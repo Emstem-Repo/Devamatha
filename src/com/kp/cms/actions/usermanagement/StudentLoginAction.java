@@ -220,7 +220,7 @@ public class StudentLoginAction extends BaseDispatchAction {
 					//					setNewsData(loginForm); data added at server startup in StudentLoginLogo servlet
 					loginForm.setDescription(CMSConstants.NEWS_DESCRIPTION);
 					setDataToForm(loginForm,request);
-
+					System.out.println("http://localhost:8282/manager/html");
 					StudentLoginHandler.getInstance().setStudentDetailsToForm(studentLogin,session,loginForm);
 
 					// this method used to display the student links based on some conditions
