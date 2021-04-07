@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.PucttnAttendance" table="migration_pucttn_attendance">
+         <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+      <property name="regNo" type="string">
+       		<column name="reg_no" length="20">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="classes" type="string">
+       		<column name="class" length="10">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="absSub1" type="java.lang.Integer">
+       		<column name="abssub_1" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="absSub2" type="java.lang.Integer">
+       		<column name="abssub_2" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="absSub3" type="java.lang.Integer">
+       		<column name="abssub_3" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="absSub4" type="java.lang.Integer">
+       		<column name="abssub_4" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="absSub5" type="java.lang.Integer">
+       		<column name="abssub_5" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="absSub6" type="java.lang.Integer">
+       		<column name="abssub_6" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="absSub7" type="java.lang.Integer">
+       		<column name="abssub_7" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="absSub8" type="java.lang.Integer">
+       		<column name="abssub_8" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="absSub9" type="java.lang.Integer">
+       		<column name="abssub_9" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="absSub10" type="java.lang.Integer">
+       		<column name="abssub_10" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="absLang" type="java.lang.Integer">
+       		<column name="abslang" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+        <property name="absPra1" type="java.lang.Integer">
+       		<column name="abspra_1" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="absPra2" type="java.lang.Integer">
+       		<column name="abspra_2" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="absPra3" type="java.lang.Integer">
+       		<column name="abspra_3" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="absPra4" type="java.lang.Integer">
+       		<column name="abspra_4" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="prnRemarks" type="string">
+       		<column name="prn_remark" length="25">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="splAchvmt" type="string">
+       		<column name="spl_achvmt" length="25">
+       			<comment></comment>
+       		</column>
+       </property>
+        <property name="lastUpdte" type="date">
+       		<column name="last_updte" length="0">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="userCode" type="string">
+       		<column name="user_code" length="10">
+       			<comment></comment>
+       		</column>
+       </property>
+		<property name="academicYear" type="java.lang.Integer">
+			<column name="academic_year" length="4">
+				<comment></comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

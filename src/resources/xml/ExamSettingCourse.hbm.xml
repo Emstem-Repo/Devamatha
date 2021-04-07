@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamSettingCourseBO" table="EXAM_exam_settings_course">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="course" class="com.kp.cms.bo.exam.ExamCourseUtilBO"
+			fetch="select"  insert="false" update="false">
+			<column name="course_id" unique="true">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<set name="examSettingCourseRevaluationSet" order-by="revaluation_id asc" >
+			<key column="exam_settings_course_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamSettingCourseRevaluationBO"  />
+		</set>
+		<property name="courseId" type="int">
+			<column name="course_id">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="improvement" type="string">
+			<column name="improvement" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="supplementaryForFailedSubject" type="string">
+			<column name="supplementary_Failed_Sub" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="minReqAttendanceWithoutFine" type="big_decimal">
+			<column name="min_req_attendance_withoutfine" precision="4">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="minReqAttendanceWithFine" type="big_decimal">
+			<column name="min_req_attendance_withfine" precision="4">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="aggregatePass" type="big_decimal">
+			<column name="aggregate_pass_prcntg" precision="4">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="individualPass" type="big_decimal">
+			<column name="individual_pass_prcntg" precision="4">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="isActive" type="java.lang.Boolean">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+			<column name="created_date" length="0">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate" type="timestamp">
+			<column name="last_modified_date" length="0">
+				<comment></comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

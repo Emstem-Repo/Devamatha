@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 22, 2009 4:21:52 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.EmpApplyLeaveDates" table="emp_apply_leave_dates">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<many-to-one name="EmpApplyLeave" class="com.kp.cms.bo.admin.EmpApplyLeave" fetch="select">
+            <column name="leave_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="date" type="date">
+            <column name="date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		
+    </class>
+</hibernate-mapping>
+

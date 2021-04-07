@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.studentfeedback.EvaStudentFeedbackScore" table="eva_student_feedback_score" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>      
+		<many-to-one name="evaStudentFeedbackOverallAverage" class="com.kp.cms.bo.studentfeedback.EvaStudentFeedbackOverallAverage" fetch="select">
+            <column name="eva_student_feedback_overall_average_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="question" class="com.kp.cms.bo.studentfeedback.EvaStudentFeedbackQuestion" fetch="select">
+            <column name="question_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="count1" type="int">
+            <column name="count_1">
+                <comment></comment>
+            </column>
+        </property>  
+		<property name="count2" type="int">
+            <column name="count_2">
+                <comment></comment>
+            </column>
+        </property>  
+		<property name="count3" type="int">
+            <column name="count_3">
+                <comment></comment>
+            </column>
+        </property>  
+		<property name="count4" type="int">
+            <column name="count_4">
+                <comment></comment>
+            </column>
+        </property>  
+		<property name="count5" type="int">
+            <column name="count_5">
+                <comment></comment>
+            </column>
+        </property>  
+        <property name="score" type="double">
+            <column name="score">
+                <comment></comment>
+            </column>
+        </property>  
+        <property name="totalCount" type="int">
+            <column name="total_count">
+                <comment></comment>
+            </column>
+        </property>  
+    </class>
+</hibernate-mapping>
+

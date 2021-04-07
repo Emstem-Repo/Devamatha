@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamMarksVerificationEntryBO" table="EXAM_marks_verification_details">
+		<comment></comment>
+		<id name="id">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<!-- Other Properties  -->
+		<property name="studentId">
+			<column name="student_id"></column>
+		</property>
+		<property name="examId">
+			<column name="exam_id"></column>
+		</property>
+		<property name="subjectId">
+			<column name="subject_id"></column>
+		</property>
+		<property name="evaluatorTypeId">
+			<column name="evaluator_type_id"></column>
+		</property>
+		<property name="answerScriptTypeId">
+			<column name="answer_script_type"></column>
+		</property>
+		<property name="vmarks">
+			<column name="vmarks"></column>
+		</property>
+		<property name="userId">
+			<column name="user_id"></column>
+		</property>
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="packetNo">
+			<column name="packet_no">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

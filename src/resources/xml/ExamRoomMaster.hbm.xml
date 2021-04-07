@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Feb 10, 2009 3:07:46 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamRoomMasterBO" table="EXAM_room_master">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="ExamRoomTypeBO" class="com.kp.cms.bo.exam.ExamRoomTypeBO"
+			fetch="select"  update="false" insert="false">
+			<column name="room_type_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="roomTypeId" >
+			<column name="room_type_id">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+
+
+		<property name="roomNo">
+			<column name="room_no">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="roomCapacity">
+			<column name="room_capacity">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="comments">
+			<column name="comments">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="examCapacity">
+			<column name="exam_capacity">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alloted" >
+			<column name="alloted" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="internalExamCapacity" >
+			<column name="internal_exam_capacity" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="floorNo" >
+			<column name="Floor_No" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate" >
+			<column name="last_modified_date" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActive" >
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="blockNo" type="string">
+			<column name="block_No" length="15">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

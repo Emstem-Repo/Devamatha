@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name = "com.kp.cms.bo.exam.ConsolidatedMarksCardProgrammePart" table = "consolidated_marks_card_programme_part_result">
+		
+		<id name="id" column="id" type="java.lang.Integer">
+			 <generator class="native"/>
+      	</id>
+		
+		<many-to-one name="student" 
+					 class="com.kp.cms.bo.admin.Student" 
+					 fetch="select"
+            		 column="student_id">
+        </many-to-one>
+		
+		<many-to-one name="examSubjectSection" 
+					 class="com.kp.cms.bo.admin.SubjectType" 
+					 fetch="select"
+            		 column="exam_subject_section_id">
+        </many-to-one>               
+		
+		<many-to-one name="subjectStream" 
+					 class="com.kp.cms.bo.exam.ConsolidatedSubjectStream" 
+					 fetch="select"
+            		 column="subject_stream_id">
+        </many-to-one>
+		
+		<property name="maxMarksObtained"
+				  column="max_marks_obtained"/>
+				  
+		<property name="maxMarksAwarded"
+				  column="max_marks_awarded"/>
+				  
+		<property name="creditPoints"
+				  column="credit_points" 
+				  type="java.lang.String"/>
+				 
+		<property name="credit"
+				  column="credit" 
+				  type="java.lang.Integer"/>
+				  
+		<property name="ccpa"
+				  column="ccpa" 
+				  type="java.lang.String"/>
+				  
+		<property name="grade"
+				  column="grade" 
+				  type="java.lang.String"/>
+				 
+		<property name="createdBy"
+				  column="created_by" 
+				  type="java.lang.String"
+				  update="false"/>
+				  
+		<property name="createdDate"
+				  column="created_date" 
+				  type="java.sql.Timestamp"
+				  update="false"/>
+				  
+		<many-to-one name="course" 
+					 class="com.kp.cms.bo.admin.Course" 
+					 fetch="select"
+            		 column="course_id">
+        </many-to-one>
+        
+        <property name="appliedYear"
+				  column="applied_year" 
+				  type="java.lang.Integer"/>
+				  
+		<property name="isFailed"
+		          column="is_failed"
+		          type="java.lang.Boolean"/>
+
+	</class>
+</hibernate-mapping>

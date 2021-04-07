@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 21, 2009 4:37:42 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.Attendance" table="attendance">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select" >
+            <column name="subject_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="activity" class="com.kp.cms.bo.admin.Activity" fetch="select" >
+            <column name="activity_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="attendanceType" class="com.kp.cms.bo.admin.AttendanceType" fetch="select" >
+            <column name="attendance_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="attendanceDate" type="date">
+            <column name="attendance_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="location" type="string">
+            <column name="location" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="hoursHeld" type="int">
+            <column name="hours_held">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="hoursHeldMonthly" type="int">
+            <column name="hours_held_monthly">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="batch" class="com.kp.cms.bo.admin.Batch" fetch="select">
+            <column name="batch_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="isCanceled" type="java.lang.Boolean">
+            <column name="is_canceled">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActivityAttendance" type="java.lang.Boolean">
+            <column name="is_activity_attendance">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isMonthlyAttendance" type="java.lang.Boolean">
+            <column name="is_monthly_attendance">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="attendanceStudents" cascade="save-update,persist" >
+            <key>
+                <column name="attendance_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AttendanceStudent" />
+        </set>
+        <set name="attendanceClasses" cascade="save-update,persist" >
+            <key>
+                <column name="attendance_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AttendanceClass" />
+        </set>
+        <set name="attendancePeriods" cascade="save-update,persist" >
+            <key>
+                <column name="attendance_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AttendancePeriod" />
+        </set>
+        <set name="attendanceInstructors" cascade="save-update,persist" >
+            <key>
+                <column name="attendance_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AttendanceInstructor" />
+        </set>
+         <property name="slipNo" type="string">
+            <column name="slip_no" length="15">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isTimeTable" type="java.lang.Boolean">
+            <column name="is_time_table">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dutyType" type="string">
+            <column name="duty_type" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="classType" type="string">
+            <column name="class_type" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="platform" type="string">
+            <column name="platform" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="topic" type="string">
+            <column name="topic" length="50">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

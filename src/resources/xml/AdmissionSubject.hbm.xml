@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 15, 2010 2:30:33 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admission.AdmissionSubject" table="migration_admission_subject">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+         <property name="classes" type="string">
+            <column name="class" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject1" type="string">
+            <column name="subject1" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subcode1" type="string">
+            <column name="sub_code1" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject2" type="string">
+            <column name="subject2" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subcode2" type="string">
+            <column name="sub_code2" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject3" type="string">
+            <column name="subject3" length="50">
+                <comment></comment>
+            </column>
+        </property> 
+        
+        <property name="subcode3" type="string">
+            <column name="sub_code3" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject4" type="string">
+            <column name="subject4" length="50">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="subcode4" type="string">
+            <column name="sub_code4" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject5" type="string">
+            <column name="subject5" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="subcode5" type="string">
+            <column name="sub_code5" length="20">
+                <comment></comment>
+            </column>
+        </property>
+     
+        <property name="academicYear" type="string">
+            <column name="academic_year" length="20">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

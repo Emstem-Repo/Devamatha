@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamEligibilitySetupAdditionalEligibilityBO"
+		table="EXAM_eligibility_setup_additional_eligibility">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examEligibilitySetupBO"
+			class="com.kp.cms.bo.exam.ExamEligibilitySetupBO" fetch="select"
+			update="false" insert="false">
+			<column name="eligibility_setup_id">
+			</column>
+		</many-to-one>
+		<many-to-one name="examEligibilityCriteriaMasterBO"
+			class="com.kp.cms.bo.exam.ExamEligibilityCriteriaMasterBO" fetch="select"
+			update="false" insert="false">
+			<column name="additional_eligibility_criteria_id">
+			</column>
+		</many-to-one>
+
+		
+
+		<!-- Other Properties -->
+		<property name="eligibilitySetupId">
+			<column name="eligibility_setup_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="additionalEligibilityCriteriaId">
+			<column name="additional_eligibility_criteria_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

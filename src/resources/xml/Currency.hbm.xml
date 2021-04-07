@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.Currency" table="currency" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+      <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="name" type="string">
+            <column name="name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currencySubdivision" type="string">
+            <column name="currency_subdivision" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currencyCode" type="string">
+            <column name="currency_code" length="3">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="symbol" type="string">
+            <column name="symbol" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="feePaymentDetails" inverse="true">
+            <key>
+                <column name="currency_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.FeePaymentDetail" />
+        </set>
+        <set name="feeTransactions" inverse="true">
+            <key>
+                <column name="currency_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.FeeTransaction" />
+        </set>
+        <set name="feeDetailses" inverse="true">
+            <key>
+                <column name="currency_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.FeeDetails" />
+        </set>
+         <set name="feePayments" inverse="true">
+            <key>
+                <column name="currency_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.FeePayment" />
+        </set>
+        <set name="incomes" inverse="true">
+            <key>
+                <column name="currency_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Income" />
+        </set>
+         <set name="personalDatasForMotherIncomeCurrencyId" inverse="true">
+            <key>
+                <column name="mother_income_currency_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.PersonalData" />
+        </set>
+        <set name="personalDatasForFatherIncomeCurrencyId" inverse="true">
+            <key>
+                <column name="father_income_currency_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.PersonalData" />
+        </set>
+       
+    </class>
+</hibernate-mapping>

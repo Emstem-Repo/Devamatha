@@ -1,0 +1,591 @@
+<HTML>
+<HEAD>
+  <TITLE>Challan</TITLE>
+  
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+div.MsoNormal {margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+li.MsoNormal {margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoNormal {margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+-->
+</style>
+<link href="../css/styles.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY>
+<table width=641 border=0 align="center" cellpadding=0 cellspacing=0 class=MsoNormalTable
+ style='width:477.75pt;border-collapse:collapse'>
+          <tr style='height:10.5pt'>
+            <td colspan=7 valign=bottom nowrap class="Challan01" style='width:429.75pt;
+  border:none;border-bottom:double black 2.25pt;padding:.75pt .75pt 0in .75pt;
+  height:10.5pt'><div align="center">Kindly fill the Challan after reading the
+              instruction carefully</div></td>
+            <td width=66 nowrap valign=bottom style='width:48.0pt;padding:.75pt .75pt 0in .75pt;
+  height:10.5pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  10.5pt'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:12.75pt'>
+            <td nowrap colspan=7 valign=bottom style='border-top:none;border-left:double black 2.25pt;
+  border-bottom:none;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:12.75pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:9.0pt;
+  font-family:"Arial","sans-serif"'>
+              Application Fee Challan </span></b><b class="Challan01">(To be Submitted in
+                Triplicate)</span></b></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:12.75pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:15.75pt'>
+            <td nowrap colspan=5 valign=bottom style='border:none;border-left:double black 2.25pt;
+  padding:.75pt .75pt 0in .75pt;height:15.75pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Arial","sans-serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              STATE BANK OF INDIA&nbsp;</span></b></p></td>
+            <td nowrap colspan=2 valign=bottom style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:double black 2.25pt;padding:
+  .75pt .75pt 0in .75pt;height:15.75pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:10.0pt;
+  font-family:"Arial","sans-serif"'>Ref No:</span></b><span style='font-size:
+  12.0pt;font-family:"Times New Roman","serif"'> $admissionFormForm.challanRefNo </span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:15.75pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td width="83" valign=bottom nowrap style='border-top:none;border-left:double black 2.25pt;
+  border-bottom:solid black 1.0pt;border-right:none;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Branch:</span></p></td>
+            <td width="143" valign=bottom nowrap style='border:none;border-bottom:solid black 1.0pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td width="19" valign=bottom nowrap style='border:none;border-bottom:solid black 1.0pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td width="114" valign=bottom nowrap style='border:none;border-bottom:solid black 1.0pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Code:</span></p></td>
+            <td width="53" valign=bottom nowrap style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap colspan=2 valign=bottom style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:double black 2.25pt;background:
+  white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;Date</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap colspan=7 valign=bottom style='border-top:none;border-left:double black 2.25pt;
+  border-bottom:solid black 1.0pt;border-right:double black 2.25pt;background:
+  white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Name
+              of the Candidate:</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap colspan=7 valign=bottom style='border-top:none;border-left:double black 2.25pt;
+  border-bottom:solid black 1.0pt;border-right:double black 2.25pt;background:
+  white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>For
+              the Credit of the Current A/c <b>30335534949</b> of <b>M/s</b> <b>CHRIST
+                UNIVERSITY, Bangalore with&nbsp;</b></span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap colspan=7 valign=bottom style='border-top:none;border-left:double black 2.25pt;
+  border-bottom:solid windowtext 1.0pt;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>State
+              Bank of India Koramangala Branch, Bangalore (Branch Code:10508)</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:16.5pt'>
+            <td nowrap colspan=7 valign=bottom style='border-top:none;border-left:double black 2.25pt;
+  border-bottom:none;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:16.5pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Amount
+              (in words): Rupees&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              only.</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:16.5pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:10.5pt'>
+            <td nowrap colspan=7 valign=bottom style='border-top:solid black 1.0pt;
+  border-left:double black 2.25pt;border-bottom:none;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:10.5pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:10.5pt'><b><span style='font-size:8.0pt;
+  font-family:"Arial","sans-serif"'>Application Fee/CODE Details&nbsp; (Please
+              see below for details)</span></b></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:10.5pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  10.5pt'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:12.95pt'>
+            <td nowrap colspan=2 valign=bottom style='border:solid black 1.0pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:12.95pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:9.0pt;
+  font-family:"Arial","sans-serif";color:black'>Code </span></b><span
+  style='font-size:7.0pt;font-family:"Arial","sans-serif";color:black'>(Select
+              only one code)</span></p></td>
+            <td nowrap colspan=4 valign=bottom style='border:solid black 1.0pt;
+  border-left:none;padding:.75pt .75pt 0in .75pt;height:12.95pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:10.0pt;
+  font-family:"Arial","sans-serif";color:black'>Course </span></b><span
+  style='font-size:7.0pt;font-family:"Arial","sans-serif";color:black'>(Select
+              only one course)</span></p></td>
+            <td width="250" valign=bottom nowrap style='border-top:solid black 1.0pt;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:12.95pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:10.0pt;
+  font-family:"Arial","sans-serif"'>Amount</span></b></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:12.95pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:20.25pt'>
+            <td nowrap colspan=2 style='border:solid black 1.0pt;border-top:none;
+  background:white;padding:.75pt .75pt 0in .75pt;height:20.25pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial","sans-serif";color:black'>$admissionFormForm.coursePayCode</span></p></td>
+            <td nowrap colspan=4 style='border:none;border-right:solid black 1.0pt;
+  padding:.75pt .75pt 0in .75pt;height:20.25pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial","sans-serif";color:black'>$admissionFormForm.programName</span></p></td>
+            <td nowrap valign=bottom style='border:none;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:20.25pt'><p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+  style='font-size:10.0pt;font-family:"Arial","sans-serif"'>$admissionFormForm.courseAmount</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:20.25pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:15.75pt'>
+            <td nowrap colspan=7 valign=bottom style='border:double black 2.25pt;
+  border-top:none;background:white;padding:.75pt .75pt 0in .75pt;height:15.75pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:8.0pt;font-family:"Arial","sans-serif"'>Bank's
+              commission amount of Rs.20/- (Rupees twenty only) is to be paid separately</span></b></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:15.75pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap colspan=3 valign=bottom style='border-top:none;border-left:double black 2.25pt;
+  border-bottom:solid black 1.0pt;border-right:double black 2.25pt;background:
+  white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Particulars
+              of Cheque/Draft</span></b></p></td>
+            <td nowrap colspan=2 valign=bottom style='border-top:none;border-left:none;
+  border-bottom:double black 2.25pt;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Cash
+              Denomination</span></b></p></td>
+            <td nowrap colspan=2 valign=bottom style='border-top:none;border-left:none;
+  border-bottom:double black 2.25pt;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:10.0pt;
+  font-family:"Arial","sans-serif"'>Amount</span></b></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap colspan=3 valign=bottom style='border:double black 2.25pt;
+  border-top:none;background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;font-family:"Arial","sans-serif"'>Chq/DD
+              No :&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>x
+              1000</span></p></td>
+            <td width="28" valign=bottom nowrap style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap valign=bottom style='border:double black 2.25pt;border-top:none;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;font-family:"Arial","sans-serif"'>Date</span></p></td>
+            <td nowrap valign=bottom style='border:none;border-bottom:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>x 500</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap valign=bottom style='border:double black 2.25pt;border-top:none;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;font-family:"Arial","sans-serif"'>Drawn
+              on</span></p></td>
+            <td nowrap valign=bottom style='border:none;border-bottom:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>x 100</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap valign=bottom style='border:double black 2.25pt;border-top:none;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;font-family:"Arial","sans-serif"'>Branch</span></p></td>
+            <td nowrap valign=bottom style='border:none;border-bottom:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>x 50</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap valign=bottom style='border:double black 2.25pt;border-top:none;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;font-family:"Arial","sans-serif"'>Amount</span></p></td>
+            <td nowrap valign=bottom style='border:none;border-bottom:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  double black 2.25pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border:none;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>x 20</span></p></td>
+            <td nowrap valign=bottom style='border:none;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border:none;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap valign=bottom style='border:none;border-left:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='background:white;padding:.75pt .75pt 0in .75pt;
+  height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='background:white;padding:.75pt .75pt 0in .75pt;
+  height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='background:white;padding:.75pt .75pt 0in .75pt;
+  height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>x 10</span></p></td>
+            <td nowrap valign=bottom style='border-top:double black 2.25pt;border-left:
+  none;border-bottom:none;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border-top:double black 2.25pt;border-left:
+  none;border-bottom:none;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:15.0pt'>
+            <td nowrap colspan=4 valign=bottom style='border-top:none;border-left:double black 2.25pt;
+  border-bottom:solid black 1.0pt;border-right:none;background:white;
+  padding:.75pt .75pt 0in .75pt;height:15.0pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Deposited
+              By:</span></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  solid black 1.0pt;border-right:double black 2.25pt;background:white;
+  padding:.75pt .75pt 0in .75pt;height:15.0pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Total</span></b></p></td>
+            <td nowrap valign=bottom style='border:double black 2.25pt;border-left:none;
+  background:white;padding:.75pt .75pt 0in .75pt;height:15.0pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='border:double black 2.25pt;border-left:none;
+  background:white;padding:.75pt .75pt 0in .75pt;height:15.0pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:15.0pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:12.75pt'>
+            <td nowrap colspan=7 valign=bottom style='border:double black 2.25pt;
+  border-top:none;background:white;padding:.75pt .75pt 0in .75pt;height:12.75pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:8.0pt;
+  font-family:"Arial","sans-serif"'>For Bank Use only</span></b></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:12.75pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap colspan=3 valign=bottom style='border:double black 2.25pt;
+  border-top:none;background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Cashier's
+              Sl No :</span></p></td>
+            <td nowrap colspan=4 valign=bottom style='border-top:none;border-left:none;
+  border-bottom:double black 2.25pt;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Cashier:</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap colspan=3 valign=bottom style='border:double black 2.25pt;
+  border-top:none;background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Cash
+              Officer/Passing Officer</span></p></td>
+            <td nowrap colspan=4 valign=bottom style='border-top:none;border-left:none;
+  border-bottom:double black 2.25pt;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap colspan=3 valign=bottom style='border:double black 2.25pt;
+  border-top:none;background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Journal
+              No.</span></b></p></td>
+            <td nowrap colspan=4 valign=bottom style='border-top:none;border-left:none;
+  border-bottom:double black 2.25pt;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:.25in'>
+            <td nowrap colspan=3 valign=bottom style='border:double black 2.25pt;
+  border-top:none;background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Partition
+              Number</span></p></td>
+            <td nowrap colspan=4 valign=bottom style='border-top:none;border-left:none;
+  border-bottom:double black 2.25pt;border-right:double black 2.25pt;
+  background:white;padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:.25in'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:10.5pt'>
+            <td nowrap colspan=7 valign=bottom style='border:none;border-bottom:solid black 1.0pt;
+  padding:.75pt .75pt 0in .75pt;height:10.5pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:10.5pt'><b><span style='font-size:8.0pt;
+  font-family:"Arial","sans-serif"'>Course Details and Code Details</span></b></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:10.5pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  10.5pt'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:10.5pt'>
+            <td nowrap valign=bottom style='border:solid black 1.0pt;border-top:none;
+  background:white;padding:.75pt .75pt 0in .75pt;height:10.5pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:10.5pt'><b><span style='font-size:8.0pt;
+  font-family:"Arial","sans-serif"'>Code</span></b></p></td>
+            <td nowrap colspan=5 valign=bottom style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:.75pt .75pt 0in .75pt;
+  height:10.5pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:10.5pt'><b><span style='font-size:8.0pt;
+  font-family:"Arial","sans-serif"'>Courses</span></b></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  solid black 1.0pt;border-right:solid black 1.0pt;padding:.75pt .75pt 0in .75pt;
+  height:10.5pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  10.5pt; text-align:center'><b><span style='font-size:8.0pt;font-family:"Arial","sans-serif"'>Amount</span></b></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:10.5pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  10.5pt'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:12.0pt'>
+            <td nowrap style='border:solid black 1.0pt;border-top:none;padding:.75pt .75pt 0in .75pt;
+  height:12.0pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span style='font-size:10.0pt;
+  font-family:"Arial","sans-serif"'>$admissionFormForm.coursePayCode</span></b></span></p></td>
+            <td nowrap colspan=5 valign=bottom style='border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:.75pt .75pt 0in .75pt;
+  height:12.0pt'><p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+  style='font-size:8.0pt;font-family:"Arial","sans-serif"'>$admissionFormForm.programName</span></b></p></td>
+            <td nowrap valign=bottom style='border-top:none;border-left:none;border-bottom:
+  solid black 1.0pt;border-right:solid black 1.0pt;padding:.75pt .75pt 0in .75pt;
+  height:12.0pt'><p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:10.0pt;
+  font-family:"Arial","sans-serif"'>$admissionFormForm.courseAmount</span></b></p></td>
+            <td nowrap valign=bottom style='padding:.75pt .75pt 0in .75pt;height:12.0pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><b><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>Instructions
+              to Core Banking Branches of State Bank of India</span></b></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>1.&nbsp;
+              Acceptance of fees by all Core Banking branches for direct credit to Christ
+              University account has been</span></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>&nbsp;&nbsp;&nbsp;&nbsp;
+              approved by Bangalore Circle.&nbsp; Please refer to the announcement in the
+              Service Desk</span></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>2.&nbsp;
+              Please enter the Reference No., Student Name, Course details and the correct amount&nbsp;</span></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>&nbsp;&nbsp;&nbsp;&nbsp;
+              directly into the above mentioned account number</span></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><span style='font-size:9.0pt;font-family:"Arial","sans-serif";
+  color:black'>3.&nbsp; Please write the Journal No. on the Challan copies and
+              hand over 2 copies to the remitter.</span></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>4.&nbsp;
+              Please recover <b>Rs.20/-(Rupees Twenty Only)</b> separately and credit to
+              your commission account</span></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><b><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>Instructions
+              to Candidates:</span></b></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><span style='font-size:9.0pt;font-family:"Arial","sans-serif";
+  color:black'>1.&nbsp; Please fill separate challan for each course.&nbsp;
+              Select only one code &amp; one course per challan</span></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>2.&nbsp;
+              Please remit the Application fees as per the Course and Code Details given in
+              the Challan.</span></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>3.&nbsp;
+              Please remit the Application fees in any Core Banking branch of State Bank of
+              India.</span></p></td>
+          </tr>
+          <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'>4.&nbsp;
+              Please submit one copy of the challan, along with other documents, to Christ
+              University</span></p></td>
+          </tr>
+           <tr style='height:11.1pt'>
+            <td nowrap colspan=8 valign=bottom style='padding:.75pt .75pt 0in .75pt;
+  height:11.1pt'><p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  11.1pt'><div align="center"><span style='font-size:9.0pt;font-family:"Arial","sans-serif"'></span></div></p></td>
+          </tr>
+        </table>
+
+</BODY>
+</HTML>
+<script type="text/javascript">
+	window.print();
+</script>

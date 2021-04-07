@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.UGConsolidateMarksCardBO"
+		table="UG_Consolidated_Marks_Card">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="examId">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="studentId">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="classId">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectId">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="courseId">
+			<column name="course_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectCode">
+			<column name="code">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectName">
+			<column name="subject">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryTotalSubInternalMark">
+			<column name="theory_total_sub_internal_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryTotalAttendanceMark">
+			<column name="theory_total_attendance_mark">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="practicalTotalSubInternalMark">
+			<column name="practical_total_sub_internal_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalTotalAttendanceMark">
+			<column name="practical_total_attendance_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="studentTheoryMark">
+			<column name="student_theory_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="studentPracticalMark">
+			<column name="student_practical_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryeseMinimumMark">
+			<column name="theory_ese_minimum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryeseMaximumMark">
+			<column name="theory_ese_maximum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicaleseMinimumMark">
+			<column name="practical_ese_minimum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicaleseMaximumMark">
+			<column name="practical_ese_maximum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="firstName">
+			<column name="first_name">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="middleName">
+			<column name="middle_name">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastName">
+			<column name="last_name">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="section">
+			<column name="section">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isInitialise">
+			<column name="is_initialise">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectOrder">
+			<column name="subject_order">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalPracticalInternalMaximumMark">
+			<column name="final_practical_internal_maximum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalTheoryInternalMaximumMark">
+			<column name="final_theory_internal_maximum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalCredit">
+			<column name="practical_credit">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryCredit">
+			<column name="theory_credit">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="regNo">
+			<column name="register_no">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subType">
+			<column name="subType">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="termNumber">
+			<column name="term_number">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryObtain">
+			<column name="theoryObtain">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalObtain">
+			<column name="practicalObtain">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryMax">
+			<column name="theoryMax">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalMax">
+			<column name="practicalMax">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryPercentage">
+			<column name="theoryPer">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalPercentage">
+			<column name="practicalper">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dontShowMaxMarks">
+			<column name="dont_show_max_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dontShowMinMarks">
+			<column name="dont_show_min_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="showOnlyGrade">
+			<column name="show_only_grade">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="name">
+			<column name="name">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dontShowSubType">
+			<column name="dont_show_sub_type">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="appliedYear">
+			<column name="applied_year">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="sectionId">
+			<column name="section_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="academicYear">
+			<column name="academic_year">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="selectedCourseId">
+			<column name="selected_course_id">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

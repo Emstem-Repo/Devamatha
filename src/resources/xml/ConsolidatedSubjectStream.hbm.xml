@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ConsolidatedSubjectStream" table="consolidated_subject_stream">
+		
+		<id name="id" column="id" type="java.lang.Integer">
+			 <generator class="native"/>
+      	</id>
+		
+		<property name="streamName"
+				  column="stream_name" 
+				  type="java.lang.String"/>
+				  
+		<property name="createdBy"
+				  column="created_by" 
+				  type="java.lang.String"
+				  update="false"/>
+				  
+		<property name="createdDate"
+				  column="created_date" 
+				  type="java.sql.Timestamp"
+				  update="false"/>
+				  
+		<property name="modifiedBy"
+				  column="modified_by" 
+				  type="java.lang.String"/>
+				  
+		<property name="lastModifiedDate"
+				  column="last_modified_date" 
+				  type="java.sql.Timestamp"/>
+				  
+		<property name="isActive"
+				  column="is_active" 
+				  type="java.lang.Boolean"/>
+		
+	</class>
+</hibernate-mapping>	

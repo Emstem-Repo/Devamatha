@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2009 2:58:31 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.HlAdmissionBo" table="hl_admission">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="studentId" class="com.kp.cms.bo.admin.Student" fetch="select" >
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+      <many-to-one name="courseId" class="com.kp.cms.bo.admin.Course" fetch="select" >
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="hostelId" class="com.kp.cms.bo.admin.HlHostel" fetch="select" >
+            <column name="hostel_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="roomTypeId" class="com.kp.cms.bo.admin.HlRoomType" fetch="select" >
+            <column name="roomtype_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+           <many-to-one name="roomId" class="com.kp.cms.bo.admin.HlRoom" fetch="select" >
+            <column name="room_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+           <many-to-one name="bedId" class="com.kp.cms.bo.admin.HlBeds" fetch="select" >
+            <column name="bed_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+          <property name="cancelReason" type="string" update="true">
+            <column name="cancel_reason">
+                <comment></comment>
+            </column>
+        </property>
+           <property name="academicYear" type="string" update="true">
+            <column name="academic_year">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isCancelled" type="java.lang.Boolean">
+            <column name="is_cancelled">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="admittedDate" type="date">
+        <column name="admission_date">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="applicationNo" type="string" update="true">
+            <column name="application_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isCheckedIn" type="java.lang.Boolean" >
+            <column name="is_checked_in">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="checkInDate" type="timestamp">
+            <column name="check_in_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="biometricId" type="string" >
+            <column name="biometric_id">
+                <comment></comment>
+            </column>
+        </property>
+         <set name="hlFacilitiesAllotted" cascade="save-update,persist,merge">
+            <key>
+                <column name="hl_admission_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.hostel.HlStudentFacilityAllotted" />
+        </set>
+        <property name="checkOut" type="java.lang.Boolean" >
+            <column name="is_checked_out">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isFacilityVerified" type="java.lang.Boolean" >
+            <column name="is_facility_verified">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="checkOutDate" type="timestamp">
+            <column name="check_out_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="checkOutRemarks" type="string">
+            <column name="check_out_remarks" length="250">
+                <comment></comment>
+            </column>
+        </property>
+     </class>
+</hibernate-mapping>

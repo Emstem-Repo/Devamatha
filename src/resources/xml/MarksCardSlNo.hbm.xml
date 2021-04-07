@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.MarksCardSlNo" table="marks_card_slno">
+        <comment></comment>
+        
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+        <property name="startNo" type="int">
+            <column name="start_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="currentNo" type="int">
+            <column name="current_no" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <many-to-one name="programType" class="com.kp.cms.bo.admin.ProgramType" fetch="select" >
+            <column name="programType_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        <property name="academicYear" type="int">
+            <column name="academic_year" length="5">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="scheme" type="int">
+            <column name="scheme" length="5">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" >
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

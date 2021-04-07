@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 15, 2009 3:06:37 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.ApplicantLateralDetails" table="applicant_lateral_details">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="admAppln" class="com.kp.cms.bo.admin.AdmAppln" fetch="select">
+            <column name="adm_appln_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="semesterName" type="string">
+            <column name="semester_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="maxMarks" type="big_decimal">
+            <column name="max_marks" precision="14">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="minMarks" type="big_decimal">
+            <column name="min_marks" precision="14">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="marksObtained" type="big_decimal">
+            <column name="marks_obtained" precision="14">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="yearPass" type="java.lang.Integer">
+            <column name="year_pass">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="semesterNo" type="java.lang.Integer">
+            <column name="semester_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="monthPass" type="java.lang.Integer">
+            <column name="month_pass">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="universityName" type="string">
+            <column name="university_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="stateName" type="string">
+            <column name="state_name" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="instituteAddress" type="string">
+            <column name="institute_address" length="200">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamValuationAnswerScript" table="exam_valuation_answer_script">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		 <many-to-one name="validationDetailsId" class="com.kp.cms.bo.exam.ExamValidationDetails" fetch="select">
+            <column name="valuation_details_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="issueDate" type="timestamp">
+			<column name="date">
+				</column>
+		</property>
+		 <property name="numberOfAnswerScripts" type="int">
+            <column name="number_of_answer_scripts" length="5">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>		  
+         <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active" length="0">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="challanGenerated" type="java.lang.Boolean">
+            <column name="challan_generated" length="0">
+                <comment></comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

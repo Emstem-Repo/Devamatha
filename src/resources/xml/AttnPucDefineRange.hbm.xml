@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.kp.cms.bo.admin.AttnPucDefineRange" table="migration_pucattn_definerange">
+         <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<property name="classes" type="string">
+			<column name="class" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="startRegNo" type="string">
+			<column name="start_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="endRegNo" type="string">
+			<column name="end_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryOrPractical" type="string">
+			<column name="theory_or_practical" length="5">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="combineClass1" type="string">
+			<column name="combine_class1" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="combineClass2" type="string">
+			<column name="combine_class2" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="combineClass3" type="string">
+			<column name="combine_class3" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="combineClass4" type="string">
+			<column name="combine_class4" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="combineClass5" type="string">
+			<column name="combine_class5" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="combineClass6" type="string">
+			<column name="combine_class6" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="combineClass7" type="string">
+			<column name="combine_class7" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="combineClass8" type="string">
+			<column name="combine_class8" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="combineClass9" type="string">
+			<column name="combine_class9" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class1StartRegNo" type="string">
+			<column name="class1_start_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class2StartRegNo" type="string">
+			<column name="class2_start_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class3StartRegNo" type="string">
+			<column name="class3_start_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class4StartRegNo" type="string">
+			<column name="class4_start_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class5StartRegNo" type="string">
+			<column name="class5_start_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class6StartRegNo" type="string">
+			<column name="class6_start_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class7StartRegNo" type="string">
+			<column name="class7_start_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class8StartRegNo" type="string">
+			<column name="class8_start_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class9StartRegNo" type="string">
+			<column name="class9_start_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class1EndRegNo" type="string">
+			<column name="class1_end_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class2EndRegNo" type="string">
+			<column name="class2_end_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class3EndRegNo" type="string">
+			<column name="class3_end_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class4EndRegNo" type="string">
+			<column name="class4_end_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class5EndRegNo" type="string">
+			<column name="class5_end_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class6EndRegNo" type="string">
+			<column name="class6_end_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class7EndRegNo" type="string">
+			<column name="class7_end_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class8EndRegNo" type="string">
+			<column name="class8_end_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="class9EndRegNo" type="string">
+			<column name="class9_end_regno" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="academicYear" type="java.lang.Integer">
+			<column name="academic_year" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		</class>
+</hibernate-mapping>

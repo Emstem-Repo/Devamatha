@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.kp.cms.bo.phd.DocumentDetailsBO" table="phd_document_details" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="documentName" type="string">
+			<column name="document_name" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="submissionOrder" type="int">
+			<column name="submission_order" length="50">
+				<comment></comment>
+			</column>
+		</property>
+	   <property name="guidesFees" type="big_decimal">
+			<column name="guides_fee" precision="12">
+				<comment></comment>
+			</column>
+		</property>
+      <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+     		</class>
+</hibernate-mapping>
+

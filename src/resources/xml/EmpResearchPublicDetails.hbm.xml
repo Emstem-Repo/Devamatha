@@ -1,0 +1,490 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 22, 2009 4:21:52 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.employee.EmpResearchPublicDetails" table="emp_research_publications_details">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="title" type="string">
+            <column name="title">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="investigators" type="string">
+            <column name="investigators">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="sponsors" type="string">
+            <column name="sponsors">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="abstractObjectives" type="string">
+            <column name="abstract_objectives">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="authorName" type="string">
+            <column name="author_name">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="language" type="string">
+            <column name="language">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="placePublication" type="string">
+            <column name="place_publication">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="isbn" type="string">
+            <column name="isbn">
+                <comment></comment>
+            </column>
+        </property> <property name="totalPages" type="string">
+            <column name="total_pages">
+                <comment></comment>
+            </column>
+        </property> 
+		<property name="monthYear" type="string">
+            <column name="month_year">
+                <comment></comment>
+            </column>
+       
+		</property> 
+		<property name="dateMonthYear" type="timestamp">
+            <column name="date_month_year" length="0">
+                <comment></comment>
+            </column>
+       
+		</property> 
+		<property name="companyInstitution" type="string">
+            <column name="pub_company_institution">
+                <comment></comment>
+            </column>
+		</property>
+ 		<property name="nameJournal" type="string">
+            <column name="name_journal">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="volumeNumber" type="string">
+            <column name="volume_number">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="issueNumber" type="string">
+            <column name="issue_number">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="pagesFrom" type="string">
+            <column name="pages_from">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="pagesTo" type="string">
+            <column name="pages_to">
+                <comment></comment>
+            </column>
+       </property> 
+	   <property name="editorsName" type="string">
+            <column name="editors_name">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="titleChapterArticle" type="string">
+            <column name="title_chapter_article">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="url" type="string">
+            <column name="url">
+                <comment></comment>
+            </column>
+       </property>
+	   <property name="numberOfComments" type="string">
+            <column name="number_of_comments">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="subject" type="string">
+            <column name="subject">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="subtitles" type="string">
+            <column name="subtitles">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="genre" type="string">
+            <column name="genre">
+                <comment></comment>
+            </column>
+        </property> 
+		<property name="credits" type="string">
+            <column name="credits">
+                <comment></comment>
+            </column>
+        </property> 
+		 <property name="runningTime" type="string">
+            <column name="running_time">
+                <comment></comment>
+            </column>
+        </property> 
+		 <property name="discFormat" type="string">
+            <column name="disc_format">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="technicalFormat" type="string">
+            <column name="technical_format">
+                <comment></comment>
+            </column>
+        </property> 
+		 <property name="audioFormat" type="string">
+            <column name="audio_format">
+                <comment></comment>
+            </column>
+        </property> 
+		 <property name="aspectRatio" type="string">
+            <column name="aspect_ratio">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="producer" type="string">
+            <column name="producer">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="copyrights" type="string">
+            <column name="copyrights">
+                <comment></comment>
+            </column>
+        </property> 
+		<property name="namePeriodical" type="string">
+            <column name="name_periodical">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="nameTalksPresentation" type="string">
+            <column name="name_talks_presentation">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="nameConferencesSeminar" type="string">
+            <column name="name_conferences_seminar">
+                <comment></comment>
+            </column>
+        </property> 
+		 <property name="abstracts" type="string">
+            <column name="abstract">
+                <comment></comment>
+            </column>
+        </property> 
+		 <property name="caseNoteWorkPaper" type="string">
+            <column name="case_note_work_paper">
+                <comment></comment>
+            </column>
+        </property> 
+		 <property name="nameOrganisers" type="string">
+            <column name="name_organisers">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="resoursePerson" type="string">
+            <column name="resourse_person">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="nameStudent" type="string">
+            <column name="name_student">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="nameGuide" type="string">
+            <column name="name_guide">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="approverComment" type="string">
+            <column name="approver_comment">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="approvedDate" type="timestamp">
+            <column name="approved_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="entryCreateDate" type="timestamp" update="false">
+            <column name="entry_created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		
+		 <property name="doi" type="string" >
+            <column name="doi">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="departmentInstitution" type="string">
+            <column name="department_institution">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="impactFactor" type="string">
+            <column name="impact_factor">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="dateSent" type="timestamp">
+            <column name="date_sent" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateAccepted" type="timestamp">
+            <column name="date_accepted" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="datePublished" type="timestamp">
+            <column name="date_published" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="place" type="string">
+            <column name="place">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="description">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isArticleJournal" type="java.lang.Boolean">
+            <column name="is_article_Journal">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isArticleInPeriodicals" type="java.lang.Boolean">
+            <column name="is_article_in_periodicals">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isBlog" type="java.lang.Boolean">
+            <column name="is_blog">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isBookMonographs" type="java.lang.Boolean">
+            <column name="is_book_monographs">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isCasesNoteWorking" type="java.lang.Boolean">
+            <column name="is_cases_note_working">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isChapterArticleBook" type="java.lang.Boolean">
+            <column name="is_chapter_article_book">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isConferencePresentation" type="java.lang.Boolean">
+            <column name="is_conference_presentation">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isFilmVideoDoc" type="java.lang.Boolean">
+            <column name="is_film_video_doc">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isResearchProject" type="java.lang.Boolean">
+            <column name="is_research_project">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isOwnPhdMphilThesis" type="java.lang.Boolean">
+            <column name="is_own_thesis">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isPhdMPhilThesisGuided" type="java.lang.Boolean">
+            <column name="is_thesis_guided">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isSeminarOrganized" type="java.lang.Boolean">
+            <column name="is_seminar_organized">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isApproved" type="java.lang.Boolean">
+            <column name="is_approved">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isInvitedTalk" type="java.lang.Boolean">
+            <column name="is_invited_talk">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isWorkshopTraining" type="java.lang.Boolean">
+            <column name="is_workshop_training">
+                <comment></comment>
+            </column>
+        </property> <property name="isSeminarAttended" type="java.lang.Boolean">
+            <column name="is_seminar_attended">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="isAwardsAchievementsOthers" type="java.lang.Boolean">
+            <column name="is_awards_achievements">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isRejected" type="java.lang.Boolean">
+            <column name="is_rejected">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isEmployee" type="java.lang.Boolean">
+            <column name="is_employee">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="rejectReason" type="string">
+            <column name="reason_rejection" length="100">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="rejectDate" type="timestamp">
+            <column name="rejection_date">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="submissionDate" type="timestamp" >
+            <column name="date_of_submission" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="type" type="string">
+            <column name="type">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="academicYear" type="string">
+            <column name="academic_year">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="internalExternal" type="string">
+            <column name="internal_external">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="coAuthored" type="string">
+            <column name="sole_coauthored">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guidedAdjudicated" type="string">
+            <column name="guided_adjudicated">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="amountGranted" type="string">
+            <column name="amount_granted">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="organisationAwarded" type="string">
+            <column name="organisation_awarded">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="otherText" type="string">
+            <column name="other_text">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="nameOfPgm" type="string">
+            <column name="name_program">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="typeOfPgm" type="string">
+            <column name="type_program">
+                <comment></comment>
+            </column>
+       </property> 
+         <property name="endOfPgm" type="timestamp">
+            <column name="end_of_pgm" length="0">
+                <comment></comment>
+            </column>
+       </property> 
+        
+		<many-to-one name="employeeId" class="com.kp.cms.bo.admin.Employee" fetch="select" >
+            <column name="employee_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="approverId" class="com.kp.cms.bo.admin.Employee" fetch="select" >
+            <column name="approver_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="guestId" class="com.kp.cms.bo.employee.GuestFaculty" fetch="select" >
+            <column name="guest_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

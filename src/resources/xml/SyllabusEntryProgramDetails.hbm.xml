@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.SyllabusEntryProgramDetails" table="syllabus_entry_program_details" >
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<property name="batchYear" type="java.lang.Integer">
+			<column name="batch_year"/>
+		</property>
+		<property name="examinationAndAssesments" type="string">
+            <column name="examination_and_assesment" >
+            </column>
+        </property>
+		<many-to-one name="courseId" class="com.kp.cms.bo.admin.Course" fetch="select">
+            <column name="course_id">
+            </column>
+        </many-to-one>
+		<property name="departmentOverview" type="string">
+            <column name="department_overview">
+            </column>
+        </property>
+		<property name="missionStatement" type="string">
+            <column name="mission_statement">
+            </column>
+        </property>
+		<property name="introductionProgramme" type="string">
+            <column name="introduction_programme">
+            </column>
+        </property>
+        <property name="programObjective" type="string">
+            <column name="program_objective">
+            </column>
+        </property>
+		<property name="assesmentPattern" type="string">
+            <column name="assesment_pattern">
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+			</column>
+		</property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active" />
+        </property>
+    </class>
+</hibernate-mapping>

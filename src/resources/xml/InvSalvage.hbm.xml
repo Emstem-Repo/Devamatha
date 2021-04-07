@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2009 2:58:31 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.InvSalvage" table="inv_salvage">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="invLocation" class="com.kp.cms.bo.admin.InvLocation" fetch="select">
+            <column name="inv_location_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="remarks" type="string">
+            <column name="remarks" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="date" type="timestamp">
+            <column name="date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="invSalvageItems" cascade="save-update">
+            <key>
+                <column name="inv_salvage_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvSalvageItem" />
+        </set>
+    </class>
+</hibernate-mapping>

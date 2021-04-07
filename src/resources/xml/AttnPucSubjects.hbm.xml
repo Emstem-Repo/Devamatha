@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 15, 2010 2:30:33 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.AttnPucSubjects" table="migration_pucattn_subjects">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+       <property name="classes" type="string">
+      	 <column name="class" length="20">
+       		<comment></comment>
+       </column>
+       </property>
+        <property name="subCde1" type="string">
+      	 <column name="sub_cde_1" length="5">
+       		<comment></comment>
+       </column>
+       </property>
+       <property name="subCde2" type="string">
+      	 <column name="sub_cde_2" length="5">
+       		<comment></comment>
+       </column>
+       </property>
+       <property name="subCde3" type="string">
+      	 <column name="sub_cde_3" length="5">
+       		<comment></comment>
+       </column>
+       </property>
+       <property name="subCde4" type="string">
+      	 <column name="sub_cde_4" length="5">
+       		<comment></comment>
+       </column>
+       </property>
+       <property name="subCde5" type="string">
+      	 <column name="sub_cde_5" length="5">
+       		<comment></comment>
+       </column>
+       </property>
+       <property name="subCde6" type="string">
+      	 <column name="sub_cde_6" length="5">
+       		<comment></comment>
+       </column>
+       </property>
+       <property name="subCde7" type="string">
+      	 <column name="sub_cde_7" length="5">
+       		<comment></comment>
+       </column>
+       </property>
+       <property name="subCde8" type="string">
+      	 <column name="sub_cde_8" length="5">
+       		<comment></comment>
+       </column>
+       </property>
+       <property name="subCde9" type="string">
+      	 <column name="sub_cde_9" length="5">
+       		<comment></comment>
+       </column>
+       </property>
+       <property name="subcde10" type="string">
+      	 <column name="sub_cde_10" length="5">
+       		<comment></comment>
+       </column>
+       </property>
+       <property name="subject1" type="string">
+       		<column name="subject_1" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="subject2" type="string">
+       		<column name="subject_2" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="subject3" type="string">
+       		<column name="subject_3" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="subject4" type="string">
+       		<column name="subject_4" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="subject5" type="string">
+       		<column name="subject_5" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="subject6" type="string">
+       		<column name="subject_6" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="subject7" type="string">
+       		<column name="subject_7" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="subject8" type="string">
+       		<column name="subject_8" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="subject9" type="string">
+       		<column name="subject_9" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="subject10" type="string">
+       		<column name="subject_10" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="praCode1" type="string">
+       		<column name="pra_code_1" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="praCode2" type="string">
+       		<column name="pra_code_2" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="praCode3" type="string">
+       		<column name="pra_code_3" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="praCode4" type="string">
+       		<column name="pra_code_4" length="5">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="practical1" type="string">
+       		<column name="practical_1" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="practical2" type="string">
+       		<column name="practical_2" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="practical3" type="string">
+       		<column name="practical_3" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="practical4" type="string">
+       		<column name="practical_4" length="50">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="maintFees" type="java.lang.Float">
+            <column name="maint_fees">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="elecPre" type="java.lang.Boolean">
+       		<column name="elec_pre" length="25">
+       			<comment></comment>
+       		</column>
+       </property>
+       <property name="academicYear" type="java.lang.Integer">
+       		<column name="academic_year" length="4">
+       			<comment></comment>
+       		</column>
+       </property>
+    </class>
+</hibernate-mapping>

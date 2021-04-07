@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 29, 2013 7:09:10 PM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.examallotment.ExamRoomAvailability" table="EXAM_rooms_available">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="roomMaster" class="com.kp.cms.bo.studentfeedback.RoomMaster" fetch="select">
+            <column name="room_id" />
+        </many-to-one>
+        <property name="createdBy" type="java.lang.String" update="false">
+            <column name="created_by" />
+        </property>
+        <property name="createdDate" type="java.util.Date" update="false">
+            <column name="created_date" />
+        </property>
+        <property name="modifiedBy" type="java.lang.String">
+            <column name="modified_by" />
+        </property>
+        <property name="lastModifiedBy" type="java.util.Date">
+            <column name="last_modified_date" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active" />
+        </property>
+    </class>
+</hibernate-mapping>

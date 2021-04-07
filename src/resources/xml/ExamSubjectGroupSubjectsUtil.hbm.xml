@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.SubjectGroupSubjectsUtilBO"
+		table="subject_group_subjects">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<many-to-one name="subjectUtilBO" class="com.kp.cms.bo.exam.SubjectUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<many-to-one name="subjectGroupUtilBO" class="com.kp.cms.bo.exam.SubjectGroupUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="subject_group_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="isActive">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+		<!--
+			Other Properties <property name="subjectGroupId" type="string"
+			update="false"> <column name="subject_group_id" length="50">
+			<comment></comment> </column> </property> <property name="subjectId"
+			type="string" update="false"> <column name="subject_id" length="50">
+			<comment></comment> </column> </property>
+		-->
+	</class>
+</hibernate-mapping>

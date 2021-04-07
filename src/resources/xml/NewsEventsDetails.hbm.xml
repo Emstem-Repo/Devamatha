@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.NewsEventsDetails" table="news_events_details" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<many-to-one name="categoryId" class="com.kp.cms.bo.admin.MobNewsEventsCategory" fetch="select" >
+            <column name="category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="courseId" class="com.kp.cms.bo.admin.Course" fetch="select" >
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="deptId" class="com.kp.cms.bo.admin.Department" fetch="select" >
+            <column name="dept_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="streamId" class="com.kp.cms.bo.admin.EmployeeStreamBO" fetch="select" >
+            <column name="stream_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="splCentre" class="com.kp.cms.bo.admin.Department" fetch="select" >
+            <column name="spl_center_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="preApproverId" class="com.kp.cms.bo.admin.Employee" fetch="select" >
+            <column name="pre_approver_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="postApproverId" class="com.kp.cms.bo.admin.Employee" fetch="select" >
+            <column name="post_approver_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="eventTitle" type="string">
+            <column name="event_title" length="50">
+                <comment></comment>
+            </column>
+        </property> 
+		 <property name="eventDescription" type="string">
+            <column name="event_description" length="500">
+                <comment></comment>
+            </column>
+        </property> 
+		 <property name="eventImage" type="string">
+            <column name="event_image" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="iconImage" type="string">
+            <column name="icon_image" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="dateFrom" type="timestamp">
+            <column name="date_from" length="0">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="dateTo" type="timestamp" >
+            <column name="date_to" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="academicYear" type="string">
+            <column name="academic_year">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="participants" type="string">
+            <column name="participants">
+                <comment></comment>
+            </column>
+        </property> 
+        <property name="organizedBy" type="string">
+            <column name="organized_by">
+                <comment></comment>
+            </column>
+        </property> 
+        <property name="isRegistrationRequired" type="java.lang.Boolean">
+            <column name="registration_required">
+                <comment></comment>
+            </column>
+        </property> 
+         <property name="isLiveTelecast" type="java.lang.Boolean">
+            <column name="live_telecast">
+                <comment></comment>
+            </column>
+        </property>  
+         <property name="isEventInvitationMail" type="java.lang.Boolean">
+            <column name="event_invitation_mail">
+                <comment></comment>
+            </column>
+        </property> 
+        <property name="invitationMail" type="string">
+            <column name="invitation_mail" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="registrationForm" type="string">
+            <column name="registration_form" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+			<column name="last_modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="viewFor" >
+            <column name="view_for" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="eventWebPosition">
+            <column name="event_web_position" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="newsWebPosition">
+            <column name="news_web_position" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="summary">
+            <column name="summary" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="materialsPublished">
+            <column name="materials_published" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="eventReport">
+            <column name="report_of_event" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="preApprovalDate" type="timestamp">
+            <column name="pre_approval_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="postApprovalDate" type="timestamp">
+            <column name="post_approval_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="preIsApproved" type="java.lang.Boolean">
+            <column name="pre_is_approved">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="postIsApproved" type="java.lang.Boolean">
+            <column name="post_is_approved">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="preApprovalRemarks">
+            <column name="pre_approval_remarks" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="postApprovalRemarks">
+            <column name="post_approval_remarks" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="displayFromDate" type="timestamp">
+            <column name="display_from_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="displayToDate" type="timestamp">
+            <column name="display_to_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+      
+       <property name="postApproveStatus">
+            <column name="admin_decision_post" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="preApproveStatus">
+            <column name="admin_decision_pre" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isAdminApprovePost" type="java.lang.Boolean">
+            <column name="is_admin_approve_post">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isAdminApprovePre" type="java.lang.Boolean">
+            <column name="is_admin_approve_pre">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isPostDeptEntry" type="java.lang.Boolean">
+            <column name="is_post_dept_entry">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="newOrEvents">
+            <column name="news_or_events">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <set name="newsEventsResourse" cascade="save-update,persist" >
+            <key>
+                <column name="news_events_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.NewsEventsResourse" />
+        </set>
+        <set name="newsEventsParticipants" cascade="save-update,persist" >
+            <key>
+                <column name="news_events_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.NewsEventsParticipants" />
+        </set>
+        <set name="newsEventsPhotos" cascade="save-update,persist,merge">
+            <key>
+                <column name="news_events_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.NewsEventsPhoto" />
+        </set>
+         <set name="newsEventsContactDetails" cascade="save-update,persist" >
+            <key>
+                <column name="news_events_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.NewsEventsContactDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

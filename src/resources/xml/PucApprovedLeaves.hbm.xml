@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.kp.cms.bo.admin.PucApprovedLeaves" table="migration_puc_approvedleaves">
+         <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="regNo" type="string">
+			<column name="reg_no" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="classes" type="string">
+			<column name="classes" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leaveStartDate" type="timestamp">
+			<column name="leave_start_date" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leaveEndDate" type="timestamp">
+			<column name="leave_end_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leaveSub1" type="java.lang.Integer">
+			<column name="leave_sub1" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leaveSub2" type="java.lang.Integer">
+			<column name="leave_sub2" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leaveSub3" type="java.lang.Integer">
+			<column name="leave_sub3" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leaveSub4" type="java.lang.Integer">
+			<column name="leave_sub4" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="leaveSub5" type="java.lang.Integer">
+			<column name="leave_sub5" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leaveSub6" type="java.lang.Integer">
+			<column name="leave_sub6" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leaveSub7" type="java.lang.Integer">
+			<column name="leave_sub7" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="leaveSub8" type="java.lang.Integer">
+			<column name="leave_sub8" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leaveSub9" type="java.lang.Integer">
+			<column name="leave_sub9" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leaveSub10" type="java.lang.Integer">
+			<column name="leave_sub10" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="leaveLang" type="java.lang.Integer">
+			<column name="leave_lang" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leavePracl" type="java.lang.Integer">
+			<column name="leave_prac1" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leavePrac2" type="java.lang.Integer">
+			<column name="leave_prac2" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="leavePrac3" type="java.lang.Integer">
+			<column name="leave_prac3" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="leavePrac4" type="java.lang.Integer">
+			<column name="leave_prac4" length="3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="academicYear" type="java.lang.Integer">
+			<column name="academic_year" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		</class>
+</hibernate-mapping>

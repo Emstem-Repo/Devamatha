@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 19, 2010 2:18:43 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.ExamCenter" table="exam_center" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+ 		<many-to-one name="program" class="com.kp.cms.bo.admin.Program" fetch="select"  >
+            <column name="program_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="center" type="string">
+            <column name="center" length="100">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="address1" type="string">
+            <column name="address_1" length="100">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="address2" type="string">
+            <column name="address_2" length="100">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="address3" type="string">
+            <column name="address_3" length="100">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="address4" type="string">
+            <column name="address_4" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="createdBy" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modifiedBy" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="seatNoFrom" type="java.lang.Integer">
+            <column name="seat_no_from">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="seatNoTo" type="java.lang.Integer">
+            <column name="seat_no_to" >
+                <comment></comment>
+            </column>
+        </property>
+          <property name="currentSeatNo" type="java.lang.Integer">
+            <column name="current_seat_no" >
+                <comment></comment>
+            </column>
+        </property> 
+		<property name="seatNoPrefix" type="string" >
+			<column name="seat_no_prefix" length="10">
+				<comment></comment>
+			</column>
+		</property> 
+		<property name="isActive" type="java.lang.Boolean">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>            
+    </class>
+</hibernate-mapping>

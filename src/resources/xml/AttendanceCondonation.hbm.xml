@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.admin.AttendanceCondonation" table="attendance_condonation">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		 <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select">
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		 <many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select">
+            <column name="class_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="semister" type="java.lang.Integer">
+			<column name="scheme_no">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="createDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedDate" type="timestamp">
+			<column name="last_modified_date" length="0">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="isActive" type="java.lang.Boolean">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="previousPercentage" type="java.lang.Double">
+			<column name="previous_percentage">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="addedPercentage" type="java.lang.Double">
+			<column name="added_percentage">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="totalPercentage" type="java.lang.Double">
+			<column name="total_percentage">
+				<comment></comment>
+			</column>
+		</property>
+		
+		
+		
+	</class>
+</hibernate-mapping>

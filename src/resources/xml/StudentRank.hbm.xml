@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.StudentRank" table="student_rank" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="admAppln" class="com.kp.cms.bo.admin.AdmAppln" fetch="select" >
+            <column name="adm_appln_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+      
+        <property name="indexMark" type="java.lang.Double">
+            <column name="index_mark">
+                <comment></comment>
+            </column>
+        </property>
+        
+          <property name="remark" type="string">
+            <column name="remarks">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select">
+            <column name="course_id">
+                <comment></comment>
+            </column>
+         </many-to-one>
+         
+          <property name="language1Marks" type="java.lang.Double">
+            <column name="language1_mark">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="language2Marks" type="java.lang.Double">
+            <column name="language2_mark">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="groupMarks" type="java.lang.Double">
+            <column name="group_marks">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="rank" type="integer">
+            <column name="rank">
+                <comment></comment>
+            </column>
+        </property>
+        
+       <property name="prefNo" type="integer">
+            <column name="prefNo">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="tiePreference" type="string">
+            <column name="tie_preference">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		
+    </class>
+</hibernate-mapping>

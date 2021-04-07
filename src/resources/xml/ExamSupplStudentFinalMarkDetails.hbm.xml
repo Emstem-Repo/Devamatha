@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamSupplStudentFinalMarkDetailsBO"
+		table="EXAM_supplementary_student_final_mark_details">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examDefinitionBO" class="com.kp.cms.bo.exam.ExamDefinitionBO"
+			fetch="select" insert="false" update="false" unique="true">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="studentUtilBO" class="com.kp.cms.bo.exam.StudentUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="classUtilBO" class="com.kp.cms.bo.exam.ClassUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="subjectUtilBO" class="com.kp.cms.bo.exam.SubjectUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+
+		<!-- Other Properties -->
+		<property name="examId">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="studentId">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="classId">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectId">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectTheoryMark">
+			<column name="subject_theory_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectPracticalMark">
+			<column name="subject_practical_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="studentTheoryMarks">
+			<column name="student_theory_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="studentPracticalMarks">
+			<column name="student_practical_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="passOrFail">
+			<column name="pass_or_fail">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="chance">
+			<column name="chance">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

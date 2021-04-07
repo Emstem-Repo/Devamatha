@@ -1,0 +1,735 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.CandidateMarks" table="candidate_marks" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+       <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <many-to-one name="ednQualification" class="com.kp.cms.bo.admin.EdnQualification" fetch="select">
+            <column name="edn_qualification_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="subject1" type="string">
+            <column name="subject_1" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject2" type="string">
+            <column name="subject_2" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject3" type="string">
+            <column name="subject_3" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject4" type="string">
+            <column name="subject_4" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject5" type="string">
+            <column name="subject_5" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject6" type="string">
+            <column name="subject_6" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject7" type="string">
+            <column name="subject_7" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject8" type="string">
+            <column name="subject_8" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject9" type="string">
+            <column name="subject_9" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject10" type="string">
+            <column name="subject_10" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject11" type="string">
+            <column name="subject_11" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject12" type="string">
+            <column name="subject_12" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject13" type="string">
+            <column name="subject_13" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject14" type="string">
+            <column name="subject_14" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject15" type="string">
+            <column name="subject_15" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject16" type="string">
+            <column name="subject_16" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject17" type="string">
+            <column name="subject_17" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject18" type="string">
+            <column name="subject_18" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject19" type="string">
+            <column name="subject_19" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject20" type="string">
+            <column name="subject_20" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject1TotalMarks" type="big_decimal">
+            <column name="subject_1_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject2TotalMarks" type="big_decimal">
+            <column name="subject_2_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject3TotalMarks" type="big_decimal">
+            <column name="subject_3_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject4TotalMarks" type="big_decimal">
+            <column name="subject_4_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject5TotalMarks" type="big_decimal">
+            <column name="subject_5_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject6TotalMarks" type="big_decimal">
+            <column name="subject_6_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject7TotalMarks" type="big_decimal">
+            <column name="subject_7_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject8TotalMarks" type="big_decimal">
+            <column name="subject_8_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject9TotalMarks" type="big_decimal">
+            <column name="subject_9_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject10TotalMarks" type="big_decimal">
+            <column name="subject_10_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject11TotalMarks" type="big_decimal">
+            <column name="subject_11_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject12TotalMarks" type="big_decimal">
+            <column name="subject_12_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject13TotalMarks" type="big_decimal">
+            <column name="subject_13_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject14TotalMarks" type="big_decimal">
+            <column name="subject_14_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject15TotalMarks" type="big_decimal">
+            <column name="subject_15_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject16TotalMarks" type="big_decimal">
+            <column name="subject_16_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject17TotalMarks" type="big_decimal">
+            <column name="subject_17_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject18TotalMarks" type="big_decimal">
+            <column name="subject_18_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject19TotalMarks" type="big_decimal">
+            <column name="subject_19_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject20TotalMarks" type="big_decimal">
+            <column name="subject_20_total_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject1ObtainedMarks" type="big_decimal">
+            <column name="subject_1_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject2ObtainedMarks" type="big_decimal">
+            <column name="subject_2_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject3ObtainedMarks" type="big_decimal">
+            <column name="subject_3_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject4ObtainedMarks" type="big_decimal">
+            <column name="subject_4_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject5ObtainedMarks" type="big_decimal">
+            <column name="subject_5_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject6ObtainedMarks" type="big_decimal">
+            <column name="subject_6_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject7ObtainedMarks" type="big_decimal">
+            <column name="subject_7_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject8ObtainedMarks" type="big_decimal">
+            <column name="subject_8_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject9ObtainedMarks" type="big_decimal">
+            <column name="subject_9_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject10ObtainedMarks" type="big_decimal">
+            <column name="subject_10_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject11ObtainedMarks" type="big_decimal">
+            <column name="subject_11_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject12ObtainedMarks" type="big_decimal">
+            <column name="subject_12_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject13ObtainedMarks" type="big_decimal">
+            <column name="subject_13_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject14ObtainedMarks" type="big_decimal">
+            <column name="subject_14_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject15ObtainedMarks" type="big_decimal">
+            <column name="subject_15_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject16ObtainedMarks" type="big_decimal">
+            <column name="subject_16_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject17ObtainedMarks" type="big_decimal">
+            <column name="subject_17_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject18ObtainedMarks" type="big_decimal">
+            <column name="subject_18_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject19ObtainedMarks" type="big_decimal">
+            <column name="subject_19_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject20ObtainedMarks" type="big_decimal">
+            <column name="subject_20_obtained_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <!--  
+       <many-to-one name="detailedSubjects1" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id1">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects2" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id2">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects3" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id3">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects4" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id4">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects5" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id5">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects6" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id6">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects7" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id7">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects8" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id8">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects9" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id9">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects10" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id10">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects11" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id11">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects12" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id12">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects13" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id13">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects14" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id14">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects15" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id15">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects16" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id16">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects17" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id17">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects18" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id18">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects19" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id19">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="detailedSubjects20" class="com.kp.cms.bo.admin.DetailedSubjects" fetch="select"  >
+            <column name="detailed_subject_id20">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        -->
+        
+        
+        <property name="overallTotal" type="big_decimal">
+            <column name="overall_total" precision="14">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="totalMarks" type="big_decimal">
+            <column name="total_marks" precision="14">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="totalObtainedMarks" type="big_decimal">
+            <column name="total_obtained_marks" precision="14">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="subject1Credit" type="big_decimal">
+            <column name="subject_1_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+       
+        <property name="subject2Credit" type="big_decimal">
+            <column name="subject_2_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject3Credit" type="big_decimal">
+            <column name="subject_3_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject4Credit" type="big_decimal">
+            <column name="subject_4_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject5Credit" type="big_decimal">
+            <column name="subject_5_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject6Credit" type="big_decimal">
+            <column name="subject_6_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject7Credit" type="big_decimal">
+            <column name="subject_7_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject15Credit" type="big_decimal">
+            <column name="subject_15_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="subject16Credit" type="big_decimal">
+            <column name="subject_16_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="subject8Credit" type="big_decimal">
+            <column name="subject_8_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="subject9Credit" type="big_decimal">
+            <column name="subject_9_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="subject10Credit" type="big_decimal">
+            <column name="subject_10_cgpa_marks" precision="8">
+                <comment></comment>
+            </column>
+        </property>
+        
+       
+       <property name="subjectid1" type="string">
+            <column name="subjectid_1" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid2" type="string">
+            <column name="subjectid_2" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid3" type="string">
+            <column name="subjectid_3" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid4" type="string">
+            <column name="subjectid_4" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid5" type="string">
+            <column name="subjectid_5" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid6" type="string">
+            <column name="subjectid_6" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid7" type="string">
+            <column name="subjectid_7" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid8" type="string">
+            <column name="subjectid_8" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid9" type="string">
+            <column name="subjectid_9" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid10" type="string">
+            <column name="subjectid_10" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid11" type="string">
+            <column name="subjectid_11" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid12" type="string">
+            <column name="subjectid_12" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid13" type="string">
+            <column name="subjectid_13" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid14" type="string">
+            <column name="subjectid_14" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid15" type="string">
+            <column name="subjectid_15" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid16" type="string">
+            <column name="subjectid_16" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid17" type="string">
+            <column name="subjectid_17" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid18" type="string">
+            <column name="subjectid_18" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid19" type="string">
+            <column name="subjectid_19" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectid20" type="string">
+            <column name="subjectid_20" length="20">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="subjectOther1" type="string">
+            <column name="subjectother_1" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther2" type="string">
+            <column name="subjectother_2" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther3" type="string">
+            <column name="subjectother_3" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther4" type="string">
+            <column name="subjectother_4" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther5" type="string">
+            <column name="subjectother_5" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther6" type="string">
+            <column name="subjectother_6" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther7" type="string">
+            <column name="subjectother_7" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther8" type="string">
+            <column name="subjectother_8" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther9" type="string">
+            <column name="subjectother_9" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther10" type="string">
+            <column name="subjectother_10" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther11" type="string">
+            <column name="subjectother_11" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther12" type="string">
+            <column name="subjectother_12" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther13" type="string">
+            <column name="subjectother_13" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther14" type="string">
+            <column name="subjectother_14" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther15" type="string">
+            <column name="subjectother_15" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther16" type="string">
+            <column name="subjectother_16" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther17" type="string">
+            <column name="subjectother_17" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther18" type="string">
+            <column name="subjectother_18" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther19" type="string">
+            <column name="subjectother_19" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectOther20" type="string">
+            <column name="subjectother_20" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+       </class>
+</hibernate-mapping>

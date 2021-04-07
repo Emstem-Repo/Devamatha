@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 14, 2009 12:28:06 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.GroupTemplateInterview" table="group_template_interview">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="programType" class="com.kp.cms.bo.admin.ProgramType" fetch="select" >
+            <column name="program_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="program" class="com.kp.cms.bo.admin.Program" fetch="select" >
+            <column name="program_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select" >
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="interviewProgramCourse" class="com.kp.cms.bo.admin.InterviewProgramCourse" fetch="select" >
+            <column name="interview_program_course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="interviewSubRounds" class="com.kp.cms.bo.admin.InterviewSubRounds" fetch="select" >
+            <column name="interview_sub_round_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="templateName" type="string">
+            <column name="template_name" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="templateDescription" type="string">
+            <column name="template_description">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="year" type="int">
+            <column name="year" length="6">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

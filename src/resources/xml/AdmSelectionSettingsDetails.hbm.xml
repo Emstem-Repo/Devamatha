@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admission.AdmSelectionSettingsDetails" table="adm_selection_settings_details" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<many-to-one name="admSelectionSettingsId" class="com.kp.cms.bo.admission.AdmSelectionSettings" fetch="select" >
+            <column name="adm_selection_settings_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="isCaste" type="java.lang.Boolean">
+            <column name="is_caste">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="isReligion" type="java.lang.Boolean">
+            <column name="is_religion">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="isInstitution" type="java.lang.Boolean">
+            <column name="is_institution">
+                <comment></comment>
+            </column>
+        </property>
+		<many-to-one name="casteId" class="com.kp.cms.bo.admin.Caste" fetch="select" >
+            <column name="caste_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="religionId" class="com.kp.cms.bo.admin.Religion" fetch="select">
+            <column name="religion_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="institutionId" class="com.kp.cms.bo.admin.College" fetch="select">
+            <column name="institution_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="selectionOrder" type="int">
+            <column name="selection_order">
+                <comment></comment>
+            </column>
+        </property>
+			
+       <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+     </class>
+</hibernate-mapping>

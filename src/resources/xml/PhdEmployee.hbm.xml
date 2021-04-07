@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2009 5:02:53 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.phd.PhdEmployee" table="phd_panel_members" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="100">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="gender" type="string">
+            <column name="gender" length="6">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="empanelmentNo" type="string">
+			<column name="empanelment_no" length="12">
+				<comment></comment>
+			</column>
+		</property>
+   	   <property name="dateOfBirth" type="date">
+            <column name="dob" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="placeOfBirth" type="string">
+            <column name="place_birth" >
+                <comment></comment>
+            </column>
+        </property>
+       <many-to-one name="nationality" class="com.kp.cms.bo.admin.Nationality" fetch="select" >
+            <column name="nationality_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+          <many-to-one name="religion" class="com.kp.cms.bo.admin.Religion"
+			fetch="select">
+			<column name="religion_id">
+				<comment></comment>
+			</column>
+		</many-to-one> 
+         <property name="bloodGroup" type="string">
+            <column name="blood_group" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="domicialStatus" type="string">
+            <column name="domicile_status" >
+                <comment></comment>
+            </column>
+        </property>
+          <property name="passPortNo" type="string">
+            <column name="passport_no" >
+                <comment></comment>
+            </column>
+        </property>
+          <property name="panNo" type="string">
+            <column name="pan_no" >
+                <comment></comment>
+            </column>
+        </property>
+          <property name="email" type="string">
+            <column name="email" >
+                <comment></comment>
+            </column>
+        </property>
+           <property name="dateOfAward" type="date">
+            <column name="date_award_phd" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="subjectGuideship" class="com.kp.cms.bo.phd.DisciplineBo" fetch="select" >
+            <column name="subject_guide_ship">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="noOfresearch" type="string">
+            <column name="no_of_research_articles_published" >
+                <comment></comment>
+            </column>
+        </property>
+            <property name="noOfBookAuthored" type="string">
+            <column name="no_of_book_authored" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="nameAddress" type="string">
+            <column name="name_address_of_organisation" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="department" type="string">
+            <column name="phd_department" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="designation" type="string">
+            <column name="phd_designation" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="yearOfExp" type="string">
+            <column name="years_of_experience" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="permanentAddress" type="string">
+            <column name="permanent_address" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="pAddressPhonNo" type="string">
+            <column name="permanent_phonno" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="contactAddress" type="string">
+            <column name="present_address" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="cAddressPhonNo" type="string">
+            <column name="present_phonno" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="bankAccNo" type="string">
+            <column name="bank_account_no" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="bankName" type="string">
+            <column name="bank_name" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="bankBranch" type="string">
+            <column name="bank_branch" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="noMphilScolars" type="int">
+			<column name="noof_mphil_scholars_guides">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="noPhdScolars" type="int">
+			<column name="noof_phd_scholars_guides">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="noPhdScolarOutside" type="int">
+			<column name="noof_phd_scholars_currently_guiding_outside_christ">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+       <set name="userses" inverse="true">
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Users" />
+        </set>
+        <set name="empImages" cascade="save-update,persist" >
+            <key>
+                <column name="phd_employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.phd.PhdEmpImages" />
+        </set> 
+        <set name="educationalDetailsSet" cascade="save-update,persist,merge">
+            <key>
+                <column name="phd_employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.phd.PhdEmpEducationalDetails" />
+        </set> 
+       <set name="teachingExperience" cascade="save-update,persist,merge" >
+            <key>
+                <column name="phd_employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.phd.PhdEmployeeExperience" />
+        </set>
+  
+      </class>
+</hibernate-mapping>

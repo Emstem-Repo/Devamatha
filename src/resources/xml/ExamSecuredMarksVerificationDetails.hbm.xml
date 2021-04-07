@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 21, 2010 2:22:27 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamSecuredMarksVerificationDetailsBO"
+		table="EXAM_secured_mark_verification_details">
+		<comment></comment>
+		<id name="id">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examSecuredMarkVerificationBO"
+			class="com.kp.cms.bo.exam.ExamSecuredMarkVerificationBO" fetch="select"
+			insert="false" update="false">
+			<column name="exam_secured_mark_verification_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="studentUtilBO" class="com.kp.cms.bo.exam.StudentUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+
+		<!-- Other Properties -->
+		<property name="examSecuredMarkVerificationId">
+			<column name="exam_secured_mark_verification_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="studentId">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryMarks">
+			<column name="theory_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalMarks">
+			<column name="practical_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isMistake">
+			<column name="is_mistake">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isRetest">
+			<column name="is_retest">
+				<comment></comment>
+			</column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

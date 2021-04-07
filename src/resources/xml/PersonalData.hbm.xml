@@ -1,0 +1,963 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.PersonalData" table="personal_data" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+       <property name="languageByLanguageWrite" type="string">
+            <column name="language_write" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="languageByLanguageSpeak" type="string">
+            <column name="language_speak" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="languageByLanguageRead" type="string">
+            <column name="language_read" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="secondLanguage" type="string">
+            <column name="second_language" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="trainingProgName" type="string">
+            <column name="training_prog_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="trainingInstAddress" type="string">
+            <column name="training_inst_address" length="200">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="trainingDuration" type="java.lang.Integer">
+            <column name="training_duration">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="trainingPurpose" type="string">
+            <column name="training_purpose" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="courseKnownBy" type="string">
+            <column name="course_known_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="courseOptReason" type="string">
+            <column name="course_opt_reason" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="strength" type="string">
+            <column name="strength" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="weakness" type="string">
+            <column name="weakness" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="otherAddnInfo" type="string">
+            <column name="other_addn_info" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="brotherName" type="string">
+            <column name="brotherName" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="brotherEducation" type="string">
+            <column name="brotherEducation" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="brotherOccupation" type="string">
+            <column name="brotherOccupation" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="brotherIncome" type="string">
+            <column name="brotherIncome" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="brotherAge" type="string">
+            <column name="brotherAge" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianName" type="string">
+            <column name="guardianName" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sisterName" type="string">
+            <column name="sisterName" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sisterEducation" type="string">
+            <column name="sisterEducation" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sisterOccupation" type="string">
+            <column name="sisterOccupation" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sisterIncome" type="string">
+            <column name="sisterIncome" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sisterAge" type="string">
+            <column name="sisterAge" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <many-to-one name="currencyByFatherIncomeCurrencyId" class="com.kp.cms.bo.admin.Currency" fetch="select" >
+            <column name="father_income_currency_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="currencyByMotherIncomeCurrencyId" class="com.kp.cms.bo.admin.Currency" fetch="select" > 
+            <column name="mother_income_currency_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="religionSection" class="com.kp.cms.bo.admin.ReligionSection" fetch="select" >
+            <column name="religion_section">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="countryByCountryId" class="com.kp.cms.bo.admin.Country" fetch="select" >
+            <column name="country_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="countryByPermanentAddressCountryId" class="com.kp.cms.bo.admin.Country" fetch="select" >
+            <column name="permanent_address_country_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="cityByCurrentAddressCityId" type="string" >
+            <column name="current_address_city" length="30">
+                <comment></comment>
+            </column>  
+        </property>
+        <many-to-one name="motherTongue" class="com.kp.cms.bo.admin.MotherTongue" fetch="select" >
+            <column name="mother_tongue_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stateByCurrentAddressStateId" class="com.kp.cms.bo.admin.State" fetch="select" >
+            <column name="current_address_state_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="incomeByFatherIncomeId" class="com.kp.cms.bo.admin.Income" fetch="select" >
+            <column name="father_income_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="countryByParentAddressCountryId" class="com.kp.cms.bo.admin.Country" fetch="select" >
+            <column name="parent_address_country_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="countryByGuardianAddressCountryId" class="com.kp.cms.bo.admin.Country" fetch="select" >
+            <column name="guardian_address_country_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="occupationByMotherOccupationId" class="com.kp.cms.bo.admin.Occupation" fetch="select"  >
+            <column name="mother_occupation_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="caste" class="com.kp.cms.bo.admin.Caste" fetch="select" >
+            <column name="caste_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="nationality" class="com.kp.cms.bo.admin.Nationality" fetch="select" >
+            <column name="nationality_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="countryByPassportCountryId" class="com.kp.cms.bo.admin.Country" fetch="select" >
+            <column name="passport_country_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="region" class="com.kp.cms.bo.admin.Region" fetch="select" >
+            <column name="region_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="countryByCurrentAddressCountryId" class="com.kp.cms.bo.admin.Country" fetch="select" >
+            <column name="current_address_country_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="incomeByIncomeId" class="com.kp.cms.bo.admin.Income" fetch="select" >
+            <column name="income_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <property name="cityByPermanentAddressCityId" type="string" >
+            <column name="permanent_address_city" length="30">
+                <comment></comment>
+            </column>  
+        </property>
+        <many-to-one name="religion" class="com.kp.cms.bo.admin.Religion" fetch="select" >
+            <column name="religion_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stateByParentAddressStateId" class="com.kp.cms.bo.admin.State" fetch="select" >
+            <column name="parent_address_state_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stateByGuardianAddressStateId" class="com.kp.cms.bo.admin.State" fetch="select" >
+            <column name="guardian_address_state_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stateByStateId" class="com.kp.cms.bo.admin.State" fetch="select" >
+            <column name="state_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="incomeByMotherIncomeId" class="com.kp.cms.bo.admin.Income" fetch="select" >
+            <column name="mother_income_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="residentCategory" class="com.kp.cms.bo.admin.ResidentCategory" fetch="select" >
+            <column name="resident_category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="occupationByFatherOccupationId" class="com.kp.cms.bo.admin.Occupation" fetch="select"  >
+            <column name="father_occupation_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+       
+        <many-to-one name="category" class="com.kp.cms.bo.admin.Category" fetch="select" >
+            <column name="category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stateByPermanentAddressStateId" class="com.kp.cms.bo.admin.State" fetch="select" >
+            <column name="permanent_address_state_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="cityByParentAddressCityId" type="string" >
+            <column name="parent_address_city" length="30">
+                <comment></comment>
+            </column>  
+        </property>
+        <property name="cityByGuardianAddressCityId" type="string" >
+            <column name="guardian_address_city" length="30">
+                <comment></comment>
+            </column>  
+        </property>
+        <property name="firstName" type="string">
+            <column name="first_name" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="middleName" type="string">
+            <column name="middle_name" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastName" type="string">
+            <column name="last_name" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateOfBirth" type="date">
+            <column name="date_of_birth" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="6">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="birthPlace" type="string">
+            <column name="birth_place" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="bloodGroup" type="string">
+            <column name="blood_group" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="passportNo" type="string">
+            <column name="passport_no" length="15">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="passportValidity" type="date">
+            <column name="passport_validity" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="residentPermitNo" type="string">
+            <column name="resident_permit_no" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="residentPermitDate" type="date">
+            <column name="resident_permit_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mobileNo1" type="string">
+            <column name="mobile_no_1" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mobileNo2" type="string">
+            <column name="mobile_no_2" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mobileNo3" type="string">
+            <column name="mobile_no_3" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="phNo1" type="string">
+            <column name="ph_no_1" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="phNo2" type="string">
+            <column name="ph_no_2" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="phNo3" type="string">
+            <column name="ph_no_3" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nationalityOthers" type="string">
+            <column name="nationality_others" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="languageOthers" type="string">
+            <column name="language_others" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ruralUrban" type="java.lang.Character">
+            <column name="rural_urban" length="1">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="permanentAddressLine1" type="string">
+            <column name="permanent_address_line_1" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="permanentAddressLine2" type="string">
+            <column name="permanent_address_line_2" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentAddressLine1" type="string">
+            <column name="current_address_line_1" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentAddressLine2" type="string">
+            <column name="current_address_line_2" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentAddressLine1" type="string">
+            <column name="parent_address_line_1" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentAddressLine2" type="string">
+            <column name="parent_address_line_2" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentAddressLine3" type="string">
+            <column name="parent_address_line_3" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="permanentAddressZipCode" type="string">
+            <column name="permanent_address_zip_code" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentAddressZipCode" type="string">
+            <column name="current_address_zip_code" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentAddressZipCode" type="string">
+            <column name="parent_address_zip_code" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianAddressZipCode" type="string">
+            <column name="guardian_address_zip_code" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianAddressLine1" type="string">
+            <column name="guardian_address_line_1" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianAddressLine2" type="string">
+            <column name="guardian_address_line_2" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianAddressLine3" type="string">
+            <column name="guardian_address_line_3" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="fatherName" type="string">
+            <column name="father_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="motherName" type="string">
+            <column name="mother_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="fatherEducation" type="string">
+            <column name="father_education" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="motherEducation" type="string">
+            <column name="mother_education" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="fatherEmail" type="string">
+            <column name="father_email" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="motherEmail" type="string">
+            <column name="mother_email" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentPh1" type="string">
+            <column name="parent_ph_1" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentPh2" type="string">
+            <column name="parent_ph_2" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentPh3" type="string">
+            <column name="parent_ph_3" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentMob1" type="string">
+            <column name="parent_mob_1" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentMob2" type="string">
+            <column name="parent_mob_2" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentMob3" type="string">
+            <column name="parent_mob_3" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianPh1" type="string">
+            <column name="guardian_ph_1" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianPh2" type="string">
+            <column name="guardian_ph_2" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianPh3" type="string">
+            <column name="guardian_ph_3" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianMob1" type="string">
+            <column name="guardian_mob_1" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianMob2" type="string">
+            <column name="guardian_mob_2" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianMob3" type="string">
+            <column name="guardian_mob_3" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="stateOthers" type="string">
+            <column name="state_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="permanentAddressStateOthers" type="string">
+            <column name="permanent_address_state_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentAddressStateOthers" type="string">
+            <column name="current_address_state_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentAddressStateOthers" type="string">
+            <column name="parent_address_state_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianAddressStateOthers" type="string">
+            <column name="guardian_address_state_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="casteOthers" type="string">
+            <column name="caste_others" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="religionOthers" type="string">
+            <column name="religion_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="religionSectionOthers" type="string">
+            <column name="religion_section_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="countryOthers" type="string">
+            <column name="country_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="permanentAddressCountryOthers" type="string">
+            <column name="permanent_address_country_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentAddressCountryOthers" type="string">
+            <column name="current_address_country_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentAddressCountryOthers" type="string">
+            <column name="parent_address_country_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="guardianAddressCountryOthers" type="string">
+            <column name="guardian_address_country_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isSportsPerson" type="java.lang.Boolean">
+            <column name="is_sports_person">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isHandicapped" type="java.lang.Boolean">
+            <column name="is_handicapped">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="sportsPersonDescription" type="string">
+            <column name="sports_person_description" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="handicappedDescription" type="string">
+            <column name="handicapped_description" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="height" type="java.lang.Integer">
+            <column name="height">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="weight" type="big_decimal">
+            <column name="weight" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="ednQualifications" cascade="save-update,persist" >
+            <key>
+                <column name="personal_data_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EdnQualification" />
+        </set>
+        <set name="admApplns" inverse="true">
+            <key>
+                <column name="personal_data_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AdmAppln" />
+        </set>
+        
+        <set name="addresses" inverse="true">
+            <key>
+                <column name="personal_data_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Address" />
+        </set>
+         <set name="studentExtracurriculars" cascade="save-update,persist" >
+            <key>
+                <column name="personal_data_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StudentExtracurricular" />
+        </set>
+        <property name="recommendedBy" type="string">
+            <column name="recommended_by" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subCaste" type="string">
+            <column name="sub_caste" length="30">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="universityEmail" type="string">
+            <column name="university_email" length="75">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="otherOccupationMother" type="string">
+            <column name="other_occupation_mother" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="otherOccupationFather" type="string">
+            <column name="other_occupation_father" length="50">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isNcccertificate" type="java.lang.Boolean">
+            <column name="is_ncc">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isNsscertificate" type="java.lang.Boolean">
+            <column name="is_nss">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isExcervice" type="java.lang.Boolean">
+            <column name="is_exservice">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="nccgrade" type="string">
+            <column name="ncc_grade" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <!--  
+        <many-to-one name="diocese" class="com.kp.cms.bo.admin.DioceseBO" fetch="select" >
+            <column name="dioceses_id">
+                <comment></comment>
+            </column>
+             </many-to-one>
+             <many-to-one name="parish" class="com.kp.cms.bo.admin.ParishBO" fetch="select" >
+            <column name="parish_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        -->
+        <many-to-one name="stateByCurrentAddressDistrictId" class="com.kp.cms.bo.admin.District" fetch="select" >
+            <column name="current_address_district_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+       
+         <many-to-one name="stateByParentAddressDistrictId" class="com.kp.cms.bo.admin.District" fetch="select" >
+            <column name="permanent_address_district_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+       
+       <property name="currenttAddressDistrcictOthers" type="string">
+            <column name="current_address_district_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="permanentAddressDistrcictOthers" type="string">
+            <column name="permanent_address_district_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="parishOthers" type="string">
+            <column name="parish_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="dioceseOthers" type="string">
+            <column name="diocese_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <many-to-one name="ugcourse" class="com.kp.cms.bo.admin.UGCoursesBO" fetch="select" >
+            <column name="ug_courses_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        
+
+         <property name="motherMobile" type="string">
+            <column name="mother_mobile" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         
+         <property name="fatherMobile" type="string">
+            <column name="father_mobile" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         
+         <property name="sports" type="string">
+            <column name="sports" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         
+         <property name="arts" type="string">
+            <column name="arts" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         
+         <property name="sportsParticipate" type="string">
+            <column name="sports_participate" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         
+         <property name="artsParticipate" type="string">
+            <column name="arts_participate" length="30">
+                <comment></comment>
+            </column>
+        </property>
+
+ 		<many-to-one name="stream" class="com.kp.cms.bo.admin.EducationStream" fetch="select">
+            <column name="stream_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+ 		<property name="currentStreet" type="string">
+            <column name="current_street" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="permanentStreet" type="string">
+            <column name="permanent_street" length="30">
+                <comment></comment>
+            </column>
+        </property>
+ 
+ 		<property name="fatherOccupationAddress" type="string">
+            <column name="father_occupation_address" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="motherOccupationAddress" type="string">
+            <column name="mother_occupation_address" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="noofenglishCoreCourses" type="string">
+            <column name="no_of_eng_core_courses" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="aadharCardNumber" type="string">
+            <column name="aahar_card_no" length="12">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="fatherPANNumber" type="string">
+            <column name="father_pan_card_no" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="fatherAadhaarNumber" type="string">
+            <column name="father_aadhaar_card_no" length="12">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="ismgquota" type="boolean">
+            <column name="is_mngquota">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="recommentedBy" type="string">
+            <column name="recommented_by">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="recommentedPersonDesignation" type="string">
+            <column name="recommented_person_designation">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="recommentedPersonMobile" type="string">
+            <column name="recommented_person_mobile">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="nssgrade" type="string">
+            <column name="nss_grade" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="preferenceNoCAP" type="string">
+            <column name="preference_no_cap">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <many-to-one name="mbaEntranceExam" class="com.kp.cms.bo.admin.MBAEntranceExam" fetch="select">
+            <column name="mba_entrance_exam_id"></column>
+        </many-to-one>
+        
+        <property name="entranceMarksSecured" type="double">
+            <column name="entrance_marks_secured">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="familyIncome" type="string">
+            <column name="family_income" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="isPhotoEdited" type="java.lang.Boolean">
+            <column name="is_photo_edited">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="isPDataEdited" type="java.lang.Boolean">
+            <column name="is_p_data_edited">
+                <comment></comment>
+            </column>
+        </property>
+ 
+    </class>
+</hibernate-mapping>

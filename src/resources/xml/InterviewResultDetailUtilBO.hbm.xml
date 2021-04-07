@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated May 18, 2009 2:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.admin.InterviewResultDetailUtilBO"
+		table="interview_result_detail">
+		<comment></comment>
+		<id name="id">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="interviewResultId">
+			<column name="interview_result_id">
+			</column>
+		</property>
+
+		<property name="gradeId">
+			<column name="grade_id">
+			</column>
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>

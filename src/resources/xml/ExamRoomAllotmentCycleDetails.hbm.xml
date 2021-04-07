@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 31, 2013 11:16:26 AM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.examallotment.ExamRoomAllotmentCycleDetails" table="EXAM_room_allotment_cycle_details">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="examRoomAllotmentCycle" class="com.kp.cms.bo.examallotment.ExamRoomAllotmentCycle" fetch="select">
+            <column name="exam_room_cycle_id" />
+        </many-to-one>
+        <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select">
+            <column name="course_id" />
+        </many-to-one>
+        <property name="schemeNo" type="java.lang.String">
+            <column name="scheme_no" />
+        </property>
+        <property name="createdBy" type="java.lang.String" update="false">
+            <column name="created_by" />
+        </property>
+        <property name="modifiedBy" type="java.lang.String">
+            <column name="modified_by" />
+        </property>
+        <property name="createdDate" type="java.util.Date" update="false">
+            <column name="created_date" />
+        </property>
+        <property name="lastModifiedDate" type="java.util.Date">
+            <column name="last_modified_date" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active" />
+        </property>
+    </class>
+</hibernate-mapping>

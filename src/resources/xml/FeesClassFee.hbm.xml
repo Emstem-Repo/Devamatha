@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 15, 2010 2:30:33 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.FeesClassFee" table="migration_fees_classfee">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="classes" type="string">
+            <column name="class" length="10">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="gia" type="java.lang.Boolean">
+            <column name="gia">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="fees" type="java.lang.Integer">
+            <column name="fees" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="maintFee" type="java.lang.Integer">
+            <column name="maint_fee" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="outKarFe" type="java.lang.Boolean">
+            <column name="out_kar_fe" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="selFnFee" type="java.lang.Integer">
+            <column name="sel_fn_fee" length="10">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="applForNri" type="java.lang.Boolean">
+            <column name="applfornri">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="aplForAdad" type="java.lang.Boolean">
+            <column name="aplforadad">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="slfnSpFee" type="java.lang.Integer">
+            <column name="slfn_spfee" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="cetFees" type="java.lang.Integer">
+            <column name="cet_fees" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="scstbtFee" type="java.lang.Integer">
+            <column name="scstbt_fee" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sscstMaint" type="java.lang.Integer">
+            <column name="scst_maint" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nriFees" type="java.lang.Integer">
+            <column name="nri_fees" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nriMFees" type="java.lang.Integer">
+            <column name="nri_m_fees" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="forgnFees" type="java.lang.Integer">
+            <column name="forgn_fees" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="forgnMFees" type="java.lang.Integer">
+            <column name="for_m_fees" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="insSpFees" type="java.lang.Integer">
+            <column name="ind_sp_fees" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="academicYear" type="java.lang.Integer">
+            <column name="academic_year" length="4">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2009 2:58:31 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.InvVendor" table="inv_vendor">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="state" class="com.kp.cms.bo.admin.State" fetch="select" >
+            <column name="state_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="country" class="com.kp.cms.bo.admin.Country" fetch="select" >
+            <column name="country_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="contactPerson" type="string">
+            <column name="contact_person" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="addressLine1" type="string">
+            <column name="address_line1" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="addressLine2" type="string">
+            <column name="address_line2" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="zipCode" type="java.lang.Integer">
+            <column name="zip_code">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="phone1" type="string">
+            <column name="phone1" length="5">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="phone2" type="string">
+            <column name="phone2" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mobile1" type="string">
+            <column name="mobile1" length="5">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mobile" type="string">
+            <column name="mobile" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="faxNo" type="string">
+            <column name="fax_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="panNo" type="string">
+            <column name="pan_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="tanNo" type="string">
+            <column name="tan_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="pin" type="string">
+            <column name="pin" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="vat" type="string">
+            <column name="vat" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="bankAccountNo" type="string">
+            <column name="bank_account_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="bankBranch" type="string">
+            <column name="bank_branch" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isAuthorized" type="java.lang.Boolean">
+            <column name="is_authorized">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="paymentTerms" type="string">
+            <column name="payment_terms" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliverySchedule" type="string">
+            <column name="delivery_schedule" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="paymentMode" type="string">
+            <column name="payment_mode" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="stateOthers" type="string">
+            <column name="state_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="200">
+                <comment></comment>
+            </column>
+            </property>
+        <set name="invPurchaseOrders" inverse="true">
+            <key>
+                <column name="inv_vendor_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvPurchaseOrder" />
+        </set>
+        <set name="invVendorItemCategories"  cascade="save-update,persist,delete">
+            <key>
+                <column name="inv_vendor_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvVendorItemCategory" />
+        </set>
+        <set name="invQuotations" inverse="true">
+            <key>
+                <column name="inv_vendor_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvQuotation" />
+        </set>
+    </class>
+</hibernate-mapping>

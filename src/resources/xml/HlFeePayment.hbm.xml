@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2009 3:48:34 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.HlFeePayment" table="hl_fee_payment">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="hlApplicationForm" class="com.kp.cms.bo.admin.HlApplicationForm" fetch="select">
+            <column name="hl_application_form_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="bank" type="string">
+            <column name="bank" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="bankBranch" type="string">
+            <column name="bank_branch" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="challanNo" type="string">
+            <column name="challan_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="journalNo" type="string">
+            <column name="journal_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="voucherNo" type="string">
+            <column name="voucher_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ddNo" type="string">
+            <column name="dd_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="receiptNo" type="string">
+            <column name="receipt_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

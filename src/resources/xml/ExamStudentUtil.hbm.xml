@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+
+	<class name="com.kp.cms.bo.exam.StudentUtilBO" table="student">
+		<comment></comment>
+		<id name="id">
+			<column name="id" />
+				<generator class="native" />
+    </id>
+
+		<many-to-one name="admApplnUtilBO" class="com.kp.cms.bo.exam.AdmApplnUtilBO"
+			fetch="select" update="false" insert="false" unique="true">
+			<column name="adm_appln_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<many-to-one name="classSchemewiseUtilBO"
+			class="com.kp.cms.bo.exam.ClassSchemewiseUtilBO" fetch="select"
+			update="false" insert="false" unique="true">
+			<column name="class_schemewise_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<set name="examStudentEligibilityCheckBOSet">
+			<key column="student_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamStudentEligibilityCheckBO" />
+		</set>
+
+		<set name="examOptSubjAssignStudentBOset">
+			<key column="student_id" />
+			<one-to-many
+				class="com.kp.cms.bo.exam.ExamOptionalSubjectAssignmentStudentBO" />
+		</set>
+
+		<set name="examAssignOverallMarksBOset">
+			<key column="student_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamAssignOverallMarksBO" />
+		</set>
+		
+		
+		<set name="examStudentEligibilityEntryBOSet">
+			<key column="student_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamStudentEligibilityEntryBO" />
+		</set>
+		
+		<set name="examInternalRetestApplicationBOset">
+			<key column="student_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamInternalRetestApplicationBO" />
+		</set>
+		
+		<set name="examStudentSpecializationBOSet">
+			<key column="student_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamStudentSpecializationBO" />
+		</set>
+		
+		<set name="examStudentBioDataBOSet">
+			<key column="student_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamStudentBioDataBO" />
+		</set>
+		<property name="classSchemewiseId" insert="false" update="false">
+			<column name="class_schemewise_id">
+			</column>
+		</property>
+		<property name="admApplnId" insert="false" update="false">
+			<column name="adm_appln_id">
+			</column>
+		</property>
+		<property name="rollNo" insert="false" update="false">
+			<column name="roll_no">
+			</column>
+		</property>
+		<property name="registerNo" insert="false" update="false">
+			<column name="register_no">
+			</column>
+		</property>
+		<property name="isHide" insert="false" update="false">
+			<column name="is_hide">
+			</column>
+		</property>
+		<set name="examStudentPreviousClassDetailsBOSet">
+			<key column="student_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamStudentPreviousClassDetailsBO" />
+		</set>
+		<set name="examStudentSubjectGroupBOSet">
+			<key column="student_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamStudentSubGrpHistoryBO" />
+		</set>
+	</class>
+</hibernate-mapping>

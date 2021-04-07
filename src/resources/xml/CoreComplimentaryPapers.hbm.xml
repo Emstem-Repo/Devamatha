@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.CoreComplimentaryPapers" table="core_complimentary_papers" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+       <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="coreSubject" type="string">
+            <column name="Core_Subject" length="100">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="complementary1Subject" type="string">
+            <column name="Complementary1_Subject" length="100">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="complementary2Subject" type="string">
+            <column name="Complementary2_Subject" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+         <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select" >
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		
+        <property name="coreSubject2" type="string">
+            <column name="core_subject2" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="coreSubject3" type="string">
+            <column name="core_subject3" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="complementary3Subject" type="string">
+            <column name="complementary3_subject" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="openSubject" type="string">
+            <column name="open_subject" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        
+    </class>
+</hibernate-mapping>

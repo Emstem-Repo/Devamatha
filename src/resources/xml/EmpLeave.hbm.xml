@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 25, 2009 3:08:43 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.EmpLeave" table="emp_leave">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="empLeaveType" class="com.kp.cms.bo.admin.EmpLeaveType" fetch="select" >
+            <column name="emp_leave_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="employee" class="com.kp.cms.bo.admin.Employee" fetch="select" >
+            <column name="employee_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="leavesAllocated" type="java.lang.Double">
+            <column name="leaves_allocated">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="leavesSanctioned" type="java.lang.Double">
+            <column name="leaves_sanctioned">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="leavesRemaining" type="java.lang.Double">
+            <column name="leaves_remaining">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="year" type="java.lang.Integer">
+            <column name="year">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="month" type="string">
+            <column name="month" length="15">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="date" type="date" update="false">
+            <column name="date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="period" type="string" update="false">
+            <column name="period" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="leaveTypeName" type="string">
+            <column name="leave_type_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

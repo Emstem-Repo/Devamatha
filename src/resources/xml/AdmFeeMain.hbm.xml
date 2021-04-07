@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.kp.cms.bo.admin.AdmFeeMain" table="migration_fee_feemain">
+         <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="billNo" type="java.lang.Integer">
+			<column name="bill_no" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="date" type="timestamp">
+			<column name="date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="time" type="string">
+			<column name="time" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="applnRegNo" type="string">
+			<column name="appln_reg_no" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="classes" type="string">
+			<column name="classes" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="normalFee" type="big_decimal">
+			<column name="normal_fee" precision="2">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="maintFee" type="big_decimal">
+			<column name="maint_fee" precision="2">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="excemption" type="java.lang.Boolean">
+			<column name="excemption">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="moneyPaid" type="java.lang.Boolean">
+			<column name="money_paid" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="userCode" type="string">
+			<column name="user_code" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="maintConcesion" type="big_decimal">
+			<column name="maint_concesion" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="concDesc" type="string">
+			<column name="conc_desc" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="academicYear" type="java.lang.Integer">
+			<column name="academic_year" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		</class>
+</hibernate-mapping>

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.SyllabusEntry" table="syllabus_entry" >
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<set name="syllabusEntryUnitsHours" cascade="all">
+            <key>
+                <column name="syllabus_entry_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.SyllabusEntryUnitsHours" />
+        </set>
+		<many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select">
+            <column name="subject_id">
+            </column>
+        </many-to-one>
+		<property name="totTeachingHrsPerSem" type="java.lang.Integer">
+			<column name="total_teaching_hours_per_semester">
+			</column>
+		</property>
+		<property name="noOfLectureHrsPerWeek" type="java.lang.Integer">
+			<column name="no_of_lecture_hours_per_week">
+			</column>
+		</property>
+		<property name="maxMarks" type="java.lang.Integer">
+			<column name="max_marks">
+			</column>
+		</property>
+		<property name="credits" type="string">
+            <column name="credits">
+            </column>
+        </property>
+		<property name="courseObjective" type="string">
+            <column name="course_objective">
+            </column>
+        </property>
+		<property name="learningOutcome" type="string">
+            <column name="learning_outcome">
+            </column>
+        </property>
+		<property name="textBooksAndRefBooks" type="string">
+            <column name="text_books_and_reference_books">
+            </column>
+        </property>
+        <property name="recommendedReading" type="string">
+            <column name="recommended_reading">
+            </column>
+        </property>
+		<property name="freeText" type="string">
+            <column name="free_text">
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+			</column>
+		</property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active" />
+        </property>
+		<property name="batchYear" type="java.lang.Integer">
+			<column name="batch_year"/>
+		</property>
+		<property name="sendForApproval" type="java.lang.Boolean">
+            <column name="send_for_approval" />
+        </property>
+		<property name="approved" type="java.lang.Boolean">
+            <column name="approved" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="changeReason" type="string">
+            <column name="reason_for_change" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="briefDetalsAboutChange" type="string">
+            <column name="brief_details_about_change" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="briefDetailsExistingSyllabus" type="string">
+            <column name="brief_details_about_existing_syllabus" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="changeInSyllabus" type="string">
+			<column name="change_in_syllabus" >
+			</column>
+		</property>
+		 <property name="rejectReason" type="string">
+			<column name="reject_reason" >
+			</column>
+		</property>
+		<property name="finalApproval" type="java.lang.Boolean">
+            <column name="final_approval" />
+        </property>
+        <property name="hodReject" type="java.lang.Boolean">
+            <column name="hod_reject" />
+        </property>
+        <property name="finalReject" type="java.lang.Boolean">
+            <column name="final_reject" />
+        </property>
+    </class>
+</hibernate-mapping>

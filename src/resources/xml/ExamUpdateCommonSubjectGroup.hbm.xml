@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+
+	<class name="com.kp.cms.bo.exam.ExamUpdateCommonSubjectGroupBO"
+		table="EXAM_update_common_subject_group">
+		<comment></comment>
+		<id name="id">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<many-to-one name="classUtilBO" class="com.kp.cms.bo.exam.ClassUtilBO"
+			fetch="select" update="false" insert="false" >
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<many-to-one name="studentUtilBO" class="com.kp.cms.bo.exam.StudentUtilBO"
+			fetch="select" update="false" insert="false" >
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<many-to-one name="subjectGroupUtilBO" class="com.kp.cms.bo.exam.SubjectGroupUtilBO"
+			fetch="select" update="false" insert="false" >
+			<column name="subject_group_id">
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties  -->
+
+		<property name="classId">
+			<column name="class_id"></column>
+		</property>
+		<property name="studentId">
+			<column name="student_id"></column>
+		</property>
+		<property name="subjectGroupId">
+			<column name="subject_group_id"></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admission.InterviewSelectionSchedule" table="interview_selection_schedule" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<set name="interviewTimeSelections" cascade="all">
+            <key>
+                <column name="select_schedule_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admission.InterviewTimeSelection" />
+        </set>
+		<!--<set name="interviewVenueSelections" cascade="all">
+            <key>
+                <column name="select_schedule_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admission.InterviewVenueSelection" />
+        </set>
+		
+		--><many-to-one name="programId" class="com.kp.cms.bo.admin.Program" fetch="select">
+            <column name="program_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="selectionProcessDate" type="timestamp">
+            <column name="selection_process_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="cutOffDate" type="timestamp">
+            <column name="cut_off_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="maxNumOfSeatsOnline" type="java.lang.Integer">
+			<column name="max_no_seats_online">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="maxNumOfSeatsOffline" type="java.lang.Integer">
+            <column name="max_no_seats_offline">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="academicYear" type="string">
+            <column name="academic_year">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="examCenter" class="com.kp.cms.bo.admin.ExamCenter" fetch="select">
+            <column name="venue_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

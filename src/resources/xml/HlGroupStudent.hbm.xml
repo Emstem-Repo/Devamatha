@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2009 3:48:34 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.HlGroupStudent" table="hl_group_student" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="hlApplicationForm" class="com.kp.cms.bo.admin.HlApplicationForm" fetch="select">
+            <column name="hl_application_form_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="hlGroup" class="com.kp.cms.bo.admin.HlGroup" fetch="select">
+            <column name="hl_group_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="hlAttendances" inverse="true">
+            <key>
+                <column name="hl_group_student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlAttendance" />
+        </set>
+    </class>
+</hibernate-mapping>

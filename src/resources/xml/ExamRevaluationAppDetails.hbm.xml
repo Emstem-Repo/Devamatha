@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.ExamRevaluationAppDetails" table="Exam_revaluation_app_details" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="status" type="string">
+            <column name="status" length="200">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="type" type="string">
+            <column name="type" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="marks" type="string" >
+			<column name="marks" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="mark1" type="string" >
+			<column name="mark_1" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="mark2" type="string" >
+			<column name="mark_2" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="thirdEvaluation" type="java.lang.Boolean" >
+			<column name="third_evaluation" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isUpdated" type="java.lang.Boolean" >
+			<column name="is_updated" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="thirdEvlMarks" type="string" >
+			<column name="third_evl_marks" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="examRevApp" class="com.kp.cms.bo.exam.ExamRevaluationApplication" fetch="select">
+            <column name="exam_rev_app_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select">
+            <column name="subject_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        <property name="mark3" type="string" >
+			<column name="mark_3" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		
+    </class>
+</hibernate-mapping>

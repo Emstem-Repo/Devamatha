@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.kp.cms.bo.auditorium.AuditoriumBooking" table="audi_auditorium_booking" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="block" class="com.kp.cms.bo.auditorium.BlockDetails"
+			fetch="select">
+			<column name="block_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="venue" class="com.kp.cms.bo.auditorium.VenueDetails"
+			fetch="select">
+			<column name="venue_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+        <property name="bookedBy" type="string">
+			<column name="booked_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="date" type="date">
+			<column name="date" >
+				<comment></comment>
+			</column>
+		</property>
+      <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="startTime" type="string">
+            <column name="start_time" length="50">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="endTime" type="string">
+            <column name="end_time" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="authorizedBy" type="string">
+            <column name="authorized_by">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="rejected" type="java.lang.Boolean">
+            <column name="rejected">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="rejectedBy" type="string">
+            <column name="rejected_by">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isApproved" type="java.lang.Boolean">
+            <column name="is_approved">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="bookingRequirements" cascade="save-update"  table="audi_booked_requirements">
+        <key column="auditorium_booking_id"/>
+        <many-to-many class="com.kp.cms.bo.auditorium.BookingRequirements" column="booking_requirements_id" />
+</set>
+<property name="adminRemarks" type="string">
+            <column name="admin_remarks" length="200">
+                <comment></comment>
+            </column>
+        </property>
+ <property name="eventCanceled" type="java.lang.Boolean">
+            <column name="event_canceled">
+                <comment></comment>
+            </column>
+    </property>
+		</class>
+</hibernate-mapping>

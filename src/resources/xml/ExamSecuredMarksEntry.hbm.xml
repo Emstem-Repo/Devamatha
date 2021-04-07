@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 21, 2010 2:22:27 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamSecuredMarksEntryBO" table="EXAM_secured_marks_entry">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examDefinitionBO" class="com.kp.cms.bo.exam.ExamDefinitionBO"
+			fetch="select" insert="false" update="false">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="subjectUtilBO" class="com.kp.cms.bo.exam.SubjectUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="studentUtilBO" class="com.kp.cms.bo.exam.StudentUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="examMultipleAnswerScriptMasterBO"
+			class="com.kp.cms.bo.exam.ExamMultipleAnswerScriptMasterBO" fetch="select"
+			insert="false" update="false">
+			<column name="answer_script_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties -->
+		<property name="examId">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectId">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="studentId">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="evaluatorType">
+			<column name="evaluator_type">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="answerScriptId">
+			<column name="answer_script_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="marks">
+			<column name="marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="previousEvaluatorMark">
+			<column name="Previous_evaluator_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isMistake">
+			<column name="is_mistake">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isRetest">
+			<column name="is_retest">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isFinal">
+			<column name="is_final">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isSupplementary">
+			<column name="is_supplementary">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isInternal">
+			<column name="is_internal">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

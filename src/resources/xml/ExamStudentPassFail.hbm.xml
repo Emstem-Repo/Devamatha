@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 23, 2010 10:17:51 AM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.ExamStudentPassFail" table="EXAM_student_pass_fail">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+        <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select">
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="schemeNo" type="java.lang.Integer">
+            <column name="scheme_no" />
+        </property>
+        <many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select" >
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="passFail" type="java.lang.Character">
+            <column name="pass_fail" length="1">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="percentage" type="big_decimal">
+			<column name="percentage" precision="5">
+			 <comment></comment>
+			</column>
+		</property>
+		<property name="result" type="string">
+			<column name="result" precision="50">
+			 <comment></comment>
+			</column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

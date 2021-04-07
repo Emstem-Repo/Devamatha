@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.examallotment.ExamRoomAllotment" table="EXAM_room_allotment" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="examDefinition" class="com.kp.cms.bo.exam.ExamDefinition" fetch="select">
+            <column name="exam_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="room" class="com.kp.cms.bo.studentfeedback.RoomMaster" fetch="select">
+            <column name="room_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="cycle" class="com.kp.cms.bo.examallotment.ExamRoomAllotmentCycle" fetch="select">
+            <column name="exam_room_allotment_cycle_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="midOrEndSem" type="string">
+            <column name="mid_end">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="date" type="timestamp">
+            <column name="date">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="roomAllotmentDetails" cascade="save-update,persist,merge">
+			<key column="exam_room_allotment_id" />
+			<one-to-many class="com.kp.cms.bo.examallotment.ExamRoomAllotmentDetails" />
+		</set>
+		<many-to-one name="examinationSessions" class="com.kp.cms.bo.examallotment.ExaminationSessions" fetch="select">
+            <column name="exam_session_id" />
+        </many-to-one>
+        <property name="fillAllColumns" type="java.lang.Boolean">
+            <column name="fill_all_columns">
+                <comment></comment>
+            </column>
+        </property>
+      </class>
+</hibernate-mapping>

@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.Program" table="program">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="programType" class="com.kp.cms.bo.admin.ProgramType" fetch="select" >
+            <column name="program_type_id" not-null="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+       <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="code" type="string">
+            <column name="code" length="15">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="isMotherTongue" type="java.lang.Boolean">
+            <column name="is_mother_tongue">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isSecondLanguage" type="java.lang.Boolean">
+            <column name="is_second_language">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isDisplayLanguageKnown" type="java.lang.Boolean">
+            <column name="is_displaylanguage_known">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isFamilyBackground" type="java.lang.Boolean">
+            <column name="is_family_background">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isHeightWeight" type="java.lang.Boolean">
+            <column name="is_height_weight">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isEntranceDetails" type="java.lang.Boolean">
+            <column name="is_entrance_details">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isLateralDetails" type="java.lang.Boolean">
+            <column name="is_lateral_details">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isDisplayTrainingCourse" type="java.lang.Boolean">
+            <column name="is_display_trainingshort_course">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isTransferCourse" type="java.lang.Boolean">
+            <column name="is_transfer_course">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isAdditionalInfo" type="java.lang.Boolean">
+            <column name="is_additional_info">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isExtraDetails" type="java.lang.Boolean">
+            <column name="is_extra_details">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isTCDetails" type="java.lang.Boolean">
+            <column name="is_tc_display">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isRegistrationNo" type="java.lang.Boolean">
+            <column name="is_registration_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isOpen" type="java.lang.Boolean">
+            <column name="is_open">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="academicYear" type="java.lang.Integer">
+            <column name="academic_year">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isExamCenterRequired" type="java.lang.Boolean">
+            <column name="is_exam_center_required">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="stream" type="string">
+			<column name="stream" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <set name="docChecklists" inverse="true" cascade="save-update,persist,merge,delete">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.DocChecklist" />
+        </set>
+        <set name="applnTypes" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ApplnType" />
+        </set>
+        <set name="groupTemplates" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.GroupTemplate" />
+        </set>
+        <set name="courses" inverse="true"  cascade="save-update,persist,merge,delete">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Course" />
+        </set>
+        
+        <set name="selectionProcesses" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.SelectionProcess" />
+        </set>
+        <set name="weightages" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Weightage" />
+        </set>
+        <set name="registrationNumberFormats" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.RegistrationNumberFormat" />
+        </set>
+        <set name="fees" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Fee" />
+        </set>
+        <set name="programCourseIntakes" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ProgramCourseIntake" />
+        </set>
+        <set name="interviewProgramCourses" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InterviewProgramCourse" />
+        </set>
+        <set name="progCourseDocs" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ProgCourseDoc" />
+        </set>
+        <set name="attendanceMarkses" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AttendanceMarks" />
+        </set>
+        <set name="feeConcessions" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.FeeConcession" />
+        </set>
+        <set name="entrances" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Entrance" />
+        </set>
+		<set name="examCenters" inverse="true">
+            <key>
+                <column name="program_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ExamCenter" />
+        </set>  
+             <property name="programNameCertificate" type="string">
+            <column name="certificate_program_name">
+                <comment></comment>
+            </column>
+        </property> 
+    </class>
+</hibernate-mapping>

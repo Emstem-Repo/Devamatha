@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamDefinitionProgramBO" table="EXAM_definition_program">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examProgramUtilBO" class="com.kp.cms.bo.exam.ExamProgramUtilBO"
+			fetch="select" update="false" insert="false">
+			<column name="program_id"></column>
+		</many-to-one>
+		<many-to-one name="examDefinitionBO" class="com.kp.cms.bo.exam.ExamDefinitionBO"
+			fetch="select" update="false" insert="false">
+			<column name="exam_defn_id"></column>
+		</many-to-one>
+		
+		<!-- Other Properties  -->
+		<property name="examDefnId">
+			<column name="exam_defn_id"></column>
+		</property>
+		<property name="programId">
+			<column name="program_id"></column>
+		</property>
+		<property name="isActive">
+			<column name="is_active"></column>
+		</property>
+		<property name="delIsActive">
+			<column name="del_is_active"></column>
+		</property>
+	</class>
+</hibernate-mapping>

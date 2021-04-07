@@ -1,0 +1,103 @@
+
+input[type="text"], 
+input[type="password"], 
+textarea, select,
+
+textarea.form-control {
+	height: 25px;
+    margin: 0;
+    padding: 0 10px;
+    vertical-align: baseline;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    width: 250px;
+    font-family: "calibri", Garamond, 'Comic Sans';
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 20px;
+    color: black;
+    -moz-border-radius: 1px; -webkit-border-radius: 1px; border-radius: 1px;
+    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+select.form-control {
+    padding:1px;
+    margin: 0;
+    height:25px;
+    width:280px;
+    background: #FFFFFF;
+    font-family: "calibri", Garamond, 'Comic Sans';
+    font-size: 12px;
+    font-weight: normal;
+    -webkit-border-radius:1px;
+    -moz-border-radius:1px;
+    border-radius:1px;
+    -webkit-box-shadow: 0 2px 0 #ccc, 0 1px #fff inset;
+    -moz-box-shadow: 0 2px 0 #ccc, 0 1px #fff inset;
+    box-shadow: 0 2px 0 #ccc, 0 1px #fff inset;
+    border: 1px solid #848484;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+.textarea:focus {
+        border-color: #59ba64;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 0 8px;
+    }
+    
+
+textarea, 
+textarea.form-control {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	line-height: 30px;
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+textarea:focus, 
+textarea.form-control:focus {
+	outline: 0;
+	background: #fff;
+    border: 1px solid #ccc;
+    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+}
+
+input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, 
+textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }
+
+input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, 
+textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #888; }
+
+input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, 
+textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }
+
+
+
+button.btn {
+	height: 20px;
+    margin: 0;
+    padding: 0 50px;
+    vertical-align: middle;
+    background: #de995e;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #fff;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+    text-shadow: none;
+    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
+button.btn:hover { opacity: 0.6; color: #fff; }
+
+button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
+
+button.btn:focus { outline: 0; opacity: 0.6; background: #de995e; color: #fff; }
+
+button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #de995e; color: #fff; }

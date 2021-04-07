@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 8, 2011 10:52:35 AM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.SubjectRuleSettingsAttendance" table="EXAM_subject_rule_settings_attendance">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="examSubjectRuleSettings" class="com.kp.cms.bo.exam.SubjectRuleSettings" fetch="select">
+            <column name="subject_rule_settings_id" />
+        </many-to-one>
+        <property name="attendanceTypeId" type="java.lang.Integer">
+            <column name="attendance_type_id" />
+        </property>
+        <property name="isLeave" type="java.lang.Boolean">
+            <column name="is_leave" />
+        </property>
+        <property name="isCoCurricular" type="java.lang.Boolean">
+            <column name="is_co_curricular" />
+        </property>
+        <property name="isTheoryPractical" type="java.lang.Character">
+            <column name="is_theory_practical" length="1" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active" />
+        </property>
+    </class>
+</hibernate-mapping>

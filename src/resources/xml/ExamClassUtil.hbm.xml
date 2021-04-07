@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+
+	<class name="com.kp.cms.bo.exam.ClassUtilBO" table="classes">
+		<comment></comment>
+		<id name="id" >
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		
+		
+	<many-to-one name="examCourseUtilBO" class="com.kp.cms.bo.exam.ExamCourseUtilBO"
+			fetch="select" insert="false" update="false" >
+			<column name="course_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		
+		<set name="classSchemewiseUtilBOSet" >
+            <key>
+                <column name="class_id" unique="true">
+                 </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.ClassSchemewiseUtilBO" />
+        </set>
+		
+		<property name="name" >
+			<column name="name">
+			</column>
+		</property>	
+		 <property name="sectionName" >
+			<column name="section_name">
+			</column>
+		</property>	
+		
+		<property name="courseId" >
+			<column name="course_id">
+			</column>
+		</property>	
+		<property name="isActive">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="termNumber" type="java.lang.Integer">
+			<column name="term_number">
+				<comment></comment>
+			</column>
+			</property>
+	</class>	
+</hibernate-mapping>

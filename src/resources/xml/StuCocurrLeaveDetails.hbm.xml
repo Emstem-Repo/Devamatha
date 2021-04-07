@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 31, 2009 5:57:08 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.StuCocurrLeaveDetails" table="stu_cocurr_leave_details" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select" >
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stuCocurrLeave" class="com.kp.cms.bo.admin.StuCocurrLeave" fetch="select">
+            <column name="stu_cocurr_leave_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

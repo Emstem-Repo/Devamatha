@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 17, 2012 10:14:00 AM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.CertificateCourseGroup" table="certificate_course_group">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<many-to-one name="certificateCourse" class="com.kp.cms.bo.admin.CertificateCourse" fetch="select" >
+            <column name="certificate_course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="groups" class="com.kp.cms.bo.admin.CCGroup" fetch="select" >
+            <column name="group_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="maxIntake" type="int">
+			<column name="max_intake">
+				<comment></comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

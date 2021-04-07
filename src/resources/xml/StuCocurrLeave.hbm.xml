@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 31, 2009 5:57:08 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.StuCocurrLeave" table="stu_cocurr_leave">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="classSchemewise" class="com.kp.cms.bo.admin.ClassSchemewise" fetch="select">
+            <column name="class_schemewise_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="attendanceType" class="com.kp.cms.bo.admin.AttendanceType" fetch="select">
+            <column name="attendance_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="activity" class="com.kp.cms.bo.admin.Activity" fetch="select" >
+            <column name="cocurricular_leavetype_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="startDate" type="date">
+            <column name="start_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="endDate" type="date">
+            <column name="end_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+           <many-to-one name="startPeriod" class="com.kp.cms.bo.admin.Period" fetch="select" >
+            <column name="start_period">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="endPeriod" class="com.kp.cms.bo.admin.Period" fetch="select" >
+            <column name="end_period">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isCocurrLeaveCancelled" type="boolean">
+            <column name="is_cocurr_leave_cancelled" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="stuCocurrLeaveDetailses" cascade="save-update,persist" >
+            <key>
+                <column name="stu_cocurr_leave_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StuCocurrLeaveDetails" />
+        </set>
+        
+        
+        <property name="approvedByTeacher" type="boolean">
+            <column name="approved_by_teacher" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+       
+           <many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select" >
+            <column name="subject_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+          <property name="cancelledByTeacher" type="boolean">
+            <column name="cancelled_by_teacher" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+       
+         <property name="approverTeacher" type="string">
+            <column name="approved_teacher_id" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        
+        
+    </class>
+</hibernate-mapping>

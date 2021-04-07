@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2009 2:58:31 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.ConsolidateMarksCardSiNo" table="consolidate_marks_card_no">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+        <property name="startNo" type="string">
+            <column name="start_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentNo" type="string">
+            <column name="current_no" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="academicYear" type="java.lang.Integer">
+            <column name="applied_year">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <many-to-one name="programType" class="com.kp.cms.bo.admin.ProgramType" fetch="select" >
+            <column name="program_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        
+    </class>
+</hibernate-mapping>

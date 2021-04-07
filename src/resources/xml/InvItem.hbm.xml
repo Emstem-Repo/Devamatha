@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2009 2:58:31 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.InvItem" table="inv_item">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="invUomByInvIssueUomId" class="com.kp.cms.bo.admin.InvUom" fetch="select" >
+            <column name="inv_issue_uom_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="invItemCategory" class="com.kp.cms.bo.admin.InvItemCategory" fetch="select" >
+            <column name="inv_item_category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="invUomByInvPurchaseUomId" class="com.kp.cms.bo.admin.InvUom" fetch="select" >
+            <column name="inv_purchase_uom_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="code" type="string">
+            <column name="code" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="purchaseCost" type="big_decimal">
+            <column name="purchase_cost" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="conversion" type="big_decimal">
+            <column name="conversion" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isWarranty" type="java.lang.Boolean">
+            <column name="is_warranty">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="invRequestItems" inverse="true">
+            <key>
+                <column name="inv_item_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvRequestItem" />
+        </set>
+        <set name="invStockTransferItems" inverse="true">
+            <key>
+                <column name="inv_item_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvStockTransferItem" />
+        </set>
+        <set name="invStockReceiptItems" inverse="true">
+            <key>
+                <column name="inv_item_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvStockReceiptItem" />
+        </set>
+        <set name="invAmcs" inverse="true">
+            <key>
+                <column name="inv_item_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvAmc" />
+        </set>
+        <set name="invQuotationItems" inverse="true">
+            <key>
+                <column name="inv_item_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvQuotationItem" />
+        </set>
+        <set name="invIssueItems" inverse="true">
+            <key>
+                <column name="inv_item_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvIssueItem" />
+        </set>
+        <set name="invSalvageItems" cascade="save-update">
+            <key>
+                <column name="inv_item_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvSalvageItem" />
+        </set>
+        <set name="invPurchaseReturnItems" inverse="true">
+            <key>
+                <column name="inv_purchase_return_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvPurchaseReturnItem" />
+        </set>
+        <set name="invPurchaseOrderItems" inverse="true">
+            <key>
+                <column name="inv_item_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvPurchaseOrderItem" />
+        </set>
+        <set name="invItemStocks" inverse="true">
+            <key>
+                <column name="inv_item_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvItemStock" />
+        </set>
+       <set name="invTxes" inverse="true">
+            <key>
+                <column name="inv_item_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvTx" />
+        </set>
+         <many-to-one name="invItemSubCategory" class="com.kp.cms.bo.admin.InvSubCategoryBo" fetch="select" >
+            <column name="inv_item_sub_category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="invItemType" class="com.kp.cms.bo.admin.InvItemType" fetch="select" >
+            <column name="item_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="remarks" type="java.lang.String">
+            <column name="remarks" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="minStockQuantity" type="java.lang.Integer">
+            <column name="min_stock_quantity" length="30">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

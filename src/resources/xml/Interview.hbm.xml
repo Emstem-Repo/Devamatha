@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.Interview" table="interview" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+       <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <many-to-one name="interviewProgramCourse" class="com.kp.cms.bo.admin.InterviewProgramCourse"  fetch="select">
+            <column name="interview_program_course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="year" type="java.lang.Integer">
+            <column name="year">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="noOfCandidates" type="java.lang.Integer">
+            <column name="no_of_candidates">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="noOfInterviewers" type="java.lang.Integer">
+            <column name="no_of_interviewers">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="interviewSchedules" cascade="all">
+            <key>
+                <column name="interview_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InterviewSchedule" />
+        </set>
+        <set name="interviewCards" inverse="true">
+            <key>
+                <column name="interview_schedule_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InterviewCard" />
+        </set>
+    </class>
+</hibernate-mapping>

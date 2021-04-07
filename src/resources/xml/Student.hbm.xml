@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 20, 2009 4:50:14 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.Student" table="student">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="classSchemewise" class="com.kp.cms.bo.admin.ClassSchemewise" >
+            <column name="class_schemewise_id" unique="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="admAppln" class="com.kp.cms.bo.admin.AdmAppln" fetch="select" cascade="save-update,persist,merge" >
+            <column name="adm_appln_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        <property name="isHide" type="java.lang.Boolean">
+            <column name="is_hide">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="hidedetailsDate" type="date">
+            <column name="hide_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="hidedetailReasons" type="string">
+            <column name="hide_reason" length="250">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isAdmitted" type="java.lang.Boolean">
+            <column name="is_admitted">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="rollNo" type="string">
+            <column name="roll_no" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="registerNo" type="string">
+            <column name="register_no" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isCurrent" type="java.lang.Boolean">
+            <column name="is_current">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isExamEligible" type="java.lang.Boolean">
+            <column name="is_exam_eligible">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="programTypeSlNo" type="java.lang.Integer">
+            <column name="programType_sl_no">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="isTcApproved" type="java.lang.Boolean">
+            <column name="is_tc_approved">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <set name="feePayments" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.FeePayment" />
+        </set>
+        <set name="attendanceStudents" inverse="true">
+            <key>
+                <column name="student_id" unique="true">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AttendanceStudent" />
+        </set>
+        <set name="batchStudents" inverse="true" >
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.BatchStudent" />
+        </set>
+         <set name="studentLogins" inverse="true" >
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StudentLogin" />
+        </set>
+        <set name="studentSubjectgroups" inverse="true">
+            <key>
+                <column name="student_id" unique="true">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StudentSubjectgroup" />
+        </set>
+        <set name="studentRemarkses"  cascade="save-update,persist">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StudentRemarks" />
+        </set>
+        <set name="userses" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Users" />
+        </set>
+        <set name="pcReceiptses" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.PcReceipts" />
+        </set>
+         <set name="stuCocurrLeaveDetailses" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StuCocurrLeaveDetails" />
+        </set>
+        <set name="principalRemarkses" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.PrincipalRemarks" />
+        </set>
+        <property name="examRegisterNo" type="string">
+            <column name="exam_register_no" length="15">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="studentNo" type="string">
+            <column name="student_no" length="15">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="tcNo" type="string">
+            <column name="tc_no" length="40">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mcNo" type="string">
+            <column name="mc_no" length="40">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="slNo" type="string">
+            <column name="tc_sl_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="tcDate" type="timestamp">
+            <column name="tc_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="bankAccNo" type="string">
+            <column name="bank_acc_No" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="tcType" type="string">
+            <column name="tc_type" length="20">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="proforma" type="java.lang.Boolean">
+            <column name="proforma">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="collegeCode" type="string">
+            <column name="puc_college_code" length="10">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="yearOfPass" type="string">
+            <column name="year_of_pass" length="20">
+                <comment></comment>
+            </column>
+        </property>
+         <set name="examRegularApplication" inverse="true">
+            <key>
+                <column name="student_id" unique="true">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.ExamRegularApplication" />
+        </set>
+        <set name="studentTCDetails" fetch="select" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StudentTCDetails" />
+        </set>
+        <set name="honorsSet" fetch="select" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HonorsEntryBo" />
+        </set>
+         <set name="examStudentDetentionRejoinDetails" fetch="select" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.ExamStudentDetentionRejoinDetails" />
+        </set>
+         <set name="studentPreviousClassesHistory" fetch="select" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.StudentPreviousClassHistory" />
+        </set>
+         <set name="studentSubjectGroupHistory" fetch="select" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.StudentSubjectGroupHistory" />
+        </set>
+        <set name="studentSupplementaryImprovements" fetch="select" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.StudentSupplementaryImprovementApplication" />
+        </set>
+		<set name="markSupplementaryDetails" fetch="select" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.InternalMarkSupplementaryDetails" />
+        </set>
+        <set name="finalMarkDetails" fetch="select" inverse="true">
+            <key>
+                <column name="student_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.StudentFinalMarkDetails" />
+        </set>
+      <property name="smartCardNo" type="string">
+            <column name="smart_card_no" length="25">
+                <comment></comment>
+            </column>
+        </property> 
+        <property name="isSCDataGenerated" type="java.lang.Boolean">
+            <column name="is_sc_data_generated">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isSCDataDelivered" type="java.lang.Boolean">
+            <column name="is_sc_data_delivered">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="universityRegisterNo" type="string">
+            <column name="university_reg_no" length="16">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="ccNo" type="string">
+            <column name="cc_no" length="40">
+                <comment></comment>
+            </column>
+        </property>
+        
+           
+    </class>
+</hibernate-mapping>

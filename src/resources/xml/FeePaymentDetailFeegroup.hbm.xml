@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 25, 2009 5:46:47 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.FeePaymentDetailFeegroup" table="fee_payment_detail_feegroup" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="feeGroup" class="com.kp.cms.bo.admin.FeeGroup" fetch="select" >
+            <column name="fee_group_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="feePaymentDetail" class="com.kp.cms.bo.admin.FeePaymentDetail" fetch="select" >
+            <column name="fee_payment_detail_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isOptional" type="java.lang.Boolean">
+            <column name="is_optional">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

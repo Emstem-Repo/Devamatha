@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 15, 2010 2:30:33 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admission.AdmissionTcDetails" table="migration_adm_tcdetails">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+         <property name="regNo" type="string">
+            <column name="reg_no" length="35">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="dateAdm" type="date">
+            <column name="date_adm" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="orderNo" type="string">
+            <column name="order_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="orderDate" type="date">
+            <column name="order_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="name" type="string">
+            <column name="name" length="40">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="sex" type="string">
+            <column name="sex" length="10">
+                <comment></comment>
+            </column>
+        </property> 
+        
+        <property name="fatherName" type="string">
+            <column name="father_name" length="40">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="motherName" type="string">
+            <column name="mother_name" length="40">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="nationality" type="string">
+            <column name="nationality" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="religion" type="string">
+            <column name="religion" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="scStBcBt" type="string">
+            <column name="sc_st_bcbt" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="dateOfBirth" type="date">
+            <column name="date_birth" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="classes" type="string">
+            <column name="class" length="15">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="year" type="string">
+            <column name="year" length="5">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="section" type="string">
+            <column name="section" length="5">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="secndLang" type="string">
+            <column name="secnd_lang" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject1" type="string">
+            <column name="subject1" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject2" type="string">
+            <column name="subject2" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject3" type="string">
+            <column name="subject3" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subject4" type="string">
+            <column name="subject4" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="publicExam" type="string">
+            <column name="public_exan" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="exmRegNo" type="string">
+            <column name="exm_regno" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="exmMonyr" type="string">
+            <column name="exm_mon_yr" length="25">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="passed" type="java.lang.Boolean">
+            <column name="passed">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="passedLang" type="string">
+            <column name="passed_lang" length="40">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="passedSubj" type="string">
+            <column name="passed_subj" length="60">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="govtSchlp" type="java.lang.Boolean">
+            <column name="govt_schlp">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="freeShip" type="java.lang.Boolean">
+            <column name="free_ship">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="lastAttnDt" type="string">
+            <column name="last_attn_dt" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="feesPaid" type="java.lang.Boolean">
+            <column name="fees_paid">
+                <comment></comment>
+            </column>
+        </property>
+        
+          <property name="degClass" type="string">
+            <column name="deg_class" length="5">
+                <comment></comment>
+            </column>
+        </property>
+         
+        <property name="firstYearMrk" type="java.lang.Integer">
+            <column name="1year_mrk" length="20">
+                <comment></comment>
+            </column>
+        </property>
+       
+       <property name="secondYearMrk" type="java.lang.Integer">
+            <column name="2year_mrk" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="thirdYearMrk" type="java.lang.Integer">
+            <column name="3year_mrk" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="fourthYearMrk" type="java.lang.Integer">
+            <column name="4year_mrk" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+       
+        <property name="outOfMrk" type="java.lang.Integer">
+            <column name="out_of_mrk" length="20">
+                <comment></comment>
+            </column>
+        </property>
+         
+        <property name="leftStudnt" type="java.lang.Boolean">
+            <column name="leftstudnt">
+                <comment></comment>
+            </column>
+        </property>
+       
+       <property name="dateLeave" type="date">
+            <column name="date_leave" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="reasonLeave" type="string">
+            <column name="reason_lve" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="caste" type="string">
+            <column name="caste" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="tcGiven" type="java.lang.Boolean">
+            <column name="tc_given">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="academicYear" type="string">
+            <column name="academic_year" length="20">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

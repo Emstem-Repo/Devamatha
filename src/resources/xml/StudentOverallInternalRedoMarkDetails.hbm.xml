@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.StudentOverallInternalRedoMarkDetails"
+		table="EXAM_student_overall_redo_internal_mark_details">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="studentOverallInternalMarkDetails" class="com.kp.cms.bo.exam.StudentOverallInternalMarkDetails" fetch="select">
+			<column name="internal_marks_details_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="exam" class="com.kp.cms.bo.exam.ExamDefinition" fetch="select">
+			<column name="redo_exam_id">
+				<comment></comment>
+			</column>
+		</many-to-one><!--
+		
+				<many-to-one name="student" class="com.kp.cms.bo.admin.Student"
+			fetch="select">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+	<many-to-one name="classes" class="com.kp.cms.bo.admin.Classes"
+			fetch="select">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="subject" class="com.kp.cms.bo.admin.Subject"
+			fetch="select">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</many-to-one>	-->
+
+		<property name="theoryTotalMarks">
+			<column name="theory_total_mark">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="practicalTotalMarks">
+			<column name="practical_total_mark">
+				<comment></comment>
+			</column>
+		</property>
+	
+	</class>
+</hibernate-mapping>

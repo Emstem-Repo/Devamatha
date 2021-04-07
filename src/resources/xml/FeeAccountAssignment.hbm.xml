@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Feb 10, 2009 3:07:46 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.admin.FeeAccountAssignment" table="fee_account_assignment">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="currencyByCurrencyId" class="com.kp.cms.bo.admin.Currency"
+			fetch="select">
+			<column name="currency_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="currencyByLigCurrencyId" class="com.kp.cms.bo.admin.Currency"
+			fetch="select">
+			<column name="lig_currency_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="currencyByCasteCurrencyId" class="com.kp.cms.bo.admin.Currency"
+			fetch="select">
+			<column name="caste_currency_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="feeHeading" class="com.kp.cms.bo.admin.FeeHeading"
+			fetch="select">
+			<column name="fee_heading_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="admittedThrough" class="com.kp.cms.bo.admin.AdmittedThrough"
+			fetch="select">
+			<column name="admitted_through_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="feeAccount" class="com.kp.cms.bo.admin.FeeAccount"
+			fetch="select">
+			<column name="fee_account_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="fee" class="com.kp.cms.bo.admin.Fee"
+			fetch="select">
+			<column name="fee_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="amount" type="big_decimal">
+			<column name="amount" precision="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+			<column name="created_date" length="0">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedData" type="timestamp">
+			<column name="last_modified_data" length="0">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActive" type="java.lang.Boolean">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="ligAmount" type="big_decimal">
+			<column name="lig_amount" precision="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="casteAmount" type="big_decimal">
+			<column name="caste_amount" precision="10">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="feeCategory" class="com.kp.cms.bo.fees.FeeCategory" fetch="select" >
+            <column name="fee_category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+	</class>
+</hibernate-mapping>

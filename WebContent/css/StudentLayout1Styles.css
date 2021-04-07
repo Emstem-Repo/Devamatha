@@ -1,0 +1,396 @@
+body{margin:0;padding:0;font-family:Verdana,Arial,Helvetica,sans-serif}
+.topheadbg{background:url(../images/bg_img.gif) repeat-x;height:95px}
+.heads{font-family:Verdana,Arial,Helvetica,sans-serif;color:#3292ba;font-weight:bold;font-size:11px;text-decoration:none}
+.calenderbg{background:url(../images/calender_bg.gif) no-repeat}
+.menubg{background:#c8e9f7}
+.heads:hover{font-family:Verdana,Arial,Helvetica,sans-serif;color:#3292ba;text-decoration:underline;font-weight:bold;font-size:11px}
+.nav{background:url(../images/cal_img.gif) no-repeat;padding-left:45px;text-align:left;height:21px;font-family:Verdana,Arial,Helvetica,sans-serif;color:#fff;font-size:11px;font-weight:bold}
+.ttr{background:url(../images/cal_top.gif) repeat-x}
+.tr{background:url(../images/tr.gif) no-repeat;height:21px;width:13px}
+.le{background:url(../images/l.gif) repeat-y;width:13px}
+.bl{background:url(../images/bl.gif) no-repeat;height:21px;width:13px}
+.bm{background:url(../images/bm.gif) repeat-x;height:21px}
+.br{background:url(../images/br.gif) no-repeat;height:21px;width:13px}
+.ri{background:url(../images/r.gif) repeat-y;width:12px}
+.navmenu{font-family:Verdana,Arial,Helvetica,sans-serif;color:#3292ba;font-size:12px;text-decoration:none}
+.navmenu:hover{font-family:Verdana,Arial,Helvetica,sans-serif;color:#3292ba;font-size:12px;text-decoration:underline}
+.td{border-left:1px solid #45b6e5;border-right:1px solid #45b6e5}
+.navmenu1{font-family:Verdana,Arial,Helvetica,sans-serif;color:#3292ba;font-size:11px}
+.copyright{font-family:Verdana,Arial,Helvetica,sans-serif;color:#fff;font-size:11px}
+.calbg{background:url(../images/cal_bg.gif) no-repeat}
+.main{width:60px;border:0 solid black}
+.month{font:bold 9px verdana;color:black}
+.daysofweek{font:bold 9px verdana;color:black}
+.days{font-size:9px;font-family:verdana;color:black;padding:2px}
+.days #today{font-weight:bold;color:red}
+.main{width:60px;border:0 solid black}
+.month{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9px;font-weight:bold;color:black}
+.daysofweek{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9px;font-weight:bold;color:black}
+.days{font-size:9px;font-family:verdana;color:black;padding:2px}
+.days #today{font-weight:bold;color:red}
+.navmenuRed{font-family:Verdana,Arial,Helvetica,sans-serif;font-weight:bold;color:red;font-size:11px;text-decoration:underline}
+.navmenuRed:hover{font-family:Verdana,Arial,Helvetica,sans-serif;color:red;font-size:11px;font-weight:bold;text-decoration:underline}
+th{padding:2px 4px 2px 4px;text-align:center;vertical-align:top;text-decoration:none}
+thead tr{background-color:#fff}
+th.sorted{background-color:threedlightshadow}
+th a,th a:visited{color:black}
+th a:hover{text-decoration:underline;color:black}
+th.sorted a,th.sortable a{background-position:right;display:block;width:100%}
+th.sortable a{background-image:url(../images/arrow_off.png);background-position:right;background-repeat:no-repeat;width:100%}
+th.order1 a{background-image:url(../images/arrow_down.png);background-position:right;background-repeat:no-repeat;width:100%}
+th.order2 a{background-image:url(../images/arrow_up.png);background-position:right;background-repeat:no-repeat;width:100%}
+div.exportlinks{background-color:#eaeccc;border:1px dotted #999;padding:2px 4px 2px 4px;margin:2px 0 10px 0;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;width:550px;text-decoration:none}
+span.export{padding:0 4px 1px 20px;display:inline;cursor:pointer;text-decoration:none;width:20%}
+span.excel{background-image:url(../images/ico_file_excel.png);background-position:left;background-repeat:no-repeat;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;width:18px;text-decoration:none}
+span.csv{background-image:url(../images/ico_file_csv.png);background-position:left;background-repeat:no-repeat;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;width:18px;text-decoration:none}
+span.pagebanner{background-color:#eaeccc;border:1px dotted #999;padding:2px 4px 2px 4px;width:550px;margin-top:10px;display:block;border-bottom:0;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;text-decoration:none}
+span.pagelinks{background-color:#eaeccc;border:1px dotted #999;padding:2px 4px 2px 4px;width:550px;display:block;border-top:0;margin-bottom:-5px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;text-decoration:none}
+.formbutton{cursor:pointer;border:outset 1px #ccc;background:#999;color:#6663366;font-weight:bold;padding:1px 2px;font:Verdana,Arial,Helvetica,sans-serif;font-size:10px;background:url(images/student/btn_login.gif) repeat-x left top}
+.login_leftlinks{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#039;text-decoration:none;font-weight:bold}
+.heading{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#039;text-decoration:none;font-weight:bold}
+.Bredcrumbs{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;color:#039;text-decoration:none;font-weight:bold}
+.heading_white{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#fff;text-decoration:none;font-weight:bold}
+.heading_orange{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#f60;text-decoration:none;font-weight:bold}
+.heading_tablehead{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#333;text-decoration:none;font-weight:bold;background-color:#c2c2c2}
+.news{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;color:#039;text-decoration:none;font-weight:normal}
+.newsLink{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9px;color:#f60;text-decoration:none}
+.button{COLOR:#fff;FONT-FAMILY:Verdana,Arial,Helvetica,sans-serif;FONT-SIZE:11px;FONT-WEIGHT:bold;font-style:normal;text-decoration:none;padding-right:8px;padding-left:8px;padding-top:4px;padding-bottom:4px;background-color:#06c;border:1px solid #333;height:4px;background-repeat:no-repeat}
+.button_type{FONT-FAMILY:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;background:#06c none;color:#fff;width:4em}
+.formbutton{cursor:pointer;border:outset 1px #ccc;background:#999;color:#6663366;font-weight:bold;padding:1px 2px;font:Verdana,Arial,Helvetica,sans-serif;font-size:10px;background:url(../images/formbg.gif) repeat-x left top}
+.btnup{cursor:pointer;border:outset 1px #ccc;background:#119;color:#6663366;width:70px;height:20px;font-weight:bold;padding:1px 2px;font:Verdana,Arial,Helvetica,sans-serif;font-size:10px;background:url(../images/btndown.gif) repeat-x left top}
+.btndown{cursor:pointer;border:outset 1px #ccc;background:#999;width:70px;height:20px;color:#2263366;font-weight:bold;padding:1px 2px;font:Verdana,Arial,Helvetica,sans-serif;font-size:10px;background:url(../images/btnup.gif) repeat-x left top}
+.tab_button{COLOR:#333;FONT-FAMILY:Verdana,Arial,Helvetica,sans-serif;FONT-SIZE:9px;FONT-WEIGHT:bold;font-style:normal;text-decoration:none;padding-right:1px;padding-left:1px;padding-top:1px;padding-bottom:1px;background-color:#ccc;border:1px solid #333;height:1px}
+.tab_button1{COLOR:#fff;FONT-FAMILY:Verdana,Arial,Helvetica,sans-serif;FONT-SIZE:11px;FONT-WEIGHT:bold;font-style:normal;text-decoration:none;padding-right:8px;padding-left:8px;padding-top:2px;padding-bottom:2px;background-color:#e8956c;border:1px solid #333;height:8px}
+.menuLink{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#039;text-decoration:none}
+.menuLink:hover{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#c30;text-decoration:none}
+.menuMainLink{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#039;text-decoration:none;font-weight:bold}
+.menuMainLink:hover{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#c30;text-decoration:none;font-weight:bold}
+.mandatoryfield{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9px;color:#f60;text-decoration:none;font-weight:bold}
+.verLine{border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;border-top-style:none;border-right-style:dashed;border-bottom-style:none;border-left-style:none;border-top-color:#ccc;border-right-color:#ccc;border-bottom-color:#ccc;border-left-color:#ccc}
+.newsLink:hover{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#2400ff;text-decoration:none}
+.fotterLink{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#fff;text-decoration:none}
+.fotterLink:hover{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#ffee60;text-decoration:none}
+.subLink{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#fff;text-decoration:none}
+.subLink:hover{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#ffee60;text-decoration:none}
+.subLink1{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#ffee60;text-decoration:none}
+.body{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#000;text-decoration:none;line-height:22px}
+.headingSub{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#039;text-decoration:none}
+.emailLink{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#f60;text-decoration:none}
+.emailLink:hover{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#2400ff;text-decoration:none}
+.chooseService{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#043f7b;text-decoration:none}
+.chooseService:hover{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#f60;text-decoration:none}
+.rteheading{font-family:Arial,Helvetica,sans-serif;font-size:11px;font-style:normal;font-weight:bold;color:#4d4e50;line-height:normal;padding-top:2px;padding-right:4px;padding-bottom:2px;padding-left:12px;font-variant:normal;word-spacing:2px;letter-spacing:.6px;background-color:#c2c2c2;text-transform:uppercase;text-align:left;white-space:normal}
+.tablecontent{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;font-style:normal;line-height:normal;color:#666;margin-top:5px;margin-bottom:6px;margin-left:4px;padding-top:5px;padding-bottom:6px;padding-left:4px;margin-right:3px;padding-right:3px;float:none;border-top:thin double #ccc;border-right:thin dotted #ccc;border-bottom:thin dotted #ccc;border-left:thin dotted #ccc}
+ul{list-style-image:url(../images/arrow1.gif)}
+.row-odd{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#333;background-color:#cc6}
+.rows-odd{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#333;background-color:#cc6;width:400px;text-align:center}
+.row-left{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:normal;color:#000;background-color:#eaeccc;text-align:left}
+.row-right{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:normal;color:#000;background-color:#eaeccc;text-align:right}
+.bold-fontAmount{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#000;background-color:#eaeccc;text-align:right}
+.bold-font{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#333}
+.row-even{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:normal;color:#000;background-color:#eaeccc}
+.rows-even{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:normal;color:#000;background-color:#eaeccc;text-align:center}
+.row-white{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:normal;color:#000;background-color:#fff}
+.rows-white{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:normal;color:#000;background-color:#fff;text-align:center}
+.TextBox{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:normal;color:#333;background-color:#fff}
+.TextBoxDecimal{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:normal;color:#333;background-color:#fff;width:70px}
+.boxheader{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#fff;text-decoration:none}
+.drivetseat{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;font-style:normal;font-weight:normal;color:#fff;text-decoration:none}
+.Mandatory{font-family:Verdana,Arial,Helvetica,sans-serif;font-weight:bold;color:red}
+.seatBooked{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9px;color:#fff;text-decoration:none;background-color:003399;border:1px solid #000}
+.seatBlocked{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:8px;color:#fff;text-decoration:none;background-color:#088200;border:1px solid #000}
+.conductorSeat{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:8px;color:#fff;text-decoration:none;background-color:red;border:1px solid #000}
+.ladiesSeat{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:8px;color:#000;text-decoration:none;background-color:#ff0;border:1px solid #000}
+.seatAvailable{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:8px;color:#000;text-decoration:none;background-color:#fff;border:1px solid #000}
+.Timings{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;font-weight:normal;color:#000}
+.combo{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:120px;height:20px}
+.comboMediumLarge{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:175px;height:20px}
+.comboLarge{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:200px;height:20px}
+.comboExtraLarge{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:330px;height:20px}
+.comboBig{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:650px;height:20px}
+.comboMediumBig{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:260px;height:20px}
+.comboSmall{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:60px;height:20px}
+.comboMedium{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:100px;height:20px}
+.textbox{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:120px;height:20px}
+.maltyselect{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:100px;height:60px}
+.textboxSmall{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:50px;height:20px}
+.ColorRed{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#fff;background-color:red}
+.ColorGreen{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#333;background-color:#0f0}
+.row-waiting{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#333;background-color:#ffbfe5}
+.ColorYellow{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#333;background-color:#ff0}
+.textboxMediam{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#000;text-decoration:none;font-weight:normal;width:90px;height:20px}
+.MandatoryMark{font-family:Verdana,Arial,Helvetica,sans-serif;font-weight:normal;color:red}
+.btnbg{cursor:pointer;background:url(../images/btn_bg3.gif) repeat-x left top;height:20px;border:1px solid #a8cddc;color:#0d77a3;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold}
+.break{page-break-after:always}
+.ColorGrey{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;color:#333;background-color:#e0e0e0}
+.score{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;font-weight:normal;color:#000;background-color:#fff}
+.row-print{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:8px;font-weight:normal;color:#000;background-color:#fff;font-weight:bold}
+.row-print-desc{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:8px;font-weight:normal;color:#000;background-color:#fff}
+.rows-font{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px}
+.rows-hedings{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px}
+#messageBox{border-right:1px solid #000;position:absolute;width:280px;height:40px;z-index:1;background-color:white;border-style:solid;border-width:1px;display:none}
+#closeButt{width:100%;height:10px;z-index:1;cursor:pointer;left:0;top:0;background-color:gray}
+.td-back-image{background-image:url('../images/tdBack.jpg')}
+.rows-bgno{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#333;width:100px;text-align:center}
+#messageBox1{border-right:1px solid #000;position:absolute;width:280px;height:30px;z-index:1;background-color:white;border-style:solid;border-width:1px;display:none}
+.atten-even{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:14px;font-weight:normal;color:#000;background-color:#eaeccc}
+.atten-odd{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#333;background-color:#cc6}
+.atten-white{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:14px;font-weight:normal;color:#000;background-color:#fff}
+#info{background-color:#bde5f8;background-image:url('../images/info.png');background-position:10px center;background-repeat:no-repeat;border:1px solid;color:#00529b;margin:10px 0;padding:15px 10px 15px 50px;position:relative}
+.row-blue{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;color:#039;text-decoration:none;font-weight:normal;background-color:66CCFF}
+.row-odd-blue{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;color:#039;text-decoration:none;font-weight:normal;background-color:#7cb8e2}
+.row-blue1{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;color:#117097;text-decoration:none;font-weight:normal;background-color:#87cefa}
+.row-odd-blue1{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;color:#039;text-decoration:none;font-weight:normal;background-color:#7cb8e2}
+#report{border-collapse:collapse}
+#report h4{margin:0;padding:0}
+#report img{float:right}
+#report ul{margin:10px 0 10px 40px;padding:0}
+#report th{background:#7cb8e2 url(header_bkg.png) repeat-x scroll center left;color:#fff;padding:7px 15px;text-align:left}
+.tdBG{background:#c7ddee none repeat-x scroll center left;color:#000;padding:7px 15px}
+.tdIMG{background:#fff url(../images/row_bkg.png) repeat-x scroll center left;cursor:pointer}
+#report div.arrow{background:transparent url(../images/arrows.png) no-repeat scroll 0 -16px;width:16px;height:16px;display:block}
+#report div.up{background-position:0 0}
+#report1{border-collapse:collapse}
+#report1 h4{margin:0;padding:0}
+#report1 ul{margin:10px 0 10px 40px;padding:0}
+#report1 th{background:#7cb8e2 url(header_bkg.png) repeat-x scroll center left;color:#fff;padding:7px 15px;text-align:left}
+.tdBG{background:#00806a none repeat-x scroll center left;color:#390;padding:7px 15px}
+.tdIMG{background:#dfc url(../images/row_bkg.png) repeat-x scroll left;cursor:pointer;text-align:left}
+#report1 div.arrow{background:transparent url(../images/arrows.png) no-repeat scroll 0 -160px;width:16px;height:16px;display:block}
+#report1 div.up{background-position:0 0}
+.display-info{background-color:#bde5f8;background-image:url('../images/info.png');background-position:10px center;background-repeat:no-repeat;border:1px solid;color:#00529b;margin:10px 0;padding:15px 10px 15px 50px;position:relative}
+.menuLoginLink{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;color:#039;text-decoration:none;font-weight:bold}
+.blackformbutton{cursor:pointer;border:outset 1px #ccc;background:#999;color:white;font-weight:bold;padding:1px 2px;font:Verdana,Arial,Helvetica,sans-serif;font-size:10px;background:url(../images/blacksubmitimage.png) repeat-x left top}
+.newformbutton{cursor:pointer;border:outset 1px #ccc;background:#999;color:white;font-weight:bold;padding:1px 2px;font:Verdana,Arial,Helvetica,sans-serif;font-size:10px;background:url(../images/submitimage.png) repeat-x left top}
+.classname{-moz-box-shadow:inset 5px 1px 10px -7px #8a808a;-webkit-box-shadow:inset 5px 1px 10px -7px #8a808a;box-shadow:inset 5px 1px 10px -7px #8a808a;background-color:#c7c7c9;-moz-border-radius:16px;-webkit-border-radius:16px;border-radius:16px;border:3px solid #f7f4f7;display:inline-block;color:#0e316e;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;padding:7px 15px;text-decoration:none;text-shadow:6px 2px 19px #fff}
+.classname:hover{background-color:#dfdfdf}
+.classname:active{position:relative;top:1px}
+
+ .studentrow-odd {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: 800;
+	color: #333333;
+	background-color: #cccc66;
+	text-align: left;
+	
+  /* border: 1px solid #0B7ED1;*/
+   background: -webkit-gradient(linear, left top, left bottom, from(#D5EAFA), to(#6EA7D1));
+   background: -webkit-linear-gradient(top, #D5EAFA, #6EA7D1);
+   background: -moz-linear-gradient(top, #D5EAFA, #6EA7D1);
+   background: -ms-linear-gradient(top, #D5EAFA, #6EA7D1);
+   background: -o-linear-gradient(top, #D5EAFA, #6EA7D1);
+   background-color: #6EA7D1;
+  
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   -webkit-transition: 0.2s;
+   -moz-transition: 0.2s;
+   -o-transition: 0.2s;
+}
+.studentrow-even {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000 !important;
+	
+	text-align: left;
+	
+  /*border: 1px solid #77BFF2;*/
+   background: -webkit-gradient(linear, left top, left bottom, from(#F2F7FC), to(#C9E1F7));
+   background: -webkit-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -moz-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -ms-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -o-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background-color: #C9E1F7;
+  
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   -webkit-transition: 0.2s;
+   -moz-transition: 0.2s;
+   -o-transition: 0.2s;
+
+}
+
+.row-white {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000!important;
+	background-color: #fdfefe;
+	text-align: left;
+	/*border-radius: 2px; 
+-webkit-border-radius: 2px; 
+-moz-border-radius: 2px; */
+ /*border: 1px solid #77BFF2;*/
+   /*background: -webkit-gradient(linear, left top, left bottom, from(#F7F2F2), to(#FAF5F5));
+   background: -webkit-linear-gradient(top, #F7F2F2, #FAF5F5);
+   background: -moz-linear-gradient(top, #F7F2F2, #FAF5F5);
+   background: -ms-linear-gradient(top, #F7F2F2, #FAF5F5);
+   background: -o-linear-gradient(top, #F7F2F2, #FAF5F5);*/
+   background-color: #fdfefe;
+   
+ -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+   
+   
+   -webkit-transition: 0.2s;
+   -moz-transition: 0.2s;
+   -o-transition: 0.2s;
+   
+}
+.studentrow-white {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000!important;
+	background-color: #fdfefe;
+	text-align: left;
+	
+   background-color: #fdfefe;
+   
+ -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+   
+   
+   -webkit-transition: 0.2s;
+   -moz-transition: 0.2s;
+   -o-transition: 0.2s;
+   
+}
+.HomePagerow-white {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	background-color: #fdfefe;
+	text-align: center;
+	/*border-radius: 2px; 
+-webkit-border-radius: 2px; 
+-moz-border-radius: 2px; */
+ /*border: 1px solid #77BFF2;*/
+   /*background: -webkit-gradient(linear, left top, left bottom, from(#F7F2F2), to(#FAF5F5));
+   background: -webkit-linear-gradient(top, #F7F2F2, #FAF5F5);
+   background: -moz-linear-gradient(top, #F7F2F2, #FAF5F5);
+   background: -ms-linear-gradient(top, #F7F2F2, #FAF5F5);
+   background: -o-linear-gradient(top, #F7F2F2, #FAF5F5);*/
+   background-color: #fdfefe;
+   
+ -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+   
+   
+   -webkit-transition: 0.2s;
+   -moz-transition: 0.2s;
+   -o-transition: 0.2s;
+   
+}
+
+#LoginFormDiv
+{
+ background: -webkit-gradient(linear, left top, left bottom, from(#F2F7FC), to(#C9E1F7));
+   background: -webkit-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -moz-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -ms-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -o-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background-color: #C9E1F7;
+	height:200px;
+	width:280px;
+	display:block;
+	z-index:699;
+	position:relative;
+	float:left;
+	border: #333 1px threedface;
+	border-radius: 12px;
+	-moz-box-shadow: 0 0 8px 3px #666;
+	-webkit-box-shadow: 0 0 5px 3px#666;
+	box-shadow: 0 0 8px 3px #666;
+}
+#News
+{
+	padding-left:20px;
+}
+
+.studentrow-odd1{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#FFF;background-color:#298cb5}
+.studentrows-odd{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:10px;font-weight:bold;color:#FFF;background-color:#298cb5;width:400px;text-align:center}
+.studentrow-even1{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:normal;color:#117097;background-color:#cbecfb}
+.studentrows-even{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:normal;color:#117097;background-color:#cbecfb;text-align:center}
+.studentrow-sub{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;font-weight:normal;color:#9ff;background-color:#9ff;text-align:center}
+.nav1{background:url(../images/studentLogin/home/newsEvents2.png) no-repeat;padding-left:45px;text-align:left;height:30px;font-family:Verdana,Arial,Helvetica,sans-serif;color:#fff;font-size:11px;font-weight:bold}
+table.gradienttable {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	 -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px!important;
+	color: #0033FF;
+	text-align: left;
+	border-collapse: collapse;
+	border: 1px solid #77BFF2;
+}
+table.gradienttable th {
+	padding: 0px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F2F7FC), to(#C9E1F7));
+   background: -webkit-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -moz-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -ms-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -o-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background-color: #C9E1F7;
+  color: #0033FF;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px!important;
+	border: 1px solid #77BFF2;
+}
+table.gradienttable td {
+	padding-left: 10px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F2F7FC), to(#C9E1F7));
+   background: -webkit-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -moz-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -ms-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -o-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background-color: #C9E1F7;
+  color: #0033FF;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius:  3px!important;
+	border: 1px solid #77BFF2;
+}
+table.gradienttable th p{
+	margin:0px;
+	padding:8px;
+	border-top: 1px solid #eefafc;
+	border-bottom:0px;
+	border-left: 1px solid #eefafc;
+	border-right:0px;
+	color: #0033FF;
+}
+table.gradienttable td p{
+	margin:0px;
+	padding:8px;
+	border-top: 1px solid #fcfdec;
+	border-bottom:0px;
+	border-left: 1px solid #fcfdec;;
+	border-right:0px;
+}
+#outertable
+{
+background: -webkit-gradient(linear, left top, left bottom, from(#F2F7FC), to(#C9E1F7));
+   background: -webkit-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -moz-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -ms-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background: -o-linear-gradient(top, #F2F7FC, #C9E1F7);
+   background-color: #C9E1F7;	
+	
+ border: #333 1px threedface;
+ border-radius: 6px;
+ -moz-box-shadow: 0 0 8px 3px #666;
+-webkit-box-shadow: 0 0 5px 3px#666;
+box-shadow: 0 0 8px 3px #666;	
+}

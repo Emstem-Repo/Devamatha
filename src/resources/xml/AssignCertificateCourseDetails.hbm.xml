@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 15, 2010 2:30:33 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.AssignCertificateCourseDetails" table="assign_certificate_course_details">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<many-to-one name="assignCertificateCourse" class="com.kp.cms.bo.admin.AssignCertificateCourse" >
+            <column name="assign_certificate_course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="certificateCourse" class="com.kp.cms.bo.admin.CertificateCourse" fetch="select">
+            <column name="certificate_course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

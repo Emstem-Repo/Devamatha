@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Feb 10, 2009 3:07:46 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.admin.Fee" table="fee">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="programType" class="com.kp.cms.bo.admin.ProgramType"
+			fetch="select">
+			<column name="program_type_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="program" class="com.kp.cms.bo.admin.Program"
+			fetch="select">
+			<column name="program_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="course" class="com.kp.cms.bo.admin.Course"
+			fetch="select">
+			<column name="course_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="feeGroup" class="com.kp.cms.bo.admin.FeeGroup"
+			fetch="select">
+			<column name="fee_group_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="academicYear" type="java.lang.Integer">
+			<column name="academic_year">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+			<column name="created_date" length="0">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate" type="timestamp">
+			<column name="last_modified_date" length="0">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="semesterNo" type="java.lang.Integer">
+			<column name="semester_no">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActive" type="java.lang.Boolean">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="aidedUnaided" type="string">
+			<column name="aided_unaided" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="courseSemNo" type="string">
+			<column name="course_sem_no">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="isCourseSemesterWise" type="java.lang.Boolean">
+			<column name="is_semester_wise">
+				<comment></comment>
+			</column>
+		</property>
+		<set name="feePayments" inverse="true">
+			<key>
+				<column name="fee_id">
+					<comment></comment>
+				</column>
+			</key>
+			<one-to-many class="com.kp.cms.bo.admin.FeePayment" />
+		</set>
+		<set name="feeDueses" inverse="true">
+			<key>
+				<column name="fee_id">
+					<comment></comment>
+				</column>
+			</key>
+			<one-to-many class="com.kp.cms.bo.admin.FeeDues" />
+		</set>
+		<set name="feeAccountAssignments" cascade="save-update">
+			<key>
+				<column name="fee_id">
+					<comment></comment>
+				</column>
+			</key>
+			<one-to-many class="com.kp.cms.bo.admin.FeeAccountAssignment" />
+		</set>
+		<set name="feeTransactions" inverse="true">
+			<key>
+				<column name="fee_id">
+					<comment></comment>
+				</column>
+			</key>
+			<one-to-many class="com.kp.cms.bo.admin.FeeTransaction" />
+		</set>
+		<set name="feeDetailses" inverse="true">
+			<key>
+				<column name="fee_id">
+					<comment></comment>
+				</column>
+			</key>
+			<one-to-many class="com.kp.cms.bo.admin.FeeDetails" />
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.OpenInternalExamForClasses" table="open_internal_exam_classes">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="openExam" class="com.kp.cms.bo.exam.OpenInternalMark" fetch="select">
+            <column name="open_exam_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="isActive">
+			<column name="is_active"></column>
+		</property>
+		<property name="createdBy" update="false">
+			<column name="created_by"></column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date"></column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by"></column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date"></column>
+		</property>
+		<many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select">
+            <column name="classes_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+	</class>
+</hibernate-mapping>

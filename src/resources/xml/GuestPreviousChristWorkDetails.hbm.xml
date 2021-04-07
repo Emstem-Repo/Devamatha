@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.employee.GuestPreviousChristWorkDetails" table="guest_previous_christ_work_details">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="guest" class="com.kp.cms.bo.employee.GuestFaculty" fetch="select">
+            <column name="guest_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="deptId" class="com.kp.cms.bo.admin.Department" fetch="select">
+            <column name="department_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="strmId" class="com.kp.cms.bo.admin.EmployeeStreamBO" fetch="select">
+            <column name="stream_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="worklLocId" class="com.kp.cms.bo.admin.EmployeeWorkLocationBO" fetch="select">
+            <column name="emp_work_location_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <property name="workHoursPerWeek" type="string">
+            <column name="work_hours_week" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="honorarium" type="string">
+            <column name="honorarium" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="semester" type="string">
+            <column name="semester" length="5">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="startDate" type="timestamp">
+            <column name="start_Date" >
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="endDate" type="timestamp">
+            <column name="end_Date" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isCurrentWorkingDates" type="java.lang.Boolean">
+            <column name="is_current_working_dates">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+		
+    </class>
+</hibernate-mapping>

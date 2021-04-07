@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.Session" table="session" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="subClass" class="com.kp.cms.bo.admin.SubClass" fetch="select">
+            <column name="sub_class_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select">
+            <column name="class_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+       
+        <many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select">
+            <column name="subject_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="subjectType" class="com.kp.cms.bo.admin.SubjectType" fetch="select">
+            <column name="subject_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="activity" class="com.kp.cms.bo.admin.Activity" fetch="select">
+            <column name="activity_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+       <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <many-to-one name="sessionType" class="com.kp.cms.bo.admin.SessionType" fetch="select">
+            <column name="session_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="startDate" type="date">
+            <column name="start_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="endDate" type="date">
+            <column name="end_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="startTime" type="time">
+            <column name="start_time" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="endTime" type="time">
+            <column name="end_time" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="location" type="string">
+            <column name="location" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="sessionIncharges" inverse="true">
+            <key>
+                <column name="session_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.SessionIncharge" />
+        </set>
+        <set name="sessionAttendees" inverse="true">
+            <key>
+                <column name="session_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.SessionAttendee" />
+        </set>
+    </class>
+</hibernate-mapping>

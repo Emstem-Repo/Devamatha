@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 21, 2010 2:22:27 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamPublishHallTicketMarksCardBO"
+		table="EXAM_publish_hall_ticket_marks_card">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examDefinitionBO" class="com.kp.cms.bo.exam.ExamDefinitionBO"
+			fetch="select" update="false" insert="false">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="classUtilBO" class="com.kp.cms.bo.exam.ClassUtilBO"
+			fetch="select" update="false" insert="false">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="examProgramTypeUtilBO"
+			class="com.kp.cms.bo.exam.ExamProgramTypeUtilBO" fetch="select"
+			update="false" insert="false">
+			<column name="program_type_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="examAgreementBO"
+			class="com.kp.cms.bo.exam.ExamFooterAgreementBO" fetch="select"
+			update="false" insert="false">
+			<column name="agreement_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="examFooterBO"
+			class="com.kp.cms.bo.exam.ExamFooterAgreementBO" fetch="select"
+			update="false" insert="false">
+			<column name="footer_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties -->
+		<property name="examId">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="classId">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="programTypeId">
+			<column name="program_type_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="agreementId">
+			<column name="agreement_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="footerId">
+			<column name="footer_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="publishFor">
+			<column name="publish_for">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="downloadStartDate">
+			<column name="download_start_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="downloadEndDate">
+			<column name="download_end_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActive">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="examCenterCode" length="50">
+			<column name="exam_center_code">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="examCenter" length="100">
+			<column name="exam_center">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="revaluationEndDate">
+			<column name="revaluation_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="extendedDate">
+			<column name="extended_date">
+				<comment></comment>
+			</column>
+		</property>
+		<!--start by giri-->
+		<many-to-one name="classes" class="com.kp.cms.bo.admin.Classes"
+			fetch="select" update="false" insert="false">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="extendedFineDate" type="java.util.Date">
+            <column name="date_fine_extended" />
+        </property>
+  		<property name="extendedSuperFineDate" type="java.util.Date">
+            <column name="date_superfine_extended" />
+        </property>      
+  		<property name="fineAmount">
+			<column name="fine_amount">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="superFineAmount">
+			<column name="super_fine_amount">
+				<comment></comment>
+			</column>
+		</property>	
+    	 <property name="extendedFineStartDate" type="java.util.Date">
+            <column name="start_date_fine_extended" />
+        </property>
+      	<property name="extendedSuperFineStartDate" type="java.util.Date">
+            <column name="start_date_superfine_extended" />
+        </property> 
+		<!--end by giri-->
+		</class>
+</hibernate-mapping>

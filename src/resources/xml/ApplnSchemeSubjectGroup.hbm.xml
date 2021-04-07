@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 18, 2009 2:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.ApplnSchemeSubjectGroup" table="appln_scheme_subject_group">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="subjectGroup" class="com.kp.cms.bo.admin.SubjectGroup" fetch="select">
+            <column name="subject_group_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="admAppln" class="com.kp.cms.bo.admin.AdmAppln" fetch="select">
+            <column name="adm_appln_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="schemeNo" type="java.lang.Integer">
+            <column name="scheme_no">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

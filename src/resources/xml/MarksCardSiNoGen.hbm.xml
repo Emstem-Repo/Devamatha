@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2009 2:58:31 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.MarksCardSiNoGen" table="student_markscardsi_no_new">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="classId" class="com.kp.cms.bo.admin.Classes" fetch="select" >
+            <column name="class_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="studentId" class="com.kp.cms.bo.admin.Student" fetch="select" >
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="examId" class="com.kp.cms.bo.exam.ExamDefinition" fetch="select" >
+            <column name="exam_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="marksCardNo" type="string">
+            <column name="si_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isDuplicate" type="boolean">
+            <column name="is_duplicate">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isConsolidate" type="boolean">
+            <column name="is_consolidated">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isSupplementary" type="boolean">
+            <column name="is_supplementary">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isRegular" type="boolean">
+            <column name="is_regular">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isImprovement" type="boolean">
+            <column name="is_improvement">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isRevaluation" type="boolean">
+            <column name="is_revaluation">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="marksCardNo1" type="string">
+            <column name="si_no1" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="additionalNo" type="integer" >
+            <column name="additional_mark_card_no" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isGrace" type="boolean">
+            <column name="is_garce">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

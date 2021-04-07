@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 20, 2009 4:50:14 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.HostelHolidaysBo" table="hl_holidays">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="programId" class="com.kp.cms.bo.admin.Program" >
+            <column name="program_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="courseId" class="com.kp.cms.bo.admin.Course" >
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="holidaysFrom" type="timestamp">
+            <column name="holidays_from">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="holidaysTo" type="timestamp">
+            <column name="holidays_to">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="holidaysFromSession" type="string">
+            <column name="holidays_from_session" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="holidaysToSession" type="string">
+            <column name="holidays_to_session">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="description">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="holidaysOrVaction" type="string">
+            <column name="holidays_or_vaction">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="hostelId" class="com.kp.cms.bo.admin.HlHostel" >
+            <column name="hostel_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="blockId" class="com.kp.cms.bo.admin.HlBlocks" >
+            <column name="block_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="unitId" class="com.kp.cms.bo.admin.HlUnits" >
+            <column name="unit_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

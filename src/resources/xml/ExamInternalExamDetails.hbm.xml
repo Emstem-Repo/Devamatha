@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+
+	<class name="com.kp.cms.bo.exam.ExamInternalExamDetailsBO" table="EXAM_exam_internal_exam_details">
+		<comment></comment>
+		<id name="id">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<many-to-one name="examDefinitionBO" class="com.kp.cms.bo.exam.ExamDefinitionBO"
+			fetch="select" insert="false" update="false">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties -->
+
+		<property name="examId">
+			<column name="exam_id"></column>
+		</property>
+		<property name="internalExamNameId">
+			<column name="internal_exam_name_id"></column>
+		</property>
+
+	</class>
+
+
+</hibernate-mapping>

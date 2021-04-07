@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" 
+"http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>cmsCustom</shortname>
+	<info>CMS Custom Tag library</info>
+
+	<tag>
+		<name>renderYear</name>
+		<tagclass>com.kp.cms.utilities.RenderYearList </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	
+	
+	
+	<tag>
+		<name>experienceMonth</name>
+		<tagclass>com.kp.cms.utilities.ExperienceMonth</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>expLimit</name>
+     			 <required>true</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>
+  		 <attribute>
+     			 <name>year</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>	
+  		 <attribute>
+     			 <name>month</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+  		 
+  		 <attribute>
+     			 <name>lack</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>
+  		 
+  		 <attribute>
+     			 <name>thousands </name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>	
+	</tag>
+	
+	
+	
+	
+	
+	<tag>
+		<name>year</name>
+		<tagclass>com.kp.cms.utilities.RenderYear</tagclass>
+		<bodycontent>jsp</bodycontent>	
+	</tag>
+	<tag>
+		<name>renderFutureYear</name>
+		<tagclass>com.kp.cms.utilities.RenderFututeYearList </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderProgramTypes</name>
+		<tagclass>com.kp.cms.utilities.RenderProgramTypeListTag </tagclass>
+		<bodycontent>jsp</bodycontent>
+	</tag>
+	<tag>
+		<name>renderMonths</name>
+		<tagclass>com.kp.cms.utilities.RenderMonthsList </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalMonth</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>	
+	</tag>
+	<tag>
+		<name>renderCasteCategory</name>
+		<tagclass>com.kp.cms.utilities.RenderCasteCategoryList </tagclass>
+		<bodycontent>jsp</bodycontent>
+	</tag>
+
+	<tag>
+		<name>renderCountry</name>
+		<tagclass>com.kp.cms.utilities.RenderCountryListTag </tagclass>
+		<bodycontent>jsp</bodycontent>
+	</tag>
+	<tag>
+		<name>renderSchemeOrCourse</name>
+		<tagclass>com.kp.cms.utilities.RenderSchemeOrCourseList </tagclass>
+		<bodycontent>jsp</bodycontent>
+	</tag>
+	<tag>
+		<name>renderSemester</name>
+		<tagclass>com.kp.cms.utilities.RenderSemester </tagclass>
+		<bodycontent>jsp</bodycontent>
+	</tag>
+	<tag>
+		<name>renderClasses</name>
+		<tagclass>com.kp.cms.utilities.RenderClassList </tagclass>
+		<bodycontent>jsp</bodycontent>
+	</tag>
+	<tag>
+		<name>renderTemplates</name>
+		<tagclass>com.kp.cms.utilities.RenderTemplateList</tagclass>
+		<bodycontent>jsp</bodycontent>
+	</tag>
+	
+	<tag>
+		<name>renderPhoto</name>
+		<tagclass>com.kp.cms.utilities.RenderStudentPhoto </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>applicationNO</name>
+     			 <required>true</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>
+  		 <attribute>
+     			 <name>dob</name>
+     			 <required>true</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderFinancialYear</name>
+		<tagclass>com.kp.cms.utilities.RenderFinancialYearList </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderPCFinancialYear</name>
+		<tagclass>com.kp.cms.utilities.RenderPCFinancialYearList </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderHostelNames</name>
+		<tagclass>com.kp.cms.utilities.RenderHostelNames </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>name</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	
+	<tag>
+		<name>renderDisciplineNames</name>
+		<tagclass>com.kp.cms.utilities.HostelDisciplinaryTypes</tagclass>
+		<bodycontent>jsp</bodycontent>
+	</tag>		
+	<tag>
+		<name>renderCurrentFutureYear</name>
+		<tagclass>com.kp.cms.utilities.RenderCurrentAndFutureYear </tagclass>
+		<bodycontent>jsp</bodycontent>
+		
+	</tag>
+	
+	<tag>
+		<name>renderAcademicYear</name>
+		<tagclass>com.kp.cms.utilities.AttendanceAcademicYearList </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	
+	<tag>
+		<name>renderMinToMaxYearList</name>
+		<tagclass>com.kp.cms.utilities.RenderMinToMaxYearList </tagclass>
+		<bodycontent>jsp</bodycontent>
+	</tag>
+	
+	<tag>
+		<name>weekDay</name>
+		<tagclass>com.kp.cms.utilities.WeekDay </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>date</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderAcademicYearForAdmission</name>
+		<tagclass>com.kp.cms.utilities.AcademicYearForAdmission</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	
+	<tag>
+		<name>renderEmployeeYear</name>
+		<tagclass>com.kp.cms.utilities.EmployeeRenderYearList </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderAdmBioDataAcademicYear</name>
+		<tagclass>com.kp.cms.utilities.AdmBioDataAcademicYear </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderAcademicYearInternal</name>
+		<tagclass>com.kp.cms.utilities.InternalAcademicYearList </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderEmpAttendanceYear</name>
+		<tagclass>com.kp.cms.utilities.EmpAttendanceYear </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderCertificateYear</name>
+		<tagclass>com.kp.cms.utilities.CertificateRequest </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>programTypesOnlineOpen</name>
+		<tagclass>com.kp.cms.utilities.ProgramTypesOnlineOpenTag </tagclass>
+		<bodycontent>jsp</bodycontent>
+	</tag>
+	<tag>
+		<name>renderEmpResearchYear</name>
+		<tagclass>com.kp.cms.utilities.EmpResearchYear</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderNewsEventsYear</name>
+		<tagclass>com.kp.cms.utilities.NewsEventsYear</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderPreviousAcademicYear</name>
+		<tagclass>com.kp.cms.utilities.PreviousAcademicYearList</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+	<tag>
+		<name>renderFinancialForFeePaymenYear</name>
+		<tagclass>com.kp.cms.utilities.RenderFinancialYearForFeePaymentList </tagclass>
+		<bodycontent>jsp</bodycontent>
+		<attribute>
+     			 <name>normalYear</name>
+     			 <required>false</required>
+      			 <rtexprvalue>true</rtexprvalue>
+  		 </attribute>		
+	</tag>
+</taglib>

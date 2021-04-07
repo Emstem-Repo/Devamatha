@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.FeeConcession" table="fee_concession" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="createdBy" type="string">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <many-to-one name="category" class="com.kp.cms.bo.admin.Category" fetch="select">
+            <column name="category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="program" class="com.kp.cms.bo.admin.Program" fetch="select">
+            <column name="program_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select">
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="registerNumber" type="string">
+            <column name="register_number" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="concessionReason" type="string">
+            <column name="concession_reason" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isApproved" type="java.lang.Boolean">
+            <column name="is_approved">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="hodConcessionFee" type="big_decimal">
+            <column name="hod_concession_fee" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deanConcessionFee" type="big_decimal">
+            <column name="dean_concession_fee" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="feeTransactions" inverse="true">
+            <key>
+                <column name="fee_concession_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.FeeTransaction" />
+        </set>
+    </class>
+</hibernate-mapping>

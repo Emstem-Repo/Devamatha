@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 21, 2010 2:22:27 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamInternalRetestApplicationBO"
+		table="EXAM_internal_retest_application">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<many-to-one name="examDefinitionBO" class="com.kp.cms.bo.exam.ExamDefinitionBO"
+			fetch="select" update="false" insert="false">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<many-to-one name="studentUtilBO" class="com.kp.cms.bo.exam.StudentUtilBO"
+			fetch="select" update="false" insert="false">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<many-to-one name="classUtilBO" class="com.kp.cms.bo.exam.ClassUtilBO"
+			fetch="select" update="false" insert="false">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+
+		<!-- Other Properties -->
+
+		<property name="academicYear">
+			<column name="academic_year">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="examId">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="studentId">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="classId">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="chance">
+			<column name="chance">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="isActive">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="createdDate" update="false">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

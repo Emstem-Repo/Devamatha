@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamStudentMarksCorrectionBO"
+		table="EXAM_students_marks_correction">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examDefinitionBO" class="com.kp.cms.bo.exam.ExamDefinitionBO"
+			fetch="select" insert="false" update="false">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="studentUtilBO" class="com.kp.cms.bo.exam.StudentUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="examMultipleAnswerScriptMasterBO"
+			class="com.kp.cms.bo.exam.ExamMultipleAnswerScriptMasterBO" fetch="select"
+			insert="false" update="false">
+			<column name="answer_script_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<set name="examStudentMarksCorrectionDetailsBOSet">
+			<key column="students_marks_correction_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamStudentMarksCorrectionDetailsBO" />
+		</set>
+
+		<!-- Other Properties -->
+		<property name="examId">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="studentId">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="answerScriptId">
+			<column name="answer_script_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="markType">
+			<column name="mark_type">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="evaluatorType">
+			<column name="evaluator_type">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="marksCardNo">
+			<column name="marks_card_no">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="marksCardDate">
+			<column name="marks_card_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActive">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

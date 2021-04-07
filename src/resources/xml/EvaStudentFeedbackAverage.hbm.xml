@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.studentfeedback.EvaStudentFeedbackAverage" table="eva_student_feedback_average" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>      
+		<property name="classId" type="int" >
+            <column name="class_id">
+                <comment></comment>
+            </column>
+        </property>	
+        <property name="year" type="int">
+            <column name="year">
+                <comment></comment>
+            </column>
+        </property>       
+        <property name="classAverage" type="double">
+            <column name="class_average">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="semester" type="int">
+            <column name="semester">
+                <comment></comment>
+            </column>
+        </property> 
+        <set name="overallAverages" cascade="all">
+        	<key>
+                <column name="eva_student_feedback_average_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.studentfeedback.EvaStudentFeedbackOverallAverage" />
+        </set>       
+    </class>
+</hibernate-mapping>
+

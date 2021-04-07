@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.ConsolidateMarksCard" table="consolidated_marks_card">
+        
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="native"/>
+        </id>
+        <many-to-one name="exam" class="com.kp.cms.bo.exam.ExamDefinition" fetch="select" >
+            <column name="exam_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select" >
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select" >
+            <column name="class_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select" >
+            <column name="subject_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select" >
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="subjectCode">
+            <column name="code">
+           </column>
+        </property>
+        <property name="subjectName">
+            <column name="subject">
+           </column>
+        </property>
+        <property name="theoryTotalSubInternalMark">
+            <column name="theory_total_sub_internal_mark">
+           </column>
+        </property>
+        <property name="theoryTotalAttendanceMark">
+            <column name="theory_total_attendance_mark">
+           </column>
+        </property>
+        
+        <property name="practicalTotalSubInternalMark">
+            <column name="practical_total_sub_internal_mark">
+           </column>
+        </property>
+        <property name="practicalTotalAttendanceMark">
+            <column name="practical_total_attendance_mark">
+           </column>
+        </property>
+        <property name="studentTheoryMark">
+            <column name="student_theory_marks">
+           </column>
+        </property>
+        <property name="studentPracticalMark">
+            <column name="student_practical_marks">
+           </column>
+        </property>
+        <property name="theoryeseMinimumMark">
+            <column name="theory_ese_minimum_mark">
+           </column>
+        </property>
+        <property name="theoryeseMaximumMark">
+            <column name="theory_ese_maximum_mark">
+           </column>
+        </property>
+        <property name="practicaleseMinimumMark">
+            <column name="practical_ese_minimum_mark">
+           </column>
+        </property>
+        <property name="practicaleseMaximumMark">
+            <column name="practical_ese_maximum_mark">
+           </column>
+        </property>
+        <property name="firstName">
+            <column name="first_name">
+           </column>
+        </property>
+        <property name="middleName">
+            <column name="middle_name">
+           </column>
+        </property>
+        <property name="lastName">
+            <column name="last_name">
+           </column>
+        </property>
+        <property name="section">
+            <column name="section">
+           </column>
+        </property>
+        <property name="isInitialise">
+            <column name="is_initialise">
+           </column>
+        </property>
+        <property name="subjectOrder">
+            <column name="subject_order">
+           </column>
+        </property>
+        <property name="finalPracticalInternalMaximumMark">
+            <column name="final_practical_internal_maximum_mark">
+           </column>
+        </property>
+        <property name="finalTheoryInternalMaximumMark">
+            <column name="final_theory_internal_maximum_mark">
+           </column>
+        </property>
+        <property name="practicalCredit">
+            <column name="practical_credit">
+           </column>
+        </property>
+        <property name="theoryCredit">
+            <column name="theory_credit">
+           </column>
+        </property>
+        <property name="regNo">
+            <column name="register_no">
+           </column>
+        </property>
+        <property name="subType">
+            <column name="subType">
+           </column>
+        </property>
+        <property name="termNumber">
+            <column name="term_number">
+           </column>
+        </property>
+        <property name="theoryObtain">
+            <column name="theoryObtain">
+           </column>
+        </property>
+        <property name="practicalObtain">
+            <column name="practicalObtain">
+           </column>
+        </property>
+        <property name="theoryMax">
+            <column name="theoryMax">
+           </column>
+        </property>
+        <property name="practicalMax">
+            <column name="practicalMax">
+           </column>
+        </property>
+        <property name="theoryPercentage">
+            <column name="theoryPer">
+           </column>
+        </property>
+        <property name="practicalPercentage">
+            <column name="practicalper">
+           </column>
+        </property>
+        <property name="dontShowMaxMarks">
+            <column name="dont_show_max_marks">
+           </column>
+        </property>
+        <property name="dontShowMinMarks">
+            <column name="dont_show_min_marks">
+           </column>
+        </property>
+        <property name="showOnlyGrade">
+            <column name="show_only_grade">
+            </column>
+        </property>
+        <property name="name">
+            <column name="name">
+            </column>
+        </property>
+        <property name="dontShowSubType">
+            <column name="dont_show_sub_type">
+            </column>
+        </property>
+        <property name="appliedYear">
+            <column name="applied_year">
+            </column>
+        </property>
+        <property name="sectionId">
+            <column name="section_id">
+            </column>
+        </property>
+        <property name="academicYear">
+            <column name="academic_year">
+           </column>
+        </property>
+        <property name="selectedCourseId">
+            <column name="selected_course_id">
+            </column>
+        </property>
+		
+		<property name="grade">
+            <column name="grade">
+            </column>
+        </property>
+		<property name="passOrFail">
+            <column name="pass_fail">
+            </column>
+        </property>
+		<property name="courseCompleteYear">
+            <column name="course_completed_year">
+            </column>
+        </property>
+		<property name="batchEndYear">
+            <column name="batch_end_year">
+            </column>
+        </property>
+		
+		<property name="finalTheoryInternalMinimumMark">
+            <column name="final_theory_internal_minimum_mark">
+           </column>
+        </property>
+        <property name="finalPracticalInternalMinimumMark">
+            <column name="final_practical_internal_minimum_mark">
+           </column>
+        </property>
+		<property name="theoryMin">
+            <column name="theoryMin">
+           </column>
+        </property>
+        <property name="practicalMin">
+            <column name="practicalMin">
+           </column>
+        </property>
+        <property name="dontConsiderFailureTotalResult">
+            <column name="dont_consider_failure_total_result">
+           </column>
+        </property>
+        <property name="dontAddInTotal">
+            <column name="dont_add_in_total">
+           </column>
+        </property>
+        <property name="isTheoryAppeared">
+            <column name="is_appeared_theory">
+           </column>
+        </property>
+        <property name="isPracticalAppeared">
+            <column name="is_appeard_practical">
+           </column>
+        </property>
+        <property name="gradePoint">
+            <column name="grade_point">
+           </column>
+        </property>
+         <property name="isCertificateCourse">
+            <column name="is_certificate_course">
+           </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectStreamId">
+            <column name="stream_id">
+           </column>
+        </property>
+        <property name="subjectTypeId">
+            <column name="subject_type_id">
+           </column>
+        </property>
+        <property name="chance">
+            <column name="chance">
+           </column>
+        </property>
+        <property name="isImprovement">
+            <column name="isImprovement">
+           </column>
+        </property>
+        <property name="isSupplymentary">
+            <column name="isSupplymentary">
+           </column>
+        </property>
+        
+        <property name="isGraced">
+            <column name="graced_mark">
+           </column>
+        </property>
+        <property name="internalMarksBeforeGrace">
+            <column name="internal_marks_before_grace">
+           </column>
+        </property>
+        <property name="theoryMarksBeforeGrace">
+            <column name="theory_marks_before_grace">
+           </column>
+        </property>
+        
+    </class>
+</hibernate-mapping>

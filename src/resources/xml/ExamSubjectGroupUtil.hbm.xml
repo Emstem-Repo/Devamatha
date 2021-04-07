@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.SubjectGroupUtilBO" table="subject_group">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examCourseUtilBO" class="com.kp.cms.bo.exam.ExamCourseUtilBO"
+			fetch="select" update="false" insert="false">
+			<column name="course_id">
+			</column>
+		</many-to-one>
+		<property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="name" type="string">
+			<column name="name" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+			<column name="created_date" length="0">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate" type="timestamp">
+			<column name="last_modified_date" length="0">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActive" type="java.lang.Boolean">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isCommonSubGrp">
+			<column name="is_common_sub_grp">
+			</column>
+		</property>
+		<property name="courseId">
+			<column name="course_id">
+			</column>
+		</property>
+		<property name="secondLanguageId">
+			<column name="second_language_id">
+			</column>
+		</property>
+		<set name="subjectGroupSubjectses">
+			<key column="subject_group_id" />
+			<one-to-many class="com.kp.cms.bo.exam.SubjectGroupSubjectsUtilBO" />
+		</set>
+	</class>
+</hibernate-mapping>

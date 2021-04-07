@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+
+	<class name="com.kp.cms.bo.exam.ExamAssignExaminerDutiesBO"
+		table="EXAM_examiner_duties">
+		<comment></comment>
+		<id name="id">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<many-to-one name="examInvigilationDutyBO"
+			class="com.kp.cms.bo.exam.ExamInvigilationDutyBO" fetch="select"
+			update="false" insert="false">
+			<column name="invigilator_duty_type_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<many-to-one name="examAssignExaminerToExamBO"
+			class="com.kp.cms.bo.exam.ExamAssignExaminerToExamBO" fetch="select"
+			update="false" insert="false">
+			<column name="assign_examiner_exam_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		
+		<!-- Other Properties  -->
+
+		<property name="dateTime">
+			<column name="date_time"></column>
+		</property>
+		<property name="invigilatorDutyTypeId">
+			<column name="invigilator_duty_type_id"></column>
+		</property>
+		<property name="roomNos">
+			<column name="room_nos"></column>
+		</property>
+		<property name="remarks">
+			<column name="remarks"></column>
+		</property>
+		<property name="assignExaminerExamId">
+			<column name="assign_examiner_exam_id"></column>
+		</property>
+		<property name="isPresent">
+			<column name="is_present"></column>
+		</property>
+	</class>
+</hibernate-mapping>

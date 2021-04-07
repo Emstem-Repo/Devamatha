@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.FeeTransaction" table="fee_transaction" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="currency" class="com.kp.cms.bo.admin.Currency" fetch="select">
+            <column name="currency_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="bankBranch" class="com.kp.cms.bo.admin.BankBranch" fetch="select">
+            <column name="bank_branch_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+       <property name="createdBy" type="string">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <many-to-one name="paymentMode" class="com.kp.cms.bo.admin.PaymentMode" fetch="select">
+            <column name="payment_mode_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="feeExcemption" class="com.kp.cms.bo.admin.FeeExcemption" fetch="select">
+            <column name="fee_excemption_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+       
+        <many-to-one name="feeConcession" class="com.kp.cms.bo.admin.FeeConcession" fetch="select">
+            <column name="fee_concession_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="fee" class="com.kp.cms.bo.admin.Fee" fetch="select">
+            <column name="fee_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="registerNumber" type="string">
+            <column name="register_number" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="paymentDate" type="timestamp">
+            <column name="payment_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="paidAmount" type="big_decimal">
+            <column name="paid_amount" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="receiptNo" type="string">
+            <column name="receipt_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="journalNo" type="string">
+            <column name="journal_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="challanRefNo" type="string">
+            <column name="challan_ref_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="installmentNo" type="java.lang.Integer">
+            <column name="installment_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

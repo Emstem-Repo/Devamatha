@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+ <class name="com.kp.cms.bo.employee.EditMyProfile" table="edit_my_profile" >
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="empId" type="java.lang.Integer">
+            <column name="emp_id">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="name" type="java.lang.Integer">
+            <column name="name">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateOfBirth" type="java.lang.Integer">
+            <column name="date_of_birth">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="dateOfJoin" type="java.lang.Integer">
+            <column name="date_of_join">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="department" type="java.lang.Integer">
+            <column name="department">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="designation" type="java.lang.Integer">
+            <column name="designation">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="currentAddress" type="java.lang.Integer">
+            <column name="current_address">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="permanentAddress" type="java.lang.Integer">
+            <column name="permanent_address">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="otherEmail" type="java.lang.Integer">
+            <column name="other_email">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="workEmail" type="java.lang.Integer">
+            <column name="work_email">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="fingerPrintId" type="java.lang.Integer">
+            <column name="finger_print_id">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="code" type="java.lang.Integer">
+            <column name="code">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="bloodGroup" type="java.lang.Integer">
+            <column name="blood_group">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="gender" type="java.lang.Integer">
+            <column name="gender">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="maritalStatus" type="java.lang.Integer">
+            <column name="marital_status">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nationality" type="java.lang.Integer">
+            <column name="nationality">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="bankAccountNo" type="java.lang.Integer">
+            <column name="bank_account_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="twoWheelerNo" type="java.lang.Integer">
+            <column name="two_wheeler_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="fourWheelerNo" type="java.lang.Integer">
+            <column name="four_wheeler_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="smartCardNo" type="java.lang.Integer">
+            <column name="smart_card_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="reservationCategory" type="java.lang.Integer">
+            <column name="reservation_category">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mobile" type="java.lang.Integer">
+            <column name="mobile">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="empLeave" type="java.lang.Integer">
+            <column name="emp_leave">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="empLoan" type="java.lang.Integer">
+            <column name="emp_loan">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="empFinancial" type="java.lang.Integer">
+            <column name="emp_financial">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="empFeeConcession" type="java.lang.Integer">
+            <column name="emp_fee_concession">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="empEducationDetails" type="java.lang.Integer">
+            <column name="emp_education_details">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="empPreviousExp" type="java.lang.Integer">
+            <column name="emp_previous_exp">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="empPayAllowances" type="java.lang.Integer">
+            <column name="emp_pay_allowances">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="empImmigrations" type="java.lang.Integer">
+            <column name="emp_immigrations">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="empRemarks" type="java.lang.Integer">
+            <column name="emp_remarks">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="panNo" type="java.lang.Integer">
+            <column name="pan_no">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="pfNo" type="java.lang.Integer">
+            <column name="pf_no">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="resignationDetails" type="java.lang.Integer">
+            <column name="resignation_details">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="grade" type="java.lang.Integer">
+            <column name="grade">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="empType" type="java.lang.Integer">
+            <column name="emp_type">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="workLocation" type="java.lang.Integer">
+            <column name="work_location">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="empStream" type="java.lang.Integer">
+            <column name="emp_stream">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sameAddress" type="java.lang.Integer">
+            <column name="same_address">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isTeachingStaff" type="java.lang.Integer">
+            <column name="is_teaching_staff">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="religion" type="java.lang.Integer">
+            <column name="religion">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subjectArea" type="java.lang.Integer">
+            <column name="subject_area">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="payScale" type="java.lang.Integer">
+            <column name="payscale">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateOfRetirement" type="java.lang.Integer">
+            <column name="date_of_retirement">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="workTimeEntry" type="java.lang.Integer">
+            <column name="work_time_entry">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="empContactDetails" type="java.lang.Integer">
+            <column name="emp_contact_details">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isSmartCardDelivered" type="java.lang.Integer">
+            <column name="is_smartcard_delivered">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isSCDataGenerated" type="java.lang.Integer">
+            <column name="is_scdata_generated">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="empJobType" type="java.lang.Integer">
+            <column name="emp_job_type">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="noOfPublicationsRefered" type="java.lang.Integer">
+            <column name="no_of_publications_refered">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="noOfPublicationsNotRefered" type="java.lang.Integer">
+            <column name="no_of_publications_not_refered">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="active" type="java.lang.Integer">
+            <column name="active">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="books" type="java.lang.Integer">
+            <column name="books">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="homeTelephone" type="java.lang.Integer">
+            <column name="home_telephone">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="empIncentives" type="java.lang.Integer">
+            <column name="emp_incentives">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="empDependents" type="java.lang.Integer">
+            <column name="emp_dependents">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="empAcheivements" type="java.lang.Integer">
+            <column name="emp_acheivements">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="title" type="java.lang.Integer">
+            <column name="title">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="reportTo" type="java.lang.Integer">
+            <column name="report_to">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="qualificationLevel" type="java.lang.Integer">
+            <column name="qualification_level">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="workTelephone" type="java.lang.Integer">
+            <column name="work_telephone">
+                <comment></comment>
+            </column>
+        </property>
+ </class>
+</hibernate-mapping>

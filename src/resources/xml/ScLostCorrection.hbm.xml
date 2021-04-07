@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2009 3:48:34 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.smartcard.ScLostCorrection" table="sc_lost_correction" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<many-to-one name="studentId" class="com.kp.cms.bo.admin.Student" fetch="select" >
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="dateOfSubmission" type="date">
+            <column name="date_of_submission" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="cardReason" type="string">
+            <column name="card_reason" length="10">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="isTextFileRequired" type="java.lang.Boolean">
+            <column name="is_text_file_required">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="status" type="string">
+            <column name="status" length="20">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="newSmartCardNum" type="string">
+            <column name="new_smart_card_no" length="25">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="oldSmartCardNum" type="string">
+            <column name="old_smart_card_no" length="25">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="250">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="reasonForRejection" type="string">
+            <column name="reason_for_rejection" length="250">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isEmployee" type="java.lang.Boolean">
+            <column name="is_employee">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="employeeId" class="com.kp.cms.bo.admin.Employee" fetch="select" >
+            <column name="employee_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

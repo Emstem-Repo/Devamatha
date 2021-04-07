@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.kp.cms.bo.admission.PromoteSecondLang" table="migration_promote_secondlanguage">
+         <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="secondLanguage" type="string">
+			<column name="second_language" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="langCode" type="string">
+			<column name="lang_code" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="academicYear" type="java.lang.Integer">
+			<column name="academic_year" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		</class>
+</hibernate-mapping>

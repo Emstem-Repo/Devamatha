@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 31, 2009 5:57:08 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.StudentTCDetails" table="stu_tc_details">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		 <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select">
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="characterAndConduct" class="com.kp.cms.bo.admin.CharacterAndConduct" fetch="select">
+            <column name="character_and_conduct_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="dateOfApplication" type="date">
+            <column name="date_of_application" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateOfLeaving" type="date">
+            <column name="date_of_leaving" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="boolean">
+            <column name="is_active" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="passed" type="string">
+            <column name="passed" length="5">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="scholarship" type="string">
+            <column name="scolarship" length="5">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="feePaid" type="string">
+            <column name="fee_paid" length="5">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="reasonOfLeaving" type="string">
+            <column name="reason_of_leaving" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="month" type="string">
+            <column name="month" length="5">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="year" type="int">
+            <column name="year" length="4">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="eligible" type="string">
+            <column name="eligible" length="5">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="subjectStudied" type="string">
+            <column name="subject_studied">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="subjectPassed" type="string">
+            <column name="subject_passed">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="publicExaminationName" type="string">
+            <column name="public_exam_name">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="showRegNo" type="string">
+            <column name="show_reg_no">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isFeePaidUni" type="boolean">
+            <column name="is_fee_paid_uni">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="classOfLeaving" type="string">
+            <column name="class_of_leaving" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="promotionToNextClass" >
+       <column name="promotion_to_next_class"></column>
+        </property>
+        <property name="classsubjectOfJoining" type="string">
+            <column name="class_subject_of_joining" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="examMonth" type="string">
+            <column name="exam_month">
+                <comment></comment>
+            </column>
+        </property>
+               <property name="examYear">
+            <column name="exam_year">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="studentName" type="string">
+            <column name="student_name">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="dateOfBirth" type="date">
+            <column name="date_of_birth" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select">
+            <column name="class_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="tcNo" type="string">
+            <column name="tc_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="tcDate" type="date">
+            <column name="tc_date" length="0">
+                <comment></comment>
+            </column>
+        </property>      
+        <property name="admissionNo" type="string">
+            <column name="admission_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateOfIssue" type="date">
+            <column name="date_of_issue">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

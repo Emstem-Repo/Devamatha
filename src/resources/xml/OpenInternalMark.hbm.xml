@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.OpenInternalMark" table="open_internal_marks_entry">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="startDate">
+			<column name="start_date"></column>
+		</property>
+		<many-to-one name="exam" class="com.kp.cms.bo.exam.ExamDefinition" fetch="select">
+            <column name="exam_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="endDate">
+			<column name="end_date"></column>
+		</property>
+		<property name="isActive">
+			<column name="is_active"></column>
+		</property>
+		<property name="createdBy" update="false">
+			<column name="created_by"></column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date"></column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by"></column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date"></column>
+		</property>
+		<property name="theoryPractical">
+			<column name="is_theory_practical"></column>
+		</property>
+		<many-to-one name="programType" class="com.kp.cms.bo.admin.ProgramType" fetch="select">
+            <column name="program_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <set name="classesSet" cascade="all">
+          <key>
+          	<column name="open_exam_id"></column>
+          </key>
+          <one-to-many class="com.kp.cms.bo.exam.OpenInternalExamForClasses"/>
+        </set>
+        <property name="displayName" type="string">
+			<column name="display_name" length="20"></column>
+		</property>
+	</class>
+</hibernate-mapping>

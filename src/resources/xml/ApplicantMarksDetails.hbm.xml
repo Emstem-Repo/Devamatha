@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 13, 2009 12:27:53 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.ApplicantMarksDetails" table="applicant_marks_details">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="courseScheme" class="com.kp.cms.bo.admin.CourseScheme" fetch="select">
+            <column name="course_scheme_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+          <many-to-one name="ednQualification" class="com.kp.cms.bo.admin.EdnQualification" fetch="select">
+            <column name="edn_qualification_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="semesterNo" type="java.lang.Integer">
+            <column name="semester_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="semesterName" type="string">
+            <column name="semester_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="maxMarks" type="java.lang.Integer">
+            <column name="max_marks">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="marksObtained" type="java.lang.Integer">
+            <column name="marks_obtained">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="percentage" type="big_decimal">
+            <column name="percentage" precision="5">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isLastExam" type="java.lang.Boolean">
+            <column name="is_last_exam">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="maxMarksLanguagewise" type="java.lang.Integer">
+            <column name="max_marks_languagewise">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="marksObtainedLanguagewise" type="java.lang.Integer">
+            <column name="marks_obtained_languagewise">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="percentageLanguagewise" type="big_decimal">
+            <column name="percentage_languagewise" precision="5">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

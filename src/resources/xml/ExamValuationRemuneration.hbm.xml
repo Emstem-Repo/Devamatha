@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamValuationRemuneration" table="exam_valuation_remuneration">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="exam" class="com.kp.cms.bo.exam.ExamDefinition" fetch="select">
+            <column name="exam_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="users" class="com.kp.cms.bo.admin.Users" fetch="select">
+            <column name="user_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="examValuators" class="com.kp.cms.bo.exam.ExamValuators" fetch="select">
+        	<column name="external_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="startDate" type="timestamp" update="false">
+            <column name="start_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="endDate" type="timestamp" update="false">
+            <column name="end_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="boardMeetings" type="int">
+			<column name="board_meetings">
+				</column>
+		</property>
+		<property name="conveyanceCharges" type="int">
+            <column name="conveyance_charges">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="billNumber" type="int">
+			<column name="bill_no">
+				</column>
+		</property>
+        <property name="ta" type="big_decimal">
+			<column name="travel_allowance">
+				<comment></comment>
+			</column>
+		</property>	
+		<property name="da" type="big_decimal">
+			<column name="dearness_allowance">
+				<comment></comment>
+			</column>
+		</property>	
+		<property name="anyOther" type="string">
+			<column name="any_other" length="100">
+				<comment></comment>
+			</column>
+		</property>	
+		<property name="anyOtherCost" type="big_decimal">
+			<column name="any_other_cost">
+				<comment></comment>
+			</column>
+		</property>	
+		 <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>		  
+         <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="examRemunerationDetails" cascade="save-update,persist,delete">
+			<key>
+				<column name="remuneration_id" unique="true">
+					<comment></comment>
+				</column>
+			</key>
+			<one-to-many class="com.kp.cms.bo.exam.ExamRemunerationDetails" />
+		</set>
+		<property name="isPaid" type="java.lang.Boolean">
+            <column name="is_paid" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modeOfPayment" type="string">
+			<column name="mode_of_payment">
+				<comment></comment>
+			</column>
+		</property>	
+	</class>
+</hibernate-mapping>

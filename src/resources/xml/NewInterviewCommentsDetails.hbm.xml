@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 4, 2009 6:08:59 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.employee.NewInterviewCommentsDetails" table="emp_interview_comments_details">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="newInterviewComments" class="com.kp.cms.bo.employee.NewInterviewComments" fetch="select">
+            <column name="emp_interview_comments_id" unique="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="interviewRatingFactor" class="com.kp.cms.bo.employee.InterviewRatingFactor" fetch="select">
+            <column name="emp_interview_ratingfactor_id" unique="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+         <property name="internalInterviewer1" type="string">
+            <column name="internal_interviewer1">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="internalInterviewer2" type="string">
+            <column name="internal_interviewer2">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="internalInterviewer3" type="string">
+            <column name="internal_interviewer3">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="internalInterviewer4" type="string">
+            <column name="internal_interviewer4">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="internalInterviewer5" type="string">
+            <column name="internal_interviewer5">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="internalInterviewer6" type="string">
+            <column name="internal_interviewer6">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="externalInterviewer1" type="string">
+            <column name="external_interviewer1">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="externalInterviewer2" type="string">
+            <column name="external_interviewer2">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="externalInterviewer3" type="string">
+            <column name="external_interviewer3">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="externalInterviewer4" type="string">
+            <column name="external_interviewer4">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="externalInterviewer5" type="string">
+            <column name="external_interviewer5">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="externalInterviewer6" type="string">
+            <column name="external_interviewer6">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update = "false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update ="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+       
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2009 5:02:53 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.studentfeedback.RoomMaster" table="room_master" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="blockId" class="com.kp.cms.bo.studentfeedback.BlockBo" fetch="select" >
+            <column name="block_id" unique="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="floor" type="string">
+            <column name="floor_no">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="floorName" type="string">
+            <column name="floor_name">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="roomNo" type="string">
+            <column name="room_no">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="totalCapacity" type="string">
+            <column name="total_capacity">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="endSemCapacity" type="string">
+            <column name="end_sem_capacity">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="endSemTotalColumn" type="string">
+            <column name="end_sem_total_column">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="endSemSeatInDesk" type="string">
+            <column name="end_sem_seat_in_desk">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="midSemCapacity" type="string">
+            <column name="mid_sem_capacity">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="midSemTotalColumn" type="string">
+            <column name="mid_sem_total_column">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="midSemSeatInDesk" type="string">
+            <column name="mid_sem_seat_in_desk">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="endMidSemRows" cascade="save-update,persist,merge" >
+            <key>
+                <column name="room_master_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.studentfeedback.RoomEndMidSemRows" />
+        </set>
+  
+      </class>
+</hibernate-mapping>

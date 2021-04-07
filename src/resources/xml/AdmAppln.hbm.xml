@@ -1,0 +1,497 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.AdmAppln" table="adm_appln" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+       <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="recommedationApplicationNo" type="string">
+			<column name="recommedation_application_no" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="courseBySelectedCourseId" class="com.kp.cms.bo.admin.Course" fetch="select" >
+            <column name="selected_course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="personalData" class="com.kp.cms.bo.admin.PersonalData" outer-join="true" fetch="select" cascade="save-update,persist,merge" >
+
+            <column name="personal_data_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select" >
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="admittedThrough" class="com.kp.cms.bo.admin.AdmittedThrough" fetch="select" >
+            <column name="admitted_through_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="examCenter" class="com.kp.cms.bo.admin.ExamCenter" fetch="select" >
+            <column name="exam_center_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="applnNo" type="java.lang.Integer">
+            <column name="appln_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="challanRefNo" type="string">
+            <column name="challan_ref_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="journalNo" type="string">
+            <column name="journal_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="bankBranch" type="string">
+            <column name="bank_branch" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="remarks" type="string">
+            <column name="remarks" length="150">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="cancelRemarks" type="string">
+            <column name="cancel_remarks" length="150">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="approvalRemark" type="string">
+            <column name="approval_remark" length="150">
+                <comment></comment>
+            </column>
+        </property>
+        
+ 		<property name="tcNo" type="string">
+            <column name="tc_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="tcDate" type="date">
+            <column name="tc_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="markscardNo" type="string">
+            <column name="marks_card_no" length="10">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="markscardDate" type="date">
+            <column name="marks_card_date" length="0">
+                <comment></comment>
+            </column>
+        </property> 
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="admissionDate" type="date">
+            <column name="admission_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="courseChangeDate" type="timestamp">
+            <column name="course_change_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isSelected" type="java.lang.Boolean">
+            <column name="is_selected">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isBypassed" type="java.lang.Boolean">
+            <column name="is_bypassed">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isCancelled" type="java.lang.Boolean">
+            <column name="is_cancelled">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isFreeShip" type="java.lang.Boolean">
+            <column name="is_FreeShip">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isApproved" type="java.lang.Boolean">
+            <column name="is_approved">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isInterviewSelected" type="java.lang.Boolean">
+            <column name="is_interview_selected">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="appliedYear" type="java.lang.Integer">
+            <column name="applied_year">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="totalWeightage" type="big_decimal">
+            <column name="total_weightage" precision="5">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="weightageAdjustedMarks" type="big_decimal">
+            <column name="weightage_adjusted_marks" precision="5">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isFinalMeritApproved" type="java.lang.Boolean">
+            <column name="is_final_merit_approved">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="isPreferenceUpdated" type="java.lang.Boolean">
+            <column name="is_preference_updated">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isLig" type="java.lang.Boolean">
+            <column name="is_lig">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="admStatus" type="string">
+			<column name="adm_status" length="250">
+				<comment></comment>
+			</column>
+		</property>
+		 <property name="seatNo" type="string">
+			<column name="seat_no" length="10">
+				<comment></comment>
+			</column>
+		</property>  
+        <set name="interviewCards" inverse="true">
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InterviewCard" />
+        </set>
+        <set name="candidatePreferences" cascade="save-update,persist,merge" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.CandidatePreference" />
+        </set>
+        <set name="students" inverse="true" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Student" />
+        </set>
+        <set name="applnDocs" cascade="save-update,persist,merge" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ApplnDoc" />
+        </set>
+        <set name="applicantRecommendors" inverse="true" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ApplicantRecommendor" />
+        </set>
+        <set name="interviewResults" inverse="true"  outer-join="true">
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InterviewResult"/>
+        </set>
+        <set name="interviewSelecteds" inverse="true" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InterviewSelected" />
+        </set>
+         <set name="studentVehicleDetailses" cascade="save-update,persist,merge" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StudentVehicleDetails" />
+        </set>
+         <set name="applicantWorkExperiences" cascade="save-update,persist,merge" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ApplicantWorkExperience" />
+        </set>
+         <set name="applicantSubjectGroups" cascade="save-update,persist,merge" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ApplicantSubjectGroup" />
+        </set>
+        <set name="candidatePrerequisiteMarks" cascade="save-update,persist,merge" >
+             <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.CandidatePrerequisiteMarks" />
+        </set>
+         <set name="candidateEntranceDetailses" cascade="save-update,persist,merge" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.CandidateEntranceDetails" />
+        </set>
+        <set name="applicantTransferDetailses" cascade="save-update,persist" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ApplicantTransferDetails" />
+        </set>
+        <set name="applicantLateralDetailses" cascade="save-update,persist" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ApplicantLateralDetails" />
+        </set>
+        <set name="studentQualifyexamDetails" cascade="save-update,persist" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StudentQualifyexamDetail" />
+        </set>
+             <set name="hlApplicationForms" inverse="true">
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlApplicationForm" />
+        </set>
+        <property name="verifiedBy" type="string">
+			<column name="verifiedBy" length="40">
+				<comment></comment>
+			</column>
+		</property>
+		 <property name="cancelDate" type="date">
+            <column name="cancel_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="finalMeritListApproveDate" type="date">
+            <column name="final_meritList_approve_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isChallanVerified" type="java.lang.Boolean">
+            <column name="is_challan_verified">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mode" type="string">
+            <column name="mode">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="studentSpecializationPrefered" inverse="true">
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StudentSpecializationPrefered" />
+        </set>
+         <set name="studentCancellationDetails" cascade="save-update,persist,merge" >
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StudentCancellationDetails" />
+        </set>
+         <set name="admapplnAdditionalInfo" cascade="save-update,persist,merge">
+            <key>
+                <column name="adm_appln_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AdmapplnAdditionalInfo" />
+        </set>
+          <property name="ddDrawnOn" type="string">
+            <column name="dd_drawn_on">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="ddIssuingBank" type="string">
+            <column name="dd_issuing_bank">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="admLoanLetterDetails" inverse="true">
+  	    <key>
+        <column name="adm_appln_id">
+            <comment></comment>
+        </column>
+   	   </key>
+       <one-to-many class="com.kp.cms.bo.admission.AdmLoanLetterDetails" />
+      </set>
+      <property name="notSelected" type="java.lang.Boolean">
+            <column name="is_not_selected">
+                <comment></comment>
+            </column>
+      </property>
+      <property name="isWaiting" type="java.lang.Boolean">
+            <column name="is_waitlisted">
+                <comment></comment>
+            </column>
+     </property>
+        <property name="isAided" type="java.lang.Boolean">
+            <column name="is_aided">
+                <comment></comment>
+            </column>
+        </property>
+     
+     
+     <many-to-one name="interScheduleSelection" class="com.kp.cms.bo.admission.InterviewSelectionSchedule" fetch="select" >
+            <column name="interview_schedule_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="admittedCourseId" class="com.kp.cms.bo.admin.Course" fetch="select" >
+            <column name="admitted_course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+         <property name="admissionNumber" type="string">
+            <column name="admission_number">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isDDRecieved" type="java.lang.Boolean">
+            <column name="is_dd_recieved">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="recievedDDNo" type="string">
+            <column name="recieved_dd_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="recievedDate" type="date">
+            <column name="recieved_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="isChallanRecieved" type="java.lang.Boolean">
+            <column name="is_challan_recieved">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="recievedChallanNo" type="string">
+            <column name="recieved_challan_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="recievedChallanDate" type="date">
+            <column name="recieved_challan_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+        
+         <many-to-one name="studentOnlineApplication" class="com.kp.cms.bo.admin.StudentOnlineApplication" fetch="select">
+        <column name="unique_id"></column>
+        </many-to-one>
+        
+      <property name="isDraftMode" type="java.lang.Boolean">
+            <column name="is_draft_mode">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isDraftCancelled" type="java.lang.Boolean">
+            <column name="is_draft_cancelled">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentPageName" type="string">
+            <column name="current_page_name">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="feeCategory" class="com.kp.cms.bo.fees.FeeCategory" fetch="select" >
+            <column name="fee_category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+     </class>
+</hibernate-mapping>

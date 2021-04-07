@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 8, 2011 10:52:35 AM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.SubjectRuleSettings" table="EXAM_subject_rule_settings">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="academicYear" type="java.lang.Integer">
+            <column name="academic_year" />
+        </property>
+        <many-to-one name="course" class="com.kp.cms.bo.admin.Course" >
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="schemeNo" type="java.lang.Integer">
+            <column name="scheme_no" />
+        </property>
+        <many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" >
+            <column name="subject_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="selectBestOfTheoryInternal" type="java.lang.Integer">
+            <column name="select_best_of_theory_internal" />
+        </property>
+        <property name="finalTheoryInternalIsSubInternal" type="java.lang.Boolean">
+            <column name="final_theory_internal_is_sub_internal" />
+        </property>
+        <property name="finalTheoryInternalIsAttendance" type="java.lang.Boolean">
+            <column name="final_theory_internal_is_attendance" />
+        </property>
+        <property name="finalTheoryInternalIsAssignment" type="java.lang.Boolean">
+            <column name="final_theory_internal_is_assignment" />
+        </property>
+        <property name="finalTheoryInternalMinimumMark" type="big_decimal">
+            <column name="final_theory_internal_minimum_mark" precision="5" />
+        </property>
+        <property name="finalTheoryInternalEnteredMaxMark" type="big_decimal">
+            <column name="final_theory_internal_entered_max_mark" precision="5" />
+        </property>
+        <property name="finalTheoryInternalMaximumMark" type="big_decimal">
+            <column name="final_theory_internal_maximum_mark" precision="5" />
+        </property>
+        <property name="selectBestOfPracticalInternal" type="java.lang.Integer">
+            <column name="select_best_of_practical_internal" />
+        </property>
+        <property name="finalPracticalInternalIsSubInternal" type="java.lang.Boolean">
+            <column name="final_practical_internal_is_sub_internal" />
+        </property>
+        <property name="finalPracticalInternalIsAttendance" type="java.lang.Boolean">
+            <column name="final_practical_internal_is_attendance" />
+        </property>
+        <property name="finalPracticalInternalIsAssignment" type="java.lang.Boolean">
+            <column name="final_practical_internal_is_assignment" />
+        </property>
+        <property name="finalPracticalInternalMinimumMark" type="big_decimal">
+            <column name="final_practical_internal_minimum_mark" precision="5" />
+        </property>
+        <property name="finalPracticalInternalEnteredMaxMark" type="big_decimal">
+            <column name="final_practical_internal_entered_max_mark" precision="5" />
+        </property>
+        <property name="finalPracticalInternalMaximumMark" type="big_decimal">
+            <column name="final_practical_internal_maximum_mark" precision="5" />
+        </property>
+        <property name="theoryEseIsRegular" type="java.lang.Boolean">
+            <column name="theory_ese_is_regular" />
+        </property>
+        <property name="theoryEseIsMultipleAnswerScript" type="java.lang.Boolean">
+            <column name="theory_ese_is_multiple_answer_script" />
+        </property>
+        <property name="theoryEseIsMultipleEvaluator" type="java.lang.Boolean">
+            <column name="theory_ese_is_multiple_evaluator" />
+        </property>
+        <property name="theoryEseMinimumMark" type="big_decimal">
+            <column name="theory_ese_minimum_mark" precision="5" />
+        </property>
+        <property name="theoryEseEnteredMaxMark" type="big_decimal">
+            <column name="theory_ese_entered_max_mark" precision="5" />
+        </property>
+        <property name="theoryEseMaximumMark" type="big_decimal">
+            <column name="theory_ese_maximum_mark" precision="5" />
+        </property>
+        <property name="theoryEseTheoryFinalMinimumMark" type="big_decimal">
+            <column name="theory_ese_theory_final_minimum_mark" precision="5" />
+        </property>
+        <property name="theoryEseTheoryFinalMaximumMark" type="big_decimal">
+            <column name="theory_ese_theory_final_maximum_mark" precision="5" />
+        </property>
+        <property name="practicalEseIsRegular" type="java.lang.Boolean">
+            <column name="practical_ese_is_regular" />
+        </property>
+        <property name="practicalEseIsMultipleAnswerScript" type="java.lang.Boolean">
+            <column name="practical_ese_is_multiple_answer_script" />
+        </property>
+        <property name="practicalEseIsMultipleEvaluator" type="java.lang.Boolean">
+            <column name="practical_ese_is_multiple_evaluator" />
+        </property>
+        <property name="practicalEseMinimumMark" type="big_decimal">
+            <column name="practical_ese_minimum_mark" precision="5" />
+        </property>
+        <property name="practicalEseEnteredMaxMark" type="big_decimal">
+            <column name="practical_ese_entered_max_mark" precision="5" />
+        </property>
+        <property name="practicalEseMaximumMark" type="big_decimal">
+            <column name="practical_ese_maximum_mark" precision="5" />
+        </property>
+        <property name="practicalEseTheoryFinalMinimumMark" type="big_decimal">
+            <column name="practical_ese_theory_final_minimum_mark" precision="5" />
+        </property>
+        <property name="practicalEseTheoryFinalMaximumMark" type="big_decimal">
+            <column name="practical_ese_theory_final_maximum_mark" precision="5" />
+        </property>
+        <property name="subjectFinalIsTheoryExam" type="java.lang.Boolean">
+            <column name="subject_final_is_theory_exam" />
+        </property>
+        <property name="subjectFinalIsPracticalExam" type="java.lang.Boolean">
+            <column name="subject_final_is_practical_exam" />
+        </property>
+        <property name="subjectFinalIsInternalExam" type="java.lang.Boolean">
+            <column name="subject_final_is_internal_exam" />
+        </property>
+        <property name="subjectFinalIsAttendance" type="java.lang.Boolean">
+            <column name="subject_final_is_attendance" />
+        </property>
+        <property name="subjectFinalMinimum" type="big_decimal">
+            <column name="subject_final_minimum" precision="5" />
+        </property>
+        <property name="subjectFinalMaximum" type="big_decimal">
+            <column name="subject_final_maximum" precision="5" />
+        </property>
+        <property name="subjectFinalValuated" type="big_decimal">
+            <column name="subject_final_valuated" precision="5" />
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50" />
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0" />
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50" />
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active" />
+        </property>
+        <property name="theoryIntMinMarksTotal" type="big_decimal">
+            <column name="theory_int_min_marks_total" precision="5" />
+        </property>
+        <property name="theoryIntMaxMarksTotal" type="big_decimal">
+            <column name="theory_int_max_marks_total" precision="5" />
+        </property>
+        <property name="theoryIntEntryMaxMarksTotal" type="big_decimal">
+            <column name="theory_int_entry_max_marks_total" precision="5" />
+        </property>
+        <property name="practicalIntMinMarksTotal" type="big_decimal">
+            <column name="practical_int_min_marks_total" precision="5" />
+        </property>
+        <property name="practicalIntMaxMarksTotal" type="big_decimal">
+            <column name="practical_int_max_marks_total" precision="5" />
+        </property>
+        <property name="practicalIntEntryMaxMarksTotal" type="big_decimal">
+            <column name="practical_int_entry_max_marks_total" precision="5" />
+        </property>
+        <set name="examSubjectRuleSettingsMulAnsScripts" cascade="save-update,persist,merge">
+            <key>
+                <column name="subject_rule_settings_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.SubjectRuleSettingsMulAnsScript" />
+        </set>
+        <set name="examSubjectRuleSettingsSubInternals" cascade="save-update,persist,merge">
+            <key>
+                <column name="subject_rule_settings_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.SubjectRuleSettingsSubInternal" />
+        </set>
+        <set name="examSubjectRuleSettingsAttendances" cascade="save-update,persist,merge">
+            <key>
+                <column name="subject_rule_settings_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.SubjectRuleSettingsAttendance" />
+        </set>
+        <set name="examSubjectRuleSettingsMulEvaluators" cascade="save-update,persist,merge">
+            <key>
+                <column name="subject_rule_settings_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.SubjectRuleSettingsMulEvaluator" />
+        </set>
+        <set name="examSubjectRuleSettingsAssignments" cascade="save-update,persist,merge">
+            <key>
+                <column name="subject_rule_settings_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.exam.SubjectRuleSettingsAssignment" />
+        </set>
+        <property name="theoryIsSupplementary" type="java.lang.Boolean">
+            <column name="theory_is_supplementary" />
+        </property>
+        <property name="practicalIsSupplementary" type="java.lang.Boolean">
+            <column name="practical_is_supplementary" />
+        </property>
+        <property name="theorySupplementaryMinMarksTotal" type="big_decimal">
+            <column name="theory_supplementary_minMarks" precision="5" />
+        </property>
+        <property name="theorySupplementaryMaxMarksTotal" type="big_decimal">
+            <column name="theory_supplementary_maxMarks" precision="5" />
+        </property>
+        <property name="practicalSupplementaryMinMarksTotal" type="big_decimal">
+            <column name="practical_supplementary_minMarks" precision="5" />
+        </property>
+        <property name="practicalSupplementaryMaxMarksTotal" type="big_decimal">
+            <column name="practical_supplementary_maxMarks" precision="5" />
+        </property>
+    </class>
+</hibernate-mapping>

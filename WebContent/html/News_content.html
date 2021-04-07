@@ -1,0 +1,88 @@
+<LINK REL=StyleSheet HREF= "css/styles.css" TYPE="text/css">
+<style>
+body {
+background : #FFFFFF;
+}
+.style1 {color: #990000}
+.style3 {font-size: 10px; text-decoration: none; font-weight: normal; font-family: Verdana, Arial, Helvetica, sans-serif;}
+</style>
+<div id="datacontainer" style="position:absolute;left:1px;top:10px;width:220Px" onMouseover="scrollspeed=0" onMouseout="scrollspeed=cache">
+
+<!-- ADD YOUR SCROLLER CONTENT INSIDE HERE -->
+
+<table width="220" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+<div class="Newsheader" style="align:justify;">
+		<div align="left"></div>
+	  </div>
+	  <div class="bodytext" style="align:justify;"><span class="news">Online Application for M.Phil./Ph.D. Guides are available Please do contact us for more information at <a href="#">info@christuniversity.edu</a></span> </div>
+
+      <br>
+	<div class="Newsheader" style="align:justify;">
+		<div align="left"></div>
+	  </div>
+	  <div class="bodytext" style="align:justify;"><span class="news">MBA/PGDM 2009 Admissions are open now.Please do contact </span><a href="#">i<span class="news style1">nfo@christuniversity.edu</span></a></div>
+<br>
+	<div class="Newsheader" style="align:justify;">
+		<div align="left"></div>
+
+	  </div>
+	  <div class="bodytext" style="align:justify;"><span class="news">Commonwealth Moot Court Competition 09.Please do register online or contact <br>
+      </span><span class="style3"><a href="#">info@christuniversity.edu</a></span><br>		  
+          </div>
+<div class="Newsheader" style="align:justify;">
+            <div align="left"></div>
+      </div>
+          <div class="news" style="align:justify;">National Conference on Changing Fabric of Intimate Relationships.Please do contact at college office for more information.<br>
+    </div>
+    </td>
+</tr>
+</table>
+<!-- END SCROLLER CONTENT -->
+
+
+
+<script type="text/javascript">
+
+/***********************************************
+* IFRAME Scroller script- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+//Specify speed of scroll. Larger=faster (ie: 5)
+var scrollspeed=cache=1
+
+//Specify intial delay before scroller starts scrolling (in miliseconds):
+var initialdelay=500
+
+function initializeScroller(){
+dataobj=document.all? document.all.datacontainer : document.getElementById("datacontainer")
+dataobj.style.top="5px"
+setTimeout("getdataheight()", initialdelay)
+}
+
+function getdataheight(){
+thelength=dataobj.offsetHeight
+if (thelength==0)
+setTimeout("getdataheight()",10)
+else
+scrollDiv()
+}
+
+function scrollDiv(){
+dataobj.style.top=parseInt(dataobj.style.top)-scrollspeed+"px"
+if (parseInt(dataobj.style.top)<thelength*(-1))
+dataobj.style.top="5px"
+setTimeout("scrollDiv()",40)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", initializeScroller, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initializeScroller)
+else
+window.onload=initializeScroller
+
+</script>

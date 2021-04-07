@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.phd.PhdDocumentSubmissionSchedule" table="phd_document_submission_schedules">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		 <many-to-one name="studentId" class="com.kp.cms.bo.admin.Student" fetch="select">
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="courseId" class="com.kp.cms.bo.admin.Course" fetch="select" >
+			<column name="course_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+	   <many-to-one name="documentId" class="com.kp.cms.bo.phd.DocumentDetailsBO" fetch="select">
+            <column name="document_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="assignDate" type="date">
+			<column name="assign_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isReminderMail" type="java.lang.Boolean">
+			<column name="is_reminder_mail_required">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="guidesFee" type="java.lang.Boolean">
+			<column name="guides_fee">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="canSubmitOnline" type="java.lang.Boolean">
+			<column name="can_submit_online">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="submited" type="java.lang.Boolean">
+			<column name="submitted">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="submittedDate" type="date">
+			<column name="submitted_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="guideFeeGenerated" type="date">
+			<column name="guide_fee_generated_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="isActive" type="java.lang.Boolean">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

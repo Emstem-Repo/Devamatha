@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created using an evaluation version of JasperAssistant (http://www.jasperassistant.com) -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Unnamed" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30">
+	<property name="com.jasperassistant.designer.Grid" value="false"/>
+	<property name="com.jasperassistant.designer.SnapToGrid" value="false"/>
+	<property name="com.jasperassistant.designer.GridWidth" value="12"/>
+	<property name="com.jasperassistant.designer.GridHeight" value="12"/>
+	<property name="com.jasperassistant.designer.VGuides.Detail" value="99"/>
+	<field name="admApplnTO.personalData.firstName" class="java.lang.String"/>
+	<field name="admApplnTO.course.code" class="java.lang.String"/>
+	<field name="interview.date" class="java.lang.String"/>
+	<field name="time" class="java.lang.String"/>
+	<field name="admApplnTO.applnNo" class="java.lang.Integer"/>
+	<field name="interviewType" class="java.lang.String"/>
+	<detail>
+		<band height="129">
+			<staticText>
+				<reportElement x="4" y="13" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[Application No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="13" width="77" height="20"/>
+				<textElement/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<textField hyperlinkType="None">
+				<reportElement x="89" y="51" width="104" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{admApplnTO.personalData.firstName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="202" y="17" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[Course]]></text>
+			</staticText>
+			<textField hyperlinkType="None">
+				<reportElement x="198" y="50" width="80" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{admApplnTO.course.code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="289" y="17" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[InterviewDate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="17" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[Time]]></text>
+			</staticText>
+			<textField hyperlinkType="None">
+				<reportElement x="286" y="51" width="80" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{interview.date}]]></textFieldExpression>
+			</textField>
+			<textField hyperlinkType="None">
+				<reportElement x="372" y="51" width="80" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{time}]]></textFieldExpression>
+			</textField>
+			<textField hyperlinkType="None">
+				<reportElement x="4" y="51" width="80" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{admApplnTO.applnNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="463" y="18" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[InterviewType]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="464" y="52" width="80" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{interviewType}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

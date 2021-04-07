@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.InternalExamGrievanceBo" table="internal_grievance_remark" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+      <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select" >
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select" >
+            <column name="subject_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select" >
+            <column name="classes_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="examDefinition" class="com.kp.cms.bo.exam.ExamDefinition" fetch="select" >
+            <column name="examDefinition_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="internal1Mark" type="string">
+            <column name="internal1_marks" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="internal2Mark" type="string">
+            <column name="internal2_marks" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="seminarMark" type="string">
+            <column name="seminar_marks" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="assignmentMark" type="string">
+            <column name="assignment_marks" length="500">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="attendanceMark" type="string">
+            <column name="attendance_mark" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="comment" type="string">
+            <column name="comment" length="500">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="isHodApproved" type="java.lang.Boolean">
+            <column name="is_hod_approved">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isHodRejected" type="java.lang.Boolean">
+            <column name="is_hod_rejected">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isHodPending" type="java.lang.Boolean">
+            <column name="is_hod_pending">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isControlerApproved" type="java.lang.Boolean">
+            <column name="is_controler_approved">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isControlerRejected" type="java.lang.Boolean">
+            <column name="is_controler_rejected">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isControlerPending" type="java.lang.Boolean">
+            <column name="is_controler_pending">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="grievanceSerialNo" type="string">
+            <column name="serial_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="hodRemark" type="string">
+            <column name="hod_remark" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="controlerRemark" type="string">
+            <column name="controler_remark" length="30">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="semNo" type="string">
+            <column name="semNo" length="20">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

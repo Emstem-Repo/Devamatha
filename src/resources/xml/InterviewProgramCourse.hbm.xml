@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.InterviewProgramCourse" table="interview_program_course" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <many-to-one name="program" class="com.kp.cms.bo.admin.Program"  fetch="select">
+            <column name="program_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="course" class="com.kp.cms.bo.admin.Course"  fetch="select">
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="weightage" class="com.kp.cms.bo.admin.Weightage" fetch="select">
+            <column name="weightage_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sequence" type="string">
+            <column name="sequence" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="year" type="java.lang.Integer">
+            <column name="year">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="weightagePercentage" type="big_decimal">
+            <column name="weightage_percentage" precision="5">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="2000">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="noOfInterviewsPerPanel" type="java.lang.Integer">
+            <column name="no_of_interviews_per_panel">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="interviews" inverse="true">
+            <key>
+                <column name="interview_program_course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Interview" />
+        </set>
+        <set name="interviewResults" inverse="true">
+            <key>
+                <column name="interview_program_course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InterviewResult" />
+        </set>
+        <set name="interviewSelecteds" inverse="true">
+            <key>
+                <column name="interview_program_course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InterviewSelected" />
+        </set>
+        <set name="interviewSubRoundses" inverse="true" >
+            <key>
+                <column name="interview_program_course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InterviewSubRounds" />
+        </set>
+         <set name="applicantRecommendors" inverse="true">
+            <key>
+                <column name="interview_program_course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ApplicantRecommendor" />
+        </set>
+    </class>
+</hibernate-mapping>

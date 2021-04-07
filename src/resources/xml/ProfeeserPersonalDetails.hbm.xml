@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.applicationform.ProfessorPersonalData" table="professor_personal_details" >
+    	 <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<property name="firstName" type="string">
+            <column name="first_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="maritalStatus" type="string">
+            <column name="martial_status" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="dateOfBirth" type="date">
+            <column name="date_of_birth" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="age" type="java.lang.Integer">
+            <column name="age" length="10">
+                <comment></comment>
+            </column>
+        </property>
+		
+		  <property name="createdDate" type="date" update = "false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+          </property>
+		  
+		  <many-to-one name="casteId" class="com.kp.cms.bo.admin.Caste" fetch="select" >
+            <column name="sub_caste_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		
+		 <many-to-one name="religionId" class="com.kp.cms.bo.admin.Religion" fetch="select" >
+            <column name="religion_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		
+		<many-to-one name="departmentId" class="com.kp.cms.bo.admin.Department" fetch="select" >
+            <column name="department_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		
+		   <set name="professerEducationDetails" cascade="save-update,persist" >
+            <key>
+                <column name="professor_personal_data_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.applicationform.ProfessorEducationDetailsBO" />
+        </set>
+        
+        <property name="emailId" type="string">
+            <column name="email_id" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="mobileNo" type="string">
+            <column name="mobile_number" length="12">
+                <comment></comment>
+            </column>
+        </property>
+        
+          <property name="diocese" type="string">
+            <column name="diocese" length="12">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="address" type="string">
+            <column name="address" length="500">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="16">
+                <comment></comment>
+            </column>
+        </property>
+        
+          <property name="fileName" type="string">
+            <column name="file_name" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="isPhoto" type="java.lang.Boolean">
+            <column name="is_photo">
+                <comment></comment>
+            </column>
+        </property> 
+        
+        <property name="document" type="binary">
+            <column name="document">
+                <comment></comment>
+            </column>
+        </property>
+
+		
+	</class>
+</hibernate-mapping>

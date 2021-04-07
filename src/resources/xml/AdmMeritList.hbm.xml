@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.AdmMeritList" table="migration_adm_meritlist">
+         <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="string">
+			<column name="name" length="40">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="appNo" type="java.lang.Integer">
+			<column name="app_no" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="urbanRural" type="string">
+			<column name="urban_rural" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="religion" type="string">
+			<column name="religion" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="scStScbt" type="string">
+			<column name="sc_st_scbt" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="cthPrOth" type="string">
+			<column name="cth_pr_oth" length="52">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastInstitute" type="string">
+			<column name="last_institute" length="30">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="karNonkar" type="string">
+			<column name="kar_nonkar" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="examPass" type="string">
+			<column name="exam_passed" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="yearPass" type="string">
+			<column name="year_pass" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="monthPass" type="string">
+			<column name="month_pass" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="noOfAttempts" type="java.lang.Integer">
+			<column name="no_of_attempts" length="2">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="mediumInstr" type="string">
+			<column name="medium_instr" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="percentage" type="big_decimal">
+			<column name="percentage">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="firstPreference" type="string">
+			<column name="first_preference" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="remarks" type="string">
+			<column name="remarks" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="totalMarks" type="java.lang.Integer">
+			<column name="total_marks" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="maxMarks" type="java.lang.Integer">
+			<column name="max_marks" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="rank" type="string">
+			<column name="rank" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="christee" type="java.lang.Boolean">
+			<column name="christee">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="oldRegisterNo" type="string">
+			<column name="old_reg_no" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="adjRank" type="string">
+			<column name="adj_rank" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="category" type="string">
+			<column name="category" length="5">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="meritSet" type="string">
+			<column name="merit_set" length="5">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="ph" type="string">
+			<column name="ph" length="5">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="sex" type="string">
+			<column name="sex" length="5">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="address1" type="string">
+			<column name="address1" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="address2" type="string">
+			<column name="address2" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="address3" type="string">
+			<column name="address3" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="address4" type="string">
+			<column name="address4" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="applnOthers" type="string">
+			<column name="appln_other" length="5">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="otherColleges" type="string">
+			<column name="other_colleges" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="distance" type="string">
+			<column name="distance" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="submitDate" type="timestamp">
+			<column name="submit_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="overPerWtg" type="big_decimal">
+			<column name="over_per_wtg" precision="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="secondPreference" type="string">
+			<column name="second_preference" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="secondLanguage" type="string">
+			<column name="second_language" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="bloodGroup" type="string">
+			<column name="blood_group" length="5">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dateOfBirth" type="timestamp">
+			<column name="date_of_birth" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="pinCode" type="string">
+			<column name="pincode" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="nationality" type="string">
+			<column name="nationality" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="sheetNo" type="string">
+			<column name="sheet_no" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="sevnyrKar" type="java.lang.Boolean">
+			<column name="sevnyr_kar">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="placeOfBirth" type="string">
+			<column name="place_of_birth" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="mobileNo" type="string">
+			<column name="mobile_no" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="academicYear" type="java.lang.Integer">
+			<column name="academic_year" length="4">
+				<comment></comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

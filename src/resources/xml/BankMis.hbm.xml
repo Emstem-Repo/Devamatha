@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 29, 2009 5:05:36 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.BankMis" table="bank_mis">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="txnDate" type="timestamp">
+            <column name="txn_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="journalNo" type="string">
+            <column name="journal_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="txnBranch" type="string">
+            <column name="txn_branch" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="refNo" type="string">
+            <column name="ref_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

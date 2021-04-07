@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 3, 2009 6:48:23 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.PcReceipts" table="pc_receipts">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+ 	<many-to-one name="pcAccountHead" class="com.kp.cms.bo.admin.PcAccountHead" fetch="select" >
+            <column name="pc_account_head_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="pcFinancialYear" class="com.kp.cms.bo.admin.PcFinancialYear" fetch="select" >
+            <column name="pc_financial_year_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="student" class="com.kp.cms.bo.admin.Student"  fetch="select">
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        <property name="number" type="int">
+            <column name="number">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="paidDate" type="timestamp">
+            <column name="paid_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="refNo" type="string">
+            <column name="ref_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="refType" type="string">
+            <column name="ref_type" length="15">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="academicYear"  type="java.lang.Integer">
+            <column name="academic_year" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isCancelled" type="java.lang.Boolean">
+            <column name="is_cancelled">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="cancelComments" type="string">
+            <column name="cancel_comments" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="users" class="com.kp.cms.bo.admin.Users" fetch="select" >
+            <column name="user_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="details" type="string">
+            <column name="details" length="15">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="offLineApplication" type="java.lang.Boolean">
+        <column name="offline_application">
+        <comment></comment>
+        </column>
+        </property>
+         <property name="concessionAmount" type="big_decimal">
+            <column name="concession_amount" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="concessionDetails" type="string">
+            <column name="concession_details" length="50">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

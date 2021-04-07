@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tools>
+  <data type="string" key="version" value="2.0"/>
+  <!-- ordinarily the SecureLinkTool would simply replace the StrutsLinkTool
+  	if SSL Ext. is in use - in that case the key would be 'link' but it's
+        'slink' here to distinguish between the two. -->
+  <toolbox scope="request">
+    <tool key="slink" class="org.apache.velocity.tools.struts.SecureLinkTool"/>
+    <tool>
+     <key>msg</key>
+     <scope>request</scope>
+     <class>
+      	org.apache.velocity.tools.struts.MessageTool
+     </class>
+  </tool>
+  <tool>
+     <key>errors</key>
+     <scope>request</scope>
+     <class>
+       org.apache.velocity.tools.struts.ErrorsTool
+     </class>
+  </tool>
+  <tool>
+     <key>form</key>
+     <scope>request</scope>
+     <class>
+       org.apache.velocity.tools.struts.FormTool
+     </class>
+  </tool>
+  <tool>
+     <key>tiles</key>
+     <scope>request</scope>
+     <class>
+       org.apache.velocity.tools.struts.TilesTool
+     </class>
+  </tool>
+  <tool>
+     <key>validator</key>
+     <scope>request</scope>
+     <class>
+       org.apache.velocity.tools.struts.ValidatorTool
+     </class>
+  </tool>
+   <tool>
+     <key>date</key>
+     <scope>request</scope>
+     <class>
+       org.apache.velocity.tools.generic.DateTool
+     </class>
+  </tool>
+  
+  </toolbox>
+	
+</tools>
+

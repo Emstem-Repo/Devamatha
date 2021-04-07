@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.ExamGracingSubjectMarksBo" table="exam_gracing_subject_marks">
+        
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="native"/>
+        </id>
+		<many-to-one name="gracingProcessBo" class="com.kp.cms.bo.exam.ExamGracingProcessBO"
+			fetch="select">
+			<column name="exam_gracing_process_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+        <many-to-one name="exam" class="com.kp.cms.bo.exam.ExamDefinition" fetch="select" >
+            <column name="exam_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select" >
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select" >
+            <column name="class_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select" >
+            <column name="subject_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select" >
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+
+        <property name="studentTheoryMark">
+            <column name="student_theory_marks">
+           </column>
+        </property>
+        <property name="studentPracticalMark">
+            <column name="student_practical_marks">
+           </column>
+        </property>
+
+        <property name="subType">
+            <column name="subType">
+           </column>
+        </property>
+        <property name="termNumber">
+            <column name="term_number">
+           </column>
+        </property>
+        <property name="theoryObtain">
+            <column name="theoryObtain">
+           </column>
+        </property>
+        <property name="practicalObtain">
+            <column name="practicalObtain">
+           </column>
+        </property>
+        <property name="appliedYear">
+            <column name="applied_year">
+            </column>
+        </property>
+        <property name="academicYear">
+            <column name="academic_year">
+           </column>
+        </property>
+		<property name="passOrFail">
+            <column name="pass_fail">
+            </column>
+        </property>		
+    <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="theoryInternalGrace">
+            <column name="theory_internal_grace">
+           </column>
+        </property>
+        <property name="theoryEseGrace">
+            <column name="theory_ese_grace">
+           </column>
+        </property>
+         <property name="practicalInternalGrace">
+            <column name="practical_internal_grace">
+           </column>
+        </property>
+        <property name="practicalEseGrace">
+            <column name="practical_ese_grace">
+           </column>
+        </property>
+          <property name="theoryObtainGraced">
+            <column name="theoryObtain_graced">
+           </column>
+        </property>
+        <property name="practicalObtainGraced">
+            <column name="practicalObtain_graced">
+           </column>
+        </property>
+        <property name="isGraced">
+            <column name="is_graced">
+           </column>
+        </property>
+        <property name="noGracingReason">
+            <column name="no_gracing_reason">
+           </column>
+        </property>
+        <property name="theoryTotalSubInternalMark">
+            <column name="theory_total_sub_internal_mark">
+           </column>
+        </property>
+        <property name="practicalTotalSubInternalMark">
+            <column name="practical_total_sub_internal_mark">
+           </column>
+        </property><!--
+        
+        <property name="theoryeseMinimumMark">
+            <column name="theory_ese_minimum_mark">
+           </column>
+        </property>
+        <property name="theoryeseMaximumMark">
+            <column name="theory_ese_maximum_mark">
+           </column>
+        </property>
+        <property name="practicaleseMinimumMark">
+            <column name="practical_ese_minimum_mark">
+           </column>
+        </property>
+        <property name="practicaleseMaximumMark">
+            <column name="practical_ese_maximum_mark">
+           </column>
+        </property>
+        <property name="subjectOrder">
+            <column name="subject_order">
+           </column>
+        </property>
+        <property name="finalPracticalInternalMaximumMark">
+            <column name="final_practical_internal_maximum_mark">
+           </column>
+        </property>
+        <property name="finalTheoryInternalMaximumMark">
+            <column name="final_theory_internal_maximum_mark">
+           </column>
+        </property>
+        <property name="theoryMax">
+            <column name="theoryMax">
+           </column>
+        </property>
+        <property name="practicalMax">
+            <column name="practicalMax">
+           </column>
+        </property>
+        <property name="sectionId">
+            <column name="section_id">
+            </column>
+        </property>
+		<property name="finalTheoryInternalMinimumMark">
+            <column name="final_theory_internal_minimum_mark">
+           </column>
+        </property>
+        <property name="finalPracticalInternalMinimumMark">
+            <column name="final_practical_internal_minimum_mark">
+           </column>
+        </property>
+		<property name="theoryMin">
+            <column name="theoryMin">
+           </column>
+        </property>
+        <property name="practicalMin">
+            <column name="practicalMin">
+           </column>
+        </property>
+    --></class>
+</hibernate-mapping>

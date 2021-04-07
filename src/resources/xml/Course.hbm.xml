@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.Course" table="course" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <many-to-one name="program" class="com.kp.cms.bo.admin.Program" fetch="select">
+            <column name="program_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="code" type="string">
+            <column name="code" length="15">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false"> 
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isAutonomous" type="java.lang.Boolean">
+            <column name="is_autonomous">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="maxIntake" type="java.lang.Integer">
+            <column name="max_intake">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isWorkExperienceRequired" type="java.lang.Boolean">
+            <column name="is_work_exp_req">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isWorkExperienceMandatory" type="java.lang.Boolean">
+            <column name="is_work_exp_mandatory">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isAppearInOnline" type="java.lang.Boolean">
+            <column name="is_appear_in_online">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isApplicationProcessSms" type="java.lang.Boolean">
+            <column name="is_application_process_sms">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="payCode" type="string">
+            <column name="payment_code" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isDetailMarksPrint" type="java.lang.Boolean">
+            <column name="is_detail_mark_print">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="feeConcessions" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.FeeConcession" />
+        </set>
+        <set name="preferencesesForPrefCourseId" inverse="true">
+            <key>
+                <column name="pref_course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Preferences" />
+        </set>
+        <set name="docChecklists" inverse="true" cascade="delete">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.DocChecklist" />
+        </set>
+        <set name="attendanceMarkses" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AttendanceMarks" />
+        </set>
+        <set name="weightages" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Weightage" />
+        </set>
+        <set name="applnTypes" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ApplnType" />
+        </set>
+        <set name="admApplns" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AdmAppln" />
+        </set>
+        <set name="coursePrerequisites" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.CoursePrerequisite" />
+        </set>
+        <set name="progCourseDocs" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ProgCourseDoc" />
+        </set>
+        <set name="courseTerms" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.CourseTerm" />
+        </set>
+        <set name="seatAllocations" cascade="all">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.SeatAllocation" />
+        </set>
+        <set name="fees" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Fee" />
+        </set>
+        <set name="subjectGroups" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.SubjectGroup" />
+        </set>
+        <set name="preferencesesForCourseId" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Preferences" />
+        </set>
+        <set name="curriculumSchemes" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.CurriculumScheme" />
+        </set>
+        <set name="registrationNumberFormats" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.RegistrationNumberFormat" />
+        </set>
+        <set name="termsConditionses" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.TermsConditions" />
+        </set>
+        <set name="selectionProcesses" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.SelectionProcess" />
+        </set>
+        <set name="candidatePreferences" inverse="true">
+            <key>
+                <column name="id" not-null="true" unique="true">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.CandidatePreference" />
+        </set>
+      	<set name="groupTemplates" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.GroupTemplate" />
+        </set>
+        <set name="programCourseIntakes" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.ProgramCourseIntake" />
+        </set>
+        <set name="guidelinesDocs" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.GuidelinesDoc" />
+        </set>
+        <set name="eligibilityCriterias" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EligibilityCriteria" />
+        </set>
+        <set name="interviewProgramCourses" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InterviewProgramCourse" />
+        </set>
+        <set name="courseApplicationNumbers" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.CourseApplicationNumber" />
+        </set>
+        <set name="admApplnsForSelectedCourseId" inverse="true">
+            <key>
+                <column name="selected_course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AdmAppln" />
+        </set>
+        <set name="termsConditionChecklists" fetch="select" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.TermsConditionChecklist" />
+        </set>
+        <set name="honorsSet" fetch="select" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HonorsEntryBo" />
+        </set>
+        <set name="classes" inverse="true">
+            <key>
+                <column name="course_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Classes" />
+        </set>
+        <property name="certificateCourseName" type="java.lang.String" update="true">
+            <column name="course_name_certificate" length="150">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="courseMarksCard" type="java.lang.String" update="true">
+            <column name="course_marks_card" length="150">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="bankName" type="java.lang.String" >
+            <column name="bankName" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="bankNameFull" type="java.lang.String" >
+            <column name="bankNameFull" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="bankIncludeSection" type="java.lang.Boolean">
+            <column name="bankIncludeSection">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="onlyForApplication" type="java.lang.Boolean">
+            <column name="only_for_application">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="commencementDate" type="date">
+            <column name="course_commencement_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="noOfAttemtsMidSem" type="java.lang.Integer">
+            <column name="no_of_attempts_midsem">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="applicationFees" type="big_decimal">
+            <column name="intapplication_fees" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="currencyId" class="com.kp.cms.bo.admin.Currency" fetch="select" >
+			<column name="currency_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="workLocation" class="com.kp.cms.bo.admin.EmployeeWorkLocationBO" fetch="select" >
+			<column name="work_location_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+						<property name="dateTime" type="string">
+			<column name="date_time" length="50">
+				<comment></comment>
+			</column>
+		</property>
+				<property name="generalFee" type="string">
+			<column name="general_fee" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="casteFee" type="string">
+			<column name="caste_fee" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isAided" type="boolean">
+			<column name="is_aided">
+				<comment></comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.alumini.AlumniEducationDetails" table="alumni_education_details">
+		
+		<id name="id" column="id" type="java.lang.Integer">
+			 <generator class="native"/>
+      	</id>
+		
+		<many-to-one name="alumniRegistrationDetails" 
+					 class="com.kp.cms.bo.alumini.AlumniRegistrationDetails" 
+					 fetch="select"
+            		 column="alumini_id">
+        </many-to-one>
+		
+		<many-to-one name="course" 
+					 class="com.kp.cms.bo.admin.Course" 
+					 fetch="select"
+            		 column="course_id">
+        </many-to-one>
+				  
+		<property name="batchFrom"
+				  column="batch_from" 
+				  type="java.lang.Integer"/>
+		
+		<property name="batchTo"
+				  column="batch_to" 
+				  type="java.lang.Integer"/>
+		
+		<property name="passOutYear"
+				  column="pass_out_year" 
+				  type="java.lang.Integer"/>
+				  
+		<property name="createdDate"
+				  column="created_date" 
+				  type="java.sql.Timestamp"
+				  update="false"/>
+		
+	</class>
+</hibernate-mapping>	

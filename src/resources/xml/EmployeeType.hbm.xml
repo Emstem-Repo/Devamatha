@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 5, 2009 12:58:33 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping package="com.kp.cms.bo.admin">
+    <class name="EmployeeTypeBO" table="employee_Type">
+    	<id name="id" type="int" column="id" >
+    		<generator class="native"/>
+		</id>
+		<property name="name" column="name" />
+		<property name="createdBy" column="created_by" update="false"/>
+		<property name ="createdDate" column="created_date" update="false"/>
+		<property name="modifiedBy" column="modified_by"/>
+		<property name="lastModifiedDate" column="last_modified_date"/>
+		<property name="isActive" column="is_active" />
+		 <set name="employees" inverse="true" cascade="save-update,persist,merge" >
+            <key>
+                <column name="emp_type_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpWorkTime" />
+        </set>	
+		
+    		
+		
+    </class>
+</hibernate-mapping>

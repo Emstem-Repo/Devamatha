@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 21, 2010 2:22:27 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamStudentBioDataBO" table="EXAM_student_bio_data">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="studentUtilBO" class="com.kp.cms.bo.exam.StudentUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="examSpecializationBO"
+			class="com.kp.cms.bo.exam.ExamSpecializationBO" fetch="select"
+			insert="false" update="false">
+			<column name="specialization_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="examSecondLanguageMasterBO"
+			class="com.kp.cms.bo.exam.ExamSecondLanguageMasterBO" fetch="select"
+			insert="false" update="false">
+			<column name="second_language_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties -->
+
+		<property name="studentId">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="specializationId">
+			<column name="specialization_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="secondLanguageId">
+			<column name="second_language_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="consolidatedMarksCardNo">
+			<column name="consolidated_marks_card_no">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="courseNameForMarksCard">
+			<column name="course_name_for_marks_card">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

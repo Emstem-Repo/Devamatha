@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.applicationform.ProfessorTeachingExpDetailsBO" table="professor_teaching_exp_details" >
+    	 <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		 <many-to-one name="professorEducationDataId" class="com.kp.cms.bo.applicationform.ProfessorEducationDetailsBO" fetch="select">
+            <column name="professor_education_details_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		
+		
+		
+		<property name="fromDate" type="date">
+            <column name="from_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="toDate" type="date">
+            <column name="to_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="collegeName" type="string">
+            <column name="college_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+
+	</class>
+</hibernate-mapping>

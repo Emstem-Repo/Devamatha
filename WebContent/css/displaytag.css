@@ -1,0 +1,114 @@
+th {
+	padding: 2px 4px 2px 4px;
+	text-align: center;
+	vertical-align: top;
+	text-decoration: none;
+}
+
+thead tr {
+	background-color: #ffffff;
+}
+
+th.sorted {
+	background-color: threedlightshadow;
+}
+
+th a,th a:visited {
+	color: black;
+}
+
+th a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+th.sorted a,th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+th.sortable a {
+	background-image: url(../images/arrow_off.png);
+	background-position: right;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+
+th.order1 a {
+	background-image: url(../images/arrow_down.png);
+	background-position: right;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+
+th.order2 a {
+	background-image: url(../images/arrow_up.png);
+	background-position: right;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+div.exportlinks {
+	background-color: #eaeccc;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px ;
+	margin: 2px 0 10px 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	width: 550px;
+	text-decoration: none;
+}
+
+span.export {
+	padding: 0 4px 1px 20px;
+	display: inline;
+	cursor: pointer;
+	text-decoration: none;
+	width: 20%;
+}
+
+span.excel {
+	background-image: url(../images/ico_file_excel.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+    width: 18px;
+    text-decoration: none;
+}
+
+span.csv {
+	background-image: url(../images/ico_file_csv.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+    width: 18px;
+    text-decoration: none;
+}
+
+span.pagebanner {
+	background-color: #eaeccc;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 550px;
+	margin-top: 10px;
+	display: block;
+	border-bottom: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+span.pagelinks {
+	background-color: #eaeccc;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 550px;
+	display: block;
+	border-top: none;
+	margin-bottom: -5px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none;
+}

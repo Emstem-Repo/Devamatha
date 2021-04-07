@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+
+	<class name="com.kp.cms.bo.exam.ClassSchemewiseUtilBO" table="class_schemewise">
+		<comment></comment>
+		<id name="id">
+			<column name="id" />
+			<generator class="native" /> 
+		</id>
+
+		<set name="studentUtilBOSet" inverse="true"  >
+			<key>
+				<column name="class_schemewise_id">
+				</column>
+			</key>
+			<one-to-many class="com.kp.cms.bo.exam.StudentUtilBO" />
+		</set>
+
+		<many-to-one name="curriculumSchemeDurationUtilBO"
+			class="com.kp.cms.bo.exam.CurriculumSchemeDurationUtilBO" fetch="select"
+			update="false" insert="false" unique="true">
+			<column name="curriculum_scheme_duration_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<many-to-one name="classUtilBO" class="com.kp.cms.bo.exam.ClassUtilBO"
+			fetch="select" update="false" insert="false" unique="true">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties -->
+
+		<property name="classId">
+			<column name="class_id">
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

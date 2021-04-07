@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 25, 2009 3:08:43 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.EmpJob" table="emp_job">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="employee" class="com.kp.cms.bo.admin.Employee" fetch="select" >
+            <column name="employee_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        <many-to-one name="objEmployeeTypeBO" class="com.kp.cms.bo.admin.EmployeeTypeBO" fetch="select" >
+            <column name="Employee_Type_Id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        <property name="jobTitle" type="string">
+            <column name="job_title" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="jobSpecification" type="string">
+            <column name="job_specification" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="employmentStatus" type="string">
+            <column name="employment_status" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="jobDuties" type="string">
+            <column name="job_duties" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="joiningDate" type="date">
+            <column name="joining_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="departmentType" type="string">
+            <column name="department_type" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateOfRetirement" type="date">
+            <column name="date_of_retirement" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="basicPay" type="big_decimal">
+            <column name="basic_pay" precision="14">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="grossPay" type="big_decimal">
+            <column name="gross_pay" precision="14">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateOfResign" type="date">
+            <column name="date_of_resign" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="resignationReason" type="string">
+            <column name="resignation_reason" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateOfLeaving" type="date">
+            <column name="date_of_leaving" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="financialAssisstance" type="string">
+            <column name="financial_assisstance" length="250">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateOfRejoin" type="date">
+        	<column name="date_of_rejoin" length="0"></column>
+        </property>
+        <set name="empJobAllowances" cascade="save-update,persist" >
+            <key>
+                <column name="emp_job_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpJobAllowance" />
+        </set>
+    </class>
+</hibernate-mapping>

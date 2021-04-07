@@ -1,0 +1,12 @@
+.formbutton{
+cursor:pointer;
+border:outset 1px #ccc;
+background:#999;
+color:#6663366;
+font-weight:bold;
+padding: 1px 2px;
+font: Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+background:url(images/student/btn_login.gif) repeat-x left top;
+}
+

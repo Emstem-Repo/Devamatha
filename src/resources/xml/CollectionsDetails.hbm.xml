@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 15, 2010 2:30:33 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.PettyCashCollectionDetails" table="migration_pettycash_collectiondetails">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+       
+        <property name="receiptNo" type="java.lang.Integer">
+            <column name="receipt_no" length="11">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="accCode" type="string">
+            <column name="acc_code" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="amount" type="java.lang.Float">
+            <column name="amount">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="aplRegNo" type="string">
+            <column name="apl_reg_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="puDgPg" type="string">
+            <column name="pu_dg_pg" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="date" type="date">
+            <column name="date">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="atStation" type="string">
+            <column name="at_station" length="20">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="atDate" type="date">
+            <column name="at_date">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="atTime" type="string">
+            <column name="at_time" length="10">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="userCode" type="string">
+            <column name="user_code" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="academicYear" type="java.lang.Integer">
+            <column name="academic_year" length="4">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

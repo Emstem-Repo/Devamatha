@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 11, 2009 5:36:36 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.Users" table="users" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select">
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="roles" class="com.kp.cms.bo.admin.Roles" fetch="select" >
+            <column name="roles_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="employee" class="com.kp.cms.bo.admin.Employee" fetch="select" lazy="false">
+            <column name="employee_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="guest" class="com.kp.cms.bo.employee.GuestFaculty" fetch="select" lazy="false">
+            <column name="guest_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="department" class="com.kp.cms.bo.admin.Department" fetch="select" >
+            <column name="department_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="userName" type="string">
+            <column name="user_name" length="50" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="pwd" type="string">
+            <column name="pwd" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="noOfRetries" type="java.lang.Integer">
+            <column name="no_of_retries">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastLoggedIn" type="timestamp">
+            <column name="last_logged_in" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ipAddress" type="string">
+            <column name="ip_address">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isLocked" type="java.lang.Boolean">
+            <column name="is_locked">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isLoggedIn" type="java.lang.Boolean">
+            <column name="is_logged_in">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isTeachingStaff" type="java.lang.Boolean">
+            <column name="is_teaching_staff">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isAddRemarks" type="java.lang.Boolean">
+            <column name="is_add_remarks">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isViewRemarks" type="java.lang.Boolean">
+            <column name="is_view_remarks">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="active" type="java.lang.Boolean">
+            <column name="active">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="staffType" type="string">
+            <column name="staff_type">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <set name="attendanceInstructors" inverse="true">
+            <key>
+                <column name="users_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AttendanceInstructor" />
+        </set>
+        <set name="pcReceipts" inverse="true">
+            <key>
+                <column name="user_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.PcReceipts" />
+        </set>
+         <property name="isRestrictedUser" type="java.lang.Boolean">
+            <column name="restricted_user">
+                <comment></comment>
+            </column>
+        </property> 
+        <property name="enableAttendanceEntry" type="java.lang.Boolean">
+            <column name="enable_attendance_entry">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="androidPwd" type="string">
+            <column name="android_pwd" length="200">
+            </column>
+        </property>
+        <property name="multipleLoginAllow" type="java.lang.Boolean">
+            <column name="multiple_login_allow">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="tillDate" type="timestamp">
+            <column name="till_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

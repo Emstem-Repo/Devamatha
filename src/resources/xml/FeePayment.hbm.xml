@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 20, 2009 2:31:55 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.FeePayment" table="fee_payment">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="currency" class="com.kp.cms.bo.admin.Currency" fetch="select" >
+            <column name="currency_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select" >
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="feePaymentMode" class="com.kp.cms.bo.admin.FeePaymentMode" fetch="select" >
+            <column name="payment_mode_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="applicationNo" type="string">
+            <column name="application_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="registrationNo" type="string">
+            <column name="registration_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="billNo" type="string">
+            <column name="bill_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="challenNo" type="string">
+            <column name="challen_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="totalAmount" type="big_decimal">
+            <column name="total_amount" precision="12">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="totalFeePaid" type="big_decimal">
+            <column name="total_fee_paid" precision="12">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isChallenPrinted" type="java.lang.Boolean">
+            <column name="is_challen_printed">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="challenPrintedDate" type="date">
+            <column name="challen_printed_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isFeePaid" type="java.lang.Boolean">
+            <column name="is_fee_paid">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="feePaidDate" type="date">
+            <column name="fee_paid_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isCompletlyPaid" type="java.lang.Boolean">
+            <column name="is_completly_paid" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="challanCreatedTime" type="time">
+            <column name="challan_created_time" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="concessionVoucherNo" type="string">
+            <column name="concession_voucher_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="totalConcessionAmount" type="big_decimal">
+            <column name="total_concession_amount" precision="12">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="totalBalanceAmount" type="big_decimal">
+            <column name="total_balance_amount" precision="12">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select" >
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="academicYear" type="java.lang.Integer">
+            <column name="academic_year">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="studentName" type="string">
+            <column name="student_name" length="90">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isCancelChallan" type="java.lang.Boolean">
+            <column name="is_challan_canceled" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="rollNo" type="string">
+            <column name="roll_no" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="cancellationReason" type="string">
+            <column name="cancellation_reason" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="manualClassName" type="string">
+            <column name="manual_class_name" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="remarks" type="string">
+            <column name="remarks" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select" >
+            <column name="class_id">
+                <comment></comment>
+            </column>
+        </many-to-one> 
+        <set name="feePaymentDetails" cascade="all" >
+            <key>
+                <column name="fee_payment_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.FeePaymentDetail" />
+        </set>
+        <set name="feePaymentApplicantDetailses"  cascade="save-update,persist,merge">
+            <key>
+                <column name="fee_payment_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.FeePaymentApplicantDetails" />
+        </set>
+         <many-to-one name="amountFinancialYear" class="com.kp.cms.bo.admin.FeeFinancialYear" fetch="select" >
+            <column name="fee_paid_financial_year_id">
+                <comment></comment>
+            </column>
+        </many-to-one>  
+         <property name="paymentVerified" type="java.lang.Boolean">
+            <column name="payment_verified">
+                <comment></comment>
+            </column>
+        </property>       
+    </class>
+</hibernate-mapping>

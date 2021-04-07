@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 21, 2010 2:22:27 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamSubjectRuleSettingsBO" table="EXAM_subject_rule_settings">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examCourseUtilBO" class="com.kp.cms.bo.exam.ExamCourseUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="course_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="subjectUtilBO" class="com.kp.cms.bo.exam.SubjectUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties -->
+		<property name="academicYear">
+			<column name="academic_year">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="courseId">
+			<column name="course_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="schemeNo">
+			<column name="scheme_no">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectId">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="selectBestOfTheoryInternal">
+			<column name="select_best_of_theory_internal">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalTheoryInternalIsSubInternal">
+			<column name="final_theory_internal_is_sub_internal">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalTheoryInternalIsAttendance">
+			<column name="final_theory_internal_is_attendance">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalTheoryInternalIsAssignment">
+			<column name="final_theory_internal_is_assignment">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalTheoryInternalMinimumMark">
+			<column name="final_theory_internal_minimum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalTheoryInternalEnteredMaxMark">
+			<column name="final_theory_internal_entered_max_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalTheoryInternalMaximumMark">
+			<column name="final_theory_internal_maximum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="selectBestOfPracticalInternal">
+			<column name="select_best_of_practical_internal">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalPracticalInternalIsSubInternal">
+			<column name="final_practical_internal_is_sub_internal">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalPracticalInternalIsAttendance">
+			<column name="final_practical_internal_is_attendance">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalPracticalInternalIsAssignment">
+			<column name="final_practical_internal_is_assignment">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalPracticalInternalMinimum_mark">
+			<column name="final_practical_internal_minimum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalPracticalInternalEnteredMaxMark">
+			<column name="final_practical_internal_entered_max_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="finalPracticalInternalMaximumMark">
+			<column name="final_practical_internal_maximum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryEseIsRegular">
+			<column name="theory_ese_is_regular">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryEseIsMultipleAnswerScript">
+			<column name="theory_ese_is_multiple_answer_script">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryEseIsMultipleEvaluator">
+			<column name="theory_ese_is_multiple_evaluator">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryEseMinimumMark">
+			<column name="theory_ese_minimum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryEseEnteredMaxMark">
+			<column name="theory_ese_entered_max_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryEseMaximumMark">
+			<column name="theory_ese_maximum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryEseTheoryFinalMinimumMark">
+			<column name="theory_ese_theory_final_minimum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryEseTheoryFinalMaximumMark">
+			<column name="theory_ese_theory_final_maximum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalEseIsRegular">
+			<column name="practical_ese_is_regular">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalEseIsMultipleAnswerScript">
+			<column name="practical_ese_is_multiple_answer_script">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalEseIsMultipleEvaluator">
+			<column name="practical_ese_is_multiple_evaluator">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalEseMinimumMark">
+			<column name="practical_ese_minimum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalEseEnteredMaxMark">
+			<column name="practical_ese_entered_max_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalEseMaximumMark">
+			<column name="practical_ese_maximum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalEseTheoryFinalMinimumMark">
+			<column name="practical_ese_theory_final_minimum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalEseTheoryFinalMaximumMark">
+			<column name="practical_ese_theory_final_maximum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectFinalIsTheoryExam">
+			<column name="subject_final_is_theory_exam">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectFinalIsPracticalExam">
+			<column name="subject_final_is_practical_exam">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectFinalIsInternalExam">
+			<column name="subject_final_is_internal_exam">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectFinalIsAttendance">
+			<column name="subject_final_is_attendance">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectFinalMinimum">
+			<column name="subject_final_minimum">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectFinalMaximum">
+			<column name="subject_final_maximum">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectFinalValuated">
+			<column name="subject_final_valuated">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryIntMinMarksTotal">
+			<column name="theory_int_min_marks_total">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryIntMaxMarksTotal">
+			<column name="theory_int_max_marks_total">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryIntEntryMaxMarksTotal">
+			<column name="theory_int_entry_max_marks_total">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalIntMinMarksTotal">
+			<column name="practical_int_min_marks_total">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalIntMaxMarksTotal">
+			<column name="practical_int_max_marks_total">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalIntEntryMaxMarksTotal">
+			<column name="practical_int_entry_max_marks_total">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActiveInt" insert="false" update="false">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActive">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

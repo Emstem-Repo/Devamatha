@@ -1,0 +1,1081 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2009 5:02:53 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.Employee" table="employee" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+         <many-to-one name="emptype" class="com.kp.cms.bo.employee.EmpType" fetch="select" >
+            <column name="emp_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+       <many-to-one name="titleId" class="com.kp.cms.bo.employee.EmpJobTitle"
+			fetch="select">
+			<column name="job_title_id">
+				<comment></comment>
+			</column>
+		</many-to-one>  
+        <many-to-one name="department" class="com.kp.cms.bo.admin.Department" fetch="select" >
+            <column name="department_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="empSubjectArea" class="com.kp.cms.bo.exam.SubjectAreaBO" fetch="select">
+            <column name="subject_area_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+                
+       <!--  <many-to-one name="emJobType" class="com.kp.cms.bo.admin.EmpJobType" fetch="select">
+            <column name="emp_job_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one> -->
+        <many-to-one name="stateByCommunicationAddressStateId" class="com.kp.cms.bo.admin.State" fetch="select" >
+            <column name="communication_address_state_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="nationality" class="com.kp.cms.bo.admin.Nationality" fetch="select" >
+            <column name="nationality_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stateByPermanentAddressStateId" class="com.kp.cms.bo.admin.State" fetch="select">
+            <column name="permanent_address_state_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="designation" class="com.kp.cms.bo.admin.Designation" fetch="select" >
+            <column name="designation_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="albumDesignation" class="com.kp.cms.bo.admin.Designation" fetch="select" >
+            <column name="album_designation_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="countryByPermanentAddressCountryId" class="com.kp.cms.bo.admin.Country" fetch="select">
+            <column name="permanent_address_country_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="countryByCommunicationAddressCountryId" class="com.kp.cms.bo.admin.Country" fetch="select" >
+            <column name="communication_address_country_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="empQualificationLevel" class="com.kp.cms.bo.admin.QualificationLevelBO" fetch="select">
+            <column name="emp_qualification_level">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="streamId" class="com.kp.cms.bo.admin.EmployeeStreamBO"
+			fetch="select">
+			<column name="emp_stream_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		 <many-to-one name="workLocationId" class="com.kp.cms.bo.admin.EmployeeWorkLocationBO"
+			fetch="select">
+			<column name="emp_Work_Location_id">
+				<comment></comment>
+			</column>
+		</many-to-one>     
+        <many-to-one name="payScaleId" class="com.kp.cms.bo.admin.PayScaleBO"
+			fetch="select">
+			<column name="pay_scale_grade_id">
+				<comment></comment>
+			</column>
+		</many-to-one>   
+         <many-to-one name="religionId" class="com.kp.cms.bo.admin.Religion"
+			fetch="select">
+			<column name="religion">
+				<comment></comment>
+			</column>
+		</many-to-one>  
+        <property name="firstName" type="string">
+            <column name="first_name" length="100">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="middleName" type="string">
+            <column name="middle_name" length="20">
+                <comment></comment>
+            </column>
+        </property>
+	<property name="lastName" type="string">
+            <column name="last_name" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="fatherName" type="string">
+            <column name="father_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+ <property name="motherName" column="mother_Name" />
+        <property name="designationName" type="string">
+            <column name="designation" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="organistionName" type="string">
+            <column name="current_organisation" >
+                <comment></comment>
+            </column>
+        </property>
+      
+        
+        
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dob" type="date">
+            <column name="dob" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="doj" type="date">
+            <column name="doj" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="permanentAddressLine1" type="string">
+            <column name="permanent_address_line_1" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="permanentAddressLine2" type="string">
+            <column name="permanent_address_line_2" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="permanentAddressCity" type="string">
+            <column name="permanent_address_city" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="permanentAddressZip" type="string">
+            <column name="permanent_address_zip" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="communicationAddressLine1" type="string">
+            <column name="communication_address_line_1" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="communicationAddressLine2" type="string">
+            <column name="communication_address_line_2" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="communicationAddressCity" type="string">
+            <column name="communication_address_city" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="communicationAddressZip" type="string">
+            <column name="communication_address_zip" length="10">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="email" type="string">
+            <column name="email" length="50">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="bloodGroup" type="string">
+            <column name="blood_group" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="communicationAddressStateOthers" type="string">
+            <column name="communication_address_state_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="permanentAddressStateOthers" type="string">
+            <column name="permanent_address_state_others" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="code" type="string">
+            <column name="code" length="10">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="maritalStatus" type="string">
+            <column name="marital_status" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="6">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="emergencyContName" type="string">
+            <column name="emergency_cont_name" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="relationship" type="string">
+            <column name="relationship" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="emergencyMobile" type="string">
+            <column name="emergency_mobile" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="emergencyHomeTelephone" type="string">
+            <column name="emergency_home_telephone" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="emergencyWorkTelephone" type="string">
+            <column name="emergency_work_telephone" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="workEmail" type="string">
+            <column name="work_email" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="otherEmail" type="string">
+            <column name="other_email" length="50">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="uid" type="string">
+            <column name="uid" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="panNo" type="string">
+            <column name="pan_no" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentAddressHomeTelephone1" type="string">
+            <column name="current_address_home_telephone1" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentAddressHomeTelephone2" type="string">
+            <column name="current_address_home_telephone2" >
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="currentAddressHomeTelephone3" type="string">
+            <column name="current_address_home_telephone3" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentAddressWorkTelephone1" type="string">
+            <column name="current_address_work_telephone1" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentAddressWorkTelephone2" type="string">
+            <column name="current_address_work_telephone2" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentAddressWorkTelephone3" type="string">
+            <column name="current_address_work_telephone3" >
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="currentAddressMobile1" type="string">
+            <column name="current_address_mobile1" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        
+       
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="teachingStaff" type="java.lang.Boolean">
+            <column name="emp_teaching_staff">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isPunchingExcemption" type="java.lang.Boolean">
+            <column name="is_punching_exemption">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isSameAddress" type="java.lang.Boolean">
+            <column name="is_same_address">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="currentlyWorking" type="java.lang.Boolean">
+            <column name="previously_working">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="fingerPrintId" type="string">
+            <column name="fingerPrintId">
+                <comment></comment>
+            </column>
+        </property>
+             
+       
+        <property name="active" type="java.lang.Boolean">
+            <column name="active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="bankAccNo" type="string" >
+            <column name="bank_account_no" length="20">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="pfNo" type="string">
+            <column name="pf_number" length="25">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="twoWheelerNo" type="string" >
+            <column name="two_wheeler_no" length="15">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="fourWheelerNo" type="string" >
+            <column name="four_wheeler_no" length="15">
+                <comment></comment>
+            </column>
+        </property>
+       
+          <property name="timeIn" type="string">
+            <column name="time_in">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="timeInEnds" type="string">
+            <column name="time_in_ends">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="timeOut" type="string">
+            <column name="time_out">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="saturdayTimeOut" type="string">
+            <column name="saturday_time_out">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="halfDayStartTime" type="string">
+            <column name="half_day_start_time">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="halfDayEndTime" type="string">
+            <column name="half_day_end_time">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="rejoinDate" type="date">
+            <column name="rejoin_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+      <property name="retirementDate" type="date">
+            <column name="retirement_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="eligibilityTest" type="string">
+            <column name="eligibility_test" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateOfResignation" type="date">
+            <column name="date_of_resignation" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateOfLeaving" type="date">
+            <column name="date_of_leaving" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="reasonOfLeaving" type="string">
+            <column name="reason_of_leaving">
+                <comment></comment>
+            </column>
+        </property>
+       
+         <property name="grossPay" type="string">
+            <column name="gross_pay">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="scale" type="string">
+            <column name="scale">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="highQualifForAlbum" type="string">
+            <column name="highest_qualification">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="relevantExpMonths" type="string">
+            <column name="relevant_experience_month" length="5">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="relevantExpYears" type="string">
+            <column name=" relevant_experience_year" length="5">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="totalExpYear" type="string">
+            <column name="total_experience_year" length="5">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="totalExpMonths" type="string">
+            <column name="total_experience_month" length="5">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="noOfPublicationsRefered" type="string">
+            <column name="publications_refered" length="5">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="noOfPublicationsNotRefered" type="string">
+            <column name="publications_not_refered" length="5">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="books" type="string">
+            <column name="books" length="5">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="otherInfo" type="string">
+            <column name="other_info" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="reservationCategory" type="string">
+            <column name="reservation_category" >
+                <comment></comment>
+            </column>
+        </property>
+       
+        <set name="employeesForReportToId" inverse="true">
+            <key>
+                <column name="report_to_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Employee" />
+        </set>
+        <set name="empLeaves" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpLeave" />
+        </set>
+        <set name="empWorkExperiences" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpWorkExperience" />
+        </set>
+        
+        <set name="studentAppraisals" inverse="true">
+            <key>
+                <column name="appraise_emp_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.StudentAppraisal" />
+        </set>
+        <set name="empSkillses" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpSkills" />
+        </set>
+        <set name="empImmigrations" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpImmigration" />
+        </set>
+        <set name="userses" inverse="true">
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Users" />
+        </set>
+        <set name="empAppraisalsForAppraiserEmpId" inverse="true">
+            <key>
+                <column name="appraiser_emp_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpAppraisal" />
+        </set>
+        <set name="empEducations" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpEducation" />
+        </set>
+       
+        <set name="empAppraisalsForAppraiseEmpId" inverse="true">
+            <key>
+                <column name="appraise_emp_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpAppraisal" />
+        </set>
+        <set name="empAttendances" inverse="true">
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpAttendance" />
+        </set>
+        <set name="empApplyLeaves" inverse="true">
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpApplyLeave" />
+        </set>
+        <set name="empDependentses" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpDependents" />
+        </set>
+        
+        <set name="invLocations" inverse="true">
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvLocation" />
+        </set>
+        <set name="empLanguages" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpLanguage" />
+        </set>
+        <set name="empJobs" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpJob" />
+        </set>
+         <set name="empLoan" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpLoan" />
+        </set>
+        <set name="empFinancial" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpFinancial" />
+        </set>
+        <set name="empIncentives" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpIncentives" />
+        </set>
+        <set name="empFeeConcession" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpFeeConcession" />
+        </set>
+        <set name="empRemarks" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpRemarks" />
+        </set>
+         <set name="empImages" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpImages" />
+        </set>
+        <set name="acheivementSet"  cascade="save-update,persist,merge">
+            <key>
+                <column name="emp_online_resume_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpAcheivement" />
+        </set> 
+         <set name="empAcheivements" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EmpAcheivement" />
+        </set>
+         <set name="educationalDetailsSet" cascade="save-update,persist,merge">
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpEducationalDetails" />
+        </set>       
+          <set name="previousExpSet" cascade="save-update,persist,merge">
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpPreviousExperience" />
+        </set>
+         <set name="empPayAllowance" cascade="save-update,persist,merge">
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpPayAllowanceDetails" />
+        </set>
+         <property name="isSCDataGenerated" type="java.lang.Boolean">
+            <column name="is_sc_data_generated">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="isSCDataDelivered" type="java.lang.Boolean">
+            <column name="is_sc_data_delivered">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="smartCardNo" type="string">
+            <column name="smart_card_no">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="staEntries" cascade="save-update,persist,merge">
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.ShiftEntry" />
+        </set>
+         <property name="eligibilityTestOther" type="string">
+            <column name="eligibility_test_other" length="50">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="industryFunctionalArea" type="string">
+            <column name="industry_functional_area" length="50">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="handicappedDescription" type="string">
+            <column name="handicap_description" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="emContactAddress" type="string">
+            <column name="emergency_address">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="extensionNumber" type="string">
+            <column name="extension_Number" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="displayInWebsite" type="java.lang.Boolean">
+            <column name="display_in_website">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="licGratuityNo" type="string">
+           <column name="lic_gratuity_no">
+           <comment></comment></column>
+        </property>
+        <property name="licGratuityDate" type="date">
+           <column name="lic_gratuity_date"><comment></comment>
+            </column>
+        </property>
+        <property name="nomineePfNo" type="string">
+           <column name="pf_no"><comment></comment>
+           </column>
+        </property>
+        <property name="nomineePfDate" type="date">
+           <column name="pf_date"><comment></comment>
+           </column>
+        </property>
+        <set name="pfGratuityNominees" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.PfGratuityNominees" />
+        </set>
+        <property name="researchPapersRefereed" type="java.lang.Integer">
+            <column name="research_papers_refereed" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="researchPapersNonRefereed" type="java.lang.Integer">
+            <column name="research_papers_non_refereed" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="researchPapersProceedings" type="java.lang.Integer">
+            <column name="research_papers_proceedings" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="internationalBookPublications" type="java.lang.Integer">
+            <column name="international_book_publications" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nationalBookPublications" type="java.lang.Integer">
+            <column name="national_book_publications" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="localBookPublications" type="java.lang.Integer">
+            <column name="local_book_publications" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="chaptersEditedBooksInternational" type="java.lang.Integer">
+            <column name="chapters_edited_books_international" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="chaptersEditedBooksNational" type="java.lang.Integer">
+            <column name="chapters_edited_books_national" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="majorSponseredProjects" type="java.lang.Integer">
+            <column name="major_sponsered_projects" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="minorSponseredProjects" type="java.lang.Integer">
+            <column name="minor_sponsered_projects" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="consultancy1SponseredProjects" type="java.lang.Integer">
+            <column name="consultancy1_sponsered_projects" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="consultancy2SponseredProjects" type="java.lang.Integer">
+            <column name="consultancy2_sponsered_projects" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="phdResearchGuidance" type="java.lang.Integer">
+            <column name="phd_research_guidance" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mphilResearchGuidance" type="java.lang.Integer">
+            <column name="mphil_research_guidance" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="trainingAttendedFdp2Weeks" type="java.lang.Integer">
+            <column name="training_attended_fdp_2weeks" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="trainingAttendedFdp1Weeks" type="java.lang.Integer">
+            <column name="training_attended_fdp_1week" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="internationalConferencePresentaion" type="java.lang.Integer">
+            <column name="international_conference_presentation" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nationalConferencePresentaion" type="java.lang.Integer">
+            <column name="national_conference_presentation" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="regionalConferencePresentaion" type="java.lang.Integer">
+            <column name="regional_conference_presentation" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="localConferencePresentaion" type="java.lang.Integer">
+            <column name="local_conference_presentation" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="deputationToDepartmentId" class="com.kp.cms.bo.admin.Department" fetch="select" >
+            <column name="deputation_department_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="appointmentLetterDate" type="date">
+            <column name="appointment_letter_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="referenceNumberForAppointment" type="string">
+            <column name="appointment_reference_number" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="releavingOrderDate" type="date">
+            <column name="releaving_order_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="referenceNubmerforReleaving" type="string">
+            <column name="releaving_reference_number" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="additionalRemarks" type="string">
+            <column name="additional_remarks" >
+                <comment></comment>
+            </column>
+        </property>
+        
+        <set name="empAcademicDeatils" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpAcademicQualificationBO" />
+        </set>
+         <set name="empIntrestDetails" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpIntrestsBO" />
+        </set>
+        <set name="empResearchDetails" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpResearchBo" />
+        </set>
+         <set name="empGuideshipDetails" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpGuideshipDetailsBo" />
+        </set>
+         <set name="empDutiesDeatils" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpDutiesDetailsBO" />
+        </set>
+        
+        <set name="empProjectDetails" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpProjectResearchDetailsBO" />
+        </set>
+        <set name="empResearchPublication" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpReaserchPublishcationDetailsBO" />
+        </set>
+         <set name="empBooksPublished" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpBooksPublishedDetailsBO" />
+        </set>
+        
+        <set name="empPaperPresentaion" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpPaperPresentationBO" />
+        </set>
+        <set name="empSeminarAttended" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpSeminarAttendedDetailsBO" />
+        </set>
+        
+        <set name="empProfeDevelopment" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpProfessionalDevelopmentBO" />
+        </set>
+        
+        <set name="empAwardDetails" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpAwardDetailsBO" />
+        </set>
+        <set name="empMemDetailsBOs" cascade="save-update,persist" >
+            <key>
+                <column name="employee_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.EmpMemeberShipDetailsBO" />
+        </set>
+        
+         <property name="refresherCourse" type="string">
+            <column name="refresher_course" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="orientationCourse" type="string">
+            <column name="orientation_course" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="titleOthers" type="string">
+            <column name="title_others" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="otherQualification" type="string">
+            <column name="other_qualification" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="highestOtherQualification" type="string">
+            <column name="highest_other_qualification" >
+                <comment></comment>
+            </column>
+        </property>
+        </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 11, 2012 12:26:55 PM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.GenerateMail" table="generate_mail">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="fromName" type="java.lang.String">
+            <column name="from_name" />
+        </property>
+        <property name="fromAddress" type="java.lang.String">
+            <column name="from_address" />
+        </property>
+        <property name="toAddress" type="java.lang.String">
+            <column name="to_address" />
+        </property>
+        <property name="subject" type="java.lang.String">
+            <column name="subject" />
+        </property>
+        <property name="message" type="java.lang.String">
+            <column name="message" />
+        </property>
+        <property name="attachment" type="java.lang.String">
+            <column name="attachment" />
+        </property>
+        <property name="filePath" type="java.lang.String">
+            <column name="file_path" />
+        </property>
+    </class>
+</hibernate-mapping>

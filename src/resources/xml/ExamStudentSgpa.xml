@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 23, 2010 10:17:51 AM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.ExamStudentSgpa" table="EXAM_student_sgpa">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+        <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select">
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="schemeNo" type="java.lang.Integer">
+            <column name="scheme_no" />
+        </property>
+        <many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select" >
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		 <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select" >
+			<column name="course_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="sgpa">
+			<column name="sgpa">
+				<comment></comment>
+			</column>
+		</property>
+		 <property name="credit" type="java.lang.Integer">
+            <column name="total_credits" />
+        </property>
+        <property name="creditGradePoint">
+			<column name="total_credit_points">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="result" >
+            <column name="result" />
+        </property>
+        <property name="grade">
+			<column name="grade">
+				<comment></comment>
+			</column>
+		</property>
+		 <property name="appliedYear">
+			<column name="applied_year">
+				<comment></comment>
+			</column>
+		</property>
+		 <property name="year">
+			<column name="year">
+				<comment></comment>
+			</column>
+		</property>
+		 <property name="month">
+			<column name="month">
+				<comment></comment>
+			</column>
+		</property>
+	
+	<property name="totalMarksAwarded">
+			<column name="total_marks_awarded">
+				<comment></comment>
+			</column>
+	</property>
+	<property name="totalMaxMarks">
+			<column name="total_max_marks">
+				<comment></comment>
+			</column>
+	</property>
+
+		
+		<property name="totalGraceMarks">
+			<column name="total_grace_marks">
+				<comment></comment>
+			</column>
+		</property>
+		
+		 <property name="isGraced">
+			<column name="is_graced">
+				<comment></comment>
+			</column>
+		</property>	
+		
+		<property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+			<column name="created_date" length="0">
+				<comment></comment>
+			</column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

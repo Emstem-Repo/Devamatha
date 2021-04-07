@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.kp.cms.bo.admin.AdmapplnAdditionalInfo" table="adm_appln_additional_info">
+<id name="id" type="int">
+<column name="id"></column>
+<generator class="native" />
+</id>
+<property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="admAppln" class="com.kp.cms.bo.admin.AdmAppln" fetch="select">
+            <column name="adm_appln_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="admissionScheduledDate" type="timestamp">
+            <column name="admission_scheduled_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="admissionScheduledTime" type="string">
+            <column name="admission_scheduled_time">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="titleFather" type="string">
+            <column name="title_father">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="titleMother" type="string">
+            <column name="title_mother">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="backLogs" type="java.lang.Boolean">
+            <column name="back_logs">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isComedk" type="java.lang.Boolean">
+            <column name="is_comedk">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="commToBeSentTo" type="string">
+            <column name="communication_sent_to">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isSpotAdmission" type="java.lang.Boolean">
+            <column name="is_spot_admission">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="listName" type="string">
+            <column name="list_name">
+                <comment></comment>
+            </column>
+        </property>
+       <many-to-one name="applicantFeedback" class="com.kp.cms.bo.admin.ApplicantFeedback" fetch="select" >
+            <column name="applicant_feedback_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="internationalApplnFeeCurrency" class="com.kp.cms.bo.admin.Currency" fetch="select" >
+            <column name="international_appln_fee_currency_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        <property name="isSaypass" type="java.lang.Boolean">
+            <column name="is_saypass">
+                <comment></comment>
+            </column>
+        </property>
+        
+</class>
+</hibernate-mapping>

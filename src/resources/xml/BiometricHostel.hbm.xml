@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 20, 2009 4:50:14 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.hostel.BiometricBo" table="hl_biometric_master">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="hlHostel" class="com.kp.cms.bo.admin.HlHostel" >
+            <column name="hostel_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="hlBlock" class="com.kp.cms.bo.admin.HlBlocks" >
+            <column name="block_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="hlUnit" class="com.kp.cms.bo.admin.HlUnits" >
+            <column name="unit_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="machineId" type="string">
+            <column name="machineId" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="machineIp" type="string">
+            <column name="machineIp">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="machineName" type="string">
+            <column name="machinename">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="worklocation" type="string">
+            <column name="work_location" >
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

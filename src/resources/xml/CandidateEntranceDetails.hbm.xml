@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 14, 2009 10:52:57 AM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.CandidateEntranceDetails" table="candidate_entrance_details">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+       
+        <many-to-one name="admAppln" class="com.kp.cms.bo.admin.AdmAppln" fetch="select">
+            <column name="adm_appln_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+         <many-to-one name="entrance" class="com.kp.cms.bo.admin.Entrance" fetch="select" >
+            <column name="entrance_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+       
+        <property name="entranceRollNo" type="string">
+            <column name="entrance_roll_no" length="25">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="yearPassing" type="java.lang.Integer">
+            <column name="year_passing">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="monthPassing" type="java.lang.Integer">
+            <column name="month_passing">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="marksObtained" type="big_decimal">
+            <column name="mark_obtained" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="totalMarks" type="big_decimal">
+            <column name="total_marks" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

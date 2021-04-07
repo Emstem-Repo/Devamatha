@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.studentfeedback.EvaStudentFeedbackOverallAverage" table="eva_student_feedback_overall_average" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>      
+		<many-to-one name="evaStudentFeedbackAverage" class="com.kp.cms.bo.studentfeedback.EvaStudentFeedbackAverage" fetch="select">
+            <column name="eva_student_feedback_average_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="teacher" class="com.kp.cms.bo.admin.Users" fetch="select">
+            <column name="teacher_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select">
+            <column name="subject_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="overallAverage" type="double">
+            <column name="overall_average">
+                <comment></comment>
+            </column>
+        </property>  
+         <set name="scores" cascade="all">
+        	<key>
+                <column name="eva_student_feedback_overall_average_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.studentfeedback.EvaStudentFeedbackScore" />
+        </set>
+    </class>
+</hibernate-mapping>
+

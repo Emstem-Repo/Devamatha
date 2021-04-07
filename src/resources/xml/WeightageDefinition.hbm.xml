@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.WeightageDefinition" table="weightage_definition" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+     <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <many-to-one name="college" class="com.kp.cms.bo.admin.College"  outer-join="true" fetch="select">
+            <column name="college_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="nationality" class="com.kp.cms.bo.admin.Nationality"  outer-join="true" fetch="select">
+            <column name="nationality_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="residentCategory" class="com.kp.cms.bo.admin.ResidentCategory" outer-join="true" fetch="select">
+            <column name="resident_category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="religionSection" class="com.kp.cms.bo.admin.ReligionSection" fetch="select">
+            <column name="religion_section_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+       
+        <many-to-one name="country" class="com.kp.cms.bo.admin.Country"  outer-join="true" fetch="select">
+            <column name="country_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="category" class="com.kp.cms.bo.admin.Category" outer-join="true" fetch="select">
+            <column name="category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="weightage" class="com.kp.cms.bo.admin.Weightage" outer-join="true" fetch="select">
+            <column name="weightage_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="university" class="com.kp.cms.bo.admin.University" outer-join="true" fetch="select">
+            <column name="university_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="caste" class="com.kp.cms.bo.admin.Caste" outer-join="true" fetch="select">
+            <column name="caste_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="religion" class="com.kp.cms.bo.admin.Religion" outer-join="true" fetch="select">
+            <column name="religion_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+	 <many-to-one name="docTypeExams" class="com.kp.cms.bo.admin.DocTypeExams" fetch="select">
+	   <column name="doc_type_exams_id">
+	  	  <comment></comment>
+	  </column>
+	 </many-to-one>
+        
+    <property name="workExp" type="string">
+            <column name="work_exp" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="gender" type="string">
+            <column name="gender" length="6">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ruralUrban" type="java.lang.Character">
+            <column name="rural_urban" length="1">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="weightage_1" type="big_decimal">
+            <column name="weightage" precision="5">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

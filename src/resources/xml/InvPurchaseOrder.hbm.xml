@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2009 2:58:31 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.InvPurchaseOrder" table="inv_purchase_order">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="invVendor" class="com.kp.cms.bo.admin.InvVendor" fetch="select" >
+            <column name="inv_vendor_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="orderNo" type="java.lang.String">
+            <column name="order_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="orderDate" type="timestamp">
+            <column name="order_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="termsandconditions" type="string">
+            <column name="termsandconditions" length="2000">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliverySite" type="string">
+            <column name="delivery_site" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="totalCost" type="big_decimal">
+            <column name="total_cost" precision="16">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="additionalCost" type="big_decimal">
+            <column name="additional_cost" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        
+        
+         <property name="vat" type="big_decimal">
+            <column name="vat" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="serviceTax" type="big_decimal" >
+            <column name="service_tax" precision="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="invPurchaseOrderItems" cascade="save-update,persist" >
+            <key>
+                <column name="inv_purchase_order_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvPurchaseOrderItem" />
+        </set>
+        <set name="invStockReceipts" >
+            <key>
+                <column name="inv_purchase_order_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvStockReceipt" />
+        </set>
+        <set name="invPurchaseReturns" >
+            <key>
+                <column name="inv_purchase_order_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvPurchaseReturn" />
+        </set>
+         <property name="prefix" type="string">
+            <column name="prefix" length="30">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="additionalDiscount" type="big_decimal">
+            <column name="additional_discount" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="invCampus" class="com.kp.cms.bo.admin.InvCampus" fetch="select" >
+            <column name="inv_campus_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="invLocation" class="com.kp.cms.bo.admin.InvLocation" fetch="select" >
+            <column name="inv_location_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="deliverySchedule" type="string">
+            <column name="delivery_schedule" length="30">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="serviceCost" type="big_decimal">
+            <column name="service_cost" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="invQuotation" class="com.kp.cms.bo.admin.InvQuotation" fetch="select" >
+            <column name="quotation_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="invCompany" class="com.kp.cms.bo.admin.InvCompany" fetch="select" >
+            <column name="inv_company_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="year" type="java.lang.Integer">
+            <column name="year">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 4, 2009 6:08:59 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.employee.NewInterviewComments" table="emp_interview_comments">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="empOnlineResume" class="com.kp.cms.bo.admin.EmpOnlineResume" fetch="select">
+            <column name="emp_online_resume_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="nameOfInternalInterviewer1" type="string">
+            <column name="name_of_internal_interviewer1" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nameOfInternalInterviewer2" type="string">
+            <column name="name_of_internal_interviewer2" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nameOfInternalInterviewer3" type="string">
+            <column name="name_of_internal_interviewer3" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nameOfInternalInterviewer4" type="string">
+            <column name="name_of_internal_interviewer4" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nameOfInternalInterviewer5" type="string">
+            <column name="name_of_internal_interviewer5" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nameOfInternalInterviewer6" type="string">
+            <column name="name_of_internal_interviewer6" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nameOfExternalInterviewer1" type="string">
+            <column name="name_of_external_interviewer1" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nameOfExternalInterviewer2" type="string">
+            <column name="name_of_external_interviewer2" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nameOfExternalInterviewer3" type="string">
+            <column name="name_of_external_interviewer3" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="nameOfExternalInterviewer4" type="string">
+            <column name="name_of_external_interviewer4" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="nameOfExternalInterviewer5" type="string">
+            <column name="name_of_external_interviewer5" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="nameOfExternalInterviewer6" type="string">
+            <column name="name_of_external_interviewer6" length="30">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="noOfInternalInterviewers" type="java.lang.Integer">
+            <column name="no_of_internal_interviewers">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="noOfExternalInterviewers" type="java.lang.Integer">
+            <column name="no_of_external_interviewers">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="comments" type="string">
+			<column name="comments" length="100">
+			<comment/>
+			</column></property>
+        <property name="createdBy" type="string" update = "false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update ="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <set name="newInterviewCommentsDetails" inverse="true" table="emp_interview_comments_details" cascade="save-update,persist,merge">
+            <key>
+                <column name="emp_interview_comments_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.employee.NewInterviewCommentsDetails" />
+        </set>
+        <property name="joiningTime" type="string">
+            <column name="joining_time">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

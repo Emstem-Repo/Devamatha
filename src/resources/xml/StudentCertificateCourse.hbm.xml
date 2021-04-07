@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.StudentCertificateCourse" table="student_certificate_course" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		 <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select">
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="certificateCourse" class="com.kp.cms.bo.admin.CertificateCourse" fetch="select">
+            <column name="certificate_course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select">
+            <column name="subject_id" />
+        </many-to-one>
+		<property name="schemeNo" type="java.lang.Integer">
+			<column name="scheme_no">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isCancelled" type="java.lang.Boolean">
+            <column name="is_cancelled">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isOptional" type="java.lang.Boolean">
+            <column name="is_optional">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isExtraCurricular" type="java.lang.Boolean">
+            <column name="is_extra_curricular">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="groups" class="com.kp.cms.bo.admin.CCGroup" fetch="select" >
+            <column name="group_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="transactionDate" type="timestamp">
+            <column name="transaction_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="status" type="string">
+			<column name="status">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="bankConfirmationId" type="string">
+			<column name="bank_confirmation_id">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="isPaymentFailed" type="java.lang.Boolean">
+            <column name="is_payment_failed">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="feeAmount" type="big_decimal">
+            <column name="fee_amount" precision="12">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="isOnline" type="java.lang.Boolean">
+            <column name="is_online">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

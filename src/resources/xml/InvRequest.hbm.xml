@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2009 2:58:31 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.InvRequest" table="inv_request">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="invLocation" class="com.kp.cms.bo.admin.InvLocation" fetch="select" >
+            <column name="inv_location_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="deliveryDate" type="date">
+            <column name="delivery_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="requestDate" type="date">
+            <column name="request_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="comments" type="string">
+            <column name="comments" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="requestedBy" type="string">
+            <column name="requested_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="requisitionNo" type="java.lang.Integer">
+            <column name="requisition_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="invRequestItems" cascade="save-update,persist,merge" >
+            <key>
+                <column name="inv_request_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvRequestItem" />
+        </set>
+        <set name="invIssues" inverse="true">
+            <key>
+                <column name="inv_request_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InvIssue" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Feb 20, 2009 2:31:55 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.admin.FeePaymentDetail" table="fee_payment_detail">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="currency" class="com.kp.cms.bo.admin.Currency"
+			fetch="select">
+			<column name="currency_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="feePayment" class="com.kp.cms.bo.admin.FeePayment"
+			fetch="select">
+			<column name="fee_payment_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="feeFinancialYear" class="com.kp.cms.bo.admin.FeeFinancialYear"
+			fetch="select">
+			<column name="fee_financial_year_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="feePaymentMode" class="com.kp.cms.bo.admin.FeePaymentMode"
+			fetch="select">
+			<column name="fee_payment_mode_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="feeAccount" class="com.kp.cms.bo.admin.FeeAccount"
+			fetch="select">
+			<column name="fee_acount_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="feeHeading" class="com.kp.cms.bo.admin.FeeHeading"
+			fetch="select">
+			<column name="fee_heading_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="totalAmount" type="big_decimal">
+			<column name="total_amount" precision="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="totalNonAdditionalAmount" type="big_decimal">
+			<column name="total_nonadditional_amount" precision="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="totalAdditionalAmount" type="big_decimal">
+			<column name="total_additional_amount" precision="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="concessionAmount" type="big_decimal">
+			<column name="concession_amount" precision="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="amountPaid" type="big_decimal">
+			<column name="amount_paid" precision="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="amountBalance" type="big_decimal">
+			<column name="amount_balance" precision="10" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="paidDate" type="date">
+			<column name="paid_date" length="0">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="referenceNumber" type="string">
+			<column name="reference_number" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="discountAmt" type="big_decimal">
+			<column name="discount_amt" precision="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="semesterNo" type="java.lang.Integer">
+            <column name="semester_no">
+                <comment></comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

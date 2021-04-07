@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2009 3:48:34 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.HlUnits" table="hl_units" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="blocks" class="com.kp.cms.bo.admin.HlBlocks" fetch="select">
+            <column name="hl_block_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        <property name="name" type="string">
+            <column name="name" length="20">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="floorNo" type="int">
+            <column name="no_of_floors">
+                <comment></comment>
+            </column>
+        </property>
+       
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="primaryContactName" type="string">
+            <column name="primary_contact_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="primaryContactDesignation" type="string">
+            <column name="primary_contact_designation" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="primaryContactPhone" type="string">
+            <column name="primary_contact_phone" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="primaryContactMobile" type="string">
+            <column name="primary_contact_mobile" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="primaryContactEmail" type="string">
+            <column name="primary_contact_email" length="50">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="secondaryContactName" type="string">
+            <column name="secondary_contact_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="secondaryContactDesignation" type="string">
+            <column name="secondary_contact_designation" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="secondaryContactPhone" type="string">
+            <column name="secondary_contact_phone" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="secondaryContactMobile" type="string">
+            <column name="secondary_contact_mobile" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="secondaryContactEmail" type="string">
+            <column name="secondary_contact_email" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="applyBeforeTime" type="string">
+            <column name="apply_before_time">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="leaveBeforeNoOfDays" type="string">
+            <column name="leave_before_no_of_days">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="applyBeforeNextDayTime" type="string">
+            <column name="apply_before_next_day_time">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="intervalMails" type="string">
+            <column name="interval_mails">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="onlineLeave" type="java.lang.Boolean">
+            <column name="online_leave">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="smsForParents" type="java.lang.Boolean">
+            <column name="sms_for_parents">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="smsForPrimaryCon" type="java.lang.Boolean">
+            <column name="sms_primary_contact">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="smsForSecondCon" type="java.lang.Boolean">
+            <column name="sms_Second_contact">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="smsOnEvening" type="java.lang.Boolean">
+            <column name="sms_evening">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="smsOnMorning" type="java.lang.Boolean">
+            <column name="sms_morning">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="punchExepSundaySession" type="java.lang.Boolean">
+            <column name="punching_exep_sunday_session">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

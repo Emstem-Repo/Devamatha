@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamAssignExaminerToExamBO"
+		table="EXAM_assign_examiner_to_exam">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examDefinitionBO" class="com.kp.cms.bo.exam.ExamDefinitionBO"
+			fetch="select" insert="false" update="false">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="employeeUtilBO" class="com.kp.cms.bo.exam.EmployeeUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="employee_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+     		
+		<!-- Other Properties  -->
+		<property name="examId">
+			<column name="exam_id"></column>
+		</property>
+		<property name="employeeId">
+			<column name="employee_id"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

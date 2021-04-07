@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+  PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+  "http://java.sun.com/j2ee/dtds/web-app_2_3.dtd">
+
+<web-app id="KnowledgePro">
+
+  <display-name>CMS Application</display-name>
+    <!-- Filter for the export, need that when using Struts and tiles -->
+    <filter>
+        <filter-name>ResponseOverrideFilter</filter-name>
+        <filter-class>org.displaytag.filter.ResponseOverrideFilter</filter-class>       
+    </filter>
+
+    <filter>
+      <filter-name>adminAccessFilter</filter-name>
+  <filter-class> 
+    com.kp.cms.actions.usermanagement.AuthorizeUser
+  </filter-class>
+   <init-param>
+    <param-name>onError</param-name>
+    <param-value>/Login.do</param-value>
+  </init-param>
+    </filter>
+       <filter-mapping>
+        <filter-name>adminAccessFilter</filter-name>
+        <url-pattern>*.do</url-pattern>        
+    </filter-mapping>
+    
+    <!-- Filter mapping for the export -->
+    <filter-mapping>
+        <filter-name>ResponseOverrideFilter</filter-name>
+        <url-pattern>*.do</url-pattern>        
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>ResponseOverrideFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+  
+  <!-- Standard Action Servlet Configuration (with debugging) -->
+  <listener>
+<listener-class>com.kp.cms.utilities.MySessionListener</listener-class>
+</listener>
+  
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+<servlet>
+    <servlet-name>velocity</servlet-name>
+    <servlet-class>org.apache.velocity.tools.view.servlet.VelocityViewServlet</servlet-class>
+     <init-param>
+      <param-name>org.apache.velocity.toolbox</param-name>
+      <param-value>/WEB-INF/tools.xml</param-value>
+    </init-param>
+    <load-on-startup>10</load-on-startup>
+  </servlet>
+  
+	<servlet>
+	<servlet-name>PhotoServlet</servlet-name>
+	<servlet-class>com.kp.cms.utilities.PhotoServlet</servlet-class>
+	<load-on-startup>12</load-on-startup>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>ResearchPhotoServlet</servlet-name>
+	<servlet-class>com.kp.cms.utilities.ResearchPhotoServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>ImageServlet</servlet-name>
+	<servlet-class>com.kp.cms.utilities.RoomTypeImageServlet</servlet-class>
+	<load-on-startup>12</load-on-startup>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>HostelRoomTypeImageServlet</servlet-name>
+	<servlet-class>com.kp.cms.utilities.HostelRoomTypeImageServlet</servlet-class>
+	<load-on-startup>12</load-on-startup>
+	</servlet>
+	<servlet>
+	<servlet-name>StudentPhotoServlet</servlet-name>
+	<servlet-class>com.kp.cms.utilities.StudentPhotoServlet</servlet-class>
+	<load-on-startup>15</load-on-startup>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>printChalanLogoServlet</servlet-name>
+	<servlet-class>com.kp.cms.utilities.printChalanLogoServlet</servlet-class>
+	<load-on-startup>16</load-on-startup>
+	</servlet>
+	<servlet>
+	<servlet-name>ChallanLogoServlet</servlet-name>
+	<servlet-class>com.kp.cms.utilities.ChallanLogoServlet</servlet-class>
+	</servlet>
+	<servlet>
+	<servlet-name>DisplinaryPhotoServlet</servlet-name>
+	<servlet-class>com.kp.cms.utilities.DispilinaryPhotoServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>LogoServlet</servlet-name>
+		<servlet-class>com.kp.cms.utilities.LogoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TopBarServlet</servlet-name>
+		<servlet-class>com.kp.cms.utilities.TopBarServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		
+		<servlet-name>ReceiverServlet</servlet-name>
+		<servlet-class>
+		com.kp.cms.utilities.ReceiverServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MailRecieverServlet</servlet-name>
+		<servlet-class>com.kp.cms.utilities.jms.MailRecieverServlet</servlet-class>
+		<load-on-startup>14</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Connector</servlet-name>
+		<servlet-class>
+			net.fckeditor.connector.ConnectorServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>StatusRecieverServlet</servlet-name>
+		<servlet-class>
+		com.kp.cms.utilities.StatusRecieverServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>StatusServlet</servlet-name>
+		<servlet-class>
+		com.kp.cms.utilities.StatusServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RequisitionServlet</servlet-name>
+		<servlet-class>com.kp.cms.utilities.RequisitionServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SinglePageServlet</servlet-name>
+		<servlet-class>com.kp.cms.utilities.SinglePageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ForgotPasswordServlet</servlet-name>
+		<servlet-class>com.kp.cms.utilities.ForgotPasswordServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdminForgotPasswordServlet</servlet-name>
+		<servlet-class>com.kp.cms.utilities.AdminForgotPasswordServlet</servlet-class>
+		<load-on-startup>18</load-on-startup>
+	</servlet>
+  	<servlet>
+		<servlet-name>EmpOnlineResumeServlet</servlet-name>
+		<servlet-class>com.kp.cms.utilities.EmpOnlineResumeServlet</servlet-class>
+	</servlet>
+  	<servlet>
+  		<servlet-name>MarksCardPhotoServlet</servlet-name>
+  		<servlet-class>
+  		com.kp.cms.utilities.MarksCardPhotoServlet</servlet-class>
+  	</servlet>
+ 	<servlet>
+  		<servlet-name>RemainderJobScheduler</servlet-name>
+  		<servlet-class>com.kp.cms.utilities.RemainderJobScheduler</servlet-class>
+		<load-on-startup>17</load-on-startup>
+  	</servlet>
+ 	<servlet>
+ 		<servlet-name>PGIResponseServlet</servlet-name>
+ 		<servlet-class>com.kp.cms.utilities.PGIResponseServlet</servlet-class>
+ 	</servlet>
+	<servlet>
+ 		<servlet-name>PGIResponseServlet1</servlet-name>
+ 		<servlet-class>com.kp.cms.utilities.PGIResponseServlet1</servlet-class>
+ 	</servlet>
+	<servlet>
+			<servlet-name>PGIResponseServletNew</servlet-name>
+ 		<servlet-class>com.kp.cms.utilities.PGIResponseServletNew</servlet-class>
+ 	</servlet>
+	
+	<servlet>
+ 		<servlet-name>StudentLoginLogo</servlet-name>
+ 		<servlet-class>com.kp.cms.utilities.StudentLoginLogo</servlet-class>
+		<load-on-startup>19</load-on-startup>
+ 	</servlet>
+	<servlet>
+	<servlet-name>BarCodeServlet</servlet-name>
+	<servlet-class>com.kp.cms.utilities.BarCodeServlet</servlet-class>
+	<load-on-startup>20</load-on-startup>
+	</servlet>
+	
+	<!-- New Admission Form -->
+	<servlet>
+		<servlet-name>OnlineApplicationServlet</servlet-name>
+		<servlet-class>com.kp.cms.utilities.OnlineApplicationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MngQuotaFormServlet</servlet-name>
+		<servlet-class>com.kp.cms.utilities.MngQuotaFormServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ALMNServlet</servlet-name>
+		<servlet-class>com.kp.cms.utilities.ALMNServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ApplicationFormServlet</servlet-name>
+		<servlet-class>
+		com.kp.cms.utilities.ApplicationFormServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>PGIResponseServletProfessore</servlet-name>
+		<servlet-class>
+		com.kp.cms.utilities.PGIResponseServletProfessore</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ApplicationPrintServlet</servlet-name>
+		<servlet-class>
+		com.kp.cms.utilities.ApplicationPrintServlet</servlet-class>
+	</servlet>
+
+  <servlet-mapping>
+    <servlet-name>velocity</servlet-name>
+    <url-pattern>*.vm</url-pattern>
+  </servlet-mapping>
+  <!-- Standard Action Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PhotoServlet</servlet-name>
+  	<url-pattern>/PhotoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ResearchPhotoServlet</servlet-name>
+  	<url-pattern>/ResearchPhotoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ImageServlet</servlet-name>
+  	<url-pattern>/ImageServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>HostelRoomTypeImageServlet</servlet-name>
+  	<url-pattern>/HostelRoomTypeImageServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>LogoServlet</servlet-name>
+  	<url-pattern>/LogoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TopBarServlet</servlet-name>
+  	<url-pattern>/TopBarServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DisplinaryPhotoServlet</servlet-name>
+  	<url-pattern>/DisplinaryPhotoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReceiverServlet</servlet-name>
+  	<url-pattern>/ReceiverServlet</url-pattern>
+  </servlet-mapping>
+ 
+ <servlet-mapping>
+  	<servlet-name>MailRecieverServlet</servlet-name>
+  	<url-pattern>/mailReciever</url-pattern>
+  </servlet-mapping>
+ <servlet-mapping>
+ 	<servlet-name>StatusRecieverServlet</servlet-name>
+ 	<url-pattern>/StatusRecieverServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+ 	<servlet-name>StatusServlet</servlet-name>
+ 	<url-pattern>/StatusServlet</url-pattern>
+ </servlet-mapping>
+<servlet-mapping>
+ 	<servlet-name>StudentPhotoServlet</servlet-name>
+ 	<url-pattern>/StudentPhotoServlet</url-pattern>
+ </servlet-mapping>
+  <servlet-mapping>
+ 	<servlet-name>printChalanLogoServlet</servlet-name>
+ 	<url-pattern>/printChalanLogoServlet</url-pattern>
+ </servlet-mapping>
+  <servlet-mapping>
+ 	<servlet-name>ChallanLogoServlet</servlet-name>
+ 	<url-pattern>/ChallanLogoServlet</url-pattern>
+ </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>RequisitionServlet</servlet-name>
+  	<url-pattern>/RequisitionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SinglePageServlet</servlet-name>
+  	<url-pattern>/SinglePageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ForgotPasswordServlet</servlet-name>
+  	<url-pattern>/ForgotPasswordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminForgotPasswordServlet</servlet-name>
+  	<url-pattern>/AdminForgotPasswordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmpOnlineResumeServlet</servlet-name>
+  	<url-pattern>/EmpOnlineResumeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MarksCardPhotoServlet</servlet-name>
+  	<url-pattern>/MarksCardPhotoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RemainderJobScheduler</servlet-name>
+  	<url-pattern>/RemainderJobScheduler</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PGIResponseServlet</servlet-name>
+  	<url-pattern>/PGIResponseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PGIResponseServlet1</servlet-name>
+  	<url-pattern>/PGIResponseServlet1</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>PGIResponseServletNew</servlet-name>
+  	<url-pattern>/PGIResponseServletNew</url-pattern>
+  </servlet-mapping>
+  	
+  <servlet-mapping>
+  	<servlet-name>StudentLoginLogo</servlet-name>
+  	<url-pattern>/StudentLoginLogo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BarCodeServlet</servlet-name>
+  	<url-pattern>/BarCodeServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- New Admission Form -->
+	<servlet-mapping>
+  	<servlet-name>OnlineApplicationServlet</servlet-name>
+  	<url-pattern>/OnlineApplicationServlet</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MngQuotaFormServlet</servlet-name>
+		<url-pattern>/MngQuotaFormServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ALMNServlet</servlet-name>
+		<url-pattern>/ALMNServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ApplicationFormServlet</servlet-name>
+		<url-pattern>/ProfessorApplicationFormServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PGIResponseServletProfessore</servlet-name>
+		<url-pattern>/PGIResponseServletProfessore</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ApplicationPrintServlet</servlet-name>
+		<url-pattern>/ApplicationPrintServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+  <!-- The Usual Welcome File List 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list> -->
+
+
+  <!-- Struts Tag Library Descriptors -->
+  <taglib>
+    <taglib-uri>/tags/struts-bean</taglib-uri>
+    <taglib-location>/WEB-INF/struts-tld/struts-bean.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-html</taglib-uri>
+    <taglib-location>/WEB-INF/struts-tld/struts-html.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-logic</taglib-uri>
+    <taglib-location>/WEB-INF/struts-tld/struts-logic.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-nested</taglib-uri>
+    <taglib-location>/WEB-INF/struts-tld/struts-nested.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-tiles</taglib-uri>
+    <taglib-location>/WEB-INF/struts-tld/struts-tiles.tld</taglib-location>
+  </taglib>
+  
+  <taglib>
+    <taglib-uri>/WEB-INF/c.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-tld/c.tld</taglib-location>
+  </taglib>
+	
+	<taglib>
+    <taglib-uri>/tags/cms</taglib-uri>
+    <taglib-location>/WEB-INF/cmsTags.tld</taglib-location>
+  </taglib>
+    <taglib>
+        <taglib-uri>/tags/display</taglib-uri>
+        <taglib-location>/WEB-INF/struts-tld/displaytag.tld</taglib-location>
+  </taglib>
+  
+  <!-- security reasons-->
+    <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>All JSP direct access</web-resource-name>
+      <url-pattern>*.jsp</url-pattern>
+      <http-method>POST</http-method>
+      <http-method>GET</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+      <description>
+       No Access
+      </description>
+      <role-name>restricted</role-name>
+     </auth-constraint>
+  </security-constraint>
+
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/index.jsp</form-login-page>
+      <form-error-page>/index.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+
+  <security-role>
+    <description>NO Access</description>
+    <role-name>restricted</role-name>
+  </security-role>
+  <session-config>
+  <tracking-mode>COOKIE</tracking-mode>
+</session-config>
+</web-app>

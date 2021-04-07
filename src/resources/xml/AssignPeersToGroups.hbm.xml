@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+  <class name="com.kp.cms.bo.admin.AssignPeersGroups" table="eva_assign_peers_groups" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<many-to-one name="department" class="com.kp.cms.bo.admin.Department" fetch="select" >
+            <column name="department_id" unique="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="users" class="com.kp.cms.bo.admin.Users" fetch="select" >
+            <column name="faculty_id" unique="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="peersEvaluationGroups" class="com.kp.cms.bo.admin.PeersEvaluationGroups" fetch="select" >
+            <column name="peers_group_id" unique="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="boolean">
+            <column name="is_active" >
+                <comment></comment>
+            </column>
+        </property>
+      </class>
+</hibernate-mapping>

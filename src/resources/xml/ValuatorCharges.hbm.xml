@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 6, 2009 1:14:01 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.ValuatorChargesBo" table="valuation_charges">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+         <many-to-one name="programType" class="com.kp.cms.bo.admin.ProgramType" fetch="select">
+            <column name="program_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+      <property name="valuatorcharge" type="big_decimal">
+			<column name="valuator_charge" precision="12">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="reviewercharge" type="big_decimal">
+			<column name="reviewer_charge" precision="12">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="projectevaluationminor" type="big_decimal">
+			<column name="project_evaluation_minor" precision="12">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="projectevaluationmajor" type="big_decimal">
+			<column name="project_evaluation_major" precision="12">
+				<comment></comment>
+			</column>
+		</property>
+		  <property name="createdby" type="string">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+	    <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="boardMeetingCharge" type="big_decimal">
+			<column name="board_meeting_charge" precision="12">
+				<comment></comment>
+			</column>
+		</property> 
+		<property name="minimumScripts" type="int">
+            <column name="minimum_scripts" >
+                <comment></comment>
+            </column>
+        </property>
+         <property name="minimumvaluatorcharge" type="big_decimal">
+			<column name="minimum_valuator_charge" precision="12">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="minimumreviewercharge" type="big_decimal">
+			<column name="minimum_reviewer_charge" precision="12">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="minimumprojectevaluationminor" type="big_decimal">
+			<column name="minimum_project_evaluation_minor" precision="12">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="minimumprojectevaluationmajor" type="big_decimal">
+			<column name="minimum_project_evaluation_major" precision="12">
+				<comment></comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

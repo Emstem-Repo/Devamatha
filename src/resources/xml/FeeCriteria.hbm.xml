@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 30, 2010 11:24:42 AM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.FeeCriteria" table="fee_criteria">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="college" class="com.kp.cms.bo.admin.College"  outer-join="true" fetch="select">
+            <column name="college_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="nationality" class="com.kp.cms.bo.admin.Nationality"  outer-join="true" fetch="select">
+            <column name="nationality_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="university" class="com.kp.cms.bo.admin.University" outer-join="true" fetch="select">
+            <column name="university_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="residentCategory" class="com.kp.cms.bo.admin.ResidentCategory" outer-join="true" fetch="select">
+            <column name="resident_category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="secLanguage" type="string">
+            <column name="sec_language" length="75" />
+        </property>
+         <many-to-one name="admittedThrough" class="com.kp.cms.bo.admin.AdmittedThrough" fetch="select" >
+            <column name="admitted_through_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="feeAdditional1" class="com.kp.cms.bo.admin.FeeAdditional" fetch="select">
+            <column name="fee_additional_id_1">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="feeAdditional2" class="com.kp.cms.bo.admin.FeeAdditional" fetch="select">
+            <column name="fee_additional_id_2">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="feeAdditional3" class="com.kp.cms.bo.admin.FeeAdditional" fetch="select">
+            <column name="fee_additional_id_3">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="createdBy" type="string">
+            <column name="created_by" length="50" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="created_date" length="0" />
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50" />
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0" />
+        </property>
+    </class>
+</hibernate-mapping>

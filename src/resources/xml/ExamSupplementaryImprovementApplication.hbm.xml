@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 21, 2010 2:22:27 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamSupplementaryImprovementApplicationBO"
+		table="EXAM_supplementary_improvement_application">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<many-to-one name="examDefinitionBO" class="com.kp.cms.bo.exam.ExamDefinitionBO"
+			fetch="select" insert="false" update="false">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<many-to-one name="studentUtilBO" class="com.kp.cms.bo.exam.StudentUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<many-to-one name="subjectUtilBO" class="com.kp.cms.bo.exam.SubjectUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select" >
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<!-- Other Properties -->
+
+		<property name="examId">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="studentId">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="subjectId">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="isSupplementary">
+			<column name="is_supplementary">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="isImprovement">
+			<column name="is_improvement">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="isFailedTheory">
+			<column name="is_failed_theory">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="isFailedPractical">
+			<column name="is_failed_practical">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="isAppearedTheory">
+			<column name="is_appeared_theory">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="isAppearedPractical">
+			<column name="is_appeared_practical">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="fees">
+			<column name="fees">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="chance">
+			<column name="chance">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="schemeNo">
+			<column name="scheme_no">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="createdDate" update="false">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="isTheoryOverallFailed" type="java.lang.Boolean">
+            <column name="is_theory_overall_failed">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isPracticalOverallFailed" type="java.lang.Boolean">
+            <column name="is_practical_overall_failed">
+                <comment></comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.InterviewScheduleHistory" table="interview_schedule_history" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+        <many-to-one name="interview" class="com.kp.cms.bo.admin.Interview"  fetch="select">
+            <column name="interview_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="selectionScheduleId" class="com.kp.cms.bo.admission.InterviewSelectionSchedule"  fetch="select">
+            <column name="interview_selection_schedule_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="date" type="date">
+            <column name="date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="startTime" type="string">
+            <column name="start_time" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="endTime" type="string">
+            <column name="end_time" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="java.lang.Integer" update="false">
+            <column name="created_by">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="timeInterval" type="string">
+            <column name="time_interval" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="venue" type="string">
+            <column name="venue" length="250">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="interviewCards" cascade="save-update,persist,merge">
+            <key>
+                <column name="schedule_history_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.InterviewCardHistory" />
+        </set>        
+    </class>
+</hibernate-mapping>

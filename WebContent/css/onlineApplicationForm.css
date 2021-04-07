@@ -1,0 +1,138 @@
+.input {
+	border: #CCCCCC solid 1px;
+	padding: 3px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #962E33;
+	font-weight: bold;
+}
+
+.MainLink5 {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 11px;
+	COLOR: #515137;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none
+}
+
+.button {
+	BACKGROUND-COLOR: #ffffff;
+	BORDER-BOTTOM: #666666 1px solid;
+	BORDER-LEFT: #666666 1px solid;
+	BORDER-RIGHT: #666666 1px solid;
+	BORDER-TOP: #666666 1px solid;
+	COLOR: #666666;
+	font-weight: bold;
+	background-color: #ffffff;
+	border-color: #666666;
+	border-style: solid;
+	border-width: 1px;
+	color: #666666;
+	font: bold 11px Verdana, Arial, Helvetica, sans-serif;
+	height: 25px;
+	padding: 4px 8px;
+	text-decoration: none;
+	cursor: pointer
+}
+
+.text1 {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: #8A221F;
+	FONT-FAMILY: Arial, Verdana;
+	TEXT-DECORATION: none
+}
+  .arrow-left
+        {
+            margin-top: 12px;
+            float: left;
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-right: 10px solid #e2e2e2;
+            z-index: 1000;
+        }
+        .tool_tip
+        {
+            background: #e2e2e2;
+            color: red;
+            padding-left: 5px;
+            padding-right: 5px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 13px;
+            font-style: italic;
+            margin-top: 8px;
+            float: left;
+            border: solid 1px silver;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            z-index: 99;
+        }
+        .tool_tip1
+        {
+            background: #e2e2e2;
+            color: green;
+            padding-left: 5px;
+            padding-right: 5px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 13px;
+            font-style: italic;
+            margin-top: 8px;
+            float: left;
+            border: solid 1px silver;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            z-index: 99;
+        }
+        .tooltip_outer
+        {
+            margin-top: -10px;
+            display: inline;
+            padding-left: 5px;
+            margin-right: 0px;
+            position: absolute;
+            z-index: 2;
+        }
+	
+	 #wrapper
+	{
+	margin:0 auto;
+	height:700px;
+	width:1200px;
+	display:block;
+	background-repeat:no-repeat;
+	}
+	body
+	{
+	background-color:#FFF;	
+	margin:0 auto;
+	width:100%;
+	height:100%;
+	
+	}
+	#container
+	{
+	margin:0 auto;
+	width:1200px;
+	height:700px;
+	background-color:#FFF;
+		
+	}
+	#LoginFormDiv
+	{
+	background-color:#eaeccc;
+	 border-radius: 3px;
+    box-shadow: 0 0 4px 3px #666;
+    height: 250px;
+    position: relative;
+    width: 520px;
+     top:200px;
+     left:350px;
+	}

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.kp.cms.bo.admission.PromoteSupliMarks" table="migration_promote_suplimarks">
+         <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="regNo" type="string">
+			<column name="reg_no" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="classCode" type="string">
+			<column name="class_code" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="markSub1" type="big_decimal">
+			<column name="mark_sub1" precision="2">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="markSub2" type="big_decimal">
+			<column name="mark_sub2" precision="2">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="markSub3" type="big_decimal">
+			<column name="mark_sub3" precision="2">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="markSub4" type="big_decimal">
+			<column name="mark_sub4" precision="2">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="markSub5" type="big_decimal">
+			<column name="mark_sub5" precision="2">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="markSub6" type="big_decimal">
+			<column name="mark_sub6" precision="2">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="markSub7" type="big_decimal">
+			<column name="mark_sub7" precision="2">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="gradeSub1" type="string">
+			<column name="grade_sub1" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="gradeSub2" type="string">
+			<column name="grade_sub2" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="gradeSub3" type="string">
+			<column name="grade_sub3" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="gradeSub4" type="string">
+			<column name="grade_sub4" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="gradeSub5" type="string">
+			<column name="grade_sub5" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="gradeSub6" type="string">
+			<column name="grade_sub6" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="gradeSub7" type="string">
+			<column name="grade_sub7" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="section" type="string">
+			<column name="section" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="withHeld" type="java.lang.Boolean">
+			<column name="with_held" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="supAttend" type="java.lang.Boolean">
+			<column name="sup_attend" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="suplSub1" type="java.lang.Boolean">
+			<column name="supl_sub1" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="suplSub2" type="java.lang.Boolean">
+			<column name="supl_sub2" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="suplSub3" type="java.lang.Boolean">
+			<column name="supl_sub3" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="suplSub4" type="java.lang.Boolean">
+			<column name="supl_sub4" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="suplSub5" type="java.lang.Boolean">
+			<column name="supl_sub5" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="suplSub6" type="java.lang.Boolean">
+			<column name="supl_sub6" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="suplSub7" type="java.lang.Boolean">
+			<column name="supl_sub7" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="academicYear" type="java.lang.Integer">
+			<column name="academic_year" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		</class>
+</hibernate-mapping>

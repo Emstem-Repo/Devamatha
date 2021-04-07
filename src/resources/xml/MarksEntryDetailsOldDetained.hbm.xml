@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.MarksEntryDetailsOldDetained" table="EXAM_marks_entry_details_old_detained">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		 <many-to-one name="marksEntry" class="com.kp.cms.bo.exam.MarksEntryOldDetained" fetch="select">
+            <column name="marks_entry_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		 <many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select">
+            <column name="subject_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="theoryMarks" type="string">
+			<column name="theory_marks"></column>
+		</property>
+		<property name="practicalMarks" type="string">
+			<column name="practical_marks"></column>
+		</property>
+		<property name="comments" type="string">
+			<column name="comments">
+				</column>
+		</property>
+		<!-- For Secured  Marks Entry Screen  -->
+		<property name="previousEvaluatorTheoryMarks" type="string">
+			<column name="previous_evaluator_theory_marks"></column>
+		</property>
+		<property name="previousEvaluatorPracticalMarks" type="string">
+			<column name="previous_evaluator_practical_marks"></column>
+		</property>
+		 <property name="isMistake" type="java.lang.Boolean">
+            <column name="is_mistake">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="isRetest" type="java.lang.Boolean">
+            <column name="is_retest">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		 <property name="isTheorySecured" type="java.lang.Boolean">
+            <column name="is_theory_secured">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="isPracticalSecured" type="java.lang.Boolean">
+            <column name="is_practical_secured">
+                <comment></comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

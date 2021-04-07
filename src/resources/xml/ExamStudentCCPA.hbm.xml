@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 23, 2010 10:17:51 AM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.ExamStudentCCPA" table="coursewise_semester_result">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+        <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select">
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		 <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select" >
+			<column name="course_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="ccpa">
+			<column name="ccpa">
+				<comment></comment>
+			</column>
+		</property>
+		 <property name="credit" type="java.lang.Integer">
+            <column name="credit" />
+        </property>
+        <property name="creditGradePoint" >
+			<column name="credit_gradepoint" >
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="result" >
+            <column name="result" />
+        </property>
+        <property name="grade">
+			<column name="grade">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="appliedYear">
+			<column name="batch_year">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="createdDate" update="false">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="passOutMonth">
+			<column name="pass_out_month">
+				<comment></comment>
+			</column>
+		</property>
+
+		<property name="passOutYear">
+			<column name="pass_out_year">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="totalMarksAwarded">
+			<column name="total_marks_awarded">
+				<comment></comment>
+			</column>
+	</property>
+	<property name="totalMaxMarks">
+			<column name="total_max_marks">
+				<comment></comment>
+			</column>
+	</property>
+	<property name="rank">
+			<column name="rank">
+				<comment></comment>
+			</column>
+	</property>
+	
+	<property name="totalGraceMarks">
+			<column name="total_grace_marks">
+				<comment></comment>
+			</column>
+	</property>
+		
+	 <property name="isGraced">
+			<column name="is_graced">
+				<comment></comment>
+			</column>
+	 </property>	
+	<property name="isFailed">
+			<column name="is_failed">
+				<comment></comment>
+			</column>
+	 </property>
+	 <property name="isExraCreditFailed">
+			<column name="is_extracredit_failed">
+				<comment></comment>
+			</column>
+	 </property>		
+		
+	</class>
+</hibernate-mapping>

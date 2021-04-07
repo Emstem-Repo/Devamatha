@@ -1,0 +1,15 @@
+
+	           <logic:notEmpty  name="admissionFormForm" property="applicantDetails.bankBranch">
+	            <tr>
+	            <td>BankBranch</td><td>: </td><td><bean:write name="admissionFormForm" property="applicantDetails.bankBranch"/></td>
+	           </tr>
+	           </logic:notEmpty>
+
+
+
+<td style="font-size:medium; font-weight: bold" align="center" align="center">APPLICATION FOR ADMISSION TO POSTGRADUATE PROGRAMME - <bean:write name="admissionFormForm" property="applicationYear"/></td>
+
+
+
+
+	

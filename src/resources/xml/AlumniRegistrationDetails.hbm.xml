@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.alumini.AlumniRegistrationDetails" table="alumni_registration_details">
+		
+		<id name="id" column="id" type="java.lang.Integer">
+			 <generator class="native"/>
+      	</id>
+		
+		<property name="firstName"
+				  column="first_name" 
+				  type="java.lang.String"/>
+				  
+		<property name="mobileNumber"
+				  column="mobile_number" 
+				  type="java.lang.String"/>
+		
+		<property name="email"
+				  column="email" 
+				  type="java.lang.String"/>
+		
+		<property name="currentStatus"
+				  column="current_status" 
+				  type="java.lang.String"/>
+				  
+		<property name="comapnyName"
+				  column="comapny_name" 
+				  type="java.lang.String"/>
+				  
+		<property name="designation"
+				  column="designation" 
+				  type="java.lang.String"/>
+				  
+		<property name="otherJobInfo"
+				  column="other_job_info" 
+				  type="java.lang.String"/>
+				  
+		<property name="country"
+				  column="country" 
+				  type="java.lang.String"/>
+		
+		<property name="city"
+				  column="city" 
+				  type="java.lang.String"/>
+				  
+		<property name="highestQualification"
+				  column="highest_qualification" 
+				  type="java.lang.String"/>
+				  
+		<property name="createdDate"
+				  column="created_date" 
+				  type="java.sql.Timestamp"
+				  update="false"/>
+				  
+		<set name="alumniEducationDetails" cascade="save-update,persist,merge">
+			<key column="alumini_id" />
+			<one-to-many class="com.kp.cms.bo.alumini.AlumniEducationDetails" />
+		</set>
+		
+	</class>
+</hibernate-mapping>	

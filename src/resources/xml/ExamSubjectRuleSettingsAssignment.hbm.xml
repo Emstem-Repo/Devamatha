@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 21, 2010 2:22:27 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamSubjectRuleSettingsAssignmentBO"
+		table="EXAM_subject_rule_settings_assignment">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<many-to-one name="examSubjectRuleSettingsBO"
+			class="com.kp.cms.bo.exam.ExamSubjectRuleSettingsBO" fetch="select"
+			insert="false" update="false">
+			<column name="subject_rule_settings_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="examAssignmentTypeMasterBO"
+			class="com.kp.cms.bo.exam.ExamAssignmentTypeMasterBO" fetch="select"
+			insert="false" update="false">
+			<column name="assignment_type_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties -->
+		<property name="subjectRuleSettingsId">
+			<column name="subject_rule_settings_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="assignmentTypeId">
+			<column name="assignment_type_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="minimumMark">
+			<column name="minimum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="maximumMark">
+			<column name="maximum_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isTheoryPractical">
+			<column name="is_theory_practical">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActive">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

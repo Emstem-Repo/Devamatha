@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamStudentAttendanceMarkDetailsBO"
+		table="EXAM_student_attendance_mark_details">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="studentUtilBO" class="com.kp.cms.bo.exam.StudentUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="classUtilBO" class="com.kp.cms.bo.exam.ClassUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		
+		<!-- Other Properties -->
+		<property name="studentId">
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="classId">
+			<column name="class_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="attendanceTypeId">
+			<column name="attendance_type_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="attendanceMinMark">
+			<column name="attendance_min_mark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="studentAttendanceMark">
+			<column name="student_attendance_mark">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

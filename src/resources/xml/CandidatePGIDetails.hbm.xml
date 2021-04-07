@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 9, 2012 10:28:50 AM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.CandidatePGIDetails" table="candidate_pgi_details">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="candidateRefNo" type="java.lang.String">
+            <column name="candidate_ref_no" />
+        </property>
+        <property name="candidateName" type="java.lang.String">
+            <column name="candidate_name" />
+        </property>
+        <property name="candidateDob" type="date">
+            <column name="candidate_dob" />
+        </property>
+        <property name="applnNo" type="java.lang.String">
+            <column name="appln_no" />
+        </property>
+       <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select">
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="txnStatus" type="java.lang.String">
+            <column name="txn_status" />
+        </property>
+        <property name="txnAmount" type="java.math.BigDecimal">
+            <column name="txn_amt" />
+        </property>
+        <property name="txnDate" type="java.util.Date">
+            <column name="txn_date" />
+        </property>
+        <property name="txnRefNo" type="java.lang.String">
+            <column name="txn_ref_no" />
+        </property>
+        <property name="bankId" type="java.lang.String">
+            <column name="bank_id" />
+        </property>
+        <property name="bankRefNo" type="java.lang.String">
+            <column name="bank_ref_no" />
+        </property>
+        <property name="errorStatus" type="java.lang.String">
+            <column name="error_status" />
+        </property>
+        <property name="errorDesc" type="java.lang.String">
+            <column name="error_desc" />
+        </property>
+        <property name="createdBy" type="java.lang.String">
+            <column name="created_by" />
+        </property>
+        <property name="modifiedBy" type="java.lang.String">
+            <column name="modified_by" />
+        </property>
+        <property name="createdDate" type="java.util.Date">
+            <column name="created_date" />
+        </property>
+        <property name="lastModifiedDate" type="java.util.Date">
+            <column name="last_modified_date" />
+        </property>
+        <many-to-one name="admAppln" class="com.kp.cms.bo.admin.AdmAppln" fetch="select">
+            <column name="adm_appln_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="mobileNo1" type="java.lang.String">
+            <column name="mobile_no_1" />
+       </property>
+        <property name="mobileNo2" type="java.lang.String">
+            <column name="mobile_no_2" />
+       </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" />
+        </property>
+         <property name="refundGenerated" type="java.lang.Boolean">
+            <column name="refund_generated">
+                <comment></comment>
+            </column>
+        </property>
+         <many-to-one name="residentCategory" class="com.kp.cms.bo.admin.ResidentCategory" fetch="select" >
+            <column name="resident_category_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="mailCount" type="int">
+            <column name="mail_count" />
+        </property>
+        <property name="settlementGenerated" type="java.lang.Boolean">
+            <column name="settlement_generated">
+                <comment></comment>
+            </column>
+        </property>
+        
+        
+       <property name="mihpayId" type="java.lang.String">
+            <column name="mihpay_id" />
+       </property>
+       <property name="pgType" type="java.lang.String">
+            <column name="pgtype" />
+       </property>
+       <property name="unmappedStatus" type="java.lang.String">
+            <column name="unmap_status" />
+       </property>
+       <property name="mode" type="java.lang.String">
+            <column name="mode" />
+       </property>
+       <property name="additionalCharges" type="java.math.BigDecimal">
+            <column name="additional_charges" />
+       </property>
+       
+        <many-to-one name="uniqueId" class="com.kp.cms.bo.admin.StudentOnlineApplication" fetch="select">
+        <column name="unique_id"></column>
+        </many-to-one>
+         <property name="paymentEmail" type="java.lang.String">
+            <column name="payment_mail" />
+        </property>
+         <property name="authzCode" type="java.lang.String">
+            <column name="authz_code" />
+        </property>
+         <property name="responseCode" type="java.lang.String">
+            <column name="response_code" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

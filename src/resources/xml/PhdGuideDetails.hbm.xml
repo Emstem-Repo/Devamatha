@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 21, 2010 2:22:27 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.phd.PhdGuideDetailsBO" table="phd_guide_details">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="name" type="string">
+			<column name="name" length="100">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="empanelmentNo" type="string">
+			<column name="empanelment_no" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="phoneNo" type="string">
+			<column name="phone_no" length="11">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="mobileNo" type="string">
+			<column name="mobile_no" length="11">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="email" type="string">
+			<column name="email" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="addressLine1" type="string">
+			<column name="address_1" length="100">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="addressLine2" type="string">
+			<column name="address_2" length="100">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="addressLine3" type="string">
+			<column name="address_3">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="addressLine4" type="string">
+			<column name="address_4" length="100">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="pinCode" type="string">
+			<column name="pin_code">
+				<comment></comment>
+			</column>
+		</property>
+       <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

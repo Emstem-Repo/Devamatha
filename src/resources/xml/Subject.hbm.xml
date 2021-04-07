@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.Subject" table="subject" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+      <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="code" type="string">
+            <column name="code" length="45">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="totalMarks" type="java.lang.Integer">
+            <column name="total_marks">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="passingMarks" type="java.lang.Integer">
+            <column name="passing_marks">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isSecondLanguage" type="java.lang.Boolean">
+            <column name="is_second_language">
+                <comment></comment>
+            </column>
+        </property>
+          <property name="questionbyrequired" type="java.lang.Boolean">
+            <column name="question_bank_isrequired">
+                <comment></comment>
+            </column>
+        </property>
+           <property name="hourpersem" type="java.lang.Integer">
+            <column name="teachning_hour_persem">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isOptionalSubject" type="java.lang.Boolean">
+            <column name="is_optional_subject">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="attendanceMarkses" inverse="true">
+            <key>
+                <column name="subject_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AttendanceMarks" />
+        </set>
+        <set name="sessions" inverse="true">
+            <key>
+                <column name="subject_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.Session" />
+        </set>
+  
+        
+        <!-- Added by Shwetha 9elements -->
+        <many-to-one name="subjectType" class="com.kp.cms.bo.admin.SubjectType"
+			fetch="select"  insert="false" update="false">
+			<column name="subject_type_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		 <many-to-one name="examMajorDepatmentCodeBO" class="com.kp.cms.bo.exam.ExamMajorDepatmentCodeBO"
+			fetch="select"  insert="false" update="false">
+			<column name="major_dept_code_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		
+	  <property name="subjectTypeId" type="java.lang.Integer">
+            <column name="subject_type_id">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="isTheoryPractical" type="string">
+            <column name="is_theory_practical">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="consldtdMarkCardSubName" type="string">
+            <column name="consldtd_mark_card_sub_name">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="subNamePrefix" type="string">
+            <column name="sub_name_prefix">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="majorDeptCodeId" type="java.lang.Integer">
+            <column name="major_dept_code_id">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="universitySubjectCode" type="string">
+            <column name="university_subject_code">
+                <comment></comment>
+            </column>
+        </property>
+	 	<property name="isCertificateCourse" type="java.lang.Boolean">
+            <column name="is_certificate_course">
+                <comment></comment>
+            </column>
+        </property>
+		<set name="examSubDefinitionCourseWiseBOSet" inverse="true">
+			<key column="subject_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamSubDefinitionCourseWiseBO" />
+		</set>
+		<set name="examSubjectRuleSettingsBOset" inverse="true">
+			<key column="subject_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamSubjectRuleSettingsBO" />
+		</set>
+		<!--<many-to-one name="certificateCourse" class="com.kp.cms.bo.admin.CertificateCourse"  fetch="select">
+		<column name="certificate_course_id">
+		<comment></comment>
+		</column>
+		</many-to-one>
+		-->
+		<property name="isAdditionalSubject" type="java.lang.Boolean">
+            <column name="is_additional_subject">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="schemeNo" type="java.lang.Integer">
+            <column name="scheme_no">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="department" class="com.kp.cms.bo.admin.Department" fetch="select" >
+            <column name="department_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <set name="certificateCourses" inverse="true">
+            <key>
+                <column name="subject_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.CertificateCourse" />
+        </set>
+        <property name="coCurricularSubject" type="java.lang.Boolean">
+            <column name="co_curricular_subject">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="eligibleCourse" class="com.kp.cms.bo.admin.Course" fetch="select" >
+            <column name="eligible_course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="subjectCodeGroup" class="com.kp.cms.bo.admin.SubjectCodeGroup" fetch="select" >
+            <column name="subject_code_group_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="consolidatedSubjectStream" 
+					 class="com.kp.cms.bo.exam.ConsolidatedSubjectStream" 
+					 fetch="select"
+            		 column="consolidated_subject_stream_id">
+        </many-to-one>
+        
+            <property name="subjectTypeBasedOnMarks" >
+            <column name="subjectType_based_on_marks">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

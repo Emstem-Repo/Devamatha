@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.kp.cms.bo.admission.ApplnAcknowledgement" table="application_acknowledgement" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="applnNo" type="string">
+			<column name="appln_no" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="receivedThrough" type="string">
+			<column name="received_through" length="50">
+				<comment></comment>
+			</column>
+		</property>
+       <property name="receivedDate" type="timestamp">
+			<column name="received_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="name" type="string">
+			<column name="name" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="remarks" type="string">
+			<column name="remarks" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="slipNo" type="string">
+			<column name="slip_no" length="20">
+				<comment></comment>
+			</column>
+		</property>
+     <many-to-one name="course" class="com.kp.cms.bo.admin.Course" fetch="select"  >
+      <column name="course_id">
+        <comment></comment>
+            </column>
+     </many-to-one>
+      <property name="dateOfBirth" type="timestamp">
+			<column name="date_of_birth" >
+				<comment></comment>
+			</column>
+		</property>
+		 <property name="trackingNo" type="string">
+			<column name="tracking_no" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="mobileNo" type="string">
+			<column name="mobile_no" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

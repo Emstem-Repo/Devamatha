@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 15, 2010 2:30:33 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.admin.ManageHolidayListBo" table="academic_holiday">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native"/>
+		</id>
+		<property name="academicYearId">
+			<column name="academic_year_id"></column>
+		</property>
+		<property name="academicYear">
+			<column name="academic_year"></column>
+		</property>
+		<property name="holiday">
+			<column name="holiday"></column>
+		</property>
+		<property name="startDate">
+			<column name="start_date"></column>
+		</property>
+		<property name="endDate">
+			<column name="end_date"></column>
+		</property>
+
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActive">
+			<column name="isActive">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+
+</hibernate-mapping>

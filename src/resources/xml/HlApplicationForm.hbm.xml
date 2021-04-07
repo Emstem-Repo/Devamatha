@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2009 3:48:34 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.HlApplicationForm" table="hl_application_form">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="hlRoomTypeByHlAppliedRoomTypeId" class="com.kp.cms.bo.admin.HlRoomType" fetch="select" >
+            <column name="hl_applied_room_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="hlStatus" class="com.kp.cms.bo.admin.HlStatus" fetch="select" >
+            <column name="hl_status_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="hlHostelByHlAppliedHostelId" class="com.kp.cms.bo.admin.HlHostel" fetch="select" >
+            <column name="hl_applied_hostel_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="hlRoomTypeByHlApprovedRoomTypeId" class="com.kp.cms.bo.admin.HlRoomType" fetch="select" >
+            <column name="hl_approved_room_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="hlHostelByHlApprovedHostelId" class="com.kp.cms.bo.admin.HlHostel" fetch="select" >
+            <column name="hl_approved_hostel_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="admAppln" class="com.kp.cms.bo.admin.AdmAppln" fetch="select" >
+            <column name="adm_appln_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="employee" class="com.kp.cms.bo.admin.Employee" fetch="select" >
+            <column name="employee_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="fingerPrintId" type="string">
+            <column name="finger_print_id" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="requisitionNo" type="java.lang.Integer">
+            <column name="requisition_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isEnteredByAdmin" type="java.lang.Boolean">
+            <column name="is_entered_by_admin">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isStaff" type="java.lang.Boolean">
+            <column name="is_staff">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="250">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isVeg" type="java.lang.Boolean">
+            <column name="is_veg">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="appliedDate" type="date">
+            <column name="applied_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="challanNo" type="string">
+            <column name="challan_no" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="clinicalRemarks" type="string">
+            <column name="clinical_remarks" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sicknessRelatedInfo" type="string">
+            <column name="sickness_related_info" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isHostelFeePaid" type="java.lang.Boolean">
+            <column name="is_hostel_fee_paid">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="billNo" type="java.lang.Integer">
+            <column name="bill_no">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="hlInOuts" inverse="true" >
+            <key>
+                <column name="hl_application_form_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlInOut" />
+        </set>
+        <set name="hlLeaves" inverse="true" >
+            <key>
+                <column name="hl_application_form_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlLeave" />
+        </set>
+        <set name="hlFeePayments" inverse="true" >
+            <key>
+                <column name="hl_application_form_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlFeePayment" />
+        </set>
+        <set name="hlDisciplinaryDetailses" inverse="true" >
+            <key>
+                <column name="hl_application_form_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlDisciplinaryDetails" />
+        </set>
+        <set name="hlDamages" inverse="true" >
+            <key>
+                <column name="hl_application_form_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlDamage" />
+        </set>
+        <set name="hlVisitorInfos" inverse="true" >
+            <key>
+                <column name="hl_application_form_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlVisitorInfo" />
+        </set>
+        <set name="hlRoomTransactions" inverse="true"  cascade="all">
+            <key>
+                <column name="hl_application_form_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlRoomTransaction" />
+        </set>
+        <set name="hlComplaints" inverse="true" >
+            <key>
+                <column name="hl_application_form_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlComplaint" />
+        </set>
+        <set name="hlGroupStudents" inverse="true" >
+            <key>
+                <column name="hl_application_form_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlGroupStudent" />
+        </set>
+        <set name="hlCheckinCheckoutFacilities" inverse="true" >
+            <key>
+                <column name="hl_application_form_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.HlCheckinCheckoutFacility" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 17, 2012 10:14:00 AM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.CCGroup" table="cc_groups">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="createdBy" type="java.lang.String">
+            <column name="created_by" />
+        </property>
+        <property name="modifiedBy" type="java.lang.String">
+            <column name="modified_by" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property>
+        <property name="createdDate" type="java.util.Date">
+            <column name="created_date" />
+        </property>
+        <property name="lastModifiedDate" type="java.util.Date">
+            <column name="last_modified_date" />
+        </property>
+        <property name="startDate" type="java.util.Date">
+            <column name="start_date" />
+        </property>
+        <property name="endDate" type="java.util.Date">
+            <column name="end_date" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

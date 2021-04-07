@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.NewsEventsContactDetails" table="news_events_contact_details">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="newsEventsId" class="com.kp.cms.bo.admin.NewsEventsDetails" fetch="select" >
+            <column name="news_events_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="contactNo" type="string">
+            <column name="contact_no">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="remarks" type="string">
+            <column name="remarks">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        
+    </class>
+</hibernate-mapping>
+

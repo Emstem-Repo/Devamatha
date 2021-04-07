@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamStudentMarksCorrectionDetailsBO"
+		table="exam_students_marks_correction_details">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="subjectUtilBO" class="com.kp.cms.bo.exam.SubjectUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="examStudentMarksCorrectionBO"
+			class="com.kp.cms.bo.exam.ExamStudentMarksCorrectionBO" fetch="select"
+			insert="false" update="false">
+			<column name="students_marks_correction_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties -->
+		<property name="studentsMarksCorrectionId">
+			<column name="students_marks_correction_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectId">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isRetest">
+			<column name="is_retest">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isMistake">
+			<column name="is_mistake">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryMarks">
+			<column name="theory_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalMarks">
+			<column name="practical_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="comments">
+			<column name="comments">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

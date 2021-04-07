@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.applicationform.ProfessorPGIDetails" table="professor_pgi_details" >
+    	 <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		
+		<property name="firstName" type="string">
+            <column name="first_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="dateOfBirth" type="date">
+            <column name="date_of_birth" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<many-to-one name="departmentId" class="com.kp.cms.bo.admin.Department" fetch="select" >
+            <column name="department_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		
+		<property name="txnStatus" type="string">
+            <column name="txn_status" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="txnAmount" type="java.math.BigDecimal">
+            <column name="txn_amount">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="mobileNo" type="string">
+            <column name="mobile_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="email" type="string">
+            <column name="email" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="createdBy" type="string">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="createdDate" type="date">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		
+			<property name="applicantRefNo" type="string">
+            <column name="applicant_ref_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		
+			<property name="txnRefNo" type="string">
+            <column name="txn_ref_no" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="mode" type="string">
+            <column name="mode" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="txnDate" type="date">
+            <column name="txn_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		
+		 <many-to-one name="professorPersonalId" class="com.kp.cms.bo.applicationform.ProfessorPersonalData" fetch="select">
+            <column name="professor_personal_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+	</class>
+</hibernate-mapping>

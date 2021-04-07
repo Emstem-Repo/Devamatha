@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admission.PromoteSubjects" table="migration_promote_subjects">
+         <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+       <property name="classCode" type="string">
+       		<column name="class_code" length="10">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="section" type="string">
+       		<column name="section" length="10">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="startNo" type="java.lang.Integer">
+       		<column name="start_no" length="10">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="endNo" type="java.lang.Integer">
+       		<column name="end_no" length="10">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="groupCode" type="string">
+       		<column name="group_code" length="20">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="subCde1" type="string">
+       		<column name="sub_cde_1" length="10">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="subCde3" type="string">
+       		<column name="sub_cde_3" length="10">
+       			<comment></comment>
+       		</column>
+       	</property>	
+       	<property name="subCde4" type="string">
+       		<column name="sub_cde_4" length="10">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="subCde5" type="string">
+       		<column name="sub_cde_5" length="10">
+       			<comment></comment>
+       		</column>
+       </property>
+        <property name="subCde6" type="string">
+       		<column name="sub_cde_6" length="10">
+       			<comment></comment>
+       		</column>
+       
+       </property>
+       
+        <property name="subCde7" type="string">
+       		<column name="sub_cde_7" length="10">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="subject1" type="string">
+       		<column name="subject_1" length="30">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="subject3" type="string">
+       		<column name="subject_3" length="30">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="subject4" type="string">
+       		<column name="subject_4" length="30">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="subject5" type="string">
+       		<column name="subject_5" length="30">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="subject6" type="string">
+       		<column name="subject_6" length="30">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="subject7" type="string">
+       		<column name="subject_7" length="30">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="hasPract1" type="java.lang.Boolean">
+       		<column name="has_pract1">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+        <property name="hasPract3" type="java.lang.Boolean">
+       		<column name="has_pract3">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+        <property name="hasPract4" type="java.lang.Boolean">
+       		<column name="has_pract4">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+        <property name="hasPract5" type="java.lang.Boolean">
+       		<column name="has_pract5">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+        <property name="hasPract6" type="java.lang.Boolean">
+       		<column name="has_pract6">
+       			<comment></comment>
+       		</column>
+       </property>
+        <property name="hasPract7" type="java.lang.Boolean">
+       		<column name="has_pract7">
+       			<comment></comment>
+       		</column>
+       </property>
+       
+       <property name="unSubCd1" type="java.lang.Integer">
+			<column name="un_sub_cd1" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="unSubcd3" type="java.lang.Integer">
+			<column name="un_sub_cd3" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="unSubcd4" type="java.lang.Integer">
+			<column name="un_sub_cd4" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="unSubcd5" type="java.lang.Integer">
+			<column name="un_sub_cd5" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="unSubcd6" type="java.lang.Integer">
+			<column name="un_sub_cd6" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="unSubcd7" type="java.lang.Integer">
+			<column name="un_sub_cd7" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="academicYear" type="java.lang.Integer">
+			<column name="academic_year" length="4">
+				<comment></comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

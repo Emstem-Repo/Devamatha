@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 15, 2010 2:30:33 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.ManageWorkingDaysBO" table="working_day">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="native"/>
+        </id>
+        <property name="startTime" type="string">
+            <column name="start_time" length="4">
+            </column>
+        </property>
+        <property name="endTime" type="string">
+            <column name="end_time" length="4">
+            </column>
+        </property>
+        <property name="breakStartTime" type="string">
+            <column name="break_start_time" length="4">
+            </column>
+        </property>
+        <property name="breakEndTime" type="string">
+            <column name="break_end_time" length="4">
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+            </column>
+        </property>
+        <many-to-one name="academicYearId" property-ref="id" class="com.kp.cms.bo.admin.AcademicYear" fetch="select">
+            <column name="academic_year_id">
+            </column>
+        </many-to-one>
+        <many-to-one name="academicYear" property-ref="year" class="com.kp.cms.bo.admin.AcademicYear" fetch="select">
+            <column name="academic_year">
+            </column>
+        </many-to-one>
+        <many-to-one name="programTypeId" property-ref="id" class="com.kp.cms.bo.admin.ProgramType" fetch="select">
+            <column name="program_type_id">
+            </column>
+        </many-to-one>
+        <many-to-one name="courseId" property-ref="id" class="com.kp.cms.bo.admin.Course" fetch="select">
+            <column name="course_id">
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

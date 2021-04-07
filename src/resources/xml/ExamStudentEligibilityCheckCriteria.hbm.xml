@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamStudentEligibilityCheckCriteriaBO"
+		table="EXAM_student_eligibility_check_criteria">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examStudentEligibilityCheckBO"
+			class="com.kp.cms.bo.exam.ExamStudentEligibilityCheckBO" fetch="select"
+			insert="false" update="false">
+			<column name="stu_eligibility_chk_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="examEligibilityCriteriaMasterBO"
+			class="com.kp.cms.bo.exam.ExamEligibilityCriteriaMasterBO" fetch="select"
+			insert="false" update="false">
+			<column name="eligibility_criteria_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties -->
+		<property name="stuEligibilityChkId">
+			<column name="stu_eligibility_chk_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="eligibilityCriteriaId">
+			<column name="eligibility_criteria_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isEligibile">
+			<column name="is_eligibile">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

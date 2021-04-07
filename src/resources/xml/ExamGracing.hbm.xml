@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 21, 2010 2:22:27 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamGracingBO" table="exam_gracing">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="student" class="com.kp.cms.bo.admin.Student"
+			 fetch="select" >
+			<column name="student_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties -->
+		<property name="academicYear">
+			<column name="academic_year">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="appliedYear">
+			<column name="applied_year">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="course" class="com.kp.cms.bo.admin.Course"
+			 fetch="select">
+			<column name="course_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="percentage">
+			<column name="percentage">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="semester">
+			<column name="semester">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="remark">
+			<column name="remark">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="processed">
+			<column name="is_processed">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="onlyPass">
+			<column name="only_passed_subjects
+			">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActive" type="java.lang.Boolean">
+			<column name="is_active">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated July 5, 2012 3:14:01 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.CertificateDetails" table="certificate_details">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		 <property name="certificateName" type="string">
+            <column name="certificate_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="fees" type="big_decimal">
+			<column name="fees" precision="12">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="marksCard" type="java.lang.Boolean">
+            <column name="marks_card">
+                <comment></comment>
+            </column>
+        </property>
+		 <property name="createdby" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="isReasonRequired" type="java.lang.Boolean">
+            <column name="is_reason_required">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isIdCard" type="java.lang.Boolean">
+            <column name="is_id_card">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="description">
+                <comment></comment>
+            </column>
+        </property>
+         <set name="assignedCertPurpose" inverse="true">
+            <key>
+                <column name="certificate_details_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.AssignCertificateRequestPurpose" />
+        </set>
+        <set name="certTemplate" inverse="true">
+            <key>
+                <column name="certificate_details_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.CertificateDetailsTemplate" />
+        </set>
+       
+    </class>
+</hibernate-mapping>

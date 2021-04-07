@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.kp.cms.bo.admin.AttnPucCetMarks" table="migration_pucattn_cetmarks">
+         <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="regNo" type="string">
+			<column name="reg_no" length="20">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="classes" type="string">
+			<column name="class" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="testId" type="string">
+			<column name="test_id" length="15">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="mrkSub1" type="string">
+			<column name="mrksub_1" length="5">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="mrkSub2" type="string">
+			<column name="mrksub_2" length="5">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="mrkSub3" type="string">
+			<column name="mrksub_3" length="5">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="mrkSub4" type="string">
+			<column name="mrksub_4" length="5">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="userCode" type="string">
+			<column name="user_code" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="pcbRank" type="string">
+			<column name="pcb_rank" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="pcmRank" type="string">
+			<column name="pcm_rank" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="aieee" type="java.lang.Boolean">
+			<column name="aieee">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="academicYear" type="java.lang.Integer">
+			<column name="academic_year" length="4">
+				<comment></comment>
+			</column>
+		</property>
+		</class>
+</hibernate-mapping>

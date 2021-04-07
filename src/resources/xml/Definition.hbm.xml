@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamDefinition" table="EXAM_definition">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<set name="courseSchemeDetails" inverse="true">
+			<key column="exam_id" />
+			<one-to-many class="com.kp.cms.bo.exam.CourseSchemeDetails" />
+		</set>
+		<set name="definitionPrograms" inverse="true" >
+			<key column="exam_defn_id" />
+			<one-to-many class="com.kp.cms.bo.exam.ExamDefinitionProgram" />
+		</set>
+		<!--  many  to 1 -->
+		<many-to-one name="internalExamType"
+			class="com.kp.cms.bo.exam.ExamInternalExamTypeBO" fetch="select">
+			<column name="internal_exam_type_id"></column>
+		</many-to-one>
+		<many-to-one name="examType" class="com.kp.cms.bo.exam.ExamTypeUtilBO" fetch="select">
+			<column name="exam_type_id"></column>
+		</many-to-one>
+		<!-- Other Properties  -->
+		<property name="name" type="string">
+			<column name="name"></column>
+		</property>
+		<property name="academicYear" type="java.lang.Integer">
+			<column name="academic_year"></column>
+		</property>
+		<property name="examCode" type="string">
+			<column name="exam_code"></column>
+		</property>
+		<property name="month">
+			<column name="month"></column>
+		</property>
+		<property name="year" type="java.lang.Integer">
+			<column name="year"></column>
+		</property>
+		<property name="examForJoiningBatch" type="java.lang.Integer">
+			<column name="exam_for_joining_batch"></column>
+		</property>
+		<property name="maxNoFailedSub">
+			<column name="max_no_failed_sub"></column>
+		</property>
+		<property name="isCurrent">
+			<column name="is_current"></column>
+		</property>
+		<property name="isActive">
+			<column name="is_active"></column>
+		</property>
+		<property name="createdBy" update="false">
+			<column name="created_by"></column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date"></column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by"></column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date"></column>
+		</property>
+		<property name="delIsActive">
+			<column name="del_is_active"></column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.InternalRedoFees" table="internal_redo_fees">
+
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+		
+		<many-to-one name="classes" 
+					 class="com.kp.cms.bo.admin.Classes" 
+					 fetch="select"
+					 column="class_id">
+		</many-to-one>
+		
+		<many-to-one name="religionSection" 
+					 class="com.kp.cms.bo.admin.ReligionSection" 
+					 fetch="select"
+					 column="section_id">
+		</many-to-one>
+		
+		<property name="createdBy" 
+				  type="string" 
+				  update="false"
+				  column="created_by"
+				  length="50">			
+		</property>
+		
+		<property name="modifiedBy" 
+				  type="string"
+				  column="modified_by"
+				  length="50">			
+		</property>
+        
+		<property name="createdDate" 
+				  type="timestamp" 
+				  update="false"
+				  column="created_date"
+				  length="0">            
+        </property>
+        
+		<property name="lastModifiedDate" 
+				  type="timestamp"
+				  column="last_modified_date"
+				  length="0">            
+        </property>
+        
+		<property name="isActive" 
+				  type="java.lang.Boolean"
+				  column="is_active">
+        </property>
+		
+		<property name="theoryFees" 
+				  type="java.math.BigDecimal"
+				  column="theory_fees">
+        </property>
+       
+		<property name="practicalFees" 
+				  type="java.math.BigDecimal"
+				  column="practical_fees">
+        </property>
+        
+		<property name="academicYear"
+				  column="academic_year">
+        </property>
+		
+		<property name="applicationFees" 
+				  type="java.math.BigDecimal"
+				  column="application_fees">
+        </property>
+        
+		<property name="cvCampFees" 
+				  type="java.math.BigDecimal"
+				  column="cv_camp_fees">
+        </property>
+        
+		<property name="marksListFees" 
+				  type="java.math.BigDecimal"
+				  column="marks_list_fees">
+        </property>
+        
+		<property name="paperFees" 
+				  type="java.math.BigDecimal"
+				  column="paper_fees">
+        </property>
+        
+		<property name="registrationFees" 
+				  type="java.math.BigDecimal"
+				  column="registration_fees">
+        </property>
+
+	</class>
+</hibernate-mapping>

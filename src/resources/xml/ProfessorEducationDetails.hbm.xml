@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.applicationform.ProfessorEducationDetailsBO" table="professor_education_details" >
+    	 <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		
+		 <many-to-one name="professorPersonalDataId" class="com.kp.cms.bo.applicationform.ProfessorPersonalData" fetch="select">
+            <column name="professor_personal_data_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		
+		
+	
+		
+		<property name="isNet" type="java.lang.Boolean">
+            <column name="is_net">
+                <comment></comment>
+            </column>
+        </property> 
+		
+		<property name="netDetails" type="string">
+            <column name="net_details" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		
+		<property name="isJrf" type="java.lang.Boolean">
+            <column name="is_jrf">
+                <comment></comment>
+            </column>
+        </property> 
+		
+		
+		
+		<property name="jrfDetails" type="string">
+            <column name="jrf_details" length="50">
+                <comment></comment>
+            </column>
+        </property>
+		
+		
+		<set name="professerBooksPublificationDetails" cascade="save-update,persist" >
+            <key>
+                <column name="professor_education_details_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.applicationform.ProfessorBooksPublificationDetailsBO" />
+        </set>
+		
+		<set name="professorPostDoctoralExpDetails" cascade="save-update,persist" >
+            <key>
+                <column name="professor_education_details_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.applicationform.ProfessorPostDoctoralExpDetailsBO" />
+        </set>
+		
+		<set name="professorTeachingExpDetails" cascade="save-update,persist" >
+            <key>
+                <column name="professor_education_details_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.applicationform.ProfessorTeachingExpDetailsBO" />
+        </set>
+		
+		<set name="professorEducationQualificationDetails" cascade="save-update,persist" >
+            <key>
+                <column name="professor_education_details_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.applicationform.ProfessorEducationQualificationDetailsBO" />
+        </set>
+		
+		  <property name="additionalInformation" type="string">
+            <column name="additional_information" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        
+          <property name="ugcApprovedInformation" type="string">
+            <column name="ugc_information" length="500">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="rankPosition" type="string">
+            <column name="rank_position" length="20">
+                <comment></comment>
+            </column>
+        </property>
+		
+		
+    	
+		
+	</class>
+</hibernate-mapping>

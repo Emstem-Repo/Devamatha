@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 23, 2010 10:17:51 AM by Hibernate Tools 3.2.6.CR1 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.exam.ExamStudentDetentionRejoinDetails" table="EXAM_student_detention_rejoin_details">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+        <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select">
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="classSchemewise" class="com.kp.cms.bo.admin.ClassSchemewise" fetch="select">
+            <column name="class_schemewise_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+         <many-to-one name="rejoinClassSchemewise" class="com.kp.cms.bo.admin.ClassSchemewise" fetch="select">
+            <column name="rejoin_class_schemewise_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        
+        <property name="registerNo" type="string">
+            <column name="register_no" length="10" />
+        </property>
+        <property name="batch" type="string">
+            <column name="batch" length="5" />
+        </property>
+        <property name="detain" type="java.lang.Boolean">
+            <column name="detain" />
+        </property>
+        <property name="detentionDate" type="timestamp">
+            <column name="detention_date" length="0" />
+        </property>
+        <property name="detentionReason" type="string">
+            <column name="detention_reason" length="250" />
+        </property>
+        <property name="discontinued" type="java.lang.Boolean">
+            <column name="discontinued" />
+        </property>
+        <property name="discontinuedDate" type="timestamp">
+            <column name="discontinued_date" length="0" />
+        </property>
+        <property name="discontinueReason" type="string">
+            <column name="discontinue_reason" length="250" />
+        </property>
+        <property name="rejoin" type="java.lang.Boolean">
+            <column name="rejoin" />
+        </property>
+        <property name="rejoinDate" type="timestamp">
+            <column name="rejoin_date" length="0" />
+        </property>
+        <property name="rejoinReason" type="string">
+            <column name="rejoin_reason" length="250" />
+        </property>
+        <property name="schemeNo" type="java.lang.Integer">
+            <column name="scheme_no" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.NewDocChecklist" table="doc_checklist" >
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+       <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+        <many-to-one name="docType" class="com.kp.cms.bo.admin.DocType" fetch="select">
+            <column name="doc_type_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="program" class="com.kp.cms.bo.admin.Program" fetch="select">
+            <column name="program_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="course" class="com.kp.cms.bo.admin.NewCourse" fetch="select">
+            <column name="course_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+           <many-to-one name="weightage" class="com.kp.cms.bo.admin.Weightage"  fetch="select">
+            <column name="weightage_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="year" type="java.lang.Integer">
+            <column name="year" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isMarksCard" type="java.lang.Boolean">
+            <column name="is_marks_card">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isConsolidatedMarks" type="java.lang.Boolean">
+            <column name="is_consolidated_marks">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isIncludeLanguage" type="java.lang.Boolean">
+            <column name="is_include_language">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="needToProduce" type="java.lang.Boolean">
+            <column name="need_to_produce">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isDocSelected" type="java.lang.Boolean">
+            <column name="isDocSelected">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isSemesterWise" type="java.lang.Boolean">
+            <column name="is_semester_wise">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isPreviousExam" type="java.lang.Boolean">
+            <column name="is_previous_exam">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="isExamRequired" type="java.lang.Boolean">
+            <column name="is_exam_req">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="weightagePercentage" type="big_decimal">
+            <column name="weightage_percentage" precision="5">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="ednQualifications" inverse="true">
+            <key>
+                <column name="doc_checklist_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.NewEdnQualification" />
+        </set>
+    </class>
+</hibernate-mapping>

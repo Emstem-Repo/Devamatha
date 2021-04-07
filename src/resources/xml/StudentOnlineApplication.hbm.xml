@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.StudentOnlineApplication" table="unique_id" >
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		<property name="emailId" type="string">
+			<column name="email_id" length="50">
+			</column>
+		</property>
+		 <property name="mobileNo" type="string">
+            <column name="mobile_no" >
+            </column>
+        </property>
+         <property name="mobileCode" type="string">
+            <column name="mobile_code" >
+            </column>
+        </property>
+		 <property name="dateOfBirth" type="date">
+            <column name="date_of_birth" >
+            </column>
+        </property>
+        <property name="uniqueId" type="string">
+            <column name="unique_id" >
+            </column>
+        </property>
+         <property name="year" type="java.lang.Integer">
+            <column name="year" >
+            </column>
+        </property>
+        <property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+			</column>
+		</property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active" />
+        </property>
+        <property name="name" type="string">
+			<column name="name" length="200">
+			</column>
+		</property>
+		<property name="programTypeId" type="string">
+			<column name="programtype_id" length="50">
+			</column>
+		</property>
+		<property name="categoryId" type="string">
+			<column name="category_id" length="50">
+			</column>
+		</property>
+		<property name="gender" type="string">
+            <column name="gender" >
+            </column>
+        </property>
+        <property name="subReligionId" type="string">
+            <column name="subReligion_id" >
+            </column>
+        </property>
+        <property name="challanNumber" type="string">
+            <column name="challan_number" >
+            </column>
+        </property>
+        <property name="isAided" type="boolean">
+			<column name="is_aided">
+			</column>
+		</property>
+		<property name="mngQuota" type="boolean">
+			<column name="is_mngquota">
+			</column>
+		</property>
+		 <property name="isCommuQuota" type="string">
+            <column name="is_commu_quota" length="50">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

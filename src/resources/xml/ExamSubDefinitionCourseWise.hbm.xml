@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamSubDefinitionCourseWiseBO"
+		table="EXAM_sub_definition_coursewise">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="subjectUtilBO" class="com.kp.cms.bo.exam.SubjectUtilBO"
+			fetch="select" update="false" insert="false">
+			<column name="subject_id">
+			</column>
+		</many-to-one>
+		<many-to-one name="examSubjectSectionMasterBO"
+			class="com.kp.cms.bo.exam.ExamSubjectSectionMasterBO" fetch="select"
+			update="false" insert="false">
+			<column name="subject_section_id">
+			</column>
+		</many-to-one>
+
+		<!-- Other Properties -->
+		<property name="subjectId">
+			<column name="subject_id">
+			</column>
+		</property>
+		<property name="subjectOrder">
+			<column name="subject_order">
+			</column>
+		</property>
+		<property name="universitySubjectCode">
+			<column name="university_subject_code">
+			</column>
+		</property>
+		<property name="subjectSectionId">
+			<column name="subject_section_id">
+			</column>
+		</property>
+		<property name="theoryHours">
+			<column name="theory_hours">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="theoryCredit">
+			<column name="theory_credit">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalHours">
+			<column name="practical_hours">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="practicalCredit">
+			<column name="practical_credit">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dontShowSubType">
+			<column name="dont_show_sub_type">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dontShowMaxMarks">
+			<column name="dont_show_max_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dontShowMinMarks">
+			<column name="dont_show_min_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dontShowAttMarks">
+			<column name="dont_show_att_marks">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dontAddTotMarkClsDecln">
+			<column name="dont_add_tot_mark_cls_decln">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dontConsiderFailureTotalResult">
+			<column name="dont_consider_failure_total_result">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="showInternalFinalMarkAdded">
+			<column name="show_internal_final_mark_added">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="showOnlyGrade">
+			<column name="show_only_grade">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActiveGradeDefn">
+			<column name="is_active_grade_defn">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isActiveAttndnc">
+			<column name="is_active_attndnc">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdBy" update="false">
+			<column name="created_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy">
+			<column name="modified_by">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="createdDate" update="false">
+			<column name="created_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified_date">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="courseId">
+			<column name="course_id">
+			</column>
+		</property>
+		<property name="schemeNo" type="java.lang.Integer">
+            <column name="scheme_no">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="academicYear" type="java.lang.Integer">
+            <column name="academic_year">
+                <comment></comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

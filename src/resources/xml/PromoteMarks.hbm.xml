@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 15, 2010 2:30:33 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admission.PromoteMarks" table="migration_promote_marks">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="regNo" type="string">
+       		 <column name="reg_no" length="20">
+        		<comment></comment></column>
+        </property>
+         
+         <property name="classCode" type="string">
+       		 <column name="class_code" length="10">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="mrkSub1" type="string">
+       		 <column name="mrksub_1" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="mrkSub2" type="string">
+       		 <column name="mrksub_2" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="mrkSub3" type="string">
+       		 <column name="mrksub_3" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="mrkSub4" type="string">
+       		 <column name="mrksub_4" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="mrkSub5" type="string">
+       		 <column name="mrksub_5" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="mrkSub6" type="string">
+       		 <column name="mrksub_6" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="mrkSub7" type="string">
+       		 <column name="mrksub_7" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="gradeSub1" type="string">
+       		 <column name="grade_sub1" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="gradeSub2" type="string">
+       		 <column name="grade_sub2" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="gradeSub3" type="string">
+       		 <column name="grade_sub3" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="gradeSub4" type="string">
+       		 <column name="grade_sub4" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="gradeSub5" type="string">
+       		 <column name="grade_sub5" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="gradeSub6" type="string">
+       		 <column name="grade_sub6" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="gradeSub7" type="string">
+       		 <column name="grade_sub7" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="section" type="string">
+       		 <column name="section" length="5">
+        		<comment></comment></column>
+        </property>
+        
+        <property name="withHeld" type="java.lang.Boolean">
+            <column name="with_held">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="supAttend" type="java.lang.Boolean">
+            <column name="sup_attend">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="academicYear" type="string">
+            <column name="academic_year" length="20">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

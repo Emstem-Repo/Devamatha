@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 22, 2009 3:35:50 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamExamCourseSchemeDetailsBO"
+		table="EXAM_exam_course_scheme_details">
+		<comment></comment>
+		<id name="id">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examDefinitionBO" class="com.kp.cms.bo.exam.ExamDefinitionBO"
+			fetch="select" update="false" insert="false">
+			<column name="exam_id"></column>
+		</many-to-one>
+		<many-to-one name="examCourseUtilBO" class="com.kp.cms.bo.exam.ExamCourseUtilBO"
+			fetch="select" update="false" insert="false">
+			<column name="course_id"></column>
+		</many-to-one>
+		<many-to-one name="courseSchemeUtilBO" class="com.kp.cms.bo.exam.CourseSchemeUtilBO"
+			fetch="select" update="false" insert="false">
+			<column name="course_scheme_id"></column>
+		</many-to-one>
+		<many-to-one name="examProgramUtilBO" class="com.kp.cms.bo.exam.ExamProgramUtilBO"
+			fetch="select" update="false" insert="false">
+			<column name="program_id"></column>
+		</many-to-one>
+		<many-to-one name="program" class="com.kp.cms.bo.admin.Program"
+			fetch="select" update="false" insert="false">
+			<column name="program_id"></column>
+		</many-to-one>
+		<!-- Other Properties -->
+		<property name="examId">
+			<column name="exam_id"></column>
+		</property>
+		<property name="courseId">
+			<column name="course_id"></column>
+		</property>
+		<property name="schemeNo">
+			<column name="scheme_no"></column>
+		</property>
+		<property name="courseSchemeId">
+			<column name="course_scheme_id"></column>
+		</property>
+		<property name="programId">
+			<column name="program_id"></column>
+		</property>
+		<property name="isActive">
+			<column name="is_active"></column>
+		</property>
+	</class>
+</hibernate-mapping>

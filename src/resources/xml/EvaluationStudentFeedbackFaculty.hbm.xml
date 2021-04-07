@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 27, 2009 4:03:40 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.kp.cms.bo.admin.EvaluationStudentFeedbackFaculty" table="eva_student_feedback_faculty">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+         <many-to-one name="faculty" class="com.kp.cms.bo.admin.Users" fetch="select">
+            <column name="teacher_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="subject" class="com.kp.cms.bo.admin.Subject" fetch="select">
+            <column name="subject_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="evaStuFeedback" class="com.kp.cms.bo.admin.EvaluationStudentFeedback" fetch="select">
+            <column name="eva_student_feedback_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <set name="feedbackAnswer" inverse="true" table="eva_student_feedback_answer" cascade="save-update,persist,merge">
+            <key>
+                <column name="feedback_faculty_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.kp.cms.bo.admin.EvaluationStudentFeedbackAnswer" />
+        </set>
+        <property name="createdBy" type="string" update="false">
+            <column name="created_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="remarks" type="string">
+            <column name="remarks" length="500">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="additionalRemarks" type="string">
+            <column name="additional_remarks" length="500">
+                <comment></comment>
+            </column>
+        </property>
+       <many-to-one name="batch" class="com.kp.cms.bo.admin.Batch" fetch="select">
+            <column name="batch_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

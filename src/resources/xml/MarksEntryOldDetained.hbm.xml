@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.MarksEntryOldDetained" table="EXAM_marks_entry_old_detained">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		 <many-to-one name="student" class="com.kp.cms.bo.admin.Student" fetch="select">
+            <column name="student_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		 <many-to-one name="exam" class="com.kp.cms.bo.exam.ExamDefinitionBO" fetch="select">
+            <column name="exam_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="classes" class="com.kp.cms.bo.admin.Classes" fetch="select">
+            <column name="class_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="evaluatorType" type="java.lang.Integer">
+			<column name="evaluator_type_id"></column>
+		</property>
+		<property name="marksCardNo" type="string">
+			<column name="marks_card_no"></column>
+		</property>
+		<property name="marksCardDate" type="timestamp">
+			<column name="marks_card_date"></column>
+		</property>
+		
+		<!-- For Secured  Marks Entry Screen  -->
+		<property name="answerScript" type="java.lang.Integer">
+			<column name="answer_script_type"></column>
+		</property>
+		<property name="sequenceEvaluator" type="java.lang.Integer">
+			<column name="sequence_evaluator"></column>
+		</property>
+		<property name="markType" type="string">
+			<column name="mark_type"></column>
+		</property>
+	
+		 <property name="createdDate" type="timestamp" update="false">
+            <column name="created_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="createdBy" type="string" update="false">
+			<column name="created_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="modifiedBy" type="string">
+			<column name="modified_by" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<set name="marksDetails" cascade="save-update,persist,merge">
+			<key column="marks_entry_id" />
+			<one-to-many class="com.kp.cms.bo.exam.MarksEntryDetailsOldDetained" />
+		</set>
+	</class>
+</hibernate-mapping>

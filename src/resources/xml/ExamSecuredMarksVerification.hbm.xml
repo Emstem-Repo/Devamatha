@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- Generated Jan 21, 2010 2:22:27 PM by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.kp.cms.bo.exam.ExamSecuredMarkVerificationBO"
+		table="EXAM_secured_mark_verification">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="examDefinitionBO" class="com.kp.cms.bo.exam.ExamDefinitionBO"
+			fetch="select" insert="false" update="false">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="subjectUtilBO" class="com.kp.cms.bo.exam.SubjectUtilBO"
+			fetch="select" insert="false" update="false">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="examMultipleAnswerScriptMasterBO"
+			class="com.kp.cms.bo.exam.ExamMultipleAnswerScriptMasterBO" fetch="select"
+			insert="false" update="false">
+			<column name="answer_script_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<set name="examSecuredMarksVerificationDetailsBOset">
+			<key column="exam_secured_mark_verification_id" />
+			<one-to-many
+				class="com.kp.cms.bo.exam.ExamSecuredMarksVerificationDetailsBO" />
+		</set>
+		<!-- Other Properties -->
+		<property name="examId">
+			<column name="exam_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="subjectId">
+			<column name="subject_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="evaluatorTypeId">
+			<column name="evaluator_type_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="answerScriptId">
+			<column name="answer_script_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isSecured">
+			<column name="is_secured">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

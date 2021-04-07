@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.kp.cms.bo.employee.EmployeeSettings" table="emp_settings">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="ageOfRetirement" type="java.lang.Integer">
+            <column name="age_of_retirement" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="smsAlert" type="java.lang.Boolean" >
+            <column name="sms_alert" >
+                <comment></comment>
+            </column>
+        </property>
+       <property name="absenceChecking" type="java.lang.Boolean" >
+            <column name="absence_check" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="currentApplicationNo" type="string">
+            <column name="current_application_no" length="15">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="0">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="accumulateLeaveType" class="com.kp.cms.bo.admin.EmpLeaveType"  fetch="select">
+		<column name="accumulate_leave_type">
+		<comment></comment>
+		</column>
+		</many-to-one>
+		<property name="machineIdForOfflineINPunch" type="java.lang.Integer">
+            <column name="machine_id_offtime_in_punch" length="11">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="machineIdForOfflineOUTPunch" type="java.lang.Integer">
+            <column name="machine_id_offtime_out_punch" length="11">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
