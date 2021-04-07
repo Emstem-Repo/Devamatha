@@ -142,6 +142,7 @@ public class StudentEditAction extends BaseDispatchAction {
 			HttpServletResponse response) throws Exception {
 
 		StudentEditForm stForm = (StudentEditForm) form;
+		System.out.println("inside Student edit Action");
 		try {
 			setUserId(request, stForm);
 			cleanupFormFromSession(stForm);
