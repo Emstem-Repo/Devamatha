@@ -392,7 +392,6 @@ function updateBatches(req) {
 	updateOptionsFromMap(req,"batchId","- Select -");
 }
 function getClassByTeacherAndYear(year){
-	document.getElementById("numericCode").value='';
 	var teachers =  document.getElementById("teachers").value;
 	var destination1 = document.getElementById("subjectId");
 	for (x1=destination1.options.length-1; x1>0; x1--) {
@@ -1027,13 +1026,13 @@ function updateAttendanceTypeid(req) {
                 <div class="col-sm-2"><span class="Mandatory" style="color:red;">*</span><b><bean:message key="knowledgepro.fee.academicyear"/></b>:</div>
 		       <div class="col-sm-2">
 		                           <input type="hidden" id="tempyear" name="tempyear" value="<bean:write name="attendanceEntryForm" property="year"/>"/>
-		                           <div style="display: none;">
-		                           <html:select property="year" styleId="academicYear" name="attendanceEntryForm" styleClass="form-control" onchange="getClassByTeacherAndYear(this.value)">
+		                           <div style="display: block;">
+		                           <html:select property="year" styleId="academicYear" name="attendanceEntryForm" styleClass="form-control" onchange="getPeriodsForTeacher();">
                        	   				 <html:option value=""><bean:message key="knowledgepro.admin.select"/></html:option>
                        	   				<cms:renderAcademicYear></cms:renderAcademicYear>
                        			   </html:select>
                        			   </div>
-                       			   <bean:write name="attendanceEntryForm" property="year"/>
+                       			  <%--  <bean:write name="attendanceEntryForm" property="year"/> --%>
 		        	 </div>
 		        	 <div class="col-sm-2"><font style="font-size: 11px"><b>Pick From Time Table:</b></font></div>
 					 <div class="col-sm-2"><html:radio property="timeTableFormat" value="yes" onclick="changeJavaScript(this.value,true);getPeriodsForTeacher();"> Yes</html:radio> 
@@ -1223,7 +1222,7 @@ function updateAttendanceTypeid(req) {
 </html:form>
 
 <script type="text/javascript">
-	var year = document.getElementById("tempyear").value;
+	 var year = document.getElementById("tempyear").value;
 	if (year.length != 0) {
 		document.getElementById("academicYear").value = year;
 	}
@@ -1234,5 +1233,5 @@ function updateAttendanceTypeid(req) {
 	var tt=document.getElementById("ttFormat").value;
 	if(tt!=null && tt!=''){
 		changeJavaScript(tt,false);
-	}
+	} 
 </script>

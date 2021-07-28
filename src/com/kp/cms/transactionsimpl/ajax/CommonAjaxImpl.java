@@ -3122,7 +3122,26 @@ public Map<Integer, String> getSubjectGroupByFeeAdditionalForMultiSelect(String[
 			Map<Integer, String> periodMap = new LinkedHashMap<Integer, String>();
 			Map<Integer, String> additionalUserMap = new LinkedHashMap<Integer, String>();
 			
-			if(classList!=null && !classList.isEmpty()){
+			//code for solving academic year problem during corona pandemic
+			//start
+			/*StringBuffer st=new StringBuffer("(");
+			for (Integer sem : CMSConstants.ACADEMIC_YEAR_OLD_SEM) {
+				st.append(sem+",");
+				
+			}
+			st.deleteCharAt(st.length()-1);
+			st.append(")");
+			String sm=st.toString();
+			Query query1 = session .createQuery( "select t.ttSubjectBatch.ttPeriodWeek.period from TTUsers t where t.users.id in ("+teacherId+") " +
+					" and t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.academicYear = :academicYear and t.ttSubjectBatch.isActive=1 and t.isActive=1 and t.ttSubjectBatch.ttPeriodWeek.weekDay='"+day+"'" +
+							" and '"+CommonUtil.ConvertStringToSQLDate(date)+"' between t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.startDate and t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.endDate" +
+							" and t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.semesterYearNo in"+sm+
+							" group by t.ttSubjectBatch.ttPeriodWeek.period.periodName order by t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.id");
+			query1.setInteger("academicYear", Integer.parseInt(year)-1);
+			List<Period> classList1 = query1.list();*/
+			//end
+			
+			if((classList!=null && !classList.isEmpty()) /*|| (classList1!=null && !classList1.isEmpty())*/){
 			Iterator<Period> itr = classList.iterator();
 			Period period;
 			List<Integer> periodList=new ArrayList<Integer>();
@@ -3132,6 +3151,20 @@ public Map<Integer, String> getSubjectGroupByFeeAdditionalForMultiSelect(String[
 				periodMap.put(period.getId(), period.getPeriodName());
 				periodList.add(period.getId());
 			}
+			
+			//code for solving academic year problem during corona pandemic
+			//start
+			
+			/*Iterator<Period> itr1 = classList1.iterator();
+			while (itr1.hasNext()) {
+				period = itr1.next();
+				//periodMap.put(period.getId(), period.getPeriodName()+"("+period.getStartTime()+"-"+period.getEndTime()+")");
+				periodMap.put(period.getId(), period.getPeriodName());
+				periodList.add(period.getId());
+			}*/
+			
+			//end
+			
 			Integer s=(Integer)session.createSQLQuery(" select p.id from period p where p.is_active=1 and '"+CommonUtil.getCurrentTime()+"' between subtime(p.start_time,'00:10:00') and addtime(p.start_time,concat('00:',(select time_limit_for_automatic_att_entry from organisation),':00')) and p.id in (:periodId)").setParameterList("periodId", periodList).uniqueResult();
 			if(s!=null ){
 				periodId=s;
@@ -3184,6 +3217,28 @@ public Map<Integer, String> getSubjectGroupByFeeAdditionalForMultiSelect(String[
 					" group by t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.id");*/
 			query.setInteger("year", Integer.parseInt(year));
 			List<ClassSchemewise> classList = query.list();
+			
+			//code for solving academic year issue due to corona
+			//start
+			
+			/*StringBuffer st=new StringBuffer("(");
+			for (Integer sem : CMSConstants.ACADEMIC_YEAR_OLD_SEM) {
+				st.append(sem+",");
+				
+			}
+			st.deleteCharAt(st.length()-1);
+			st.append(")");
+			String sm=st.toString();
+			Query query1 = session .createQuery( "select t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise from TTUsers t where t.users.id in ("+teachers+") and t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.academicYear = :year and t.ttSubjectBatch.isActive=1 and t.isActive=1 and t.ttSubjectBatch.ttPeriodWeek.period.periodName in ( select p.periodName from Period p where p.isActive=1 and p.id in ("+periods+") ) and t.ttSubjectBatch.ttPeriodWeek.weekDay='"+day+"' " +
+					" and '"+CommonUtil.ConvertStringToSQLDate(date)+"' between t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.startDate and t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.endDate" +		
+					" and t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.semesterYearNo in"+sm+
+					" group by t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.id");
+			//athira
+			query1.setInteger("year", Integer.parseInt(year)-1);
+			List<ClassSchemewise> classList1 = query1.list();*/
+			
+			//end
+			
 			Map<Integer, String> periodMap = new LinkedHashMap<Integer, String>();
 			Iterator<ClassSchemewise> itr = classList.iterator();
 			ClassSchemewise classSchemewise;
@@ -3191,6 +3246,14 @@ public Map<Integer, String> getSubjectGroupByFeeAdditionalForMultiSelect(String[
 				classSchemewise = itr.next();
 				periodMap.put(classSchemewise.getId(), classSchemewise.getClasses().getName());
 			}
+			//code for solving academic year issue due to corona
+			//start
+			/*Iterator<ClassSchemewise> itr1 = classList1.iterator();
+			while (itr1.hasNext()) {
+				classSchemewise = itr1.next();
+				periodMap.put(classSchemewise.getId(), classSchemewise.getClasses().getName());
+			}*/
+			//end
 			session.flush();
 			periodMap = (HashMap<Integer, String>) CommonUtil.sortMapByValue(periodMap);
 			return periodMap;
@@ -3231,6 +3294,26 @@ public Map<Integer, String> getSubjectGroupByFeeAdditionalForMultiSelect(String[
 					" and '"+CommonUtil.ConvertStringToSQLDate(date)+"' between t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.startDate and t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.endDate" );
 			query.setInteger("year", Integer.parseInt(year));
 			List<TTUsers> classList = query.list();
+			//academic year issue code due tocovid pandemic
+			//start
+			/*StringBuffer st=new StringBuffer("(");
+			for (Integer sem : CMSConstants.ACADEMIC_YEAR_OLD_SEM) {
+				st.append(sem+",");
+				
+			}
+			st.deleteCharAt(st.length()-1);
+			st.append(")");
+			String sm=st.toString();
+			Query query1 = session .createQuery( "select t from TTUsers t where t.ttSubjectBatch.ttPeriodWeek.ttClasses.isApproved=1 and t.users.id in ("+teachers+") and t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.academicYear = :year and t.ttSubjectBatch.isActive=1 and t.isActive=1 and t.ttSubjectBatch.ttPeriodWeek.period.periodName in ( select p.periodName from Period p where p.isActive=1 and p.id in ("+periods+") ) and t.ttSubjectBatch.ttPeriodWeek.weekDay='"+day+"' " +
+					" and '"+CommonUtil.ConvertStringToSQLDate(date)+"' between t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.startDate and t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.endDate"+
+					" and t.ttSubjectBatch.ttPeriodWeek.ttClasses.classSchemewise.curriculumSchemeDuration.semesterYearNo in"+sm	);
+			query1.setInteger("year", Integer.parseInt(year)-1);
+			List<TTUsers> classList1 = query1.list();
+			for (TTUsers ttUsers : classList1) {
+				classList.add(ttUsers);
+			}*/
+			
+			//end
 			Map<String, String> periodMap = new LinkedHashMap<String, String>();
 			Iterator<TTUsers> itr = classList.iterator();
 			TTUsers ttUsers;

@@ -430,7 +430,9 @@ import com.kp.cms.utilities.jms.SMS_Message;
 			log.info("Enter saveApplicationDetailsToSession ...");
 			boolean result=false;
 			AdmAppln appln=new AdmAppln();
+			System.out.println("inside haandler saveApplicationDetailsToSession method -> before getting admAppln ");
 			appln=txn.getAppliedApplnDetails(admForm);
+			System.out.println("inside haandler saveApplicationDetailsToSession method -> after getting admAppln ");
 			//save challan
 			if(admForm.getSelectedFeePayment()!=null && !admForm.getSelectedFeePayment().isEmpty() && admForm.getSelectedFeePayment().equalsIgnoreCase("SBI")){
 				if(admForm.getApplicationAmount()!=null && !StringUtils.isEmpty(admForm.getApplicationAmount())&& CommonUtil.isValidDecimal(admForm.getApplicationAmount())){
@@ -485,8 +487,9 @@ import com.kp.cms.utilities.jms.SMS_Message;
 				appln.setIsChallanVerified(false);
 				admForm.setMode("Online");
 			}
-			
+			System.out.println("inside haandler saveApplicationDetailsToSession method -> before saving admAppln ");
 			result=txn.saveChallanDetail(appln, admForm);
+			System.out.println("inside haandler saveApplicationDetailsToSession method -> after saving admAppln ");
 			if(result){
 				admForm.setCurrentPageNo("payment");
 				admForm.setDisplayPage("paymentsuccess");

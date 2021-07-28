@@ -60,6 +60,7 @@
 	document.getElementById("paymentMail").value="<%= request.getAttribute("email").toString()%>";
  --%>
 	<%--document.getElementById("payuMoneyId").value="<%= request.getAttribute("payuMoneyId").toString()%>";--%>
+	<% System.out.println("Inside response jsp"); %>
 	document.getElementById("txnRefNo").value="<%= request.getAttribute("txnRefNo").toString()%>";
 	document.getElementById("txnAmt").value="<%= request.getAttribute("txnAmt").toString()%>";
 	document.getElementById("candidateRefNo").value="<%= request.getAttribute("candidateRefNo").toString()%>";

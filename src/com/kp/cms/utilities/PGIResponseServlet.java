@@ -72,6 +72,7 @@ public class PGIResponseServlet extends HttpServlet {
 		log.error("msg recieved from PGI:"+hash);*/
 		//request.setAttribute("responseMsg", responseMsg);
 		String merchantResponse = request.getParameter("merchantResponse");
+		System.out.println("Inside response Servelt");
 		AWLMEAPI objAWLMEAPI = new AWLMEAPI();
 		ResMsgDTO objResMsgDTO = null;
 		try {
@@ -80,6 +81,7 @@ public class PGIResponseServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		if(objResMsgDTO!=null){
+		System.out.println("Inside response Servelt objResMsgDTO Not null");
 		request.setAttribute("txnRefNo",objResMsgDTO.getPgMeTrnRefNo() );
 		request.setAttribute("txnAmt", objResMsgDTO.getTrnAmt());
 		request.setAttribute("candidateRefNo", objResMsgDTO.getOrderId());
@@ -99,6 +101,8 @@ public class PGIResponseServlet extends HttpServlet {
 		System.out.println("authzCode"+objResMsgDTO.getAuthZCode());
 		System.out.println("responceCode"+ objResMsgDTO.getResponseCode());
 		System.out.println("txnDate"+objResMsgDTO.getTrnReqDate());
+		}else{
+			System.out.println("Inside response Servlet-> objResMsgDTO is null");
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("./jsp/pgiRepsonseReceiver.jsp");
 		dispatcher.forward(request, response);

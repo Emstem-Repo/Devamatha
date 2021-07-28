@@ -441,7 +441,14 @@ function updateAttendanceTypeid(req) {
 									<div align="center" class="delete"><img src="images/delete_icon.gif" width="16" height="16"
 										onclick="deleteTimeTable('<bean:write name="to" property="deleteCount" />')" />
 									</div>
-									</c:if>		
+									</c:if>	
+										<logic:equal value="129" property="roleId" name="timeTableForClassForm">
+				                    
+									<div align="center" class="delete"><img src="images/delete_icon.gif" width="16" height="16"
+										onclick="deleteTimeTable('<bean:write name="to" property="deleteCount" />')" />
+									</div>
+													
+									</logic:equal>
 									</c:forEach>
 											
 									</td>

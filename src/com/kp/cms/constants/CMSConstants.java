@@ -218,6 +218,7 @@ public class CMSConstants extends CMSExamConstants {
 	public static List<Integer>  ROLE_ID_TEACHER = new ArrayList<Integer>();
 	public static List<Integer> INTERNAL_EXAM_IDS=new ArrayList<Integer>();
 	public static String EMPLOYEE_ACHIEVEMENT_FILE_FOLDER_PATH = "";
+	//public static List<Integer> ACADEMIC_YEAR_OLD_SEM=new ArrayList<Integer>();
 	
 
 	static {
@@ -1110,6 +1111,18 @@ public class CMSConstants extends CMSExamConstants {
 				}
 			}
 		}
+		/*String semNos=prop.getProperty("knowledgePro.academic.year.sem.old");
+		if(semNos!=null && !StringUtils.isEmpty(semNos)){
+			StringTokenizer tokenizer = new StringTokenizer(semNos,",");
+			while(tokenizer.hasMoreElements()){
+				String token=tokenizer.nextToken();
+				if(token!=null && !StringUtils.isEmpty(token)
+							&& StringUtils.isNumeric(token)){
+					int tok=Integer.parseInt(token);
+					ACADEMIC_YEAR_OLD_SEM.add(Integer.valueOf(tok));
+				}
+			}
+		}*/
 		
 		if(prop.getProperty("knowledgepro.employee.achieve.file.path") != null && !StringUtils.isEmpty(prop.getProperty("knowledgepro.employee.image.path")) ){
 			EMPLOYEE_ACHIEVEMENT_FILE_FOLDER_PATH = prop.getProperty("knowledgepro.employee.achieve.file.path");

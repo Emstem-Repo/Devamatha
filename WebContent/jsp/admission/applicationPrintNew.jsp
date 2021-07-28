@@ -51,7 +51,7 @@ table tr{
 }
 </style>
 <script language="JavaScript" src="js/calendar_us.js"></script>
-	<link rel="stylesheet" href="css/calendar.css">
+<link rel="stylesheet" href="css/calendar.css">
 <script language="JavaScript" src="js/admission/admissionform.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
 <html:form action="/uniqueIdRegistration" method="POST">

@@ -2707,12 +2707,14 @@ public class OnlineApplicationAction extends BaseDispatchAction {
 		ActionMessages messages=new ActionMessages();
 		
 		try{
-			
+			System.out.println("inside updatePGIResponse method -> Before Updating status");
 			boolean isUpdated= OnlineApplicationHandler.getInstance().updateResponse(admForm);
+			System.out.println("inside updatePGIResponse method -> after Updating status");
 			
+			System.out.println("inside updatePGIResponse method -> Before Updating application details");
 			if(isUpdated && admForm.getIsTnxStatusSuccess()){
 				boolean	result=handler.saveApplicationDetailsToSession(admForm);
-				
+				System.out.println("inside updatePGIResponse method -> after Updating application details");
 				
 				if(admForm.getIsTnxStatusSuccess()) {
 					admForm.setDisplayPage("paymentsuccess");

@@ -1021,13 +1021,13 @@ function checkOtherPLatform(val){
                  <div class="col-sm-2"><span class="Mandatory" style="color:red;">*</span><b><bean:message key="knowledgepro.fee.academicyear"/>:</b></div>
 		          <div class="col-sm-2">
 		                           <input type="hidden" id="tempyear" name="tempyear" value="<bean:write name="attendanceEntryForm" property="year"/>"/>
-		                           <div style="display: none;">
+		                           <div>
 		                           <html:select property="year" styleId="academicYear" name="attendanceEntryForm" styleClass="form-control" onchange="getClassByTeacherAndYear(this.value)">
                        	   				 <html:option value=""><bean:message key="knowledgepro.admin.select"/></html:option>
                        	   				<cms:renderAcademicYear></cms:renderAcademicYear>
                        			   </html:select>
                        			   </div>
-                       			   <bean:write name="attendanceEntryForm" property="year"/>
+                       			   <%-- <bean:write name="attendanceEntryForm" property="year"/> --%>
 		        	</div>
 		        	<div class="col-sm-2" ><font style="font-size: 13px"><b>Pick From Time Table:</b></font></div>
 					<div class="col-sm-2"><html:radio styleClass="rdio rdio-primary" property="timeTableFormat" value="yes" onclick="changeJavaScript(this.value,true);getPeriodsForTeacher();"> Yes</html:radio> 

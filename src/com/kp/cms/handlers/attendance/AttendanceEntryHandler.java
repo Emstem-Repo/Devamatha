@@ -620,12 +620,12 @@ public class AttendanceEntryHandler {
 		Collections.sort(studentList,new Comparator<StudentTO>() {
 			@Override
 			public int compare(StudentTO arg0, StudentTO arg1) {
-				//String string = arg0.getRollNo();
-				//String string2=arg1.getRollNo();
-				Integer n1=new Integer(arg0.getRollNo());
-				Integer n2=new Integer(arg1.getRollNo());
-				//return string.compareTo(string2);
-				return n1.compareTo(n2);
+				String string = arg0.getRollNo();
+				String string2=arg1.getRollNo();
+				//Integer n1=new Integer(arg0.getRollNo());
+				//Integer n2=new Integer(arg1.getRollNo());
+				return string.compareTo(string2);
+				//return n1.compareTo(n2);
 			}
 		})
 		;
@@ -2282,12 +2282,12 @@ public void getStudentsList(AttendanceEntryForm attendanceEntryForm,HttpSession 
 	Collections.sort(studentList,new Comparator<StudentTO>() {
 		@Override
 		public int compare(StudentTO arg0, StudentTO arg1) {
-			//String string = arg0.getRollNo();
-			//String string2=arg1.getRollNo();
-			Integer n1=new Integer(arg0.getRollNo());
-			Integer n2=new Integer(arg1.getRollNo());
-			//return string.compareTo(string2);
-			return n1.compareTo(n2);
+			String string = arg0.getRollNo();
+			String string2=arg1.getRollNo();
+			//Integer n1=new Integer(arg0.getRollNo());
+			//Integer n2=new Integer(arg1.getRollNo());
+			return string.compareTo(string2);
+			//return n1.compareTo(n2);
 		}
 	})
 	;
@@ -2624,12 +2624,12 @@ public void getStudentsList1(AttendanceEntryForm attendanceEntryForm,HttpSession
 	 Collections.sort(studentList,new Comparator<StudentTO>() {
 			@Override
 			public int compare(StudentTO arg0, StudentTO arg1) {
-				//String string = arg0.getRollNo();
-				//String string2=arg1.getRollNo();
-				Integer n1=new Integer(arg0.getRollNo());
-				Integer n2=new Integer(arg1.getRollNo());
-				//return string.compareTo(string2);
-				return n1.compareTo(n2);
+				String string = arg0.getRollNo();
+				String string2=arg1.getRollNo();
+				//Integer n1=new Integer(arg0.getRollNo());
+				//Integer n2=new Integer(arg1.getRollNo());
+				return string.compareTo(string2);
+				//return n1.compareTo(n2);
 			}
 		})
 		;
@@ -2869,12 +2869,12 @@ public void getStudentsList2(AttendanceEntryForm attendanceEntryForm,HttpSession
 	 Collections.sort(studentList,new Comparator<StudentTO>() {
 			@Override
 			public int compare(StudentTO arg0, StudentTO arg1) {
-				//String string = arg0.getRollNo();
-				//String string2=arg1.getRollNo();
-				Integer n1=new Integer(arg0.getRollNo());
-				Integer n2=new Integer(arg1.getRollNo());
-				//return string.compareTo(string2);
-				return n1.compareTo(n2);
+				String string = arg0.getRollNo();
+				String string2=arg1.getRollNo();
+				//Integer n1=new Integer(arg0.getRollNo());
+				//Integer n2=new Integer(arg1.getRollNo());
+				return string.compareTo(string2);
+				//return n1.compareTo(n2);
 			}
 		})
 		;
@@ -3133,12 +3133,12 @@ public void getStudentsList3(AttendanceEntryForm attendanceEntryForm,HttpSession
 	 Collections.sort(studentList,new Comparator<StudentTO>() {
 			@Override
 			public int compare(StudentTO arg0, StudentTO arg1) {
-				//String string = arg0.getRollNo();
-				//String string2=arg1.getRollNo();
-				Integer n1=new Integer(arg0.getRollNo());
-				Integer n2=new Integer(arg1.getRollNo());
-				//return string.compareTo(string2);
-				return n1.compareTo(n2);
+				String string = arg0.getRollNo();
+				String string2=arg1.getRollNo();
+				//Integer n1=new Integer(arg0.getRollNo());
+				//Integer n2=new Integer(arg1.getRollNo());
+				return string.compareTo(string2);
+				//return n1.compareTo(n2);
 			}
 		})
 		;
