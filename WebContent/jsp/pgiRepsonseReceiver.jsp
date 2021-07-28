@@ -9,7 +9,7 @@
 <html:hidden property="method" value="updatePGIResponse"/>
 <html:hidden property="formName" value="onlineApplicationForm"/>
 
-<%--<html:hidden property="responseMsg" styleId="responseMsg"/>--%>
+
 <%-- 
  <html:hidden property="mihpayid" styleId="mihpayid"/>
 <html:hidden property="mode1" styleId="mode1"/>
