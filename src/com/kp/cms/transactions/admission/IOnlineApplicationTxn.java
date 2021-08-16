@@ -214,4 +214,6 @@ public interface IOnlineApplicationTxn {
 	public String getIsCommunityQuota(String admApplnId) throws ApplicationException;
 	public String getIsMngQuota(String admApplnId) throws ApplicationException;
 
+	public AdmAppln getApplicantDet(OnlineApplicationForm admForm) throws Exception;
+
 }

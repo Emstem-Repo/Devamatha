@@ -67,9 +67,11 @@
 	document.getElementById("status").value="<%= request.getAttribute("status").toString()%>";
 	document.getElementById("bank_ref_num").value="<%= request.getAttribute("bank_ref_num").toString()%>";
 	document.getElementById("statusDes").value="<%= request.getAttribute("statusDes").toString()%>";
-	document.getElementById("authzCode").value="<%= request.getAttribute("authzCode").toString()%>";
-	document.getElementById("responceCode").value="<%= request.getAttribute("responceCode").toString()%>"
+	<%-- document.getElementById("authzCode").value="<%= request.getAttribute("authzCode").toString()%>"; --%>
+	<%-- document.getElementById("responceCode").value="<%= request.getAttribute("responceCode").toString()%>" --%>
 	document.getElementById("txnDate").value="<%= request.getAttribute("txnDate").toString()%>"
+	<% session.setAttribute("isOnline", "1"); %>
+	<% System.out.println("after setting values"); %>
 	document.onlineApplicationForm.submit();
 </script>
 </html:html>

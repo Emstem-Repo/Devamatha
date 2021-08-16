@@ -2621,12 +2621,17 @@ public class OnlineApplicationAction extends BaseDispatchAction {
 			
 			ReqMsgDTO objReqMsgDTO = new ReqMsgDTO();
 			objReqMsgDTO.setOrderId(hash);
+			System.out.println("hash "+hash);
 			objReqMsgDTO.setMid(CMSConstants.PGI_WLS_MERCHANT_ID);
+			System.out.println(CMSConstants.PGI_WLS_MERCHANT_ID);
 			objReqMsgDTO. setTrnAmt(admForm.getApplicationAmount()+"00");
+			System.out.println(admForm.getApplicationAmount()+"00");
 			objReqMsgDTO.setTrnCurrency("INR");
 			objReqMsgDTO. setMeTransReqType("S");
 			objReqMsgDTO. setEnckey(CMSConstants.PGI_WLS_ENCRIPTION_KEY);
+			System.out.println(CMSConstants.PGI_WLS_ENCRIPTION_KEY);
 			objReqMsgDTO. setResponseUrl(CMSConstants.PAYUMONEY_SUCCESSURL);
+			System.out.println(CMSConstants.PAYUMONEY_SUCCESSURL);
 			objReqMsgDTO.setTrnRemarks("Admission fee payment");
 			objReqMsgDTO.setAddField1(admForm.getApplicantName());
 			objReqMsgDTO.setAddField2(admForm.getEmail());
@@ -2708,14 +2713,22 @@ public class OnlineApplicationAction extends BaseDispatchAction {
 		
 		try{
 			System.out.println("inside updatePGIResponse method -> Before Updating status");
+			System.out.println("txnRefNo "+admForm.getTxnRefNo()+", txnAmt "+ admForm.getTxnAmt()
+			+", candidateRefNo "+admForm.getCandidateRefNo()+", status "+admForm.getStatus()+", bank_ref_num "
+			+admForm.getBank_ref_num()+", statusDes "+admForm.getStatusDes()+", txnDate "+admForm.getTxnDate());
+			IOnlineApplicationTxn txn= new OnlineApplicationImpl();
+			AdmAppln adm=txn.getApplicantDet(admForm);
+			admForm.setAdmApplnId(String.valueOf(adm.getId()));
+			admForm.setUniqueId(String.valueOf(adm.getStudentOnlineApplication().getId()));
+			admForm.setSelectedFeePayment("OnlinePayment");
 			boolean isUpdated= OnlineApplicationHandler.getInstance().updateResponse(admForm);
+			
 			System.out.println("inside updatePGIResponse method -> after Updating status");
 			
 			System.out.println("inside updatePGIResponse method -> Before Updating application details");
 			if(isUpdated && admForm.getIsTnxStatusSuccess()){
 				boolean	result=handler.saveApplicationDetailsToSession(admForm);
 				System.out.println("inside updatePGIResponse method -> after Updating application details");
-				
 				if(admForm.getIsTnxStatusSuccess()) {
 					admForm.setDisplayPage("paymentsuccess");
 					smsForPaymentSucess(admForm);
@@ -2730,6 +2743,9 @@ public class OnlineApplicationAction extends BaseDispatchAction {
 
 				/*messages.add(CMSConstants.MESSAGES,new ActionMessage("knowledgepro.admission.empty.err.message",admForm.getPgiStatus()));
 				saveMessages(request, messages);*/
+				int amnt=Integer.parseInt(admForm.getTxnAmt())/100;
+				admForm.setTxnAmt(String.valueOf(amnt));
+				
 			}
 			else{
 				errors.add("error", new ActionError("knowledgepro.admission.pgi.update.failure"));
@@ -2749,6 +2765,7 @@ public class OnlineApplicationAction extends BaseDispatchAction {
 		}
 		
 		log.info("exit updatePGIResponse-AdmissionFormAction...");
+		System.out.println("exit updatePGIResponse-AdmissionFormAction...");
 		return mapping.findForward("onlineAppBasicPage");
 	}
 	

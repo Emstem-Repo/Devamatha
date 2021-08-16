@@ -251,7 +251,7 @@ response.setHeader("Expires", "0"); // Proxies.
 
 	<logic:notEmpty property="incompleteApplication" name="uniqueIdRegistrationForm">
 	<logic:equal value="1" name="uniqueIdRegistrationForm" property="programTypeId">
-	<logic:equal value="0" name="uniqueIdRegistrationForm" property="isCommuQuota">
+	<%-- <logic:equal value="0" name="uniqueIdRegistrationForm" property="isCommuQuota"> --%>
 	<logic:notEmpty property="admissionStatusTOList" name="uniqueIdRegistrationForm">
 	<nested:iterate name="uniqueIdRegistrationForm" id="toList" property="admissionStatusTOList" indexId="count">
 		
@@ -260,7 +260,7 @@ response.setHeader("Expires", "0"); // Proxies.
 	
 	</nested:iterate>
 	</logic:notEmpty>
-	</logic:equal>
+	<%-- </logic:equal> --%>
 	</logic:equal>		
 	</logic:notEmpty>
 	
@@ -279,11 +279,11 @@ response.setHeader("Expires", "0"); // Proxies.
 	</logic:notEmpty>
 
 	<logic:equal value="1" name="uniqueIdRegistrationForm" property="programTypeId">
-	<logic:equal value="0" name="uniqueIdRegistrationForm" property="isCommuQuota">
+	<%-- <logic:equal value="0" name="uniqueIdRegistrationForm" property="isCommuQuota"> --%>
 	<logic:empty property="admissionStatusTOList" name="uniqueIdRegistrationForm">
 	<a id="newCourseLink" href="javascript:void(0)" onclick="newCourse()" id="applyCourses" style="color:red;font-size:large;">Click here to Apply Programme</a>
 	</logic:empty>
-	</logic:equal>
+	<%-- </logic:equal> --%>
 	</logic:equal>
 	<logic:equal value="2" name="uniqueIdRegistrationForm" property="programTypeId">
 	<logic:empty property="admissionStatusTOList" name="uniqueIdRegistrationForm">

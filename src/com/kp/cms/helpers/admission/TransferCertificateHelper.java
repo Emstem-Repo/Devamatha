@@ -1290,9 +1290,13 @@ public class TransferCertificateHelper
         final int date = Integer.parseInt(str.nextToken());
         final int month = Integer.parseInt(str.nextToken());
         final String year = str.nextToken();
-        final String year2 = year.substring(0, 2);
-        final String year3 = year.substring(2);
-        inWords = String.valueOf(NumberToWordConvertor.getDate(date)) + " " + CommonUtil.getMonthForNumber(month) + " " + NumberToWordConvertor.convertNumber(year2).toUpperCase() + " " + NumberToWordConvertor.convertNumber(year3);
+        final String year1 = year.substring(0, 2);
+        final String year2 = year.substring(2);
+        if (Integer.parseInt(year)<2010 && Integer.parseInt(year)>1999) {
+			inWords=NumberToWordConvertor.getDate(date)+" "+CommonUtil.getMonthForNumber(month)+" "+NumberToWordConvertor.convertNumber(year).toUpperCase();
+		}else{
+			inWords=NumberToWordConvertor.getDate(date)+" "+CommonUtil.getMonthForNumber(month)+" "+NumberToWordConvertor.convertNumber(year1).toUpperCase()+" "+NumberToWordConvertor.convertNumber(year2);
+		}
         String result = "";
         final char firstChar = inWords.charAt(0);
         result = String.valueOf(result) + Character.toUpperCase(firstChar);

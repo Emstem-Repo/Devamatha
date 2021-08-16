@@ -514,6 +514,12 @@ function verifyPendingTxn(verificationRefNo) {
 	           
             </td>
             </tr>
+            <tr>
+            <td colspan="2" height="100" width="100%" class="heading" align="center">
+	           <img src="images/paymentWarning.jpg" height="400px" width="90%" style="border-radius: 10px">
+	           
+            </td>
+            </tr>
             
             <%-- 
             <tr >

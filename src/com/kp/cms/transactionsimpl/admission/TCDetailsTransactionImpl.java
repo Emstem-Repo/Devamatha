@@ -161,7 +161,7 @@ public class TCDetailsTransactionImpl implements ITCDetailsTransaction
                 int count = 0;
                 int startingTCNumber = Integer.parseInt(tcDetailsForm.getStartingNumber());
                 final String accr = String.valueOf(tcDetailsForm.getAcademicYear()).substring(2);
-                final String finAccyr = String.valueOf(accr) + "-" + (Integer.parseInt(accr) + 1);
+                final String finAccyr = String.valueOf(tcDetailsForm.getAcademicYear()) + "-" + (Integer.parseInt(accr) + 1);
                 while (itr.hasNext()) {
                     final Student stu = itr.next();
                     StudentTCDetails bo = (StudentTCDetails)session.createQuery("from StudentTCDetails t where t.student.id=" + stu.getId()).uniqueResult();

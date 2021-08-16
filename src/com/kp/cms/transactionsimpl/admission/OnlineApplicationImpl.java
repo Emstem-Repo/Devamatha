@@ -3772,14 +3772,18 @@ public Map<String, String> getYear() throws Exception {
 		Transaction transaction=null;
 		boolean isUpdated=false;
 		String txnStatus ="Pending";
+		admForm.setApplicationAmount(admForm.getTxnAmt());
 		admForm.setIsTnxStatusSuccess(false);
 		try {
 			session=HibernateUtil.getSession();
 			transaction=session.beginTransaction();
-			
+				System.out.println("inside txnImpl -> before geting Bo");
 				String query=" from CandidatePGIDetails c where c.candidateRefNo='"+admForm.getCandidateRefNo()
-				+"' and c.txnAmount="+admForm.getApplicationAmount()+" and c.txnStatus='" + txnStatus + "'";
+				+"' and c.txnStatus='" + txnStatus + "'";
+				
+				System.out.println(query);
 				CandidatePGIDetails candidatePgiBo=(CandidatePGIDetails)session.createQuery(query).uniqueResult();
+				System.out.println("inside txnImpl -> after geting Bo id="+candidatePgiBo.getId());
 				if(candidatePgiBo!=null){
 					candidatePgiBo.setTxnRefNo(admForm.getTxnRefNo());
 					candidatePgiBo.setBankRefNo(admForm.getBank_ref_num());
@@ -3790,8 +3794,8 @@ public Map<String, String> getYear() throws Exception {
 						candidatePgiBo.setTxnStatus("failure");
 					}
 					
-					candidatePgiBo.setAuthzCode(admForm.getAuthzCode());
-					candidatePgiBo.setResponseCode(admForm.getResponceCode());
+					//candidatePgiBo.setAuthzCode(admForm.getAuthzCode());
+					//candidatePgiBo.setResponseCode(admForm.getResponceCode());
 					//raghu
 					//candidatePgiBo.setMode(bo.getMode());
 					//candidatePgiBo.setUnmappedStatus(bo.getUnmappedStatus());
@@ -3799,6 +3803,7 @@ public Map<String, String> getYear() throws Exception {
 				//	candidatePgiBo.setPgType(bo.getPgType());
 				//	candidatePgiBo.setAdditionalCharges(bo.getAdditionalCharges());
 					if(admForm.getStatus()!=null && admForm.getStatus().equalsIgnoreCase("S")){
+						System.out.println("inside txnImpl ->Before admappln id"+admForm.getAdmApplnId());
 						AdmAppln adm=new AdmAppln();
 						adm.setId(Integer.parseInt(admForm.getAdmApplnId()));
 						candidatePgiBo.setAdmAppln(adm);
@@ -3806,6 +3811,7 @@ public Map<String, String> getYear() throws Exception {
 	
 					session.update(candidatePgiBo);
 					if(admForm.getStatus()!=null && admForm.getStatus().equalsIgnoreCase("S")){
+						System.out.println("inside txnImpl ->after Updaate success");
 						admForm.setIsTnxStatusSuccess(true);
 						admForm.setPaymentSuccess(true);
 						admForm.setPgiStatus("Payment Successful");
@@ -3880,5 +3886,24 @@ public Map<String, String> getYear() throws Exception {
 		}
 		return rtResult; 
 	
+	}
+
+	@Override
+	public AdmAppln getApplicantDet(OnlineApplicationForm admForm) throws Exception {
+		Session session = null;
+		AdmAppln admAppln =null;
+		try{
+			session = HibernateUtil.getSession();
+			if(admForm.getCandidateRefNo()!=null && !admForm.getCandidateRefNo().isEmpty()){
+				String str = "from AdmAppln a where a.studentOnlineApplication.id=(select b.uniqueId.id from CandidatePGIDetails b where b.candidateRefNo='"+admForm.getCandidateRefNo()+"')";
+				System.out.println("get manual admappln Query "+str);
+				Query query = session.createQuery(str);
+				admAppln = (AdmAppln) query.uniqueResult();
+			}
+		}catch (Exception e) {
+			System.out.println("Error during .................................getAdmApplnDetails.........."+ e.getCause().toString());
+			throw e;
+		}
+		return admAppln;
 	}
 }
