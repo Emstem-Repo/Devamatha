@@ -2000,7 +2000,7 @@ public class CommonAjaxImpl extends CommonAjaxExamImpl implements ICommonAjax {
 					if(subjectCodeGroupMap.containsKey(String.valueOf(tcs.getSubject().getSubjectCodeGroup().getId())+"_"+subjectCodeName)){
 						 List<Integer> subjectIds=subjectCodeGroupMap.get(String.valueOf(tcs.getSubject().getSubjectCodeGroup().getId())+"_"+subjectCodeName);
 						//if all subject contains different subjectCodeGroup start
-						 for (Integer subjectId : subjectIds) {
+						 /*for (Integer subjectId : subjectIds) {
 							if(classMap.containsKey(String.valueOf(subjectId)) && !subjectChange){
 								classMap.remove(String.valueOf(subjectId));
 							}
@@ -2012,7 +2012,7 @@ public class CommonAjaxImpl extends CommonAjaxExamImpl implements ICommonAjax {
 						  subjectCodeGroupMap.put(String.valueOf(tcs.getSubject().getSubjectCodeGroup().getId())+"_"+subjectCodeName, subjectIds);
 						  if(!classMap.containsKey(String.valueOf(tcs.getSubject().getSubjectCodeGroup().getId())+"_"+subjectCodeName)){
 							  classMap.put(String.valueOf(tcs.getSubject().getSubjectCodeGroup().getId())+"_"+subjectCodeName, tcs.getSubject().getSubjectCodeGroup().getSubjectsGroupName());
-						  }
+						  }*/
 					}else{
 						if(tcs.getSubject().getIsActive() && tcs.getIsActive()){
 							List<Integer> subjectIds=new ArrayList<Integer>();
@@ -7186,7 +7186,7 @@ try {
 		}
 
 		@Override
-		public Map<Integer, String> getExamNameByYearAndCourseAndSem(int year,int course,int sem) throws Exception {
+		public Map<Integer, String> getExamNameByYearAndCourseAndSem(int year,int course,int sem,String type, String subId) throws Exception {
 			Session session = null;
 			Map<Integer, String> map=new HashMap<Integer, String>();
 			try {
@@ -7198,10 +7198,28 @@ try {
 					
 				
 				Query query = session.createQuery(SQL_QUERY);
+				List<Integer> tList=new ArrayList<Integer>();
+				List<Integer> pList=new ArrayList<Integer>();
+				if (Integer.parseInt(subId)!=83) {
+					pList.add(3);pList.add(6);pList.add(3);pList.add(10);pList.add(9);pList.add(11);pList.add(7);pList.add(6);
+					tList.add(3);tList.add(6);tList.add(3);tList.add(4);tList.add(5);tList.add(11);tList.add(7);
+				}else{
+					pList.add(3);pList.add(6);pList.add(3);pList.add(10);pList.add(11);pList.add(7);pList.add(6);pList.add(4);
+					tList.add(3);tList.add(6);tList.add(3);tList.add(4);tList.add(5);tList.add(11);tList.add(7);
+					
+				}
 				Iterator<ExamDefinitionBO> itr=query.list().iterator();
 				while (itr.hasNext()) {
 					ExamDefinitionBO exam= itr.next();
-					map.put(exam.getId(),exam.getName());
+					if (type.equalsIgnoreCase("1") &&
+		            		 tList.contains(exam.getInternalExamTypeId()) ) {
+						map.put(exam.getId(),exam.getName());
+					}else if (type.equalsIgnoreCase("0") &&
+							pList.contains(exam.getInternalExamTypeId()) ) {
+						map.put(exam.getId(),exam.getName());
+					}/*else{
+						map.put(exam.getId(),exam.getName());
+					}*/
 				}
 				return map;
 			} catch (Exception e) {

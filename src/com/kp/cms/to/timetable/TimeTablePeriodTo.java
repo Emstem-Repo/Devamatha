@@ -105,6 +105,7 @@ public class TimeTablePeriodTo  implements Serializable,Comparable<TimeTablePeri
 	public void setWeek(String week) {
 		this.week = week;
 	}
+	
 	@Override
 	public int compareTo(TimeTablePeriodTo arg0) {
 		if(arg0!=null && this!=null){
@@ -125,6 +126,27 @@ public class TimeTablePeriodTo  implements Serializable,Comparable<TimeTablePeri
 		}	
 		return 0;
 	}
+	
+	/*@Override
+	public int compareTo(TimeTablePeriodTo arg0) {
+		if(arg0!=null && this!=null){
+			DateFormat dateFormat = new SimpleDateFormat("k:mm:ss");
+			
+			String startTime;
+			try {
+				startTime = this.getPeriodName();
+				String startTime1 = arg0.getPeriodName();
+				if(startTime.compareTo(startTime1) > 0)
+					return 1;
+				else if(startTime.compareTo(startTime1) < 0){
+					return -1;
+				}else
+					return 0;
+			} catch (Exception e) {
+			}
+		}	
+		return 0;
+	}*/
 	
 
 }

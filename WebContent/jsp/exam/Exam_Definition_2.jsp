@@ -356,6 +356,22 @@ function closeWindow(){
 										styleId="maxFailedSubjects" size="20" maxlength="2" /> </span></td>
 								</tr>
 								<tr>
+
+
+									<td height="25" class="row-odd">
+									
+									</td>
+
+									<td height="25" class="row-even"></td>
+
+									<td height="25" class="row-odd">
+									<div align="right">Exam alias:</div>
+									</td>
+									<td height="25" class="row-even"><span class="star">
+									<html:text property="alias"
+										styleId="maxFailedSubjects" size="20" maxlength="2" /> </span></td>
+								</tr>
+								<tr>
 									<td height="25" class="row-odd">
 									<div align="right"><bean:message
 										key="knowledgepro.exam.examDefinition.current" />:</div>

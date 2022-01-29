@@ -1561,14 +1561,14 @@ public class AttendanceEntryHelper {
 		attendance.setAttendanceDate(CommonUtil.ConvertStringToSQLDate(attendanceEntryForm.getAttendancedate()));
 		if (attendanceEntryForm.getDutyType()!=null && (attendanceEntryForm.getDutyType()!="other" && !attendanceEntryForm.getDutyType().equalsIgnoreCase("other"))) {
 			attendance.setDutyType(attendanceEntryForm.getDutyType());
-		}else if(attendanceEntryForm.getDutyType()=="other" || attendanceEntryForm.getDutyType().equalsIgnoreCase("other") && attendanceEntryForm.getDutyTypeOther()!=null)
+		}else if(attendanceEntryForm.getDutyType()!=null && (attendanceEntryForm.getDutyType()=="other" || attendanceEntryForm.getDutyType().equalsIgnoreCase("other")))
 			attendance.setDutyType(attendanceEntryForm.getDutyTypeOther());
 		if (attendanceEntryForm.getClassType()!=null) {
 			attendance.setClassType(attendanceEntryForm.getClassType());
 		}
 		if (attendanceEntryForm.getPlatform()!=null && (attendanceEntryForm.getPlatform()!="other" & !attendanceEntryForm.getPlatform().equalsIgnoreCase("other"))) {
 			attendance.setPlatform(attendanceEntryForm.getPlatform());
-		}else if(attendanceEntryForm.getDutyType()=="other" || attendanceEntryForm.getPlatform().equalsIgnoreCase("other") && attendanceEntryForm.getPlatformOther()!=null)
+		}else if(attendanceEntryForm.getPlatform()!=null && (attendanceEntryForm.getDutyType()=="other" || attendanceEntryForm.getPlatform().equalsIgnoreCase("other")))
 			attendance.setPlatform(attendanceEntryForm.getPlatformOther());
 		if (attendanceEntryForm.getTopic()!=null) {
 			attendance.setTopic(attendanceEntryForm.getTopic());

@@ -541,7 +541,7 @@ public class TimeTableForClassAction extends BaseDispatchAction {
 					}else{
 						if (commonSubList!=null) {
 						if(commonSubList.contains(Integer.parseInt(to.getSubjectId()))){
-							isCommonSub=true;
+							//isCommonSub=true;
 						}
 						}
 					}

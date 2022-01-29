@@ -157,6 +157,7 @@ public class AdmissionCSVUpdater {
 						exlSheetAcademicYear = Integer.parseInt(parser.getValueByLabel("Academic_year"));
 					}
 					applnBo.setBankBranch(parser.getValueByLabel("Bank_BranchCode"));
+					applnBo.setAdmissionNumber(parser.getValueByLabel("Admission_number"));
 					applnBo.setIsSelected(true);
 					applnBo.setIsCancelled(false);
 					applnBo.setIsBypassed(true);

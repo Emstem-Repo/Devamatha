@@ -24,6 +24,7 @@ import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
 import com.kp.cms.bo.admin.Attendance;
+import com.kp.cms.bo.admin.AttendanceInstructor;
 import com.kp.cms.bo.admin.AttendanceSlipNumber;
 import com.kp.cms.bo.admin.AttendanceTimeRestrictionClasswise;
 import com.kp.cms.bo.admin.Batch;
@@ -2483,5 +2484,52 @@ public class AttendanceEntryTransactionImpl implements IAttendanceEntryTransacti
 		}
 		return ttUsersBo;
 	}
+	
+	public String getEmployeeDuty(AttendanceEntryForm attendanceEntryForm) throws Exception{
+		log.debug("Txn Impl : Entering addAttendance ");
+		Session session = null; 
+		Transaction tx = null;
+		String sqlDate=null;
+		 String duty=null;
+		try {
+			//SessionFactory sessionFactory = InitSessionFactory.getInstance();
+			 session = HibernateUtil.getSession();
+			 tx = session.beginTransaction();
+			 tx.begin();
+			 sqlDate=CommonUtil.formatDate(attendanceEntryForm.getAttendancedate());
+			 String attQuery = "select  duty from EmployeeDutyPerformed where is_active = 1 and users.id ="+attendanceEntryForm.getUserId() +" and date='"+sqlDate+"' ";
+			 Query q =session.createQuery(attQuery);
+			 if (q.uniqueResult()!=null) {
+	             duty=(String) q.uniqueResult();
+			}else{
+				duty="NO";
+			}
 
+	}
+		catch (Exception e) {
+			log.debug("Error during getting applicaition numbers..." + e);
+			session.flush();
+			//session.close();
+			throw new ApplicationException(e);
+		}
+		return duty;
+	}
+	public List<AttendanceInstructor> getAttendanceEntryDetails(AttendanceEntryForm attendanceEntryForm) throws Exception {
+		Session session = null;
+		List<AttendanceInstructor> periodList;
+
+		try {
+			session = HibernateUtil.getSession();
+			Query query = session.createQuery("from AttendanceInstructor at where at.attendance.attendanceDate='"+CommonUtil.ConvertStringToSQLDate(attendanceEntryForm.getDutyPerformedDate())+"' and at.users.id="+attendanceEntryForm.getUserId());
+			List<AttendanceInstructor> list = query.list();
+			session.flush();
+			periodList = list;
+
+		} catch (Exception e) {
+			log.debug("Error during getting getPeriodsForAttendanceEntryDay numbers..." + e);
+			session.flush();
+			throw new ApplicationException(e);
+		}
+		return periodList;
+	}
 }

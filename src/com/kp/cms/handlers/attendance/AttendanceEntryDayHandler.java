@@ -11,15 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.kp.cms.bo.admin.AttendanceEntryDay;
 import com.kp.cms.bo.admin.Caste;
+import com.kp.cms.bo.admin.EmployeeDutyPerformed;
 import com.kp.cms.bo.admin.IsActive;
 import com.kp.cms.exceptions.DuplicateException;
 import com.kp.cms.exceptions.ReActivateException;
 import com.kp.cms.forms.admin.CasteForm;
 import com.kp.cms.forms.attendance.AttendanceEntryDayForm;
+import com.kp.cms.forms.attendance.AttendanceEntryForm;
 import com.kp.cms.helpers.admin.CasteHelper;
 import com.kp.cms.helpers.attendance.AttendanceEntryDayHelper;
 import com.kp.cms.to.admin.CasteTO;
 import com.kp.cms.to.attendance.AttendanceEntryDayTO;
+import com.kp.cms.to.attendance.DutyPerformedTo;
 import com.kp.cms.transactions.admin.ICasteTransaction;
 import com.kp.cms.transactions.attandance.IAttendanceEntryDayTransaction;
 import com.kp.cms.transactionsimpl.admin.CasteTransactionImpl;
@@ -173,5 +176,52 @@ public class AttendanceEntryDayHandler {
 			attendanceEntryDayNew.setDate(date);
 			attendanceEntryDayNew.setDay(day);
 			attImpl.addAttendanceEntryDayByRemainder(attendanceEntryDayNew);
+	}
+	
+	public List<DutyPerformedTo> getDutyPerformedList() throws Exception{
+		IAttendanceEntryDayTransaction transaction = new AttendanceEntryDayTransactionImpl();
+		List<EmployeeDutyPerformed> dutyPerformedList = transaction.getDutyPerformedList();
+		List<DutyPerformedTo> dutyPerformedToList = AttendanceEntryDayHelper.convertEmpDutBOsToTos(dutyPerformedList);
+		
+		
+		return dutyPerformedToList;
+	}
+	
+public boolean addEmplDutyPerformed(AttendanceEntryForm attendanceEntryForm,String mode,HttpServletRequest request) throws Exception{
+		
+
+		// TODO Auto-generated method stub
+		IAttendanceEntryDayTransaction attImpl = new AttendanceEntryDayTransactionImpl();
+		EmployeeDutyPerformed bo = null;
+		
+		
+		EmployeeDutyPerformed dupBo= attImpl.isDuplicateEmpDutyPerformed(attendanceEntryForm, mode);
+		if(dupBo!=null && dupBo.getIsActive()==true)
+		{
+			throw new DuplicateException();
+		}
+		if(dupBo!=null && dupBo.getIsActive()==false){
+			request.getSession().setAttribute("AttendanceEntryDay",dupBo);
+			attendanceEntryForm.setEmployeeDutyPerformed(dupBo);
+			attendanceEntryForm.setDutyPerformedDupeId(String.valueOf(dupBo.getId()));
+			throw new ReActivateException();
+		}
+		else
+		{
+			bo=AttendanceEntryDayHelper.getInstance().addEmpDutyPerformed(attendanceEntryForm,mode);
+		}
+	if(mode.equals("Add")){
+		bo.setCreatedBy(attendanceEntryForm.getUserId());
+		bo.setModifiedBy(attendanceEntryForm.getUserId());
+		bo.setLastModifiedDate(new Date());
+		bo.setCreatedDate(new Date());
+		bo.setIsActive(true);
+	}else{ // Edit
+		bo.setLastModifiedDate(new Date());
+		bo.setModifiedBy(attendanceEntryForm.getUserId());
+	}
+	boolean isadded=attImpl.addEmployeeDutyPerformed(bo,mode);
+	return isadded;
+	
 	}
 }

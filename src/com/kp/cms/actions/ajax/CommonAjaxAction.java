@@ -2785,7 +2785,6 @@ public class CommonAjaxAction extends CommonAjaxExamAction {
 			String teacherId = request.getParameter("teacherId");
 			String year = request.getParameter("year");
 			String day=CommonUtil.getDayForADate(request.getParameter("date"));
-			
 			String attEntryDay = AttendanceEntryTransactionImpl.getInstance().getAttendanceEntryDay(baseActionForm);
 			if(attEntryDay!=null  && !attEntryDay.isEmpty())//{
 				day=attEntryDay;

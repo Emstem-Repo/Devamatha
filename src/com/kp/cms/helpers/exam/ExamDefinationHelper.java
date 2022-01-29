@@ -183,7 +183,7 @@ public class ExamDefinationHelper {
 						.getMonth(), Integer.parseInt(objForm.getYear()),
 				objForm.getJoiningBatchYear(), objForm.getMaxFailedSubjects(),
 				"on".equalsIgnoreCase(objForm.getCurrent()) ? true : false,
-				objForm.getInternalExamTypeId(), objForm.getUserId(), flag, (objForm.getRegularExamIdForRedo() != null && !objForm.getRegularExamIdForRedo().isEmpty()) ? Integer.parseInt(objForm.getRegularExamIdForRedo()) : null);
+				objForm.getInternalExamTypeId(), objForm.getUserId(), flag, (objForm.getRegularExamIdForRedo() != null && !objForm.getRegularExamIdForRedo().isEmpty()) ? Integer.parseInt(objForm.getRegularExamIdForRedo()) : null,objForm.getAlias());
 
 	}
 

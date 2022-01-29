@@ -6654,6 +6654,11 @@
         	<forward name="adminProgressCard" path="/jsp/exam/progressCard.jsp"/>
         </action>
         
+        <action path="/EmpDutyPerformed" name="attendanceEntryForm" scope="request"
+         validate="false" parameter="method" type="com.kp.cms.actions.attendance.EmpDutyPerformedAction">
+            <forward name="dutyPerform" path="dutyPerform"/>
+        </action>
+        
 	 </action-mappings>
 
     <!--

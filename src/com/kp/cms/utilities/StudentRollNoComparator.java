@@ -11,7 +11,8 @@ public class StudentRollNoComparator implements Comparator<StudentTO>{
     @Override
  	public int compare(StudentTO s1, StudentTO s2) {
     	if(s1.getRollNo() != null && s2.getRollNo() != null && !s1.getRollNo().equalsIgnoreCase("") && !s2.getRollNo().equalsIgnoreCase(""))
-       	 return new Integer(s1.getRollNo()).compareTo(new Integer(s2.getRollNo()));
+       	/* return new Integer(s1.getRollNo()).compareTo(new Integer(s2.getRollNo()));*/
+    		 return  s1.getRollNo().compareTo(s2.getRollNo());
      
      else if(this.isRegNoCheck && s1.getRegisterNo() != null && s2.getRegisterNo() != null)
     	 return s1.getRegisterNo().compareTo(s2.getRegisterNo());

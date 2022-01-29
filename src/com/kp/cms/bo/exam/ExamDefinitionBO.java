@@ -20,6 +20,7 @@ public class ExamDefinitionBO extends ExamGenBO {
 	private ExamInternalExamTypeBO internalExamTypeBO;
 	private ExamTypeUtilBO examTypeUtilBO;
 	private Integer regularExamId;
+	private String alias;
 
 	// 1-to-many
 	private Set<ExamExamCourseSchemeDetailsBO> examExamCourseSchemeDetailsBOSet;
@@ -33,7 +34,7 @@ public class ExamDefinitionBO extends ExamGenBO {
 	public ExamDefinitionBO(int id, String examName, String examCode,
 			int academicYear, int examTypeId, String month, int year,
 			Integer joiningBatch, Integer maxFailedSub, boolean isCurrent,
-			int internalTypeId, String userId, boolean isActive, Integer regularExamId) {
+			int internalTypeId, String userId, boolean isActive, Integer regularExamId,String alias) {
 		super();
 		this.id = id;
 		this.name = examName;
@@ -57,6 +58,7 @@ public class ExamDefinitionBO extends ExamGenBO {
 		this.isActive = isActive;
 		this.delIsActive=true;
 		this.regularExamId = regularExamId;
+		this.alias=alias;
 	}
 
 	public int getAcademicYear() {
@@ -179,6 +181,14 @@ public class ExamDefinitionBO extends ExamGenBO {
 
 	public void setRegularExamId(Integer regularExamId) {
 		this.regularExamId = regularExamId;
+	}
+
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
 	}
 
 }

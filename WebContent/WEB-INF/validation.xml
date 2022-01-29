@@ -2770,15 +2770,15 @@
             <field property="hoursHeld" depends="required,integer">
                 <arg key="knowledgepro.attendanceentry.hoursheld"/>
             </field>
-            <field property="dutyType" depends="required">
+            <!-- <field property="dutyType" depends="required">
                 <arg key="knowledgepro.attendanceentry.duty.required"/>
-            </field>
-            <field property="classType" depends="required">
+            </field> -->
+            <!-- <field property="classType" depends="required">
                 <arg key="knowledgepro.attendanceentry.class.type.required"/>
-            </field>
-            <field property="platform" depends="required">
+            </field> -->
+           <!--  <field property="platform" depends="required">
                 <arg key="knowledgepro.attendanceentry.platform.required"/>
-            </field>
+            </field> -->
         </form>
         
         <form name="monthlyAttendanceEntryForm#1">

@@ -14,6 +14,7 @@ import com.kp.cms.to.timetable.DepartentTimeTableClassTo;
 import com.kp.cms.to.timetable.DepartmentTimeTablePeriodTo;
 import com.kp.cms.to.timetable.TimeTableClassTo;
 import com.kp.cms.to.timetable.TimeTablePeriodTo;
+import com.kp.cms.utilities.TimeTableComparator;
 
 public class ViewTeacherWiseTimeTableHelper {
 	private static volatile ViewTeacherWiseTimeTableHelper timeTableHelper = null;
@@ -202,7 +203,9 @@ return hqlQuery;
 					}
 				}
 			}
-			Collections.sort(periodToList);
+			//Collections.sort(periodToList);
+			Collections.sort(periodToList, new TimeTableComparator());
+			
 			classTo.setTimeTablePeriodTos(periodToList);
 		}
 	}

@@ -5149,6 +5149,7 @@ public class StudentLoginAction extends BaseDispatchAction {
 	        try {
 	            final int doctypeId = CMSConstants.CLASS12_DOCTYPEID;
 	            final EdnQualificationTO qualTO = loginForm.getEdnQualification();
+	            System.out.println(qualTO.getId());
 	            if (qualTO.getDocTypeId() == doctypeId) {
 	                final String language = "Language";
 	                Map<Integer, String> admsubjectMap = null;

@@ -2210,9 +2210,9 @@ public class CommonAjaxHandler extends CommonAjaxExamHandler {
 			return subjectMap;
 		}
 
-		public Map<Integer, String> getExamNameByYearAndCourseAndSem(int year,int course,int sem) throws Exception {
+		public Map<Integer, String> getExamNameByYearAndCourseAndSem(int year,int course,int sem,String type,String subId) throws Exception {
 			ICommonAjax iCommonAjax = CommonAjaxImpl.getInstance();
-			Map<Integer, String> examMap = iCommonAjax.getExamNameByYearAndCourseAndSem(year, course, sem);
+			Map<Integer, String> examMap = iCommonAjax.getExamNameByYearAndCourseAndSem(year, course, sem, type, subId);
 			examMap = (HashMap<Integer, String>) CommonUtil.sortMapByValue(examMap);
 			return examMap;
 		}

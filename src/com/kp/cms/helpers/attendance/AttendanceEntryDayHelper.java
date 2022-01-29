@@ -7,10 +7,13 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.kp.cms.bo.admin.AttendanceEntryDay;
-
+import com.kp.cms.bo.admin.EmployeeDutyPerformed;
+import com.kp.cms.bo.admin.Users;
 import com.kp.cms.forms.BaseActionForm;
 import com.kp.cms.forms.attendance.AttendanceEntryDayForm;
+import com.kp.cms.forms.attendance.AttendanceEntryForm;
 import com.kp.cms.to.attendance.AttendanceEntryDayTO;
+import com.kp.cms.to.attendance.DutyPerformedTo;
 import com.kp.cms.utilities.CommonUtil;
 
 import org.apache.commons.logging.Log;
@@ -102,5 +105,45 @@ public class AttendanceEntryDayHelper {
 		}
 	   return attendanceEntryDay;
 	}
+	public static List<DutyPerformedTo> convertEmpDutBOsToTos(List<EmployeeDutyPerformed> casteBOList) {
+		List<DutyPerformedTo> attList = new ArrayList<DutyPerformedTo>();
+		
+		if (casteBOList != null) {
+
+			Iterator<EmployeeDutyPerformed> iterator = casteBOList.iterator();
+			while (iterator.hasNext()) {
+				EmployeeDutyPerformed attbo = (EmployeeDutyPerformed) iterator.next();
+				DutyPerformedTo attTO = new DutyPerformedTo();
+				attTO.setId(attbo.getId());
+				attTO.setDate(String.valueOf(attbo.getDate()));
+				attTO.setDutyPerformed(attbo.getDuty());
+				attList.add(attTO);
+			}
+		}
+		return attList;
+	}
 	
+	public EmployeeDutyPerformed addEmpDutyPerformed(
+			AttendanceEntryForm attendanceEntryForm , String mode) throws ParseException {
+		// TODO Auto-generated method stub
+		
+		EmployeeDutyPerformed bo=new EmployeeDutyPerformed();
+		//attendanceEntryDay.setDate(CommonUtil.ConvertStringToDateFormat(CommonUtil.getDate(attendanceEntryDayForm.getDate(), "dd-MMM-yyyy","dd/MM/yyyy"));
+		bo.setDate(CommonUtil.ConvertStringToSQLDate(attendanceEntryForm.getDutyPerformedDate()));
+		bo.setDuty(attendanceEntryForm.getDutyPerformed());
+		bo.setCreatedDate(new Date());
+		bo.setIsActive(true);
+		bo.setCreatedBy(attendanceEntryForm.getUserId());
+		Users user=new Users();
+		user.setId(Integer.parseInt(attendanceEntryForm.getUserId()));
+		bo.setUsers(user);
+		
+	    if (mode.equalsIgnoreCase("Edit")) {
+	    	bo.setLastModifiedDate(new java.util.Date());
+	    	bo.setModifiedBy(attendanceEntryForm.getUserId());
+	    	bo.setId(Integer.parseInt(attendanceEntryForm.getDutyPerformedId()));
+
+		}
+	   return bo;
+	}
 }

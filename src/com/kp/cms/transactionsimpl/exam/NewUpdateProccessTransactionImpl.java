@@ -715,7 +715,7 @@ public class NewUpdateProccessTransactionImpl implements
 							enterdMaxMarks=Double.parseDouble(obj[2].toString());
 						if(obj[3]!=null && !obj[3].toString().trim().isEmpty())
 							maxMarks=Double.parseDouble(obj[3].toString());
-						marks=marks+((totalMarks/enterdMaxMarks)*maxMarks);
+						//marks=marks+((totalMarks/enterdMaxMarks)*maxMarks);
 						if (enterdMaxMarks == 80.0) {
                             if (totalMarks >= 1.0 && totalMarks <= 7.0) {
                                 marks=marks+ 0.5;

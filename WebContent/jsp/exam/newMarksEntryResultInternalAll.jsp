@@ -371,7 +371,7 @@
 										</logic:equal>
 										
 										<logic:equal value="true" property="isPractical" name="examMarksEntryStudentTO">
-										<%-- <td width="10%" height="35">
+										<td width="10%" height="35">
 										
 											<logic:equal value="true" property="isPracticalSecured" name="examMarksEntryStudentTO">	
 												<nested:text property="practicalMarks" maxlength="6" styleId= '<%=id %>' onkeydown="movenext(this.name, event, this.id)" onblur="totMarksP(this.name, event, this.id)" disabled="true"/>
@@ -391,21 +391,21 @@
 											</c:otherwise>
 											</c:choose>
 												
-										</td> --%>
+										</td>
 										</logic:equal>
 										
 										</nested:iterate>
 										
-										<logic:equal value="1" property="subjectType" name="newExamMarksEntryForm">
+									<%-- 	<logic:equal value="1" property="subjectType" name="newExamMarksEntryForm">
 										<td height="35" width="10%"><div id='<%=tott %>'><bean:write name="examStudentTO" property="totalInternalMarksT"/></div></td>
 										</logic:equal>
 										<logic:equal value="0" property="subjectType" name="newExamMarksEntryForm">
 										<td height="35" width="10%"><div id='<%=totp %>'><bean:write name="examStudentTO" property="totalInternalMarksP" /></div></td>
-										</logic:equal>
-										<logic:equal value="11" property="subjectType" name="newExamMarksEntryForm">
+										</logic:equal> --%>
+										<%-- <logic:equal value="11" property="subjectType" name="newExamMarksEntryForm">
 										<td height="35" width="10%"><div id='<%=tott %>'><bean:write name="examStudentTO" property="totalInternalMarksT" /></div></td>
 										<td height="35" width="10%"><div id='<%=totp %>'><bean:write name="examStudentTO" property="totalInternalMarksP" /></div></td>
-										</logic:equal>
+										</logic:equal> --%>
 										
 									</tr>
 								

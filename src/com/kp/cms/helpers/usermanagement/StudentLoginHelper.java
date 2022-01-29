@@ -1050,6 +1050,9 @@ public class StudentLoginHelper
         bo.setYearPassing(Integer.valueOf(qualificationTO.getYearPassing()));
         bo.setMonthPassing(Integer.valueOf(qualificationTO.getMonthPassing()));
         bo.setPreviousRegNo(qualificationTO.getPreviousRegNo());
+        PersonalData pdata=new PersonalData();
+        pdata.setId(loginForm.getPersonalData().getId());
+        bo.setPersonalData(pdata);
         if (qualificationTO.getDocCheckListId() != 0) {
             final DocChecklist docList = new DocChecklist();
             docList.setId(qualificationTO.getDocCheckListId());
@@ -1067,6 +1070,9 @@ public class StudentLoginHelper
                     detailMark.setId(detailMarkto.getId());
                 }
                 detailMark.setCreatedBy(detailMarkto.getCreatedBy());
+                EdnQualification edco=new EdnQualification();
+                edco.setId(qualificationTO.getId());
+                detailMark.setEdnQualification(edco);
                 detailMark.setCreatedDate(detailMarkto.getCreatedDate());
                 detailMark.setModifiedBy(appBO.getModifiedBy());
                 detailMark.setLastModifiedDate(new Date());
@@ -1936,6 +1942,9 @@ public class StudentLoginHelper
             admSubjectMarkForRank.setIsActive(Boolean.valueOf(true));
             admSubjectMarkForRank.setCreatedDate(new Date());
             admSubjectMarkForRank.setCreatedBy(admForm.getUserId());
+            EdnQualification edco=new EdnQualification();
+            edco.setId(admForm.getEdnQualification().getId());
+            admSubjectMarkForRank.setEdnQualification(edco);
             admSubjectMarkForRank.setLastModifiedDate(new Date());
             admSubjectMarkForRank.setModifiedBy(admForm.getUserId());
             final int doctypeId = CMSConstants.CLASS12_DOCTYPEID;
@@ -2507,10 +2516,12 @@ public class StudentLoginHelper
                 ExamDoctype = 6;
                 ExamDoctypeName = "DEG";
             }
+            final EdnQualificationTO ednQualificationTO = new EdnQualificationTO();
             while (iterator.hasNext()) {
                 final EdnQualification ednQualificationBO = iterator.next();
-                if (ednQualificationBO.getDocTypeExams() != null && ednQualificationBO.getDocTypeExams().getId() == doctype) {
-                    final EdnQualificationTO ednQualificationTO = new EdnQualificationTO();
+                
+                if (ednQualificationBO.getDocTypeExams() != null && ednQualificationBO.getDocTypeExams().getId() == doctype || ednQualificationBO.getCandidateMarkses()!=null) {
+                    
                     for (final DocChecklist docChecklist : exambos) {
                         if (docChecklist.getDocType().getId() == ExamDoctype) {
                             ednQualificationBO.setDocChecklist(docChecklist);
@@ -2630,9 +2641,11 @@ public class StudentLoginHelper
                             }
                         }
                     }
-                    return ednQualificationTO;
+                   
                 }
+                
             }
+            return ednQualificationTO;
         }
         return null;
     }

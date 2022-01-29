@@ -218,6 +218,7 @@ public class CMSConstants extends CMSExamConstants {
 	public static List<Integer>  ROLE_ID_TEACHER = new ArrayList<Integer>();
 	public static List<Integer> INTERNAL_EXAM_IDS=new ArrayList<Integer>();
 	public static String EMPLOYEE_ACHIEVEMENT_FILE_FOLDER_PATH = "";
+	public static String ATTENDANCE_TIME = "0";
 	//public static List<Integer> ACADEMIC_YEAR_OLD_SEM=new ArrayList<Integer>();
 	
 
@@ -1126,6 +1127,10 @@ public class CMSConstants extends CMSExamConstants {
 		
 		if(prop.getProperty("knowledgepro.employee.achieve.file.path") != null && !StringUtils.isEmpty(prop.getProperty("knowledgepro.employee.image.path")) ){
 			EMPLOYEE_ACHIEVEMENT_FILE_FOLDER_PATH = prop.getProperty("knowledgepro.employee.achieve.file.path");
+		}
+		String attendanceTime = prop.getProperty("knowledgepro.attendance.time");
+		if(attendanceTime!=null && !attendanceTime.isEmpty()){
+			ATTENDANCE_TIME = attendanceTime;
 		}
 		
 	}

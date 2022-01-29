@@ -457,7 +457,10 @@ public class ApplicationRankHelperforPg {
 				AdmAppln admAppln=(AdmAppln)iter.next() ;
 				if (admAppln.getApplnNo()!=0) {
 				System.out.println("before================"+admAppln.getId());
-		//if(admAppln.getId()==2388){
+		/*if(admAppln.getId()==3527 || admAppln.getId()==3570){
+			System.out.println("before================"+admAppln.getId());
+			continue;
+		}*/
 				int penalty=0;
 
 				//form.setAccoId(admAppln.getId());
@@ -1258,10 +1261,10 @@ public class ApplicationRankHelperforPg {
 														cgpa=(Double.parseDouble(detailMarkBO.getObtainedmark())/Double.parseDouble(detailMarkBO.getMaxmark()))*10;
 														//coreMarks = coreMarks+CommonUtil.Round(cgpa,2);
 														//coreMaxMarks = coreMaxMarks+4;
-														credit=Double.parseDouble(detailMarkBO.getCredit());
+														/*credit=Double.parseDouble(detailMarkBO.getCredit());
 														mult=cgpa*credit;
 														totalCoreCgpa=totalCoreCgpa+mult;
-														totalcorecredit=totalcorecredit+credit;
+														totalcorecredit=totalcorecredit+credit;*/
 
 														if(detailMarkBO.getAdmSubjectForRank().getGroupName().equalsIgnoreCase("Core")){
 															coremalMark=(Double.parseDouble(detailMarkBO.getObtainedmark())/Double.parseDouble(detailMarkBO.getMaxmark()))*4;

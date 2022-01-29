@@ -18,6 +18,7 @@ import org.apache.struts.action.ActionMessage;
 
 import com.kp.cms.bo.admin.Department;
 import com.kp.cms.bo.admin.Designation;
+import com.kp.cms.bo.admin.EmployeeDutyPerformed;
 import com.kp.cms.bo.admin.Period;
 import com.kp.cms.bo.admin.TeacherClass;
 import com.kp.cms.bo.admin.TeacherClassSubject;
@@ -30,6 +31,7 @@ import com.kp.cms.to.attendance.ActivityTO;
 import com.kp.cms.to.attendance.AttendanceTO;
 import com.kp.cms.to.attendance.AttendanceTypeTO;
 import com.kp.cms.to.attendance.ClassesTO;
+import com.kp.cms.to.attendance.DutyPerformedTo;
 import com.kp.cms.to.attendance.PeriodTO;
 import com.kp.cms.to.attendance.TeacherClassEntryTo;
 import com.kp.cms.to.attendance.TeacherDepartmentTO;
@@ -89,6 +91,13 @@ public class AttendanceEntryForm extends BaseActionForm{
 	private List<Users> users;
 	private String roleId;
 	private String accessForRoleId;
+	private String dutyPerformedDate;
+	private String dutyPerformed;
+	private List<DutyPerformedTo> dutyPerformedList;
+	private String dutyPerformedId;
+	private EmployeeDutyPerformed employeeDutyPerformed;
+	private String dutyPerformedDupeId;
+	
 	// modify 
 	
 	public List<Users> getUsers() {
@@ -1701,6 +1710,66 @@ public class AttendanceEntryForm extends BaseActionForm{
 
 	public void setPlatformOther(String platformOther) {
 		this.platformOther = platformOther;
+	}
+
+
+	public String getDutyPerformedDate() {
+		return dutyPerformedDate;
+	}
+
+
+	public void setDutyPerformedDate(String dutyPerformedDate) {
+		this.dutyPerformedDate = dutyPerformedDate;
+	}
+
+
+	public String getDutyPerformed() {
+		return dutyPerformed;
+	}
+
+
+	public void setDutyPerformed(String dutyPerformed) {
+		this.dutyPerformed = dutyPerformed;
+	}
+
+
+	public List<DutyPerformedTo> getDutyPerformedList() {
+		return dutyPerformedList;
+	}
+
+
+	public void setDutyPerformedList(List<DutyPerformedTo> dutyPerformedList) {
+		this.dutyPerformedList = dutyPerformedList;
+	}
+
+
+	public String getDutyPerformedId() {
+		return dutyPerformedId;
+	}
+
+
+	public void setDutyPerformedId(String dutyPerformedId) {
+		this.dutyPerformedId = dutyPerformedId;
+	}
+
+
+	public EmployeeDutyPerformed getEmployeeDutyPerformed() {
+		return employeeDutyPerformed;
+	}
+
+
+	public void setEmployeeDutyPerformed(EmployeeDutyPerformed employeeDutyPerformed) {
+		this.employeeDutyPerformed = employeeDutyPerformed;
+	}
+
+
+	public String getDutyPerformedDupeId() {
+		return dutyPerformedDupeId;
+	}
+
+
+	public void setDutyPerformedDupeId(String dutyPerformedDupeId) {
+		this.dutyPerformedDupeId = dutyPerformedDupeId;
 	}
 	
 

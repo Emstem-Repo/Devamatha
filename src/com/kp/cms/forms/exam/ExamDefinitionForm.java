@@ -23,6 +23,7 @@ public class ExamDefinitionForm extends BaseActionForm {
 	private String[] selectedProgramType;
 	private String[] selectedProgram;
 	private String programIds;
+	private String alias;
 
 	public List<KeyValueTO> getProgramList() {
 		return programList;
@@ -482,5 +483,13 @@ public class ExamDefinitionForm extends BaseActionForm {
 
 	public void setRegularExams(Map<Integer, String> regularExams) {
 		this.regularExams = regularExams;
+	}
+
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
 	}
 }

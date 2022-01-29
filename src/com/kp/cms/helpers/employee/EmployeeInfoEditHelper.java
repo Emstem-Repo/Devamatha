@@ -3663,41 +3663,41 @@ public class EmployeeInfoEditHelper {
 							if (eLeave.getId() > 0) {
 								eLeaveTO.setEmpLeaveId(eLeave.getId());
 							}
-							if (eLeave.getEmpLeaveType().getId() > 0) {
+							if (eLeave.getEmpLeaveType() !=null && eLeave.getEmpLeaveType().getId() > 0) {
 								EmpLeaveType leavetype = new EmpLeaveType();
 								leavetype.setId(eLeave.getEmpLeaveType()
 										.getId());
 								eLeaveTO.setEmpLeaveType(leavetype);
 							}
 							
-							if (StringUtils.isNotEmpty(eLeave.getEmpLeaveType()
+							if (eLeave.getEmpLeaveType() !=null &&  StringUtils.isNotEmpty(eLeave.getEmpLeaveType()
 									.getName())) {
 								eLeaveTO.setLeaveType(eLeave.getEmpLeaveType()
 										.getName());
 							}
-							if (StringUtils.isNotEmpty(String.valueOf(eLeave
+							if (eLeave.getEmpLeaveType() !=null &&  StringUtils.isNotEmpty(String.valueOf(eLeave
 									.getLeavesAllocated()))) {
 								eLeaveTO.setAllottedLeave(String.valueOf(eLeave
 										.getLeavesAllocated()));
 							}
-							if (StringUtils.isNotEmpty(String.valueOf(eLeave
+							if (eLeave.getEmpLeaveType() !=null && StringUtils.isNotEmpty(String.valueOf(eLeave
 									.getLeavesSanctioned()))) {
 								eLeaveTO.setSanctionedLeave(String
 										.valueOf(eLeave.getLeavesSanctioned()));
 							}
-							if (StringUtils.isNotEmpty(String.valueOf(eLeave
+							if (eLeave.getEmpLeaveType() !=null && StringUtils.isNotEmpty(String.valueOf(eLeave
 									.getLeavesRemaining()))) {
 								eLeaveTO.setRemainingLeave(String
 										.valueOf(eLeave.getLeavesRemaining()));
 							}
-							if (StringUtils.isNotEmpty(String.valueOf(eLeave
+							if (eLeave.getEmpLeaveType() !=null && StringUtils.isNotEmpty(String.valueOf(eLeave
 									.getYear()))) {
 								eLeaveTO.setYear(eLeave.getYear());
 							}
 							String monthString = new DateFormatSymbols()
 									.getMonths()[month - 1];
 
-							if (StringUtils.isNotEmpty(monthString)) {
+							if (eLeave.getEmpLeaveType() !=null && StringUtils.isNotEmpty(monthString)) {
 								eLeaveTO.setMonth(monthString);
 							}
 							empLeaveTOs.add(eLeaveTO);
@@ -3749,7 +3749,7 @@ public class EmployeeInfoEditHelper {
 
 					}
 				}
-				Collections.sort(empLeaveTOs);
+				//Collections.sort(empLeaveTOs);
 				objform.getEmployeeInfoTONew().setEmpLeaveToList(empLeaveTOs);
 				objform.setEmpLeaveAllotTo(extEmpLeaveTos);
 			} else {

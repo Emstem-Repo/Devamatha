@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -978,8 +979,9 @@ public class NewExamMarksEntryAction extends BaseDispatchAction {
 				String schemes[] = newExamMarksEntryForm.getSchemeNo().split("_");
 				newExamMarksEntryForm.setSchemeNo(schemes[1]);
 				int year=Integer.parseInt(newExamMarksEntryForm.getYear());
-				Map<Integer, String> examNameMap = CommonAjaxHandler.getInstance().getExamNameByYearAndCourseAndSem(year, Integer.parseInt(newExamMarksEntryForm.getCourseId()), Integer.parseInt(schemes[1]));
+				Map<Integer, String> examNameMap = CommonAjaxHandler.getInstance().getExamNameByYearAndCourseAndSem(year, Integer.parseInt(newExamMarksEntryForm.getCourseId()), Integer.parseInt(schemes[1]),newExamMarksEntryForm.getSubjectType(),newExamMarksEntryForm.getSubjectId());
 				examNameMap = (Map<Integer, String>) CommonUtil.sortMapByValue(examNameMap);// sorting the exam names based on name
+				
 				newExamMarksEntryForm.setExamNameList(examNameMap);// setting the examNameMap to form
 				if(examNameMap.isEmpty()){// if student list is empty display no record found in the input screen
 					errors.add(CMSConstants.ERROR, new ActionError(CMSConstants.KNOWLEDGEPRO_ADMISSION_NORECORDSFOUND));
@@ -1031,6 +1033,7 @@ public class NewExamMarksEntryAction extends BaseDispatchAction {
 				//setNamesToForm(newExamMarksEntryForm);
 				
 			}  catch (Exception exception) {
+				exception.printStackTrace();
 				String msg = super.handleApplicationException(exception);
 				newExamMarksEntryForm.setErrorMessage(msg);
 				newExamMarksEntryForm.setErrorStack(exception.getMessage());
@@ -1073,7 +1076,7 @@ public class NewExamMarksEntryAction extends BaseDispatchAction {
 					if((to.getIsTheory() && to.getTheoryMarks()!=null && !to.getTheoryMarks().isEmpty())){
 						if(maxMarkMap.containsKey(Integer.parseInt(to.getExamId()))){
 							maxMark=maxMarkMap.get(Integer.parseInt(to.getExamId()));
-						if(!(to.getTheoryMarks().matches("\\d{0,2}(\\.\\d{1,2})?") )){
+						if(!(to.getTheoryMarks().matches("\\d{0,2}(\\.\\d{1,2})?") ) && !to.getTheoryMarks().equalsIgnoreCase("ab")){
 							if(examAbscentCode!=null && !examAbscentCode.contains(to.getTheoryMarks())){
 								if(regValid.isEmpty()){
 									regValid=to.getRegisterNo();
@@ -1082,14 +1085,17 @@ public class NewExamMarksEntryAction extends BaseDispatchAction {
 								}
 							}
 						}else{
-							
-							double marks=Double.parseDouble(to.getTheoryMarks());
-							if(marks>maxMark){
-								if(reg.isEmpty()){
-									reg=to.getRegisterNo();
-								}else{
-									reg=reg+","+to.getRegisterNo();
+							if (!to.getTheoryMarks().equalsIgnoreCase("ab")) {
+								double marks=Double.parseDouble(to.getTheoryMarks());
+								if(marks>maxMark){
+									if(reg.isEmpty()){
+										reg=to.getRegisterNo();
+									}else{
+										reg=reg+","+to.getRegisterNo();
+									}
 								}
+							}else if(to.getTheoryMarks().equalsIgnoreCase("ab")){
+								to.setTheoryMarks(to.getTheoryMarks().toUpperCase());
 							}
 						}
 						
@@ -1103,7 +1109,7 @@ public class NewExamMarksEntryAction extends BaseDispatchAction {
 				else if(to.getIsPractical() && to.getPracticalMarks()!=null && !to.getPracticalMarks().isEmpty()){
 					if(maxMarkMap.containsKey(Integer.parseInt(to.getExamId()))){
 						maxMark=maxMarkMap.get(Integer.parseInt(to.getExamId()));
-					if(!(to.getPracticalMarks().matches("\\d{0,2}(\\.\\d{1,2})?") )){
+					if(!(to.getPracticalMarks().matches("\\d{0,2}(\\.\\d{1,2})?") )&& !to.getPracticalMarks().equalsIgnoreCase("ab")){
 							if(examAbscentCode!=null && !examAbscentCode.contains(to.getPracticalMarks())){
 								if(regValid.isEmpty()){
 									regValid=to.getRegisterNo();
@@ -1113,14 +1119,19 @@ public class NewExamMarksEntryAction extends BaseDispatchAction {
 							}
 						
 							}else{
-							double marks=Double.parseDouble(to.getPracticalMarks());
-							if(marks>maxMark){
-								if(reg.isEmpty()){
-									reg=to.getRegisterNo();
-								}else{
-									reg=reg+","+to.getRegisterNo();
+								if (!to.getPracticalMarks().equalsIgnoreCase("ab")) {
+									
+									double marks=Double.parseDouble(to.getPracticalMarks());
+									if(marks>maxMark){
+										if(reg.isEmpty()){
+											reg=to.getRegisterNo();
+										}else{
+											reg=reg+","+to.getRegisterNo();
+										}
+									}
+								}else if(to.getPracticalMarks().equalsIgnoreCase("ab")){
+									to.setPracticalMarks(to.getPracticalMarks().toUpperCase());
 								}
-							}
 						}
 					}else{
 						errors.add(CMSConstants.ERROR,new ActionError("knowledgepro.exam.max.marks.notDefined"));

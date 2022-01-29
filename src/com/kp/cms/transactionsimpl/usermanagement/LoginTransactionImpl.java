@@ -124,7 +124,7 @@ public class LoginTransactionImpl implements ILoginTransaction {
 					+ "  and accessPrevileges.modules.isActive = true "
 					+ "  and accessPrevileges.isActive = true   "
                     + "  and accessPrevileges.menus.modules.id="+14
-                    +"   and accessPrevileges.menus.id in (88,92,418,847,848)"
+                    +"   and accessPrevileges.menus.id in (88,92,418,847,848,865)"
 					+ " order by  accessPrevileges.menus.modules.position , accessPrevileges.menus.position";
 
 			Query accessableModuleQuery = session

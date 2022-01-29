@@ -13,9 +13,11 @@ import org.hibernate.exception.ConstraintViolationException;
 
 import com.kp.cms.bo.admin.AttendanceEntryDay;
 import com.kp.cms.bo.admin.Caste;
+import com.kp.cms.bo.admin.EmployeeDutyPerformed;
 import com.kp.cms.exceptions.ApplicationException;
 import com.kp.cms.exceptions.BusinessException;
 import com.kp.cms.forms.attendance.AttendanceEntryDayForm;
+import com.kp.cms.forms.attendance.AttendanceEntryForm;
 import com.kp.cms.transactions.attandance.IAttendanceEntryDayTransaction;
 import com.kp.cms.transactionsimpl.admin.CasteTransactionImpl;
 import com.kp.cms.utilities.CommonUtil;
@@ -281,6 +283,101 @@ public class AttendanceEntryDayTransactionImpl implements IAttendanceEntryDayTra
 			     transaction.rollback();
 			log.error("Error during saving admitted Through data..." ,e);
 		}
+		
+	}
+	
+	public List<EmployeeDutyPerformed> getDutyPerformedList(){
+		Session session = null;
+		try {
+			session = HibernateUtil.getSession();
+			List<EmployeeDutyPerformed> attList = session.createQuery("from EmployeeDutyPerformed a where a.isActive=1").list();
+			session.flush();
+			return attList;
+		} catch (Exception e) {
+			if (session != null){
+				session.flush();
+			}
+			return null;
+		}
+	}
+	
+	public EmployeeDutyPerformed isDuplicateEmpDutyPerformed(
+			AttendanceEntryForm attendanceEntryForm, String mode) throws ApplicationException {
+		Session session=null;
+		String query = null;
+		EmployeeDutyPerformed bo;
+		try{
+			session=HibernateUtil.getSession();
+			if(mode.equalsIgnoreCase("edit")){
+				
+			   query="from EmployeeDutyPerformed a where duty = :duty  and date = :date and users.id = :userId   and a.id = :id " ;
+			}
+			
+			else{
+				query="from EmployeeDutyPerformed a where duty = :duty and users.id = :userId  and date = :date ";
+			}
+				
+			Query que=session.createQuery(query);
+			if(mode.equalsIgnoreCase("add")){
+				que.setString("userId", attendanceEntryForm.getUserId());	
+				que.setString("duty", attendanceEntryForm.getDutyPerformed());	
+				que.setDate("date", CommonUtil.ConvertStringToSQLDate(attendanceEntryForm.getDutyPerformedDate()));				
+			}
+			
+			if(mode.equalsIgnoreCase("edit")){
+			  que.setString("id", attendanceEntryForm.getDutyPerformedId());
+			  que.setString("userId", attendanceEntryForm.getUserId());	
+			que.setString("duty", attendanceEntryForm.getDutyPerformed());					
+			que.setDate("date", CommonUtil.ConvertStringToSQLDate(attendanceEntryForm.getDutyPerformedDate()));
+			}
+			bo = (EmployeeDutyPerformed) que.uniqueResult();
+			session.flush();
+			session.close();
+			//if(attendanceEntryDay!=null)
+				return bo;
+			//else
+				//return false;
+			   
+		}catch (Exception e) {
+			log.error("Error during duplcation checking..." ,e);
+			//session.flush();
+			//session.close();
+			throw new ApplicationException(e);
+		}
+	
+	}
+	
+	public boolean addEmployeeDutyPerformed(EmployeeDutyPerformed bo ,String mode)
+			throws Exception {
+		Session session = null;
+		Transaction transaction= null;
+		boolean isAdded=false;
+		try{
+			session=InitSessionFactory.getInstance().openSession();
+			transaction=session.beginTransaction();
+			transaction.begin();
+			if(mode.equalsIgnoreCase("Add")){
+				session.save(bo);
+			}else if(mode.equalsIgnoreCase("edit")){
+				session.update(bo);
+			}
+			transaction.commit();
+			session.flush();
+			session.close();
+			isAdded = true;
+		}catch (ConstraintViolationException e) {
+			if(transaction!=null)
+			     transaction.rollback();
+			log.error("Error during saving admitted Through data..." ,e);
+			throw new BusinessException(e);
+		} catch (Exception e) {
+			if(transaction!=null)
+			     transaction.rollback();
+			log.error("Error during saving admitted Through data..." ,e);
+			throw new ApplicationException(e);
+		}
+		return isAdded;
+		
 		
 	}
 

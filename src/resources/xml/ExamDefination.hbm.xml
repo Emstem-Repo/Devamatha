@@ -81,5 +81,8 @@
 		<property name="regularExamId">
 			<column name="regular_exam_id"></column>
 		</property>
+		<property name="alias">
+			<column name="alias"></column>
+		</property>
 	</class>
 </hibernate-mapping>

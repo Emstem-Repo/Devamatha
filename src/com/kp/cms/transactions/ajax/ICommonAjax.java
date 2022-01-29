@@ -488,7 +488,7 @@ public interface ICommonAjax {
 
 	public Map<Integer, String> getCourseByyearandTerm(String year, String term, String userId, String roleId);
 	
-	public Map<Integer, String> getExamNameByYearAndCourseAndSem(int year,int course,int sem) throws Exception;
+	public Map<Integer, String> getExamNameByYearAndCourseAndSem(int year,int course,int sem, String type, String subId) throws Exception;
 
 }
 

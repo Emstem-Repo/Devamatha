@@ -21,6 +21,7 @@ import org.apache.struts.action.ActionErrors;
 
 import com.kp.cms.constants.CMSConstants;
 import com.kp.cms.forms.usermanagement.LoginForm;
+import com.kp.cms.utilities.EncryptUtil;
 import com.kp.cms.utilities.HibernateUtil;
 
 /**

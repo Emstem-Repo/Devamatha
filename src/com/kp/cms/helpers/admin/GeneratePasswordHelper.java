@@ -55,6 +55,9 @@ private static final Log log = LogFactory.getLog(GeneratePasswordHelper.class);
 			while (stItr.hasNext()) {
 				Student student = (Student) stItr.next();
 				//if it is mailid to be username
+				if (student.getId()==4100) {
+					System.out.println(student.getId());
+				}
 				if(gnForm.isStudentMailid() && student.getAdmAppln().getPersonalData()!=null && student.getAdmAppln().getPersonalData().getEmail()!=null && !StringUtils.isEmpty(student.getAdmAppln().getPersonalData().getEmail().trim())){
 					StudentLogin login= new StudentLogin();
 					StudentLoginTO loginTo= new StudentLoginTO();

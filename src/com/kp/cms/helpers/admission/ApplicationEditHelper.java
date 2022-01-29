@@ -2575,7 +2575,7 @@ while(itr.hasNext()){
 			if(personalData.getFatherAadhaarNumber() != null && !personalData.getFatherAadhaarNumber().isEmpty())
 				personalDataTO.setFatherAadhaarNumber(personalData.getFatherAadhaarNumber());
 			personalDataTO.setIsmgquota(personalData.getIsmgquota());
-			if(personalData.getIsmgquota()) {
+			if(personalData.getIsmgquota()!=null && personalData.getIsmgquota()) {
 				/*personalDataTO.setRecommentedBy(personalData.getRecommentedBy());
 				personalDataTO.setRecommentedPersonDesignation(personalData.getRecommentedPersonDesignation());
 				personalDataTO.setRecommentedPersonMobile(personalData.getRecommentedPersonMobile());*/

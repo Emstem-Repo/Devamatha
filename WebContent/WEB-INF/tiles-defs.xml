@@ -12621,4 +12621,10 @@ This is a blank Tiles definition file with a commented example.
         <put name="page" value="Admission Form "/>
         <put name="body" value="/jsp/studentlogin/personalDataDetailsMarksDegree.jsp"/>
     </definition>
+    
+    <definition name="dutyPerform" extends=".AdminBootstrapLayout">
+        <put name="page" value="Attendance Entry">
+        </put>
+        <put name="body" value="/jsp/attendance/employeeDutyPerformsPage.jsp"/>
+    </definition>
 </tiles-definitions>

@@ -1162,7 +1162,7 @@ function updateAttendanceTypeid(req) {
                 </div>
     </div>
     </div> 	
-    <div class="form-group">
+    <%-- <div class="form-group">
                  <div class="col-sm-11">               
                   <div class="col-sm-2" >
                     	<div align="left"><b><bean:message key="knowledgepro.attendanceentry.duty"/>:</b></div>
@@ -1200,7 +1200,7 @@ function updateAttendanceTypeid(req) {
 					 </div>
                
                    </div>
-               </div>
+               </div> --%>
          
          	<div class="form-group">
          	<div class="col-sm-4 text-center">

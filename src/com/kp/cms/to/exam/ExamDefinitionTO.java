@@ -26,6 +26,7 @@ public class ExamDefinitionTO implements Serializable,Comparable<ExamDefinitionT
 	private String endDate;
 	private String theoryPractical;
 	private String displayExamName;
+	private String alias;
 	
 	public int getId() {
 		return id;
@@ -136,5 +137,11 @@ public class ExamDefinitionTO implements Serializable,Comparable<ExamDefinitionT
 	}
 	public void setDisplayExamName(String displayExamName) {
 		this.displayExamName = displayExamName;
+	}
+	public String getAlias() {
+		return alias;
+	}
+	public void setAlias(String alias) {
+		this.alias = alias;
 	}
 }

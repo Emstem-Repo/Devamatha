@@ -170,6 +170,12 @@ public class AttendanceEntryAction extends BaseDispatchAction {
 		
 		try {
 			if(attendanceEntryForm.getAttendancedate()!= null){
+				String duty=AttendanceEntryTransactionImpl.getInstance().getEmployeeDuty(attendanceEntryForm);
+				/*if (!duty.equalsIgnoreCase("NO") || duty!="NO") {
+					errors.add(CMSConstants.ERROR, new ActionError("errors.required"," You have already performed a duty "+duty));
+					saveErrors(request, errors);
+					return mapping.findForward(CMSConstants.ATTENDANCE_ENTRY_FIRST1);
+				}*/
 				boolean isHolidayDate=AttendanceEntryHandler.getInstance().checkHolidayDate(attendanceEntryForm.getAttendancedate());
 				if(isHolidayDate){
 					errors.add("error", new ActionError("knowledgepro.attendance.date.holiday"));
@@ -177,7 +183,7 @@ public class AttendanceEntryAction extends BaseDispatchAction {
 					return mapping.findForward(CMSConstants.ATTENDANCE_ENTRY_FIRST1);
 				}
 			}
-			
+			validateTime(attendanceEntryForm, errors);
 			if(errors.isEmpty()) {
 			attendanceEntryForm.setRoleId(session.getAttribute("rid").toString());	
 			boolean isallow=true;
@@ -3113,5 +3119,25 @@ public class AttendanceEntryAction extends BaseDispatchAction {
 			return mapping.findForward(CMSConstants.ERROR_PAGE);
 		}
 		return mapping.findForward(CMSConstants.VIEW_ATTENDANCE);
+	}
+private void validateTime(AttendanceEntryForm attendanceEntryForm, ActionMessages errors)  throws Exception{
+		
+		if(attendanceEntryForm.getIsStaff()){
+			String time=CMSConstants.ATTENDANCE_TIME;
+			Calendar now=Calendar.getInstance();
+			Calendar atdate=Calendar.getInstance();
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			//Date date = (Date) sdf.parse(attendanceEntryForm.getAttendancedate());
+			atdate.setTime(sdf.parse(attendanceEntryForm.getAttendancedate()));
+			int attDateNow=atdate.get(Calendar.DATE);
+			int currentDate=now.get(Calendar.DATE);
+			if(!(now.get(Calendar.DATE)-atdate.get(Calendar.DATE)>2)){
+					
+			}else{
+				errors.add(CMSConstants.ERRORS,new ActionError("knowledgepro.attendance.time.exceeded"));
+				
+			}
+				
+		}
 	}
 }
