@@ -850,11 +850,15 @@ public class StudentTO implements Serializable,Comparable<StudentTO>{
 		if(this.getRollNo()!=null && !this.rollNo.isEmpty() && arg0 instanceof StudentTO && arg0.getRollNo()!=null && !arg0.getRollNo().isEmpty()){
 			//Integer n1=new Integer(this.getRollNo());
 			//Integer n2=new Integer(arg0.rollNo);
-			if (arg0.rollNo=="20UG632" || arg0.rollNo.equalsIgnoreCase("20UG632") ) {
+			if (arg0.rollNo==null || (arg0.rollNo=="" || arg0.rollNo.equalsIgnoreCase(""))) {
+				System.out.println(this.getRollNo() +" " +arg0.rollNo);
+				return -1;
+			}
+			if (this.getRollNo()==null || (this.getRollNo()=="" || this.getRollNo().equalsIgnoreCase(""))) {
 				System.out.println(this.getRollNo() +" " +arg0.rollNo);
 				return 1;
 			}
-			
+			System.out.println(this.getRollNo() +" " +arg0.rollNo);
 			return this.getRollNo().compareTo(arg0.rollNo);
 		
 		}else if(this.getRegisterNo()!=null && !this.registerNo.isEmpty() && arg0 instanceof StudentTO && arg0.getRegisterNo()!=null && !arg0.getRegisterNo().isEmpty()){

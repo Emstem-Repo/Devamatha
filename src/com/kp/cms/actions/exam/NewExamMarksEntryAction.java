@@ -1003,7 +1003,7 @@ public class NewExamMarksEntryAction extends BaseDispatchAction {
 				//sorting and set studentlist
 				StudentRollNoComparator s=new StudentRollNoComparator();
 				s.setRegNoCheck(true);
-				Collections.sort(studentList, s);
+				//Collections.sort(studentList, s);
 				newExamMarksEntryForm.setStudentMarksList(studentList);
 				
 				//set exam list

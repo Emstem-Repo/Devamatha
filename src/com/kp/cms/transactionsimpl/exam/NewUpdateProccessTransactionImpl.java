@@ -774,6 +774,65 @@ public class NewUpdateProccessTransactionImpl implements
                             	marks=marks+ 4.0;
                             }
                         }
+                        else if (enterdMaxMarks == 40.0) {
+                            if (totalMarks >= 0.5 && totalMarks <= 3.5) {
+                                marks += 0.5;
+                            }
+                            else if (totalMarks >= 4.0 && totalMarks <= 7.5) {
+                            	marks += 1.0;
+                            }
+                            else if (totalMarks >= 8.0 && totalMarks <= 11.5) {
+                                marks += 1.5;
+                            }
+                            else if (totalMarks >= 12.0 && totalMarks <= 15.5) {
+                                marks += 2.0;
+                            }
+                            else if (totalMarks >= 16.0 && totalMarks <= 19.5) {
+                                marks += 2.5;
+                            }
+                            else if (totalMarks >= 20.0 && totalMarks <= 23.5) {
+                                marks += 3.0;
+                            }
+                            else if (totalMarks >= 24.0 && totalMarks <= 27.5) {
+                                marks += 3.5;
+                            }
+                            else if (totalMarks >= 28.0 && totalMarks <= 31.5) {
+                                marks += 4.0;
+                            }
+                            else if (totalMarks >= 32.0 && totalMarks <= 35.5) {
+                            	marks=marks+ 4.5;
+                            }
+                            else if (totalMarks >= 36.0 && totalMarks <= 40.0) {
+                            	marks=marks+ 5.0;
+                            }
+                        }
+                        else if (enterdMaxMarks == 30.0) {
+                            if (totalMarks >= 0.5 && totalMarks <= 3.5) {
+                                marks += 0.5;
+                            }
+                            else if (totalMarks >= 4.0 && totalMarks <= 7.0) {
+                            	marks += 1.0;
+                            }
+                            else if (totalMarks >= 7.5 && totalMarks <= 11.0) {
+                                marks += 1.5;
+                            }
+                            else if (totalMarks >= 11.5 && totalMarks <= 14.5) {
+                                marks += 2.0;
+                            }
+                            else if (totalMarks >= 15.0 && totalMarks <= 18.5) {
+                                marks += 2.5;
+                            }
+                            else if (totalMarks >= 19.0 && totalMarks <= 22.0) {
+                                marks += 3.0;
+                            }
+                            else if (totalMarks >= 22.5 && totalMarks <= 26.0) {
+                                marks += 3.5;
+                            }
+                            else if (totalMarks >= 26.5 && totalMarks <= 30.0) {
+                                marks += 4.0;
+                            }
+                           
+                        }
                         else {
                             marks += totalMarks / enterdMaxMarks * maxMarks;
                         }
@@ -888,6 +947,65 @@ public class NewUpdateProccessTransactionImpl implements
                         else if (totalMarks >= 53.0 && totalMarks <= 60.0) {
                         	marks=marks+ 4.0;
                         }
+                    }
+                    else if (enterdMaxMarks == 40.0) {
+                        if (totalMarks >= 0.5 && totalMarks <= 3.5) {
+                            marks += 0.5;
+                        }
+                        else if (totalMarks >= 4.0 && totalMarks <= 7.5) {
+                        	marks += 1.0;
+                        }
+                        else if (totalMarks >= 8.0 && totalMarks <= 11.5) {
+                            marks += 1.5;
+                        }
+                        else if (totalMarks >= 12.0 && totalMarks <= 15.5) {
+                            marks += 2.0;
+                        }
+                        else if (totalMarks >= 16.0 && totalMarks <= 19.5) {
+                            marks += 2.5;
+                        }
+                        else if (totalMarks >= 20.0 && totalMarks <= 23.5) {
+                            marks += 3.0;
+                        }
+                        else if (totalMarks >= 24.0 && totalMarks <= 27.5) {
+                            marks += 3.5;
+                        }
+                        else if (totalMarks >= 28.0 && totalMarks <= 31.5) {
+                            marks += 4.0;
+                        }
+                        else if (totalMarks >= 32.0 && totalMarks <= 35.5) {
+                        	marks=marks+ 4.5;
+                        }
+                        else if (totalMarks >= 36.0 && totalMarks <= 40.0) {
+                        	marks=marks+ 5.0;
+                        }
+                    }
+                    else if (enterdMaxMarks == 30.0) {
+                        if (totalMarks >= 0.5 && totalMarks <= 3.5) {
+                            marks += 0.5;
+                        }
+                        else if (totalMarks >= 4.0 && totalMarks <= 7.0) {
+                        	marks += 1.0;
+                        }
+                        else if (totalMarks >= 7.5 && totalMarks <= 11.0) {
+                            marks += 1.5;
+                        }
+                        else if (totalMarks >= 11.5 && totalMarks <= 14.5) {
+                            marks += 2.0;
+                        }
+                        else if (totalMarks >= 15.0 && totalMarks <= 18.5) {
+                            marks += 2.5;
+                        }
+                        else if (totalMarks >= 19.0 && totalMarks <= 22.0) {
+                            marks += 3.0;
+                        }
+                        else if (totalMarks >= 22.5 && totalMarks <= 26.0) {
+                            marks += 3.5;
+                        }
+                        else if (totalMarks >= 26.5 && totalMarks <= 30.0) {
+                            marks += 4.0;
+                        }
+                       
                     }
                     else {
                         marks += totalMarks / enterdMaxMarks * maxMarks;

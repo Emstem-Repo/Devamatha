@@ -5767,10 +5767,10 @@ public class CMSConstants extends CMSExamConstants {
 	//public static final String PGI_SECURITY_ID = "eCwWELxi";
 	//public static final String PGI_CHECKSUM_KEY = "eCwWELxi";
 	//SelfFinancing key
-	public static final String PGI_MERCHANT_ID = "lrTJ5a";
+	public static final String PGI_MERCHANT_ID = "WL0000000025353";
 	//SelfFinancing salt
-	public static final String PGI_SECURITY_ID = "yT1Fbmcx";
-	public static final String PGI_CHECKSUM_KEY = "yT1Fbmcx";
+	public static final String PGI_SECURITY_ID = "d1b8cd588cddf3357ce3a5a548d700d3";
+	public static final String PGI_CHECKSUM_KEY = "d1b8cd588cddf3357ce3a5a548d700d3";
 	
 	//Aided key
 	public static final String PGI_MERCHANT_ID_AIDED = "HumZ1q";//HumZ1q
@@ -5999,8 +5999,8 @@ public class CMSConstants extends CMSExamConstants {
 	public static final String PGI_WLS_ENCRIPTION_KEY = "6375b97b954b37f956966977e5753ee6";*/
 	
 	//production salt key for wls
-	public static final String PGI_WLS_MERCHANT_ID = "WL0000000009188";
-	public static final String PGI_WLS_ENCRIPTION_KEY = "54bf42cb4a94501d1f7dee47585ca642";
+	public static final String PGI_WLS_MERCHANT_ID = "WL0000000025353";
+	public static final String PGI_WLS_ENCRIPTION_KEY = "d1b8cd588cddf3357ce3a5a548d700d3";
 	public static final String ADMISSIONFORM_PENDING_ONLINE_APP = "initPendingOnlineApp";
 	public static final String EXAM_MARKS_ENTRY_INPUT_INTERNAL_ALL = "initMarksEntryInternalAll";
 	public static final String EXAM_MARKS_ENTRY_RESULT_INTERNAL_ALL = "examMarksEntryResultInternalAll";
